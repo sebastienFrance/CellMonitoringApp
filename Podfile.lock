@@ -3,17 +3,17 @@ PODS:
   - MBProgressHUD (0.9.1)
 
 DEPENDENCIES:
-  - CorePlot (from `https://github.com/core-plot/core-plot.git`, branch `release-2.0`)
+  - CorePlot (from `https://github.com/core-plot/core-plot.git`, branch `xcode-7`)
   - MBProgressHUD (~> 0.9)
 
 EXTERNAL SOURCES:
   CorePlot:
-    :branch: release-2.0
+    :branch: xcode-7
     :git: https://github.com/core-plot/core-plot.git
 
 CHECKOUT OPTIONS:
   CorePlot:
-    :commit: e2d55d75ff41693d5d862bc0e8a4cd4e4f197a91
+    :commit: de881f652893698417ca25e75ac10ed366e3d348
     :git: https://github.com/core-plot/core-plot.git
 
 SPEC CHECKSUMS:
