@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MapPreferencesController">
+            <connections>
+                <outlet property="GSMCellCheckBox" destination="opo-Vh-rGH" id="rf4-5b-xoT"/>
+                <outlet property="LTECellCheckBox" destination="MTv-Y5-sjZ" id="tzZ-cG-iah"/>
+                <outlet property="WCDMACellCheckBox" destination="cHt-zW-F76" id="FIT-wg-Z1C"/>
+                <outlet property="automaticRefreshCheckBox" destination="ccN-ul-21m" id="PGB-7L-ZZa"/>
+                <outlet property="blackListedCheckBox" destination="6yy-O4-rAs" id="GAN-Qx-uUk"/>
+                <outlet property="buildingsCheckBox" destination="m7m-J9-BOj" id="TwM-c1-GHz"/>
+                <outlet property="cellNameFilter" destination="9ZH-go-nj4" id="C20-gP-ie2"/>
+                <outlet property="displayCoverageCheckBox" destination="bZK-Qa-0NR" id="bmV-qD-YkD"/>
+                <outlet property="displaySectorCheckBox" destination="K86-wm-QZt" id="6SQ-Th-RWX"/>
+                <outlet property="distanceNRSlider" destination="caA-l8-Wis" id="ApM-sN-xSd"/>
+                <outlet property="distanceNRTextField" destination="uVM-AI-E8U" id="swJ-b1-VWX"/>
+                <outlet property="emptyCellCheckBox" destination="jeh-qw-oBa" id="qgE-W9-2fY"/>
+                <outlet property="followUserPositionCheckBox" destination="v1S-Tq-2mk" id="UWC-Ds-93m"/>
+                <outlet property="interFrequencyCheckBox" destination="nXH-jn-1se" id="qq4-aN-OlL"/>
+                <outlet property="interRATCheckBox" destination="HeE-0s-sO2" id="qBn-aY-eVg"/>
+                <outlet property="intraFrequencyCheckBox" destination="D7J-ve-iOh" id="gZg-9P-AtT"/>
+                <outlet property="markedCellsCheckBox" destination="j3r-Fy-lov" id="YXu-mP-O0J"/>
+                <outlet property="measuredByANRCheckBox" destination="Veh-IG-eiU" id="mCT-Qj-P77"/>
+                <outlet property="notBLAndNotWLCheckBox" destination="x7k-KQ-UYw" id="uTM-ds-Fwc"/>
+                <outlet property="radiusSlider" destination="TYZ-NH-7hd" id="Qtd-3X-Owe"/>
+                <outlet property="radiusTextField" destination="g5B-tS-wCI" id="dyi-Wi-ITj"/>
+                <outlet property="rangeSlider" destination="nbn-NX-c4b" id="IdD-qe-KQP"/>
+                <outlet property="rangeTextField" destination="BTz-LD-8vJ" id="Wlv-zZ-DcZ"/>
+                <outlet property="stalliteViewCheckBox" destination="mCa-k0-TQG" id="SW0-AX-gMe"/>
+                <outlet property="whiteListedCheckBox" destination="T8W-zW-ivu" id="4Cf-TA-oB0"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Map preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="1" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="371" height="668"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <view key="contentView" id="2">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="668"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Coverage" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="KEI-H5-rS4">
+                        <rect key="frame" x="9" y="315" width="353" height="148"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="351" height="132"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mCa-k0-TQG">
+                                    <rect key="frame" x="16" y="106" width="104" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Satellite view" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="JdN-Ch-dji">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="satelliteViewCheckBox:" target="-2" id="k20-eq-Rcu"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m7m-J9-BOj">
+                                    <rect key="frame" x="16" y="86" width="80" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Buildings" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="zRd-o1-Zz4">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="buildingsCheckBox:" target="-2" id="WRP-LC-nJn"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZK-Qa-0NR">
+                                    <rect key="frame" x="16" y="66" width="131" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Display Coverage" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wJ2-2k-RcW">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="displayCoverageCheckBox:" target="-2" id="aDc-HP-QBC"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccN-ul-21m">
+                                    <rect key="frame" x="177" y="106" width="138" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Automatic Refresh" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Gbp-2M-Q0e">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="automaticRefreshCheckBox:" target="-2" id="7kY-mQ-QxJ"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1S-Tq-2mk">
+                                    <rect key="frame" x="177" y="86" width="148" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Follow user position" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="QGu-Bl-ZoA">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="followUserPositionCheckBox:" target="-2" id="s36-a2-wEh"/>
+                                    </connections>
+                                </button>
+                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbn-NX-c4b">
+                                    <rect key="frame" x="16" y="13" width="319" height="26"/>
+                                    <sliderCell key="cell" state="on" alignment="left" maxValue="40000" doubleValue="50" tickMarkPosition="above" numberOfTickMarks="10" sliderType="linear" id="pfk-0t-QgN"/>
+                                    <connections>
+                                        <action selector="rangeSlider:" target="-2" id="u5x-tj-gSU"/>
+                                    </connections>
+                                </slider>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYX-bv-jsz">
+                                    <rect key="frame" x="18" y="40" width="51" height="17"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Range" id="JGS-vK-dyM">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BTz-LD-8vJ">
+                                    <rect key="frame" x="73" y="40" width="83" height="17"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="40km" id="h88-aG-boT">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Neighbors relations" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="K9u-By-Eu9">
+                        <rect key="frame" x="9" y="26" width="353" height="175"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="351" height="159"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7J-ve-iOh">
+                                    <rect key="frame" x="16" y="133" width="124" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Intra-Frequency" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4fG-bP-blI">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="intraFrequencyCheckBox:" target="-2" id="U7R-cs-ew9"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXH-jn-1se">
+                                    <rect key="frame" x="16" y="113" width="124" height="18"/>
+                                    <buttonCell key="cell" type="check" title="inter-Frequency" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="fuB-nX-gcw">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="interFrequencyCheckBox:" target="-2" id="VWC-hh-DRy"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8W-zW-ivu">
+                                    <rect key="frame" x="16" y="93" width="99" height="18"/>
+                                    <buttonCell key="cell" type="check" title="White Listed" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="xvW-11-lre">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="whiteListCheckBox:" target="-2" id="mhv-77-9oE"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x7k-KQ-UYw">
+                                    <rect key="frame" x="16" y="72" width="177" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Others (not BL &amp; not WL)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="UI4-83-Br7">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="notBLAndNotWLCheckBox:" target="-2" id="3ln-bM-Bns"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6yy-O4-rAs">
+                                    <rect key="frame" x="177" y="93" width="96" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Black Listed" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dcK-yG-bDL">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="blackListedCheckBox:" target="-2" id="Q3E-do-EYy"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HeE-0s-sO2">
+                                    <rect key="frame" x="177" y="133" width="83" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Inter-RAT" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3rK-PJ-lWW">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="interRATCheckBox:" target="-2" id="l4U-SE-Bw8"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-IG-eiU">
+                                    <rect key="frame" x="177" y="113" width="133" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Measured by ANR" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="2a7-bh-ipV">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="measuredByANRCheckBox:" target="-2" id="FnF-oa-9E4"/>
+                                    </connections>
+                                </button>
+                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caA-l8-Wis">
+                                    <rect key="frame" x="16" y="12" width="319" height="26"/>
+                                    <sliderCell key="cell" state="on" alignment="left" maxValue="10000" tickMarkPosition="above" numberOfTickMarks="10" sliderType="linear" id="MqI-xA-A1k"/>
+                                    <connections>
+                                        <action selector="NRDistanceSlider:" target="-2" id="ar6-Ia-hsR"/>
+                                    </connections>
+                                </slider>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YXE-49-P3e">
+                                    <rect key="frame" x="18" y="39" width="80" height="17"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Distance >" id="UBZ-Gw-hS1">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVM-AI-E8U">
+                                    <rect key="frame" x="90" y="39" width="80" height="17"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0 m" id="Dvr-Ax-FZ9">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Others" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="zWJ-qp-lvb">
+                        <rect key="frame" x="9" y="205" width="353" height="106"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="351" height="90"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K86-wm-QZt">
+                                    <rect key="frame" x="16" y="64" width="117" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Display Sectors" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kcI-TX-4S7">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="displaySectorCheckBox:" target="-2" id="tqV-iM-OrJ"/>
+                                    </connections>
+                                </button>
+                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TYZ-NH-7hd">
+                                    <rect key="frame" x="16" y="14" width="319" height="26"/>
+                                    <sliderCell key="cell" state="on" alignment="left" maxValue="4" tickMarkPosition="above" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="sQ0-hv-MKr"/>
+                                    <connections>
+                                        <action selector="radiusSliderTextField:" target="-2" id="AwZ-Dh-G9k"/>
+                                    </connections>
+                                </slider>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R9x-iq-msx">
+                                    <rect key="frame" x="18" y="41" width="55" height="17"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Radius" id="4aa-6X-DiK">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5B-tS-wCI">
+                                    <rect key="frame" x="69" y="41" width="55" height="17"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="4" id="0Va-99-BK3">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Technology" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="XLl-g6-U2J">
+                        <rect key="frame" x="9" y="467" width="353" height="192"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="351" height="176"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DcV-Ww-tv5">
+                                    <rect key="frame" x="7" y="121" width="48" height="48"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="8_purple" id="D3c-2t-AEL"/>
+                                </imageView>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MTv-Y5-sjZ">
+                                    <rect key="frame" x="58" y="136" width="92" height="18"/>
+                                    <buttonCell key="cell" type="check" title="LTE Cell" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="VF4-XQ-bYC">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="LTECellCheckBox:" target="-2" id="8uS-xW-umD"/>
+                                    </connections>
+                                </button>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0sD-YX-n5M">
+                                    <rect key="frame" x="171" y="121" width="48" height="48"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="8_teal" id="Rbi-hk-gWf"/>
+                                </imageView>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHt-zW-F76">
+                                    <rect key="frame" x="222" y="136" width="110" height="18"/>
+                                    <buttonCell key="cell" type="check" title="WCDMA Cell" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Mjq-jC-BtL">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="WCMDACellCheckBox:" target="-2" id="1Mx-6f-jJ9"/>
+                                    </connections>
+                                </button>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U9C-fz-4i5">
+                                    <rect key="frame" x="7" y="67" width="48" height="48"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="8_yellow" id="M16-YY-7KJ"/>
+                                </imageView>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opo-Vh-rGH">
+                                    <rect key="frame" x="58" y="82" width="92" height="18"/>
+                                    <buttonCell key="cell" type="check" title="GSM Cell" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dvS-aq-hdD">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="GSMCellCheckBox:" target="-2" id="cBI-b0-Dzv"/>
+                                    </connections>
+                                </button>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sXA-zh-nqY">
+                                    <rect key="frame" x="171" y="67" width="48" height="48"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="8_black" id="Jkg-xD-qGV"/>
+                                </imageView>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeh-qw-oBa">
+                                    <rect key="frame" x="222" y="82" width="121" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Empty Cell Site" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="6nM-wB-cqS">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="emptyCellCheckBox:" target="-2" id="Pun-hK-2Ia"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j3r-Fy-lov">
+                                    <rect key="frame" x="8" y="46" width="134" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Marked Cells only" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kj5-nL-UZ1">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="markedCellCheckBox:" target="-2" id="Rg9-PO-Ijj"/>
+                                    </connections>
+                                </button>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ZH-go-nj4">
+                                    <rect key="frame" x="10" y="18" width="331" height="22"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="cell name filter" drawsBackground="YES" id="jJh-Tw-OGH">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <action selector="cellNameFilterTextField:" target="-2" id="rvD-NN-Iiu"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                </subviews>
+            </view>
+        </window>
+    </objects>
+    <resources>
+        <image name="8_black" width="28" height="51"/>
+        <image name="8_purple" width="28" height="51"/>
+        <image name="8_teal" width="28" height="51"/>
+        <image name="8_yellow" width="28" height="51"/>
+    </resources>
+</document>

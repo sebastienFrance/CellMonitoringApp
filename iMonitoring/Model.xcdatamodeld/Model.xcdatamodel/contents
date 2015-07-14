@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3389" systemVersion="12E55" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CellBookmark" representedClassName="CellBookmark" syncable="YES">
+        <attribute name="cellInternalName" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="color" attributeType="Transformable" valueTransformerName="UIColorRGBValueTransformer" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creationDate" attributeType="Date" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="techno" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="RegionBookmark" representedClassName="RegionBookmark" syncable="YES">
+        <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="color" attributeType="Transformable" valueTransformerName="UIColorRGBValueTransformer" syncable="YES"/>
+        <attribute name="creationDate" attributeType="Date" syncable="YES"/>
+        <attribute name="heading" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="pitch" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="VisitedCells" representedClassName="VisitedCells" syncable="YES">
+        <attribute name="cellInternalName" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="lastVisitedDate" attributeType="Date" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="techno" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="visitedCount" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CellBookmark" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="RegionBookmark" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="VisitedCells" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

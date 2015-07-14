@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+        <plugIn identifier="com.apple.MapKitIBPlugin" version="5053"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainMapWindowController">
+            <connections>
+                <outlet property="theMapView" destination="gFt-kY-Q3h" id="MZZ-T0-qqn"/>
+                <outlet property="theSearchField" destination="6ps-N2-gQF" id="pNa-9L-bLC"/>
+                <outlet property="window" destination="gFJ-IU-sjp" id="35C-9M-sM9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="iMonitoringMac" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="gFJ-IU-sjp" customClass="WindowForPopover">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="1019" height="850"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <view key="contentView" id="fgU-AK-Fyb">
+                <rect key="frame" x="0.0" y="0.0" width="1019" height="850"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <mapView showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFt-kY-Q3h">
+                        <rect key="frame" x="0.0" y="0.0" width="1019" height="850"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </mapView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gFt-kY-Q3h" firstAttribute="top" secondItem="fgU-AK-Fyb" secondAttribute="top" id="RrZ-az-dZk"/>
+                    <constraint firstAttribute="bottom" secondItem="gFt-kY-Q3h" secondAttribute="bottom" id="Sj4-lS-KZd"/>
+                    <constraint firstAttribute="trailing" secondItem="gFt-kY-Q3h" secondAttribute="trailing" id="Zag-zu-AIS"/>
+                    <constraint firstItem="gFt-kY-Q3h" firstAttribute="leading" secondItem="fgU-AK-Fyb" secondAttribute="leading" id="ugm-0o-2o7"/>
+                </constraints>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="6705B7F9-15C9-446C-933D-105356328885" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconOnly" sizeMode="small" id="K55-JO-rIB">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="lwu-Y0-wka"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="BzA-qN-uWt"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="esh-Z3-QYv"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Vyh-zF-MpS"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="IL9-04-0Nc"/>
+                    <toolbarItem implicitItemIdentifier="5E7A45B9-F68F-469D-9FF8-EE7A1B5A0045" label="" paletteLabel="" id="AfH-XN-3rt">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="96" height="22"/>
+                        <size key="maxSize" width="212" height="22"/>
+                        <searchField key="view" verticalHuggingPriority="750" id="6ps-N2-gQF">
+                            <rect key="frame" x="0.0" y="14" width="200" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Cell name or Address" usesSingleLineMode="YES" bezelStyle="round" id="hSm-eo-Qq9">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                            <connections>
+                                <action selector="searchField:" target="-2" id="N3k-Q0-BUu"/>
+                            </connections>
+                        </searchField>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="2445DECE-D3C6-45A0-B11F-131138E1AA46" label="" paletteLabel="" id="byV-gC-pGM">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="82" height="32"/>
+                        <size key="maxSize" width="120" height="43"/>
+                        <button key="view" verticalHuggingPriority="750" id="gEy-YL-Plk">
+                            <rect key="frame" x="0.0" y="14" width="120" height="43"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="Dashboard" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2EF-yZ-5xb">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="dashboardButtonPushed:" target="-2" id="JnN-Q3-K2u"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="25E7A6D4-D8DD-46CE-B511-E1C205DC9370" label="" paletteLabel="" id="vbc-7p-wG7">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="54" height="32"/>
+                        <size key="maxSize" width="60" height="54"/>
+                        <button key="view" verticalHuggingPriority="750" id="qCF-yo-tN1">
+                            <rect key="frame" x="0.0" y="14" width="60" height="54"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="Map" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Iil-Ub-7Iz">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="preferencesButtonPushed:" target="-2" id="YYx-Gb-Xrx"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="615C3AE4-289F-4F20-8F5A-D036421EA26B" label="" paletteLabel="" id="8wu-PR-NqL">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="82" height="32"/>
+                        <size key="maxSize" width="106" height="43"/>
+                        <button key="view" verticalHuggingPriority="750" id="I8b-z2-3PK">
+                            <rect key="frame" x="0.0" y="14" width="106" height="43"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="Location" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CYv-pM-4bY">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="locationPushed:" target="-2" id="JZN-5i-rbU"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="byV-gC-pGM"/>
+                    <toolbarItem reference="8wu-PR-NqL"/>
+                    <toolbarItem reference="IL9-04-0Nc"/>
+                    <toolbarItem reference="AfH-XN-3rt"/>
+                    <toolbarItem reference="vbc-7p-wG7"/>
+                </defaultToolbarItems>
+            </toolbar>
+        </window>
+        <button verticalHuggingPriority="750" id="6lF-vg-Tuj">
+            <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sfS-7B-mdU">
+                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                <font key="font" metaFont="system"/>
+            </buttonCell>
+        </button>
+    </objects>
+</document>
