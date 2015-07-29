@@ -32,6 +32,11 @@
     [super viewDidLoad];
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    [self.navigationController setToolbarHidden:TRUE];
+    self.navigationController.hidesBarsOnTap = FALSE;
+}
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"addRegionBookmark"]) {
         MarkViewController* controller = segue.destinationViewController;

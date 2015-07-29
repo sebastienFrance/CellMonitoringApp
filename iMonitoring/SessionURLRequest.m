@@ -285,13 +285,11 @@
 // Server errors are not reported through the error parameter. The only errors your delegate receives through the error parameter are client-side errors, such as being unable to resolve the hostname or connect to the host.
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
-    if (error == Nil) {
-    } else {
+    if (error != Nil) {
         NSLog(@"Session download has failed : %@", error);
         SessionURLRequestHandler* handler = self.handlers[task];
         [self.handlers removeObjectForKey:task];
         [self callErrorHandler:handler];
-
     }
 }
 
@@ -303,42 +301,36 @@
 
 #pragma mark - NSURLSessionDelegate Protocol
 
-- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler {
+- (void)URLSession:(NSURLSession *)session
+didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
+ completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler {
     
-  //  [RequestURLUtilities dumpChallenge:challenge];
+    [RequestURLUtilities dumpChallenge:challenge];
     
     
     if (challenge.protectionSpace != Nil) {
         NSURLProtectionSpace *protection = challenge.protectionSpace;
-        
+
         SecTrustRef sslState = protection.serverTrust;
         if (sslState == Nil) {
-            //NSLog(@"it has no sslstate");
+            NSLog(@"%s Warning: empty serverTrust",__PRETTY_FUNCTION__);
         }
         
         
         if ([protection.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
             
-            
+            NSLog(@"%s => NSURLAuthenticationMethodServerTrust", __PRETTY_FUNCTION__);
             // warning normaly I should check the validity of the SecTrustRef before to trust
             NSURLCredential* credential = [NSURLCredential credentialForTrust:sslState];
-            
-            [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
-            
-            completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
-            
-        } else if ([protection.authenticationMethod isEqualToString:NSURLAuthenticationMethodDefault]) {
-            
-            // CellMonitoring never enter in this part of code
-            
-            //warning should select something different for Persistence
-            NSURLCredential* credential = [NSURLCredential credentialWithUser:@"UserName"
-                                                                     password:@"password"
-                                                                  persistence:NSURLCredentialPersistenceForSession];
-            
-            [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
 
-            completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
+            // Put in command for test
+            //[challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+            
+           completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
+
+        } else {
+            NSLog(@"%s => Called for another challenge", __PRETTY_FUNCTION__);
+           completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, NULL);
         }
       //  [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
         
@@ -349,6 +341,7 @@
 
 
 - (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(NSError *)error {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 
     // cancel all pending requests
     for (SessionURLRequestHandler* handler in self.handlers) {

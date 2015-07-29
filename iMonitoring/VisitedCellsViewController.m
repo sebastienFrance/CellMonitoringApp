@@ -26,14 +26,6 @@
 
 @implementation VisitedCellsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -44,7 +36,15 @@
     self.lastVisitedCells = [self.lastVisitedCells sortedArrayUsingSelector:@selector(compareByLastVisited:)];
 
     [super viewDidLoad];
+}
 
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self.navigationController setToolbarHidden:FALSE];
+        self.navigationController.hidesBarsOnTap = FALSE;
+    }
 }
 
 - (void)didReceiveMemoryWarning

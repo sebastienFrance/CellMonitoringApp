@@ -36,6 +36,12 @@
 
 }
 
+-(void) viewDidAppear:(BOOL) animated {
+    [super viewDidAppear:animated];
+
+    [self.navigationController setToolbarHidden:TRUE];
+    self.navigationController.hidesBarsOnTap = FALSE;
+}
 
 
 #pragma mark - Table view delegate

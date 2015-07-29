@@ -67,21 +67,13 @@
 }
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
+
+    [self.navigationController setToolbarHidden:FALSE];
+    self.navigationController.hidesBarsOnTap = FALSE;
+
     self.theCollectionView.dataSource = self;
     self.theCollectionView.delegate = self;
     

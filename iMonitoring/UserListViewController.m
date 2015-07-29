@@ -46,8 +46,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setToolbarHidden:YES animated:YES];
-    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self.navigationController setToolbarHidden:YES animated:YES];
+    }
     
     [super viewWillAppear:animated];
 }
@@ -68,6 +69,16 @@
     [self loadUsers];
     
 }
+
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self.navigationController setToolbarHidden:FALSE];
+        self.navigationController.hidesBarsOnTap = FALSE;
+    }
+}
+
 
 
 - (void) loadUsers {

@@ -75,10 +75,22 @@ typedef NS_ENUM(NSUInteger, NeighborDisplayModeId) {
 
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self.navigationController setToolbarHidden:FALSE];
+        self.navigationController.hidesBarsOnTap = FALSE;
+    }
+
+}
+
 - (void)viewDidLoad {
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
-    
+
+
+
     if (self.displayMode == NeighborDisplayModeNormal) {
         [self initializeSegmentForNormalMode];
     } else {

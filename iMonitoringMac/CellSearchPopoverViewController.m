@@ -35,6 +35,7 @@
     
 }
 
+
 -(void) updateWith:(NSString*) address cells:(NSArray*)cells {
     self.address = address;
     self.cells = cells;

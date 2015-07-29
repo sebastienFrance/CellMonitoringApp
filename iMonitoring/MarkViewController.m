@@ -152,6 +152,16 @@ typedef NS_ENUM(NSUInteger, BookmarkColorId) {
     [self.textLabelForComments becomeFirstResponder];
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self.navigationController setToolbarHidden:FALSE];
+        self.navigationController.hidesBarsOnTap = FALSE;
+    }
+}
+
+
 -(void) updateBookmarkDisplay {
     for (NSUInteger i = 0; i < self.backgrounds.count; i++) {
         UIView* currentView  = self.backgrounds[i];

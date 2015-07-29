@@ -98,7 +98,7 @@
 
 - (IBAction)sendMail:(UIBarButtonItem *)sender {
     MailCellAlarms* mailbody = [[MailCellAlarms alloc] init:self.alarmDatasource.theCell alarms:self.alarmDatasource.alarmsOrderedByDate];
-    
+
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [mailbody presentActivityViewFrom:self];
     } else {
