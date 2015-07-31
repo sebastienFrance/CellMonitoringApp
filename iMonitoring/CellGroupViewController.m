@@ -137,7 +137,6 @@
     
     DataCenter* dc = [DataCenter sharedInstance];
     [dc.aroundMeItf initiliazeWithNeighborsOf:self.displayCells[sender.tag]];
-    
 }
 
 #pragma mark - Table view data source

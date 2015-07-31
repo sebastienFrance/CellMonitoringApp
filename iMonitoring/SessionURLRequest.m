@@ -305,7 +305,7 @@
 didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
  completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler {
     
-    [RequestURLUtilities dumpChallenge:challenge];
+    //[RequestURLUtilities dumpChallenge:challenge];
     
     
     if (challenge.protectionSpace != Nil) {
