@@ -64,6 +64,7 @@
         // init mapview configuration
         
         _mapView.showsPointsOfInterest = FALSE;
+        _mapView.showsScale = TRUE;
         _mapView.pitchEnabled = TRUE;
         _mapView.showsBuildings = _buildingDisplayed;
         _mapView.mapType = _satelliteDisplayed ? MKMapTypeHybrid : MKMapTypeStandard;

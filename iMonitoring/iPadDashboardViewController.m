@@ -87,6 +87,13 @@
     [[UserHelp sharedInstance] iPadHelpForDashboardView];
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [self.navigationController setToolbarHidden:FALSE];
+    self.navigationController.hidesBarsOnTap  = FALSE;
+}
+
 #pragma mark - Worst Chart
 
 
@@ -124,15 +131,6 @@
 
 
 #pragma mark - initializations
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
-}
 
 - (void) initializeTitle {
     MonitoringPeriodUtility* dc = [MonitoringPeriodUtility sharedInstance];
@@ -354,10 +352,6 @@
     return cell;
 }
 
-
-
-
-
 #pragma mark - UICollectionViewDelegate Protocol
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     // Return the list of KPIs and for each KPI the list of values
@@ -521,9 +515,7 @@
 #pragma mark - Navigation from detailed worst KPI modal view
 
 - (void) displayCellOnMap:(CellMonitoring*) theCellonMap {
-    
-    
-    
+
     iPadAroundMeImpl* aroundMe = (iPadAroundMeImpl*) [DataCenter sharedInstance].aroundMeItf;
     
     [self.navigationController popToViewController:aroundMe.aroundMeViewController animated:YES];

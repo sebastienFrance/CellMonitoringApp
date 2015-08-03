@@ -120,28 +120,18 @@ static NSUInteger _technoMapping[] =  { DCTechnologyLTE, DCTechnologyWCDMA, DCTe
     static NSString *CellIdForMonitoringPeriod = @"DefaultMonitoringPeriodId";
     static NSString *CellIdForTouchId = @"touchIdCellId";
 
-    //static NSString *CellIdForGraphicsConfigId = @"GraphicsConfigId";
-    
     switch (indexPath.section) {
         case USER_PREFS_SECTION_KPIS: {
-            KPIsTechnoCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdForKPIs];
-            
-            if (cell == Nil) {
-                cell = [[KPIsTechnoCell alloc] init];
-            }
-            
+            KPIsTechnoCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdForKPIs forIndexPath:indexPath];
+
             cell.technoLabel.text = _technoLabel[indexPath.row];
             cell.technoImage.image = _imageLabel[indexPath.row];
             return cell;
             
         }
         case USER_PREFS_SECTION_MONITORING_CONFIG: {
-            UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdForMonitoringPeriod];
-            
-            if (cell == Nil) {
-                cell = [[KPIsTechnoCell alloc] init];
-            }
-            
+            UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdForMonitoringPeriod forIndexPath:indexPath];
+
             if (indexPath.row == 0) {
                 cell.textLabel.text = @"Default Monitoring Period";
                 cell.detailTextLabel.text = [[MonitoringPeriodUtility sharedInstance] monitoringPeriodString];
@@ -153,12 +143,8 @@ static NSUInteger _technoMapping[] =  { DCTechnologyLTE, DCTechnologyWCDMA, DCTe
            
         }
         case USER_PREFS_SECTION_GRAPHICS_CONFIG: {
-            UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdForMonitoringPeriod];
-            
-            if (cell == Nil) {
-                cell = [[KPIsTechnoCell alloc] init];
-            }
-            
+            UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdForMonitoringPeriod forIndexPath:indexPath];
+
             cell.textLabel.text = @"Graphics options";
             cell.detailTextLabel.text = @"Configure graphics properties";
             
@@ -166,10 +152,7 @@ static NSUInteger _technoMapping[] =  { DCTechnologyLTE, DCTechnologyWCDMA, DCTe
             
         }
         case USER_PREFS_SECTION_SECURITY: {
-            TouchIdCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdForTouchId];
-            if (cell == Nil) {
-                cell = [[TouchIdCell alloc] init];
-            }
+            TouchIdCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdForTouchId forIndexPath:indexPath];
 
             LAContext *context = [LAContext new];
             NSError *error;
@@ -184,12 +167,8 @@ static NSUInteger _technoMapping[] =  { DCTechnologyLTE, DCTechnologyWCDMA, DCTe
             return cell;
         }
         case USER_PREFS_SECTION_ADMIN: {
-            UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdForMonitoringPeriod];
-            
-            if (cell == Nil) {
-                cell = [[KPIsTechnoCell alloc] init];
-            }
-            
+            UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdForMonitoringPeriod forIndexPath:indexPath];
+
             cell.textLabel.text = @"Change Password";
             cell.detailTextLabel.text = @"Change your password to connect";
             
@@ -223,10 +202,6 @@ static NSUInteger _technoMapping[] =  { DCTechnologyLTE, DCTechnologyWCDMA, DCTe
             break;
         }
         case USER_PREFS_SECTION_ADMIN: {
-//            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-//                iPadAroundMeImpl* aroundMe = (iPadAroundMeImpl*) [DataCenter sharedInstance].aroundMeItf;
-//                [aroundMe dismissAllPopovers];
-//            }
             [self performSegueWithIdentifier:@"OpenChangePassword" sender:self];
             break;
         }

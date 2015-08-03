@@ -36,6 +36,12 @@
     self.timezoneDatasource = [[CellTimezoneDataSource alloc] initWithDelegate:self cell:self.theCell];
     [self.timezoneDatasource loadTimeZone];
 }
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [self.navigationController setToolbarHidden:TRUE];
+    self.navigationController.hidesBarsOnTap = FALSE;
+}
 
 #pragma mark - Table view data source
 

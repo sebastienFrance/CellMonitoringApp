@@ -48,12 +48,6 @@
     self.title = self.theCell.id;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 - (void) neighborsHistoricalDataIsLoaded:(CellMonitoring*) centerCell {
     [MBProgressHUD hideAllHUDsForView:self.view animated:TRUE];
     self.isLoading = FALSE;

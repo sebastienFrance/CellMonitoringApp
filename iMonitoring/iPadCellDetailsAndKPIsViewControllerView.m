@@ -187,21 +187,24 @@
         self.isMarked = FALSE;
         [CellBookmark removeCellBookmark:_theCell.id];
     } else { 
-        
-        [self dismissAllPopovers];
-        
-        UIViewController *viewControllerForPopover = 
-        [self.storyboard instantiateViewControllerWithIdentifier:@"MarkViewControllerId"];
-        
-        MarkViewController* modal = (MarkViewController*) viewControllerForPopover;
-        modal.delegate = self; 
-        modal.theCell = _theCell;
-        
-        
-        self.thePopover = [[UIPopoverController alloc] 
-                       initWithContentViewController:viewControllerForPopover];
-        [self.thePopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+        [self displayMarkViewController:sender];
     }
+}
+
+-(void) displayMarkViewController:(UIBarButtonItem *) sender  {
+    [self dismissAllPopovers];
+
+    UINavigationController *viewControllerForPopover =
+    [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverCellBookmarkId"];
+
+    MarkViewController* modal = (MarkViewController*) viewControllerForPopover.topViewController;
+    modal.delegate = self;
+    modal.theCell = _theCell;
+
+    self.thePopover = [[UIPopoverController alloc] initWithContentViewController:viewControllerForPopover];
+    [self.thePopover presentPopoverFromBarButtonItem:sender
+                            permittedArrowDirections:UIPopoverArrowDirectionDown
+                                            animated:YES];
 }
 
 
@@ -216,7 +219,9 @@
     
     self.thePopover = [[UIPopoverController alloc] initWithContentViewController:detailsMap];
     
-    [self.thePopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+    [self.thePopover presentPopoverFromBarButtonItem:sender
+                            permittedArrowDirections:UIPopoverArrowDirectionDown
+                                            animated:YES];
 }
 
 

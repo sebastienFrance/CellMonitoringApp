@@ -150,6 +150,7 @@ typedef NS_ENUM(NSUInteger, BookmarkColorId) {
     
     
     [self.textLabelForComments becomeFirstResponder];
+
 }
 
 -(void) viewDidAppear:(BOOL)animated {
