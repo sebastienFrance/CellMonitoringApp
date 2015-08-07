@@ -39,7 +39,7 @@
 @property (nonatomic, readonly) NSString* country;
 
 @property (nonatomic, readonly) Boolean hasTimezone;
-@property (nonatomic) NSString* timezone;
+@property (nonatomic, readonly) NSString* timezone;
 @property (nonatomic, readonly) NSString* timezoneAbbreviation;
 
 @property (nonatomic, readonly) MKPolygon* thePolygon;

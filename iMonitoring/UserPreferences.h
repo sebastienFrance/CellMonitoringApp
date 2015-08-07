@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MonitoringPeriodUtility.h"
 #import "BasicTypes.h"
+@import MapKit;
+
 
 @interface UserPreferences : NSObject
 
@@ -31,7 +33,7 @@
 @property (nonatomic) NSString* FilterCellName;
 @property (nonatomic, getter = isFilterEmptySite) Boolean FilterEmptySite;
 
-@property (nonatomic, getter = isSatelliteView) Boolean SatelliteView;
+@property (nonatomic) MKMapType MapType;
 @property (nonatomic, getter = isBuildingView) Boolean BuildingView;
 @property (nonatomic, getter = isDisplayCoverage) Boolean DisplayCoverage;
 @property (nonatomic, getter = isAutomaticRefresh) Boolean AutomaticRefresh;

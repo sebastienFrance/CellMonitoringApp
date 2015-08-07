@@ -75,7 +75,7 @@
                 return;
             }
             CLPlacemark* currentPlacemark = [placemarks lastObject];
-            
+
             [theCell initialiazeAddress:currentPlacemark];
             
             self.street.text = theCell.street;

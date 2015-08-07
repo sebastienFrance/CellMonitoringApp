@@ -35,7 +35,7 @@ NSString *const kFilterLTEReleases            = @"Cell.FilterLTEReleases";
 NSString *const kFilterWCDMAReleases          = @"Cell.FilterWCDMAReleases";
 NSString *const kFilterGSMReleases            = @"Cell.FilterGSMReleases";
 NSString *const kFilterEmptySite              = @"Cell.FilterEmptySite";
-NSString *const kSatelliteView                = @"Cell.SatelliteView";
+NSString *const kMapType                      = @"Cell.MapType";
 NSString *const kBuildingView                 = @"Cell.BuildingView";
 NSString *const kDisplayCoverage              = @"Cell.DisplayCoverage";
 NSString *const kAutomaticRefresh             = @"Cell.AutomaticRefresh";
@@ -122,7 +122,7 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
         [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:kFilterWCDMACells];
         [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:kFilterGSMCells];
         [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:kFilterEmptySite];
-        [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:kSatelliteView];
+        [[NSUserDefaults standardUserDefaults] setInteger:MKMapTypeStandard forKey:kMapType];
         [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:kBuildingView];
         [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:kDisplayCoverage];
         [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:kAutomaticRefresh];
@@ -547,13 +547,15 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
 - (Boolean) isFilterGSMCells  {
     return [[NSUserDefaults standardUserDefaults] boolForKey:kFilterGSMCells];
 }
-- (void) setSatelliteView:(Boolean)SatelliteView {
-    [[NSUserDefaults standardUserDefaults] setBool:SatelliteView forKey:kSatelliteView];
+
+- (MKMapType) MapType {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:kMapType];
 }
 
-- (Boolean) isSatelliteView {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kSatelliteView];
+-(void) setMapType:(MKMapType) mapType {
+    [[NSUserDefaults standardUserDefaults] setInteger:mapType forKey:kMapType];
 }
+
 
 - (void) setBuildingView:(Boolean)BuildingView {
     [[NSUserDefaults standardUserDefaults] setBool:BuildingView forKey:kBuildingView];

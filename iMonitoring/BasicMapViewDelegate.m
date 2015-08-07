@@ -120,7 +120,7 @@
         MKCircle* theCircle = overlay;
         MKCircleRenderer*    theCircleView = [[MKCircleRenderer alloc] initWithCircle:theCircle];
         
-        if (mapView.mapType == MKMapTypeHybrid) {
+        if (mapView.mapType == MKMapTypeHybridFlyover) {
 #if TARGET_OS_IPHONE
             theCircleView.fillColor = [[UIColor whiteColor] colorWithAlphaComponent:0.3];
 #elif TARGET_OS_MAC && !TARGET_OS_IPHONE

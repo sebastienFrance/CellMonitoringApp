@@ -21,7 +21,7 @@
 @property (nonatomic) NSDictionary* releasesFilteredPerTechno;
 @property (nonatomic) Boolean isEmptySiteDisplayed;
 
-@property (nonatomic, getter = isSatelliteDisplayed) Boolean satelliteDisplayed;
+@property (nonatomic) MKMapType mapType;
 @property (nonatomic, getter = isBuildingDisplayed) Boolean buildingDisplayed;
 @property (nonatomic, getter = isCoverageDisplayed) Boolean coverageDisplayed;
 @property (nonatomic, getter = isAutomaticRefresh) Boolean automaticRefresh;
@@ -67,7 +67,7 @@
         _mapView.showsScale = TRUE;
         _mapView.pitchEnabled = TRUE;
         _mapView.showsBuildings = _buildingDisplayed;
-        _mapView.mapType = _satelliteDisplayed ? MKMapTypeHybrid : MKMapTypeStandard;
+        _mapView.mapType = self.mapType;
     }
     return self;
 }
@@ -90,7 +90,7 @@
     _releasesFilteredPerTechno   = [userPrefs filterReleasesAllTechnos];
 
     _isEmptySiteDisplayed        = userPrefs.isFilterEmptySite;
-    _satelliteDisplayed          = userPrefs.isSatelliteView;
+    _mapType                     = userPrefs.MapType;
     _buildingDisplayed           = userPrefs.isBuildingView;
     _coverageDisplayed           = userPrefs.isDisplayCoverage;
     _displaySectors              = userPrefs.isDisplaySectors;
@@ -162,14 +162,10 @@
     }
     
     Boolean hasSatelliteChanged = FALSE;
-    if (userPrefs.isSatelliteView != self.isSatelliteDisplayed) {
-        self.satelliteDisplayed = userPrefs.isSatelliteView;
+    if (userPrefs.MapType != self.mapType) {
+        self.mapType = userPrefs.MapType;
         hasSatelliteChanged = TRUE;
-        if (self.isSatelliteDisplayed) {
-            self.mapView.mapType = MKMapTypeHybrid;
-        } else {
-            self.mapView.mapType = MKMapTypeStandard;
-        }
+        self.mapView.mapType = self.mapType;
     }
     
     // Just update the building view in case it has changed

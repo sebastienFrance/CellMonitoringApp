@@ -172,9 +172,6 @@ static const NSString* PARAM_numberInterRATNR = @"numberInterRATNR";
     return self.parentGroup.hasTimezone;
 }
 
-- (void) setTimezone:(NSString *)timezone {
-    self.parentGroup.timezone = timezone;
-}
 
 - (NSString*) timezone {
     return self.parentGroup.timezone;

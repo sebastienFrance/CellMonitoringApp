@@ -20,6 +20,7 @@
 
 @implementation CellTimezoneDataSource
 
+#warning SEB: Timezone to be removed
 - (id) initWithDelegate:(id<CellTimezoneDataSourceDelegate>) delegate cell:(CellMonitoring*) theCell{
     self = [super init];
     if (self) {
@@ -39,7 +40,7 @@
     
     if ([theClientId isEqualToString:@"getTimeZone"]) {
         NSString* timezone = [Utility extractTimezoneFromData:theData];
-        self.theCell.timezone = timezone;
+       // self.theCell.timezone = timezone;
         [self.delegate cellTimezoneResponse:self.theCell error:Nil];
     } else {
         NSError* error = [[NSError alloc] initWithDomain:@"Communication Error" code:1 userInfo:Nil];

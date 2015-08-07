@@ -21,6 +21,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UISwitch *displayCoverageSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *displayStandardSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *displayFlyoverSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *displaySatelliteSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *automaticRefresh;
 @property (weak, nonatomic) IBOutlet UISwitch *displaySectors;
@@ -73,11 +75,6 @@
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 // Workaround for iPad else the cell colors are white instead of dark gray
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     [cell setBackgroundColor:[UIColor clearColor]];
@@ -122,11 +119,12 @@
     self.radiusDisplayValue.text = [NSString stringWithFormat:@"%lu m", (unsigned long)userPrefs.SectorRadius];
 
     self.displayCoverageSwitch.on    = userPrefs.isDisplayCoverage;
-    self.displaySatelliteSwitch.on   = userPrefs.isSatelliteView;
     self.displayBuildingSwitch.on    = userPrefs.isBuildingView;
     self.automaticRefresh.on         = userPrefs.isAutomaticRefresh;
     self.displaySectors.on           = userPrefs.isDisplaySectors;
     self.displaySectorAngle.on       = userPrefs.isDisplaySectorAngle;
+
+    [self initMapSwitchesFrom:userPrefs.MapType];
 
 
     MapModeEnabled currentMapMode = [[[DataCenter sharedInstance] aroundMeItf] currentMapMode];
@@ -155,7 +153,7 @@
     UserPreferences* userPrefs = [UserPreferences sharedInstance];
 
     userPrefs.DisplayCoverage   = self.displayCoverageSwitch.on;
-    userPrefs.SatelliteView     = self.displaySatelliteSwitch.on;
+    userPrefs.MapType           = [self getMapType];
     userPrefs.BuildingView      = self.displayBuildingSwitch.on;
     userPrefs.AutomaticRefresh  = self.automaticRefresh.on;
     userPrefs.DisplaySectors    = self.displaySectors.on;
@@ -178,6 +176,51 @@
     return value;
 
 }
+- (IBAction)displayMapTypeSwitchPushed:(UISwitch *)sender {
+    if (sender == self.displayStandardSwitch) {
+        if (self.displayStandardSwitch.on) {
+            self.displayFlyoverSwitch.on = FALSE;
+            self.displaySatelliteSwitch.on = FALSE;
+        }
+    } else if (sender == self.displayFlyoverSwitch) {
+        if (self.displayFlyoverSwitch.on) {
+            self.displayStandardSwitch.on = FALSE;
+            self.displaySatelliteSwitch.on = FALSE;
+        }
+    } else {
+        if (self.displaySatelliteSwitch.on) {
+            self.displayStandardSwitch.on = FALSE;
+            self.displayFlyoverSwitch.on = FALSE;
+        }
+    }
+}
+
+- (MKMapType) getMapType {
+    if (self.displayStandardSwitch.on) {
+        return MKMapTypeStandard;
+    } else if (self.displayFlyoverSwitch.on) {
+        return MKMapTypeHybridFlyover;
+    } else {
+        return MKMapTypeSatellite;
+    }
+}
+
+-(void) initMapSwitchesFrom:(MKMapType) mapType {
+    if (mapType == MKMapTypeStandard) {
+        self.displayStandardSwitch.on = TRUE;
+        self.displayFlyoverSwitch.on = FALSE;
+        self.displaySatelliteSwitch.on = FALSE;
+    } else if (mapType == MKMapTypeHybridFlyover) {
+        self.displayStandardSwitch.on = FALSE;
+        self.displayFlyoverSwitch.on = TRUE;
+        self.displaySatelliteSwitch.on = FALSE;
+    } else {
+        self.displayStandardSwitch.on = FALSE;
+        self.displayFlyoverSwitch.on = FALSE;
+        self.displaySatelliteSwitch.on = TRUE;
+    }
+}
+
 - (IBAction)displaySectorsPushed:(UISwitch *)sender {
     if (self.displaySectors.on == TRUE) {
         self.displaySectorAngle.enabled = TRUE;

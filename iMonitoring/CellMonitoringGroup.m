@@ -115,15 +115,14 @@
     }
 }
 
-- (void) setTimezone:(NSString *)timezone {
-    _timezone = timezone;
-    
-    NSTimeZone* theTimezone = [NSTimeZone timeZoneWithName:_timezone];
-    
-   _timezoneAbbreviation = [theTimezone localizedName:NSTimeZoneNameStyleShortStandard
-                                               locale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
-}
 
+- (void) initializeTimezone:(NSTimeZone *)timezone {
+
+    _timezone = [timezone localizedName:NSTimeZoneNameStyleGeneric
+                                    locale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+   _timezoneAbbreviation = [timezone localizedName:NSTimeZoneNameStyleShortStandard
+                                                locale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+}
 
 - (Boolean) hasAddress {
     if ((self.street == Nil) || (self.city == Nil) || (self.country == Nil)) {
@@ -137,7 +136,6 @@
     //85 Larkspur ...
     //Brewster NY 10548
     //USA
-    
     _cellPlacemark = [[MKPlacemark alloc] initWithPlacemark:currentPlacemark];
     NSString* subThoroughfare = currentPlacemark.subThoroughfare;
     if (([subThoroughfare isEqualToString:@"(null)"]) || (subThoroughfare == Nil)) {
@@ -159,6 +157,8 @@
     _city = theCity;
     
     _country = [NSString stringWithFormat:@"%@",currentPlacemark.country];
+
+    [self initializeTimezone:currentPlacemark.timeZone];
 }
 
 + (MKCoordinateRegion) getRegionThatFitsCells:(NSArray*) theCellGroupList {
