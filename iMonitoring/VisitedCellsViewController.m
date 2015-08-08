@@ -19,7 +19,7 @@
 @interface VisitedCellsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *theTable;
 
-@property (nonatomic) NSArray* lastVisitedCells;
+@property (nonatomic) NSArray<VisitedCells*>* lastVisitedCells;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *theSegmentForOrdering;
 
 @end
@@ -105,12 +105,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"VisitedCellViewCellId";
-    VisitedCellViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (cell == Nil) {
-        cell = [[VisitedCellViewCell alloc] init];
-    }
-    
+    VisitedCellViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+
     [cell initializeWithVisitedCell:self.lastVisitedCells[indexPath.row]];
     
     return cell;

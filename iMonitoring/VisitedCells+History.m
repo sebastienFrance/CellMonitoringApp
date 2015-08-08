@@ -91,7 +91,7 @@
 
 // Return an Array that contains the Cellbookmark stored in the DB
 // If the DB is empty then an empty array is returned
-+ (NSArray*) loadVisitedCells {
++ (NSArray<VisitedCells*>*) loadVisitedCells {
     
         
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"VisitedCells"];

@@ -16,7 +16,7 @@
 
 @interface MarkedCellsViewController ()
 
-@property (strong) NSMutableArray* cells;
+@property NSMutableArray<CellBookmark*>* cells;
 
 @end
 
@@ -58,15 +58,6 @@
         [theTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:TRUE];
     }
 
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated

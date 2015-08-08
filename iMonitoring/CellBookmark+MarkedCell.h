@@ -19,7 +19,7 @@
 #endif
 
 + (void) removeCellBookmark:(NSString*) cellId;
-+ (NSArray*) loadBookmarks;
++ (NSArray<CellBookmark*>*) loadBookmarks;
 + (void) remove:(CellBookmark*) bookmark;
 
 + (Boolean) isCellMarked:(CellMonitoring*) theCell;

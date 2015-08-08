@@ -39,7 +39,7 @@ static NSArray* _cacheCellBookmark = Nil;
 
 // Return an Array that contains the Cellbookmark stored in the DB
 // If the DB is empty then an empty array is returned
-+ (NSArray*) loadBookmarks {
++ (NSArray<CellBookmark*>*) loadBookmarks {
     
     if (_cacheCellBookmark == Nil) {
         

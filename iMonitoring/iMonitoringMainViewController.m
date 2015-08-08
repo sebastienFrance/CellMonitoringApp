@@ -181,16 +181,25 @@
         if (self.displayStandardSwitch.on) {
             self.displayFlyoverSwitch.on = FALSE;
             self.displaySatelliteSwitch.on = FALSE;
+            self.displayFlyoverSwitch.enabled = TRUE;
+            self.displaySatelliteSwitch.enabled = TRUE;
+            self.displayStandardSwitch.enabled = FALSE;
         }
     } else if (sender == self.displayFlyoverSwitch) {
         if (self.displayFlyoverSwitch.on) {
             self.displayStandardSwitch.on = FALSE;
             self.displaySatelliteSwitch.on = FALSE;
+            self.displayFlyoverSwitch.enabled = FALSE;
+            self.displaySatelliteSwitch.enabled = TRUE;
+            self.displayStandardSwitch.enabled = TRUE;
         }
     } else {
         if (self.displaySatelliteSwitch.on) {
             self.displayStandardSwitch.on = FALSE;
             self.displayFlyoverSwitch.on = FALSE;
+            self.displayFlyoverSwitch.enabled = TRUE;
+            self.displaySatelliteSwitch.enabled = FALSE;
+            self.displayStandardSwitch.enabled = TRUE;
         }
     }
 }
@@ -208,17 +217,20 @@
 -(void) initMapSwitchesFrom:(MKMapType) mapType {
     if (mapType == MKMapTypeStandard) {
         self.displayStandardSwitch.on = TRUE;
+        self.displayStandardSwitch.enabled = FALSE;
         self.displayFlyoverSwitch.on = FALSE;
         self.displaySatelliteSwitch.on = FALSE;
     } else if (mapType == MKMapTypeHybridFlyover) {
         self.displayStandardSwitch.on = FALSE;
         self.displayFlyoverSwitch.on = TRUE;
+        self.displayFlyoverSwitch.enabled = FALSE;
         self.displaySatelliteSwitch.on = FALSE;
     } else {
         self.displayStandardSwitch.on = FALSE;
         self.displayFlyoverSwitch.on = FALSE;
         self.displaySatelliteSwitch.on = TRUE;
-    }
+        self.displaySatelliteSwitch.enabled = FALSE;
+   }
 }
 
 - (IBAction)displaySectorsPushed:(UISwitch *)sender {

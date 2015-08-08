@@ -54,8 +54,9 @@
             }
             
            [currCellGroup setPinImageAnnotation:FALSE pinView:pinView];
-            
+
         }
+
 #elif TARGET_OS_MAC && !TARGET_OS_IPHONE
         CellGroupAnnotationView* pinView = (CellGroupAnnotationView *)[theMapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
         
@@ -76,7 +77,7 @@
             }
             
             [currCellGroup setPinImageAnnotation:FALSE pinView:pinView];
-            
+
         } else {
             pinView.theMapView = theMapView;
             pinView.mapDelegate = self.delegate;
@@ -90,6 +91,42 @@
     } else {
         return Nil;
     }
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *) view {
+    NSLog(@"didSelectAnnotationView called");
+    if ([view.annotation isKindOfClass:[CellMonitoringGroup class]]) {
+        NSLog(@"didSelectAnnotationView Group");
+        [self configureDetailView:view];
+    }
+}
+
+-(void) configureDetailView:(MKAnnotationView*) annotationView {
+    NSLog(@"configureDetailView called");
+    UIView* snapshotView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+
+    MKMapSnapshotOptions* options = [[MKMapSnapshotOptions alloc] init];
+    options.size = CGSizeMake(300, 300);
+    options.mapType = MKMapTypeSatelliteFlyover;
+
+
+    MKMapCamera* camera = [MKMapCamera cameraLookingAtCenterCoordinate:annotationView.annotation.coordinate
+                                                          fromDistance:500
+                                                                 pitch:65
+                                                               heading:0];
+    options.camera = camera;
+
+    MKMapSnapshotter* snapshotter = [[MKMapSnapshotter alloc] initWithOptions:options];
+    [snapshotter startWithCompletionHandler:^(MKMapSnapshot * _Nullable snapshot, NSError * _Nullable error) {
+        if (snapshot != nil) {
+            UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+            imageView.image = snapshot.image;
+            [snapshotView addSubview:imageView];
+        }
+    }];
+
+    annotationView.detailCalloutAccessoryView = snapshotView;
+
 }
 
 #if TARGET_OS_IPHONE

@@ -15,7 +15,7 @@
 
 @interface MarkedRegionsViewController ()
 
-@property (strong) NSMutableArray* bookmarkRegions;
+@property NSMutableArray<RegionBookmark*>* bookmarkRegions;
 
 @end
 
@@ -57,7 +57,7 @@
 {
     [super viewDidLoad];
     
-    NSArray* bookmarks = [RegionBookmark loadBookmarks];
+    NSArray<RegionBookmark*> *bookmarks = [RegionBookmark loadBookmarks];
     _bookmarkRegions = [[NSMutableArray alloc] initWithArray:bookmarks];
     [_bookmarkRegions sortUsingSelector:@selector(compareByColor:)];
     

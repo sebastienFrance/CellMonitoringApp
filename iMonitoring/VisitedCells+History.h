@@ -16,7 +16,7 @@
 
 + (VisitedCells*) createVisitedCells:(CellMonitoring*) theCell;
 
-+ (NSArray*) loadVisitedCells;
++ (NSArray<VisitedCells*>*) loadVisitedCells;
 + (VisitedCells*) findVisitedCells:(NSString*) cellInternalName;
 
 - (CLLocationCoordinate2D) theCellCoordinate;

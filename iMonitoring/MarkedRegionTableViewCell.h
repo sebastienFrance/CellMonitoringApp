@@ -12,9 +12,6 @@
 
 @interface MarkedRegionTableViewCell : UITableViewCell
 
-
-
-
 -(void) initWithRegionBookmark:(RegionBookmark*) currentRegion;
 
 @end

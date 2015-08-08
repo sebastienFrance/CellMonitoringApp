@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VisitedCells.h"
 
 @class VisitedCell;
 
@@ -16,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *cellName;
 @property (weak, nonatomic) IBOutlet UILabel *visitedCount;
 
-- (void) initializeWithVisitedCell:(VisitedCell*) theVisitedCell;
+- (void) initializeWithVisitedCell:(VisitedCells*) theVisitedCell;
 
 @end

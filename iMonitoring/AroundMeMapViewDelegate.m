@@ -50,10 +50,16 @@
     
     MKMapCamera *startCamera = theMapView.camera;
     
-    CLLocation* endLocation = [[CLLocation alloc] initWithCoordinate:endCamera.centerCoordinate altitude:endCamera.altitude
-                                                  horizontalAccuracy:0 verticalAccuracy:0 timestamp:Nil];
-    CLLocation* startLocation = [[CLLocation alloc] initWithCoordinate:startCamera.centerCoordinate altitude:startCamera.altitude
-                                                    horizontalAccuracy:0 verticalAccuracy:0 timestamp:Nil];
+    CLLocation* endLocation = [[CLLocation alloc] initWithCoordinate:endCamera.centerCoordinate
+                                                            altitude:endCamera.altitude
+                                                  horizontalAccuracy:0
+                                                    verticalAccuracy:0
+                                                           timestamp:[NSDate date]];
+    CLLocation* startLocation = [[CLLocation alloc] initWithCoordinate:startCamera.centerCoordinate
+                                                              altitude:startCamera.altitude
+                                                    horizontalAccuracy:0
+                                                      verticalAccuracy:0
+                                                             timestamp:[NSDate date]];
     
     CLLocationDistance distance = [endLocation distanceFromLocation:startLocation];
     if (distance < 1000.0) {
@@ -101,11 +107,17 @@
 - (void) performsLongCameraAnimation:(MKMapCamera*) endCamera MapView:(MKMapView*) theMapView {
  
     MKMapCamera* startCamera = theMapView.camera;
-    CLLocation* startLocation = [[CLLocation alloc] initWithCoordinate:startCamera.centerCoordinate altitude:startCamera.altitude
-                                                    horizontalAccuracy:0 verticalAccuracy:0 timestamp:Nil];
+    CLLocation* startLocation = [[CLLocation alloc] initWithCoordinate:startCamera.centerCoordinate
+                                                              altitude:startCamera.altitude
+                                                    horizontalAccuracy:0
+                                                      verticalAccuracy:0
+                                                             timestamp:[NSDate date]];
    
-    CLLocation* endLocation = [[CLLocation alloc] initWithCoordinate:endCamera.centerCoordinate altitude:endCamera.altitude
-                                                  horizontalAccuracy:0 verticalAccuracy:0 timestamp:Nil];
+    CLLocation* endLocation = [[CLLocation alloc] initWithCoordinate:endCamera.centerCoordinate
+                                                            altitude:endCamera.altitude
+                                                  horizontalAccuracy:0
+                                                    verticalAccuracy:0
+                                                           timestamp:[NSDate date]];
 
     CLLocationDistance distance = [endLocation distanceFromLocation:startLocation];
 
