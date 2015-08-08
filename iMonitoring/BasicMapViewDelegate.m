@@ -93,27 +93,39 @@
     }
 }
 
+/*
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *) view {
     NSLog(@"didSelectAnnotationView called");
     if ([view.annotation isKindOfClass:[CellMonitoringGroup class]]) {
         NSLog(@"didSelectAnnotationView Group");
-        [self configureDetailView:view];
+        [self configureDetailView:view mapView:mapView];
     }
 }
 
--(void) configureDetailView:(MKAnnotationView*) annotationView {
+
+-(void) configureDetailView:(MKAnnotationView*) annotationView mapView:(MKMapView*) theMapView {
     NSLog(@"configureDetailView called");
-    UIView* snapshotView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+   // UIView* snapshotView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
 
     MKMapSnapshotOptions* options = [[MKMapSnapshotOptions alloc] init];
     options.size = CGSizeMake(300, 300);
-    options.mapType = MKMapTypeSatelliteFlyover;
+
+    MKMapCamera* camera;
+    if (theMapView.mapType != MKMapTypeStandard) {
+        options.mapType = MKMapTypeStandard;
+        camera = [MKMapCamera cameraLookingAtCenterCoordinate:annotationView.annotation.coordinate
+                                            fromEyeCoordinate:annotationView.annotation.coordinate
+                                                  eyeAltitude:500];
+        camera.pitch = 55;
+    } else {
+        options.mapType = MKMapTypeSatelliteFlyover;
+        camera = [MKMapCamera cameraLookingAtCenterCoordinate:annotationView.annotation.coordinate
+                                                 fromDistance:100
+                                                        pitch:70
+                                                      heading:0];
+   }
 
 
-    MKMapCamera* camera = [MKMapCamera cameraLookingAtCenterCoordinate:annotationView.annotation.coordinate
-                                                          fromDistance:500
-                                                                 pitch:65
-                                                               heading:0];
     options.camera = camera;
 
     MKMapSnapshotter* snapshotter = [[MKMapSnapshotter alloc] initWithOptions:options];
@@ -121,13 +133,15 @@
         if (snapshot != nil) {
             UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
             imageView.image = snapshot.image;
-            [snapshotView addSubview:imageView];
+            //[snapshotView addSubview:imageView];
+            [annotationView.detailCalloutAccessoryView addSubview:imageView];
         }
     }];
 
-    annotationView.detailCalloutAccessoryView = snapshotView;
+  //  annotationView.detailCalloutAccessoryView = snapshotView;
 
 }
+ */
 
 #if TARGET_OS_IPHONE
 - (UIButton*) getCalloutAccessoryFor:(CellMonitoringGroup*) currCellGroup {

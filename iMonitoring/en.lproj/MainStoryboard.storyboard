@@ -5858,12 +5858,13 @@ To restart a session you must stop and restart the App.</string>
                                 <items>
                                     <barButtonItem style="plain" id="fvB-jN-mnk">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Jc9-ZO-XKf">
-                                            <rect key="frame" x="16" y="8" width="100" height="29"/>
+                                            <rect key="frame" x="16" y="7" width="182" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <segments>
                                                 <segment title="Car"/>
                                                 <segment title="Walk"/>
+                                                <segment title="Transit"/>
                                             </segments>
                                             <connections>
                                                 <action selector="directionTypeSelected:" destination="ZcO-LU-Yly" eventType="valueChanged" id="gwW-yJ-i5R"/>

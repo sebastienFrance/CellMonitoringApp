@@ -414,7 +414,8 @@
 
 + (void) getTimeZone:(CLLocationCoordinate2D) coordinate delegate:(id<HTMLDataResponse>) delegate clientId:(NSString*) theClientId {
    // [RequestUtilities getYahooTimeZone:coordinate delegate:delegate clientId:theClientId];
-    [RequestUtilities getGoogleTimeZone:coordinate delegate:delegate clientId:theClientId];
+   // [RequestUtilities getGoogleTimeZone:coordinate delegate:delegate clientId:theClientId];
+    [RequestUtilities getAppleTimeZone:coordinate delegate:delegate clientId:theClientId];
 }
 
 
@@ -439,6 +440,23 @@
     [request sendBasicRequest:url];
 }
 
++(void) getAppleTimeZone:(CLLocationCoordinate2D) coordinate delegate:(id<HTMLDataResponse>) delegate clientId:(NSString*) theClientId{
+    CLGeocoder* reverseGeoCoder = [[CLGeocoder alloc] init];
+
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude
+                                                        longitude:coordinate.longitude];
+
+    [reverseGeoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error){
+            [delegate connectionFailure:theClientId];
+        } else {
+            CLPlacemark* currentPlacemark = [placemarks lastObject];
+
+            [delegate dataReady:currentPlacemark.timeZone clientId:theClientId];
+        }
+    }];
+
+}
 
 +(void) getGoogleTimeZone:(CLLocationCoordinate2D) coordinate delegate:(id<HTMLDataResponse>) delegate clientId:(NSString*) theClientId {
     // https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331161200

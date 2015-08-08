@@ -43,12 +43,8 @@
     self.dlFrequency.text = [Utility displayLongDLFrequency:theCell.normalizedDLFrequency earfcn:theCell.dlFrequency];
 
 
-    [self getCellAddress:theCell];
+    [self initializeCellAddress:theCell];
 
-    if ([theCell hasTimezone]) {
-        self.timezone.text = [NSString stringWithFormat:@"%@ (TZ)",theCell.timezone];
-    }
-    
     if (self.markButton != Nil) {
         if ([CellBookmark isCellMarked:theCell]) {
             [self.markButton setTitle:@"Unmark" forState:UIControlStateNormal];
@@ -60,34 +56,38 @@
     }
 }
 
-- (void) getCellAddress:(CellMonitoring*) theCell {
+- (void) initializeCellAddress:(CellMonitoring*) theCell {
     if ([theCell hasAddress] == false) {
         CLGeocoder* reverseGeoCoder = [[CLGeocoder alloc] init];
         
         CLLocationCoordinate2D cellCoordinate = [theCell coordinate];
-        CLLocation *coordinate = [[CLLocation alloc] initWithLatitude:cellCoordinate.latitude longitude:cellCoordinate.longitude];
+        CLLocation *coordinate = [[CLLocation alloc] initWithLatitude:cellCoordinate.latitude
+                                                            longitude:cellCoordinate.longitude];
         
         [reverseGeoCoder reverseGeocodeLocation:coordinate completionHandler:^(NSArray *placemarks, NSError *error) {
             if (error){
                 self.street.text = @"Cannot resolve address";
                 self.city.text = @"";
                 self.country.text = @"";
+                self.timezone.text = @"";
                 return;
             }
             CLPlacemark* currentPlacemark = [placemarks lastObject];
 
             [theCell initialiazeAddress:currentPlacemark];
             
-            self.street.text = theCell.street;
-            self.city.text = theCell.city;
-            self.country.text = theCell.country;
+            [self setAddressAndTimeZoneInCell:theCell];
         }];
     } else {
-        self.street.text = theCell.street;
-        self.city.text = theCell.city;
-        self.country.text = theCell.country;
+        [self setAddressAndTimeZoneInCell:theCell];
     }
-    
+}
+
+-(void) setAddressAndTimeZoneInCell:(CellMonitoring*) theCell {
+    self.street.text = theCell.street;
+    self.city.text = theCell.city;
+    self.country.text = theCell.country;
+    self.timezone.text = theCell.timezone;
 }
 
 

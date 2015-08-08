@@ -13,6 +13,7 @@
 #import "AddressBook/AddressBook.h"
 #import "CellBookmark+MarkedCell.h"
 #import "CellFilter.h"
+#import "Utility.h"
 
 @interface CellMonitoringGroup()
 
@@ -118,10 +119,8 @@
 
 - (void) initializeTimezone:(NSTimeZone *)timezone {
 
-    _timezone = [timezone localizedName:NSTimeZoneNameStyleGeneric
-                                    locale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
-   _timezoneAbbreviation = [timezone localizedName:NSTimeZoneNameStyleShortStandard
-                                                locale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+    _timezone = [Utility extractLongTimezoneFrom:timezone];
+    _timezoneAbbreviation = [Utility extractShortTimezoneFrom:timezone];
 }
 
 - (Boolean) hasAddress {

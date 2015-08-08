@@ -2552,12 +2552,13 @@ To restart a session you must stop and restart the App.</string>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Zgn-aJ-gsQ"/>
                                     <barButtonItem style="plain" id="gDS-xg-so9">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="fbC-EL-a4e">
-                                            <rect key="frame" x="250" y="8" width="100" height="29"/>
+                                            <rect key="frame" x="223" y="7" width="154" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <segments>
                                                 <segment title="Car"/>
                                                 <segment title="Walk"/>
+                                                <segment title="Transit"/>
                                             </segments>
                                             <connections>
                                                 <action selector="directionTypeSelected:" destination="rgQ-DM-Boh" eventType="valueChanged" id="Mhz-Ix-6U6"/>
@@ -2693,7 +2694,7 @@ To restart a session you must stop and restart the App.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVC-Pa-4fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5325.6000000000004" y="-1276.0119940029986"/>
+            <point key="canvasLocation" x="5325" y="-1277"/>
         </scene>
         <!--Bookmarks-->
         <scene sceneID="Viq-cf-kjR">

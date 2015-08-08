@@ -267,14 +267,10 @@
     return cell;
 }
 
-- (UITableViewCell *) buildCellForAddress:(UITableView *)tableView  {
+- (UITableViewCell *) buildCellForAddress:(UITableView *)tableView  cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"CellAddressCellId";
-    CellAddressDetails *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == Nil) {
-        cell = [[CellAddressDetails alloc] init];
-        
-    }
+    CellAddressDetails *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
     [cell initializeWithCell:self.theCell];
     if (self.defaultCellImage != Nil) {
         cell.sitePicture.image = self.defaultCellImage;
@@ -338,7 +334,7 @@
 {
     switch (indexPath.section) {
         case SECTION_ADDRESS: {
-            return [self buildCellForAddress:tableView];
+            return [self buildCellForAddress:tableView cellForRowAtIndexPath:indexPath];
         }
         case SECTION_GENERAL: {
             return [self buildCellForGeneralSection:tableView cellForRowAtIndexPath:indexPath];

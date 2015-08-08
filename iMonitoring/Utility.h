@@ -18,6 +18,8 @@
 
 
 + (NSString*) extractTimezoneFromData:(id) theData;
++(NSString*) extractLongTimezoneFrom:(NSTimeZone*)timezoneData;
++(NSString*) extractShortTimezoneFrom:(NSTimeZone*) timezoneData;
 
 // Index to get the min / max entry from the NSArray result
 typedef NS_ENUM(NSUInteger, ArrayMinMaxEntry)  {

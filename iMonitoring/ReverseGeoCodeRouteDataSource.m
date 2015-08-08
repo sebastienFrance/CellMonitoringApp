@@ -118,10 +118,11 @@
 
 
 - (void) RequestCellsOnRoute {
-    RouteInformation* theRoute = [[RouteInformation alloc] initWithRouteInfo:self.sourceLocation.coordinate
-                                                                 destination:self.destinationaLocation.coordinate
-                                                                    distance:self.lookUpBorder
-                                                               transportType:self.transportType];
+    RouteInformation* theRoute = [[RouteInformation alloc]
+                                  initWithRouteInfo:self.sourceLocation.coordinate
+                                  destination:self.destinationaLocation.coordinate
+                                  distance:self.lookUpBorder
+                                  transportType:self.transportType];
 
     [self.delegate reverseGeoCodeRouteResponse:theRoute error:Nil];
 }

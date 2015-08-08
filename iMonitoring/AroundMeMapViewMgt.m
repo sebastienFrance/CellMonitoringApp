@@ -225,7 +225,8 @@
 
 - (MKMapCamera*) getDefaultEndCamera:(CLLocationCoordinate2D) endLocation {
 
-    if (self.theMapView.mapType == MKMapTypeSatelliteFlyover || self.theMapView.mapType == MKMapTypeHybridFlyover) {
+    if (self.theMapView.mapType == MKMapTypeSatelliteFlyover ||
+        self.theMapView.mapType == MKMapTypeHybridFlyover) {
         MKMapCamera *endCamera = [MKMapCamera cameraLookingAtCenterCoordinate:endLocation
                                                                  fromDistance:100
                                                                         pitch:70

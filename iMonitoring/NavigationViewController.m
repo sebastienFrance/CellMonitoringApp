@@ -56,12 +56,9 @@
     
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Looking for address";
- 
-    MKDirectionsTransportType transportType = MKDirectionsTransportTypeAutomobile;
-    if (self.transportSelectionSegmented.selectedSegmentIndex == 1) {
-        transportType = MKDirectionsTransportTypeWalking;
-    }
-    
+
+    MKDirectionsTransportType transportType = [self getTransportType];
+
     id<AroundMeViewItf> aroundMe = [DataCenter sharedInstance].aroundMeItf;
 
     self.datasource = [[ReverseGeoCodeRouteDataSource alloc] init:aroundMe.aroundMeMapVC delegate:self];
@@ -72,6 +69,27 @@
                                   border:[self getBorderValue]];
     
     [self hideKeyboard];
+}
+
+-(MKDirectionsTransportType) getTransportType {
+    switch (self.transportSelectionSegmented.selectedSegmentIndex) {
+        case 0: {
+            return MKDirectionsTransportTypeAutomobile;
+            break;
+        }
+        case 1: {
+            return MKDirectionsTransportTypeWalking;
+            break;
+        }
+        case 2: {
+            return MKDirectionsTransportTypeTransit;
+            break;
+        }
+        default: {
+            return MKDirectionsTransportTypeAutomobile;
+            break;
+        }
+    }
 }
 
 #pragma mark - RouteDataSourceDelegate protocol

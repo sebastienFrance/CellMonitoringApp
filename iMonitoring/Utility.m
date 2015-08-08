@@ -13,7 +13,8 @@
 
 
 + (NSString*) extractTimezoneFromData:(id) theData {
-    return [Utility extractTimezoneFromGoogleData:theData];
+    //return [Utility extractTimezoneFromGoogleData:theData];
+    return [Utility extractLongTimezoneFrom:theData];
 }
 
 
@@ -44,7 +45,15 @@
     }
 }
 
++(NSString*) extractLongTimezoneFrom:(NSTimeZone*)timezoneData {
+    return [timezoneData localizedName:NSTimeZoneNameStyleGeneric
+                                locale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+}
 
++(NSString*) extractShortTimezoneFrom:(NSTimeZone*) timezoneData {
+    return [timezoneData localizedName:NSTimeZoneNameStyleShortStandard
+                                locale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+}
 
 #pragma mark - Yahoo!
 // Yahoo return something like this. We just need to extract from ResultSet the Result and then the timezone!
