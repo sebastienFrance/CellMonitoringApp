@@ -118,7 +118,7 @@
 // Show the regions and RELOAD all cells from this region
 - (void) showLocationOnMapAndReload:(CLLocationCoordinate2D) newLocation {
     
-    MKMapCamera* endCamera = [AroundMeMapViewMgt getDefaultEndCamera:newLocation];
+    MKMapCamera* endCamera = [self getDefaultEndCamera:newLocation];
     
     [AroundMeMapViewMgt configureMapRegionWithCamera:endCamera MapView:self.theMapView reloadCells:TRUE];
 }
@@ -132,7 +132,7 @@
 // Just to show a cell in the region WITHOUT reloading cells from the region
 - (void) showCellInRegion:(CellMonitoring*) theCell {
     
-    MKMapCamera* endCamera = [AroundMeMapViewMgt getDefaultEndCamera:theCell.coordinate];
+    MKMapCamera* endCamera = [self getDefaultEndCamera:theCell.coordinate];
     
 
     AroundMeMapViewDelegate *delegateMap = (AroundMeMapViewDelegate*) self.theMapView.delegate;
@@ -223,13 +223,22 @@
 }
 
 
-+ (MKMapCamera*) getDefaultEndCamera:(CLLocationCoordinate2D) endLocation {
-    MKMapCamera *endCamera = [MKMapCamera cameraLookingAtCenterCoordinate:endLocation
-                                                        fromEyeCoordinate:endLocation
-                                                              eyeAltitude:500];
+- (MKMapCamera*) getDefaultEndCamera:(CLLocationCoordinate2D) endLocation {
+
+    if (self.theMapView.mapType == MKMapTypeSatelliteFlyover || self.theMapView.mapType == MKMapTypeHybridFlyover) {
+        MKMapCamera *endCamera = [MKMapCamera cameraLookingAtCenterCoordinate:endLocation
+                                                                 fromDistance:100
+                                                                        pitch:70
+                                                                      heading:0];
+        return endCamera;
+    } else {
+        MKMapCamera *endCamera = [MKMapCamera cameraLookingAtCenterCoordinate:endLocation
+                                                            fromEyeCoordinate:endLocation
+                                                                  eyeAltitude:500];
+        endCamera.pitch = 55;
+        return endCamera;
+    }
     
-    endCamera.pitch = 55;
-    return endCamera;
 }
 
 @end
