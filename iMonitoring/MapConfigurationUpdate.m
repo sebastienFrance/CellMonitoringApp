@@ -17,8 +17,8 @@
 @property (nonatomic) Boolean isLTEDisplayed;
 @property (nonatomic) Boolean isWCDMADisplayed;
 @property (nonatomic) Boolean isGSMDisplayed;
-@property (nonatomic) NSDictionary* frequencyFilteredPerTechno;
-@property (nonatomic) NSDictionary* releasesFilteredPerTechno;
+@property (nonatomic) NSDictionary<NSNumber*, NSSet<NSNumber*>*>* frequencyFilteredPerTechno;
+@property (nonatomic) NSDictionary<NSNumber*, NSSet<NSString*>*>* releasesFilteredPerTechno;
 @property (nonatomic) Boolean isEmptySiteDisplayed;
 
 @property (nonatomic) MKMapType mapType;
@@ -222,9 +222,9 @@
     UserPreferences* userPrefs = [UserPreferences sharedInstance];
 
     Boolean updateMapAnnotations = FALSE;
-    NSDictionary* newFrequencyFilterAllTechnos = [userPrefs filterFrequenciesAllTechnos];
-    NSSet* newFrequencyFilter = newFrequencyFilterAllTechnos[@(DCTechnologyLTE)];
-    NSSet* oldFrequencyFilter = self.frequencyFilteredPerTechno[@(DCTechnologyLTE)];
+    NSDictionary<NSNumber*, NSSet<NSNumber*>*>* newFrequencyFilterAllTechnos = [userPrefs filterFrequenciesAllTechnos];
+    NSSet<NSNumber*>* newFrequencyFilter = newFrequencyFilterAllTechnos[@(DCTechnologyLTE)];
+    NSSet<NSNumber*>* oldFrequencyFilter = self.frequencyFilteredPerTechno[@(DCTechnologyLTE)];
 
     if ((newFrequencyFilter != Nil) && (([newFrequencyFilter isEqualToSet:oldFrequencyFilter]) == FALSE)) {
         updateMapAnnotations = TRUE;
@@ -253,9 +253,9 @@
     UserPreferences* userPrefs = [UserPreferences sharedInstance];
 
     Boolean updateMapAnnotations = FALSE;
-    NSDictionary* newReleasesFilterAllTechnos = [userPrefs filterReleasesAllTechnos];
-    NSSet* newReleasesFilter = newReleasesFilterAllTechnos[@(DCTechnologyLTE)];
-    NSSet* oldReleasesFilter = self.releasesFilteredPerTechno[@(DCTechnologyLTE)];
+    NSDictionary<NSNumber*,NSSet<NSString*>*>* newReleasesFilterAllTechnos = [userPrefs filterReleasesAllTechnos];
+    NSSet<NSString*>* newReleasesFilter = newReleasesFilterAllTechnos[@(DCTechnologyLTE)];
+    NSSet<NSString*>* oldReleasesFilter = self.releasesFilteredPerTechno[@(DCTechnologyLTE)];
 
     if ((newReleasesFilter != Nil) && (([newReleasesFilter isEqualToSet:oldReleasesFilter]) == FALSE)) {
         updateMapAnnotations = TRUE;

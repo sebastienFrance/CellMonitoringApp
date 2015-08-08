@@ -312,7 +312,7 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
     [[NSUserDefaults standardUserDefaults] setObject:[frequencies allObjects] forKey:kFilterLTECellsFrequencies];
 }
 
-- (NSSet*) FilterLTECellsFrequencies {
+- (NSSet<NSString*>*) FilterLTECellsFrequencies {
     NSArray* filterArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFilterLTECellsFrequencies];
     return [[NSSet alloc] initWithArray:filterArray];
 }
@@ -321,7 +321,7 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
     [[NSUserDefaults standardUserDefaults] setObject:[frequencies allObjects] forKey:kFilterWCDMACellsFrequencies];
 }
 
-- (NSSet*) FilterWCDMACellsFrequencies {
+- (NSSet<NSString*>*) FilterWCDMACellsFrequencies {
     NSArray* filterArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFilterWCDMACellsFrequencies];
     return [[NSSet alloc] initWithArray:filterArray];
 }
@@ -330,20 +330,20 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
     [[NSUserDefaults standardUserDefaults] setObject:[frequencies allObjects] forKey:kFilterGSMCellsFrequencies];
 }
 
-- (NSSet*) FilterGSMCellsFrequencies {
+- (NSSet<NSString*>*) FilterGSMCellsFrequencies {
     NSArray* filterArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFilterGSMCellsFrequencies];
     return [[NSSet alloc] initWithArray:filterArray];
 }
 
--(NSDictionary*) filterFrequenciesAllTechnos {
+-(NSDictionary<NSNumber*, NSSet<NSNumber*>*>*) filterFrequenciesAllTechnos {
     return @{ @(DCTechnologyLTE)   : [self filterFrequenciesFor:DCTechnologyLTE],
               @(DCTechnologyWCDMA) : [self filterFrequenciesFor:DCTechnologyWCDMA],
               @(DCTechnologyGSM)   : [self filterFrequenciesFor:DCTechnologyGSM]};
 }
 
 
--(NSSet*) filterFrequenciesFor:(DCTechnologyId) technology {
-    NSSet* frequencies = Nil;
+-(NSSet<NSNumber*>*) filterFrequenciesFor:(DCTechnologyId) technology {
+    NSSet<NSString*>* frequencies = Nil;
 
     switch (technology) {
         case DCTechnologyLTE: {
@@ -363,7 +363,7 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
         }
     }
 
-    NSMutableSet* convertedFreq = [[NSMutableSet alloc] initWithCapacity:frequencies.count];
+    NSMutableSet<NSNumber*>* convertedFreq = [[NSMutableSet alloc] initWithCapacity:frequencies.count];
     for (NSString* currentFreq in frequencies) {
         float frequency = [currentFreq floatValue];
         [convertedFreq addObject:@(frequency)];
@@ -371,7 +371,7 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
     return convertedFreq;
 }
 
--(void) setFilterFrequenciesFor:(DCTechnologyId) technology filter:(NSSet*) frequencies {
+-(void) setFilterFrequenciesFor:(DCTechnologyId) technology filter:(NSSet<NSNumber*>*) frequencies {
     // Convert all numbers into NSString
     NSMutableSet* convertedFreq = [[NSMutableSet alloc] initWithCapacity:frequencies.count];
     for (NSNumber* currentFreq in frequencies) {
@@ -397,42 +397,42 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
     }
 }
 
-- (void) setFilterLTEReleases:(NSSet*) releases {
+- (void) setFilterLTEReleases:(NSSet<NSString*>*) releases {
     [[NSUserDefaults standardUserDefaults] setObject:[releases allObjects] forKey:kFilterLTEReleases];
 }
 
-- (NSSet*) FilterLTEReleases {
-    NSArray* filterArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFilterLTEReleases];
+- (NSSet<NSString*>*) FilterLTEReleases {
+    NSArray<NSString*>* filterArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFilterLTEReleases];
     return [[NSSet alloc] initWithArray:filterArray];
 }
 
-- (void) setFilterWCDMAReleases:(NSSet*) releases {
+- (void) setFilterWCDMAReleases:(NSSet<NSString*>*) releases {
     [[NSUserDefaults standardUserDefaults] setObject:[releases allObjects] forKey:kFilterWCDMAReleases];
 }
 
-- (NSSet*) FilterWCDMAReleases {
-    NSArray* filterArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFilterWCDMAReleases];
+- (NSSet<NSString*>*) FilterWCDMAReleases {
+    NSArray<NSString*>* filterArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFilterWCDMAReleases];
     return [[NSSet alloc] initWithArray:filterArray];
 }
 
-- (void) setFilterGSMReleases:(NSSet*) releases {
+- (void) setFilterGSMReleases:(NSSet<NSString*>*) releases {
     [[NSUserDefaults standardUserDefaults] setObject:[releases allObjects] forKey:kFilterGSMReleases];
 }
 
-- (NSSet*) FilterGSMReleases {
-    NSArray* filterArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFilterGSMReleases];
+- (NSSet<NSString*>*) FilterGSMReleases {
+    NSArray<NSString*>* filterArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFilterGSMReleases];
     return [[NSSet alloc] initWithArray:filterArray];
 }
 
--(NSDictionary*) filterReleasesAllTechnos {
+-(NSDictionary<NSNumber*,NSSet<NSString*>*>*) filterReleasesAllTechnos {
     return @{ @(DCTechnologyLTE)   : [self filterReleasesFor:DCTechnologyLTE],
               @(DCTechnologyWCDMA) : [self filterReleasesFor:DCTechnologyWCDMA],
               @(DCTechnologyGSM)   : [self filterReleasesFor:DCTechnologyGSM]};
 }
 
 
--(NSSet*) filterReleasesFor:(DCTechnologyId) technology {
-    NSSet* releases = Nil;
+-(NSSet<NSString*>*) filterReleasesFor:(DCTechnologyId) technology {
+    NSSet<NSString*>* releases = Nil;
 
     switch (technology) {
         case DCTechnologyLTE: {
@@ -455,7 +455,7 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
     return releases;
 }
 
--(void) setFilterReleasesFor:(DCTechnologyId) technology filter:(NSSet*) releases {
+-(void) setFilterReleasesFor:(DCTechnologyId) technology filter:(NSSet<NSString*>*) releases {
 
     switch (technology) {
         case DCTechnologyLTE: {

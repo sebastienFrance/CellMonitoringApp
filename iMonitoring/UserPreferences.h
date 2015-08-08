@@ -90,12 +90,12 @@
 -(Boolean) isCellFiltered:(DCTechnologyId) technology;
 -(void) setFilteredCell:(DCTechnologyId) technology filter:(Boolean) filterCells;
 
--(NSSet*) filterFrequenciesFor:(DCTechnologyId) technology;
+-(NSSet<NSNumber*>*) filterFrequenciesFor:(DCTechnologyId) technology;
 -(void) setFilterFrequenciesFor:(DCTechnologyId) technology filter:(NSSet*) frequencies;
--(NSDictionary*) filterFrequenciesAllTechnos;
+-(NSDictionary<NSNumber*, NSSet<NSNumber*>*>*) filterFrequenciesAllTechnos;
 
--(NSSet*) filterReleasesFor:(DCTechnologyId) technology;
--(void) setFilterReleasesFor:(DCTechnologyId) technology filter:(NSSet*) releases;
--(NSDictionary*) filterReleasesAllTechnos;
+-(NSSet<NSString*>*) filterReleasesFor:(DCTechnologyId) technology;
+-(void) setFilterReleasesFor:(DCTechnologyId) technology filter:(NSSet<NSString*>*) releases;
+-(NSDictionary<NSNumber*,NSSet<NSString*>*>*) filterReleasesAllTechnos;
 
 @end

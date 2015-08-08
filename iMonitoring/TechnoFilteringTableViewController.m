@@ -16,8 +16,8 @@
 
 @property(nonatomic) MapInfoTechnoDatasource* infoCells;
 
-@property(nonatomic) NSMutableSet* frequenciesCheckmark;
-@property(nonatomic) NSMutableSet* releasesCheckmark;
+@property(nonatomic) NSMutableSet<NSNumber*>* frequenciesCheckmark;
+@property(nonatomic) NSMutableSet<NSString*>* releasesCheckmark;
 
 @end
 
@@ -55,12 +55,12 @@ static const NSUInteger FILTER_SECTION_NUMBER = 2;
 
 -(void) initializeFrequencies {
 
-    NSSet* userFilter = [[UserPreferences sharedInstance] filterFrequenciesFor:self.infoCells.theTechno];
+    NSSet<NSNumber*>* userFilter = [[UserPreferences sharedInstance] filterFrequenciesFor:self.infoCells.theTechno];
     self.frequenciesCheckmark = [userFilter mutableCopy];
 }
 
 -(void) initializeReleases {
-    NSSet* userFilter = [[UserPreferences sharedInstance] filterReleasesFor:self.infoCells.theTechno];
+    NSSet<NSString*>* userFilter = [[UserPreferences sharedInstance] filterReleasesFor:self.infoCells.theTechno];
     self.releasesCheckmark = [userFilter mutableCopy];
 }
 

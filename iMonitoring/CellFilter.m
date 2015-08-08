@@ -21,8 +21,8 @@
 @property (nonatomic, readonly) Boolean isMarkedCellsFiltered;
 @property (nonatomic, readonly) NSString* filterCellName;
 
-@property (nonatomic, readonly) NSDictionary* frequencyFilterAllTechnos;
-@property (nonatomic, readonly) NSDictionary* releasesFilterAllTechnos;
+@property (nonatomic, readonly) NSDictionary<NSNumber*, NSSet<NSNumber*>*>* frequencyFilterAllTechnos;
+@property (nonatomic, readonly) NSDictionary<NSNumber*,NSSet<NSString*>*>* releasesFilterAllTechnos;
 
 @end
 
@@ -146,7 +146,7 @@
 
 - (Boolean) isCellFilteredByRelease:(CellMonitoring*) currentCell {
 
-    NSSet* releaseFilter = self.releasesFilterAllTechnos[@(currentCell.cellTechnology)];
+    NSSet<NSString*>* releaseFilter = self.releasesFilterAllTechnos[@(currentCell.cellTechnology)];
     if (releaseFilter == Nil) {
         return FALSE;
     }

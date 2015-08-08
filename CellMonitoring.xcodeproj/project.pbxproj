@@ -2513,7 +2513,7 @@
 			attributes = {
 				CLASSPREFIX = iMonitoring;
 				LastTestingUpgradeCheck = 0510;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					BE09A5B81517CA1A00A12C4B = {
 						DevelopmentTeam = 7VVU8FW2ME;
@@ -3074,6 +3074,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -3156,6 +3157,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CellMonitoring;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -3182,6 +3184,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CellMonitoring;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -3218,6 +3221,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "$(SRCROOT)/iMonitoringMac/CellMonitoringMac-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CellMonitoringMac;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -3250,6 +3254,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "$(SRCROOT)/iMonitoringMac/CellMonitoringMac-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CellMonitoringMac;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -3282,6 +3287,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "$(SRCROOT)/iMonitoringMac/CellMonitoringMac-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CellMonitoringMac;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -3322,6 +3328,7 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -3358,6 +3365,7 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -3394,6 +3402,7 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -3454,6 +3463,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CellMonitoring;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
