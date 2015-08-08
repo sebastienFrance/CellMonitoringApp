@@ -15,9 +15,6 @@
 
 NSString *const kKPIDefaultMonitoringPeriod   = @"KPI.DefaultMonitoringPeriod";
 
-NSString *const kNeighborsSatelliteView       = @"Neighbors.SatelliteView";
-NSString *const kNeighborsBuildingView        = @"Neighbors.BuildingView";
-NSString *const kNeighborsDisplaySectors      = @"Neighbors.DisplaySectors";
 NSString *const kServerIPAddress              = @"Server.IPAddress";
 NSString *const kServerPortNumber             = @"Server.PortNumber";
 NSString *const kServerUserName               = @"Server.UserName";
@@ -148,9 +145,6 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
         [[NSUserDefaults standardUserDefaults] setObject:@"empty" forKey:kServerPassword];
         [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:kTouchIdEnabled];
 
-        [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:kNeighborsSatelliteView];
-        [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:kNeighborsBuildingView];
-        [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:kNeighborsDisplaySectors];
         [[NSUserDefaults standardUserDefaults] setInteger:last6Hours15MnView forKey:kKPIDefaultMonitoringPeriod];
         [[NSUserDefaults standardUserDefaults] setInteger:last6Hours15MnView forKey:kCellDashboardDefaultViewScope];
         [[NSUserDefaults standardUserDefaults] setInteger:last6Hours15MnView forKey:kZoneDashboardDefaultScope];
@@ -223,35 +217,6 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
 - (DCMonitoringPeriodView) KPIDefaultMonitoringPeriod {
     return [[NSUserDefaults standardUserDefaults] integerForKey:kKPIDefaultMonitoringPeriod];
 }
-
-- (void) setNeighborsSatelliteView:(Boolean)NeighborsSatelliteView {
-    [[NSUserDefaults standardUserDefaults] setBool:NeighborsSatelliteView forKey:kNeighborsSatelliteView];
-    
-}
-
-- (Boolean) isNeighborsSatelliteView {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kNeighborsSatelliteView];
-}
-
-
-- (void) setNeighborsBuildingView:(Boolean)BuildingView {
-    [[NSUserDefaults standardUserDefaults] setBool:BuildingView forKey:kNeighborsBuildingView];
-}
-
-- (Boolean) isNeighborsBuildingView {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kNeighborsBuildingView];
-}
-
-
-- (void) setNeighborsDisplaySectors:(Boolean)NeighborsDisplaySectors {
-    [[NSUserDefaults standardUserDefaults] setBool:NeighborsDisplaySectors forKey:kNeighborsDisplaySectors];
-   
-}
-
-- (Boolean) isNeighborsDisplaySectors {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kNeighborsDisplaySectors];
-}
-
 
 - (void) setServerIPAddress:(NSString *)ServerIPAddress {
     [[NSUserDefaults standardUserDefaults] setObject:ServerIPAddress forKey:kServerIPAddress];

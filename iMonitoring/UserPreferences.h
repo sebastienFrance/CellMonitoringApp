@@ -19,9 +19,6 @@
 
 @property (nonatomic) DCMonitoringPeriodView KPIDefaultMonitoringPeriod;
 
-@property (nonatomic, getter = isNeighborsSatelliteView) Boolean NeighborsSatelliteView;
-@property (nonatomic, getter = isNeighborsDisplaySectors) Boolean NeighborsDisplaySectors;
-@property (nonatomic, getter = isNeighborsBuildingView) Boolean NeighborsBuildingView;
 @property (nonatomic) NSString* ServerIPAddress;
 @property (nonatomic) NSUInteger ServerPortNumber;
 @property (nonatomic) NSString* ServerUserName;
