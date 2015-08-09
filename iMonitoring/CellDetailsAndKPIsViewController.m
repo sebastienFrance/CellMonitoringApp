@@ -190,7 +190,7 @@
         }
         case SECTION_GENERAL: {
             if (indexPath.row == SECTION_GENERAL_ROW_NEIGHBORS_RELATIONS) {
-                return 110.0;
+                return 125.0;
             } else if (indexPath.row == SECTION_GENERAL_ROW_ALARMS) {
                 return 103.0;
             } else {
