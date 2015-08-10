@@ -77,7 +77,7 @@ static NSUInteger zipFileNameId = 0;
                              center.password,
                              (unsigned long)[RequestURLUtilities getDeviceType]];
     
-    fullBodyURL = [fullBodyURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    fullBodyURL = [fullBodyURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     self.isZippedResponse = zippedResponse;
     
     NSMutableURLRequest *theRequest=[NSMutableURLRequest

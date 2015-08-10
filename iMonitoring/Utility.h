@@ -14,10 +14,16 @@
 #pragma mark - zip methods
 + (NSData*) unzipFromData:(NSData *) theData outputFileName:(NSString*) fileName;
 
+#pragma mark - AlertView methods
+
++(UIAlertController*) getSimpleAlertView:(NSString*) title
+                                 message:(NSString*) theMessage
+                             actionTitle:(NSString*) actionTitle;
+
 #pragma mark - utility methods
 
 
-+ (NSString*) extractTimezoneFromData:(id) theData;
++(NSString*) extractTimezoneFromData:(id) theData;
 +(NSString*) extractLongTimezoneFrom:(NSTimeZone*)timezoneData;
 +(NSString*) extractShortTimezoneFrom:(NSTimeZone*) timezoneData;
 

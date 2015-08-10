@@ -18,7 +18,7 @@
 @property(nonatomic, readonly) NSString* portNumber;
 @property(nonatomic, readonly) NSString* userName;
 
-- (id) init:(id<ConfigViewDataResponse>) theDelegate;
+- (id) init:(UIViewController<ConfigViewDataResponse>*) theDelegate;
 - (void) openConnection:(NSString*) theIPAddress portNumber:(NSString*) thePortNumber userName:(NSString*) theUserName password:(NSString*) thePassword;
 @end
 

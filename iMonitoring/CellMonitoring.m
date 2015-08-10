@@ -17,6 +17,7 @@
 #import <MapKit/MapKit.h>
 #import "Utility.h"
 #import "CellParameters2HTMLTable.h"
+@import Contacts;
 
 @interface CellMonitoring()
 
@@ -223,15 +224,14 @@ static const NSString* PARAM_numberInterRATNR = @"numberInterRATNR";
     MKPlacemark* cellPlacemark = self.parentGroup.cellPlacemark;
 
     BOOL atLeastIOS6 = [[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0;
-    
+
     if (atLeastIOS6) {
-        NSDictionary *addressDict = @{(id)kABPersonAddressCountryCodeKey: cellPlacemark.ISOcountryCode,
-                                      (id)kABPersonAddressCountryKey: cellPlacemark.country,
-                                      (id)kABPersonAddressStateKey: cellPlacemark.subAdministrativeArea,
-                                      (id)kABPersonAddressCityKey: cellPlacemark.locality,
-                                      (id)kABPersonAddressStreetKey: self.street,
-                                      (id)kABPersonAddressZIPKey: cellPlacemark.postalCode};
-        
+        NSDictionary *addressDict = @{(id)CNPostalAddressISOCountryCodeKey: cellPlacemark.ISOcountryCode,
+                                      (id)CNPostalAddressCountryKey: cellPlacemark.country,
+                                      (id)CNPostalAddressStateKey: cellPlacemark.subAdministrativeArea,
+                                      (id)CNPostalAddressCityKey: cellPlacemark.locality,
+                                      (id)CNPostalAddressStreetKey: self.street,
+                                      (id)CNPostalAddressPostalCodeKey: cellPlacemark.postalCode};
         MKPlacemark* placemark = [[MKPlacemark alloc] initWithCoordinate:self.coordinate addressDictionary:addressDict];
         
         //MKMapItem* map = [[MKMapItem alloc] initWithPlacemark:_cellPlacemark];
@@ -255,7 +255,7 @@ static const NSString* PARAM_numberInterRATNR = @"numberInterRATNR";
                                    self.country];
         
             NSString *url = [NSString stringWithFormat: @"http://maps.google.com/maps?%@",
-                             [direction stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                             [direction stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }
 #endif

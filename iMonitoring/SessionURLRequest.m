@@ -63,7 +63,7 @@
                              center.password,
                              (unsigned long)[RequestURLUtilities getDeviceType]];
     
-    fullBodyURL = [fullBodyURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    fullBodyURL = [fullBodyURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     NSMutableURLRequest *theRequest=[NSMutableURLRequest
                                      requestWithURL:[RequestURLUtilities getBaseURL]
@@ -142,7 +142,7 @@
                              center.password,
                              (unsigned long)[RequestURLUtilities getDeviceType]];
     
-    fullBodyURL = [fullBodyURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    fullBodyURL = [fullBodyURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     NSMutableURLRequest *theRequest=[NSMutableURLRequest
                                      requestWithURL:[RequestURLUtilities getBaseURL]

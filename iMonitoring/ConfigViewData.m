@@ -17,17 +17,19 @@
 #import "UserPreferences.h"
 #import "PasswordUtility.h"
 #import "ConnectionManager.h"
+#import "Utility.h"
 
 @interface ConfigViewData() 
 
-@property (nonatomic, weak) id<ConfigViewDataResponse> delegate;
+@property (nonatomic, weak) UIViewController<ConfigViewDataResponse>* delegate;
 
 @end
 
 @implementation ConfigViewData
 
 
-- (id) init:(id<ConfigViewDataResponse>) theDelegate; {
+
+- (id) init:(UIViewController<ConfigViewDataResponse>*) theDelegate; {
 
     if (self = [super init]) {
         _delegate = theDelegate;
@@ -62,6 +64,13 @@
     [RequestUtilities connect:hashPassword delegate:self clientId:@"connect"];
 }
 
+typedef NS_ENUM(NSUInteger, ConnectionStatus) {
+    ConnectionSuccess = 0,
+    InvalidUserName = 1,
+    InvalidUserPassword = 2,
+};
+
+
 #pragma mark - HTMLDataResponse Protocol
 - (void) dataReady: (id) theData clientId:(NSString *)theClientId {
     
@@ -71,49 +80,58 @@
 
         if (data.count >= 2) {
             NSNumber* dataValue = data[@"connectionStatus"];
-            NSUInteger value = dataValue.intValue;
+            ConnectionStatus value = dataValue.intValue;
 
             dataValue = data[@"isAdmin"];
             [DataCenter sharedInstance].isAdminUser = dataValue.boolValue;
 
             switch (value) {
-                case 0: {
+                case ConnectionSuccess: {
                     [RequestUtilities getKPIDictionaries:self clientId:@"getKPIDictionaries"];               
                     break;
                 }
-                case 1: {
+                case InvalidUserName: {
                     [MBProgressHUD hideHUDForView:[_delegate getView] animated:YES];
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failure" message:@"Invalid user name" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-                    [alert show];        
+                    UIAlertController *alert = [Utility getSimpleAlertView:@"Connection Failure"
+                                                                   message:@"Invalid user name."
+                                                               actionTitle:@"OK"];
+                    [self.delegate presentViewController:alert animated:YES completion:nil];
                     break;
                 }
-                case 2: {
+                case InvalidUserPassword: {
                     [MBProgressHUD hideHUDForView:[_delegate getView] animated:YES];
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failure" message:@"Invalid password" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-                    [alert show];
+                    UIAlertController *alert = [Utility getSimpleAlertView:@"Connection Failure"
+                                                                   message:@"Invalid password."
+                                                               actionTitle:@"OK"];
+                    [self.delegate presentViewController:alert animated:YES completion:nil];
                     break;
                 }
                 default:
                     [MBProgressHUD hideHUDForView:[_delegate getView] animated:YES];
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failure" message:@"Error unknown" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-                    [alert show];
+                    UIAlertController *alert = [Utility getSimpleAlertView:@"Connection Failure"
+                                                                   message:@"Error unknown."
+                                                               actionTitle:@"OK"];
+                    [self.delegate presentViewController:alert animated:YES completion:nil];
                     break;
             }
         } else {
             [MBProgressHUD hideHUDForView:[_delegate getView] animated:YES];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Server has provided an invalid response" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];
-
+            UIAlertController *alert = [Utility getSimpleAlertView:@"Connection Failure"
+                                                           message:@"Server has provided an invalid response."
+                                                       actionTitle:@"OK"];
+            [self.delegate presentViewController:alert animated:YES completion:nil];
         }
 
     } else {
-        
+
         [MBProgressHUD hideHUDForView:[_delegate getView] animated:YES];
 
         if ([KPIDictionary loadKPIsdictionaries:theData] == false) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Configuration Error" message:@"Invalid KPI dictionary" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];
-            return;            
+            UIAlertController *alert = [Utility getSimpleAlertView:@"Configuration Error"
+                                                           message:@"Invalid KPI dictionary."
+                                                       actionTitle:@"OK"];
+            [self.delegate presentViewController:alert animated:YES completion:nil];
+            return;
         }
         
                 
@@ -123,8 +141,10 @@
 
 - (void) connectionFailure:(NSString*) theClientId {
     [MBProgressHUD hideHUDForView:[_delegate getView] animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failure" message:@"Cannot communicate with the server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    [alert show];        
+    UIAlertController *alert = [Utility getSimpleAlertView:@"Connection Failure"
+                                                   message:@"Cannot communicate with the server."
+                                               actionTitle:@"OK"];
+    [self.delegate presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Accessors

@@ -427,11 +427,11 @@
     NSString* latitude  = [NSString stringWithFormat:@"http://ws.geonames.org/timezone?lat=%f",coordinate.latitude];
     NSString* longitude = [NSString stringWithFormat:@"lng=%f",coordinate.longitude];
     NSString* lastPart  = @"'&format=json";
-    
-    firstPart = [firstPart stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    latitude  = [latitude stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    longitude = [longitude stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    lastPart  = [lastPart stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    [firstPart stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    latitude  = [latitude stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    longitude = [longitude stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    lastPart  = [lastPart stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     // Warning: & character must be escaped with %%26 between lat & long
     NSString* url = [NSString stringWithFormat:@"%@%@%%26%@%@", firstPart, latitude, longitude, lastPart];
@@ -476,7 +476,7 @@
                            coordinate.latitude,
                            coordinate.longitude,
                            [timestamp timeIntervalSince1970]];
-    GoogleURL = [GoogleURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    GoogleURL = [GoogleURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSLog(@"sending URL Timezone request: %@", GoogleURL);
     id<HTMLRequest> request = [RequestURLUtilities instantiateRequest:delegate clientId:theClientId];
     [request sendBasicRequest:GoogleURL];

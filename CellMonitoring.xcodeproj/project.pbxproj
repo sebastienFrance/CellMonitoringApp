@@ -210,6 +210,7 @@
 		BE90A0F81865AE8600AAB4C0 /* KPIDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0FF45B158670CD0034FA92 /* KPIDictionary.m */; };
 		BE93ECC31578037E00BEF8B8 /* MarkedRegionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE93ECC21578037E00BEF8B8 /* MarkedRegionsViewController.m */; };
 		BE93ECC61578052200BEF8B8 /* MarkedRegionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE93ECC51578052100BEF8B8 /* MarkedRegionTableViewCell.m */; };
+		BE94C4041B77E8B300A013A3 /* ConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94C4031B77E8B300A013A3 /* ConnectionTest.m */; };
 		BE94C4B61620927E00554CBC /* MailZoneKPIDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94C4B51620927D00554CBC /* MailZoneKPIDetails.m */; };
 		BE9506451A910E7D00BB2277 /* MailCellNeighborsRelations.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9506441A910E7D00BB2277 /* MailCellNeighborsRelations.m */; };
 		BE9506481A91121400BB2277 /* CellNeighbors2HTMLTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9506471A91121400BB2277 /* CellNeighbors2HTMLTable.m */; };
@@ -368,11 +369,19 @@
 		BEF2338D185E4D030071402F /* AroundMeMapViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE336841708448600E29F09 /* AroundMeMapViewDelegate.m */; };
 		BEF2338E185E50420071402F /* AroundMeMapViewMgt.m in Sources */ = {isa = PBXBuildFile; fileRef = BE543BAE15DC34C300897B65 /* AroundMeMapViewMgt.m */; };
 		BEF653E0179D8E0700D36CAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF653DF179D8E0700D36CAB /* MapKit.framework */; };
+		BEF6794F1B77EC3400073C66 /* CellMonitoringUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6794E1B77EC3400073C66 /* CellMonitoringUITests.m */; };
 		F20A9026E6B97C4B53818C8D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E757D0CFF9F23A173F7F7626 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		BE53BBF8190856260041FB20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE09A5B01517CA1A00A12C4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE09A5B81517CA1A00A12C4B;
+			remoteInfo = CellMonitoring;
+		};
+		BEF679511B77EC3400073C66 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BE09A5B01517CA1A00A12C4B /* Project object */;
 			proxyType = 1;
@@ -732,6 +741,7 @@
 		BE93ECC21578037E00BEF8B8 /* MarkedRegionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkedRegionsViewController.m; sourceTree = "<group>"; };
 		BE93ECC41578052100BEF8B8 /* MarkedRegionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkedRegionTableViewCell.h; sourceTree = "<group>"; };
 		BE93ECC51578052100BEF8B8 /* MarkedRegionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkedRegionTableViewCell.m; sourceTree = "<group>"; };
+		BE94C4031B77E8B300A013A3 /* ConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionTest.m; sourceTree = "<group>"; };
 		BE94C4B41620927D00554CBC /* MailZoneKPIDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailZoneKPIDetails.h; sourceTree = "<group>"; };
 		BE94C4B51620927D00554CBC /* MailZoneKPIDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailZoneKPIDetails.m; sourceTree = "<group>"; };
 		BE9506431A910E7D00BB2277 /* MailCellNeighborsRelations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailCellNeighborsRelations.h; sourceTree = "<group>"; };
@@ -968,6 +978,9 @@
 		BEF0D9AC15D83A880080E31A /* CellKPIsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellKPIsDataSource.m; sourceTree = "<group>"; };
 		BEF23388185E26110071402F /* MapModeItf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapModeItf.h; sourceTree = "<group>"; };
 		BEF653DF179D8E0700D36CAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BEF6794C1B77EC3400073C66 /* CellMonitoringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CellMonitoringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF6794E1B77EC3400073C66 /* CellMonitoringUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellMonitoringUITests.m; sourceTree = "<group>"; };
+		BEF679501B77EC3400073C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFCDD9216C6BDC600B72A04 /* CellMonitoringTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CellMonitoringTests-Info.plist"; sourceTree = "<group>"; };
 		BEFCDD9416C6BDC600B72A04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BEFCDD9616C6BDC600B72A04 /* KPITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KPITests.h; path = ../iMonitoringTests/KPITests.h; sourceTree = "<group>"; };
@@ -1023,6 +1036,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BEF679491B77EC3400073C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1056,6 +1076,7 @@
 				BEFCDD9016C6BDC600B72A04 /* iMonitoringTests */,
 				BE3B25FF1854D4A5003160FA /* iMonitoringMac */,
 				BE53BBEF190856260041FB20 /* CellMonitoring Tests IOS */,
+				BEF6794D1B77EC3400073C66 /* CellMonitoringUITests */,
 				BE09A5BC1517CA1A00A12C4B /* Frameworks */,
 				BE09A5BA1517CA1A00A12C4B /* Products */,
 				B10BB5BB257145DEA162487A /* Pods */,
@@ -1068,6 +1089,7 @@
 				BE09A5B91517CA1A00A12C4B /* CellMonitoring.app */,
 				BE3B25F81854D4A4003160FA /* CellMonitoringMac.app */,
 				BE53BBEB190856260041FB20 /* CellMonitoring Tests IOS.xctest */,
+				BEF6794C1B77EC3400073C66 /* CellMonitoringUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1439,6 +1461,7 @@
 			isa = PBXGroup;
 			children = (
 				BEA4E7961928AD3700D8BC3F /* DateUtilityTests.m */,
+				BE94C4031B77E8B300A013A3 /* ConnectionTest.m */,
 				BEB48BE6190A5D3100E8118F /* PasswordUtilityTests.m */,
 				BEA45E611929E2F9003F0C65 /* CellAlarmTests.m */,
 				BE0BEC6616C6C70400A6D0B3 /* AttributeNameValueTests.h */,
@@ -2429,6 +2452,15 @@
 			name = Datasources;
 			sourceTree = "<group>";
 		};
+		BEF6794D1B77EC3400073C66 /* CellMonitoringUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BEF6794E1B77EC3400073C66 /* CellMonitoringUITests.m */,
+				BEF679501B77EC3400073C66 /* Info.plist */,
+			);
+			path = CellMonitoringUITests;
+			sourceTree = "<group>";
+		};
 		BEFCDD9016C6BDC600B72A04 /* iMonitoringTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -2505,6 +2537,24 @@
 			productReference = BE53BBEB190856260041FB20 /* CellMonitoring Tests IOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BEF6794B1B77EC3400073C66 /* CellMonitoringUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEF679531B77EC3400073C66 /* Build configuration list for PBXNativeTarget "CellMonitoringUITests" */;
+			buildPhases = (
+				BEF679481B77EC3400073C66 /* Sources */,
+				BEF679491B77EC3400073C66 /* Frameworks */,
+				BEF6794A1B77EC3400073C66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEF679521B77EC3400073C66 /* PBXTargetDependency */,
+			);
+			name = CellMonitoringUITests;
+			productName = CellMonitoringUITests;
+			productReference = BEF6794C1B77EC3400073C66 /* CellMonitoringUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2549,6 +2599,10 @@
 					BE53BBEA190856260041FB20 = {
 						TestTargetID = BE09A5B81517CA1A00A12C4B;
 					};
+					BEF6794B1B77EC3400073C66 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = BE09A5B81517CA1A00A12C4B;
+					};
 				};
 			};
 			buildConfigurationList = BE09A5B31517CA1A00A12C4B /* Build configuration list for PBXProject "CellMonitoring" */;
@@ -2568,6 +2622,7 @@
 				BE09A5B81517CA1A00A12C4B /* CellMonitoring */,
 				BE3B25F71854D4A4003160FA /* CellMonitoringMac */,
 				BE53BBEA190856260041FB20 /* CellMonitoring Tests IOS */,
+				BEF6794B1B77EC3400073C66 /* CellMonitoringUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -2618,6 +2673,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE53BBF4190856260041FB20 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEF6794A1B77EC3400073C66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2984,8 +3046,17 @@
 				BE39C28A1908F4630044C483 /* AttributeNameValueTests.m in Sources */,
 				BEA4E7971928AD3700D8BC3F /* DateUtilityTests.m in Sources */,
 				BE39C28B1908F4630044C483 /* KPIDictionaryTests.m in Sources */,
+				BE94C4041B77E8B300A013A3 /* ConnectionTest.m in Sources */,
 				BE39C28C1908F4630044C483 /* KPITests.m in Sources */,
 				BEA45E621929E2F9003F0C65 /* CellAlarmTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEF679481B77EC3400073C66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF6794F1B77EC3400073C66 /* CellMonitoringUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2996,6 +3067,11 @@
 			isa = PBXTargetDependency;
 			target = BE09A5B81517CA1A00A12C4B /* CellMonitoring */;
 			targetProxy = BE53BBF8190856260041FB20 /* PBXContainerItemProxy */;
+		};
+		BEF679521B77EC3400073C66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE09A5B81517CA1A00A12C4B /* CellMonitoring */;
+			targetProxy = BEF679511B77EC3400073C66 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3092,8 +3168,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
@@ -3128,8 +3204,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
@@ -3154,7 +3230,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMonitoring/CellMonitoring-Prefix.pch";
 				INFOPLIST_FILE = "iMonitoring/CellMonitoring-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
@@ -3181,7 +3257,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMonitoring/CellMonitoring-Prefix.pch";
 				INFOPLIST_FILE = "iMonitoring/CellMonitoring-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
@@ -3220,7 +3296,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "$(SRCROOT)/iMonitoringMac/CellMonitoringMac-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CellMonitoringMac;
 				PROVISIONING_PROFILE = "";
@@ -3253,7 +3329,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "$(SRCROOT)/iMonitoringMac/CellMonitoringMac-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CellMonitoringMac;
 				PROVISIONING_PROFILE = "";
@@ -3286,7 +3362,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "$(SRCROOT)/iMonitoringMac/CellMonitoringMac-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CellMonitoringMac;
 				PROVISIONING_PROFILE = "";
@@ -3434,8 +3510,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
@@ -3460,7 +3536,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMonitoring/CellMonitoring-Prefix.pch";
 				INFOPLIST_FILE = "iMonitoring/CellMonitoring-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
@@ -3470,6 +3546,73 @@
 				USER_HEADER_SEARCH_PATHS = /Users/sebastien/Documents/IOS;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
+			};
+			name = "Deployment ALU";
+		};
+		BEF679541B77EC3400073C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CellMonitoringUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = sebCompany.CellMonitoringUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CellMonitoring;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BEF679551B77EC3400073C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CellMonitoringUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = sebCompany.CellMonitoringUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CellMonitoring;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		BEF679561B77EC3400073C66 /* Deployment ALU */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CellMonitoringUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = sebCompany.CellMonitoringUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CellMonitoring;
+				USES_XCTRUNNER = YES;
 			};
 			name = "Deployment ALU";
 		};
@@ -3515,6 +3658,15 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BEF679531B77EC3400073C66 /* Build configuration list for PBXNativeTarget "CellMonitoringUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEF679541B77EC3400073C66 /* Debug */,
+				BEF679551B77EC3400073C66 /* Release */,
+				BEF679561B77EC3400073C66 /* Deployment ALU */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

@@ -419,5 +419,16 @@
     }
 }
 
++(UIAlertController*) getSimpleAlertView:(NSString*) title message:(NSString*) theMessage actionTitle:(NSString*) actionTitle  {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:theMessage
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:actionTitle style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+
+    [alert addAction:defaultAction];
+    return alert;
+}
 
 @end
