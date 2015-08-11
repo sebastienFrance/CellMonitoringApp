@@ -14,6 +14,7 @@
 #import "CellParametersDifferencesViewController.h"
 #import "CellMonitoring.h"
 #import "MailCellParametersWithAllHistoricalDiffs.h"
+#import "Utility.h"
 
 @interface HistoricalOverviewParametersViewController()
 
@@ -123,8 +124,10 @@
 -(void) cellParametersHistoricalResponse:(CellMonitoring *)cell error:(NSError *)theError {
     [MBProgressHUD hideAllHUDsForView:self.view animated:TRUE];
     if (theError != Nil) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Execution error" message:@"Cannot get historical parameters" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Execution error"
+                                                       message:@"Cannot get historical parameters."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
     } else {
         self.isLoading = FALSE;
         

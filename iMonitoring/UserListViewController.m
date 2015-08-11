@@ -12,6 +12,7 @@
 #import "UserListViewCell.h"
 #import "CreateUserViewController.h"
 #import "DisplayAndModifyUserViewController.h"
+#import "Utility.h"
 
 #import "SWRevealViewController/SWRevealViewController.h"
 
@@ -195,8 +196,10 @@
         
         UserDescription* userToBeDeleted = (UserDescription*) self.users[indexPath.row];
         if ([userToBeDeleted.name isEqualToString:@"admin"]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"admin user cannot be deleted" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];
+            UIAlertController* alert = [Utility getSimpleAlertView:@"Error"
+                                                           message:@"admin user cannot be deleted."
+                                                       actionTitle:@"OK"];
+            [self presentViewController:alert animated:YES completion:nil];
             return;
         }
       
@@ -253,22 +256,30 @@
 - (void) connectionFailure:(NSString*) theClientId {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
-    UIAlertView *alert = Nil;
+    UIAlertController* alert = Nil;
     if ([theClientId isEqualToString:@"getUsers"]) {
-        alert = [[UIAlertView alloc] initWithTitle:@"Connection Failure" message:@"Cannot get users" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+        alert = [Utility getSimpleAlertView:@"Connection Failure"
+                                    message:@"Cannot get users."
+                                actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
     } else if ([theClientId isEqualToString:@"deleteUser"]) {
-        alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot delete the user" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+        alert = [Utility getSimpleAlertView:@"Error"
+                                    message:@"Cannot delete the user."
+                                actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
     } else {
-        alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:@"Unknown error" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+        alert = [Utility getSimpleAlertView:@"Failure"
+                                    message:@"Unknown error."
+                                actionTitle:@"OK"];
     }
 
-    [alert show];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Segue
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+
     if ([segue.identifier isEqualToString:@"openCreateUserId"]) {
         CreateUserViewController* controller = segue.destinationViewController;
         controller.delegateUserList = self;

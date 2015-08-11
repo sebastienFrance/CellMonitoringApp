@@ -12,6 +12,7 @@
 #import "RequestUtilities.h"
 #import "PasswordUtility.h"
 #import "ConnectionManager.h"
+#import "Utility.h"
 
 @interface ChangePasswordViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *oldPasswordTextField;
@@ -61,8 +62,10 @@
 }
 - (IBAction)ApplyPasswordPushed:(UIBarButtonItem *)sender {
     if ([self.oldPasswordTextField.text isEqualToString:@""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing data" message:@"Please enter old password" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Missing data"
+                                                       message:@"Please enter old password."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     }
     
@@ -71,8 +74,10 @@
     }
     
     if ([self.theNewPasswordTextField.text isEqualToString:self.oldPasswordTextField.text]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect data" message:@"New and old password must be different" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Incorrect data"
+                                                       message:@"New and old password must be different."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     }
     
@@ -104,14 +109,18 @@
                 }
                 case 1: {
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Password not updated" message:@"Unknown reason" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-                    [alert show];
+                    UIAlertController* alert = [Utility getSimpleAlertView:@"Password not updated"
+                                                                   message:@"Unknown reason."
+                                                               actionTitle:@"OK"];
+                    [self presentViewController:alert animated:YES completion:nil];
                     break;
                 }
                 default:
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failure" message:@"Error unknown" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-                    [alert show];
+                    UIAlertController* alert = [Utility getSimpleAlertView:@"Connection Failure"
+                                                                   message:@"Error unknown."
+                                                               actionTitle:@"OK"];
+                    [self presentViewController:alert animated:YES completion:nil];
                     break;
             }
         }
@@ -122,8 +131,10 @@
 //  ----------- Cannot retreive the KPI dictionaries from the server ----------
 - (void) connectionFailure:(NSString*) theClientId {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failure" message:@"Cannot communicate with the server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    [alert show];
+    UIAlertController* alert = [Utility getSimpleAlertView:@"Connection Failure"
+                                                   message:@"Cannot communicate with the server."
+                                               actionTitle:@"OK"];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 

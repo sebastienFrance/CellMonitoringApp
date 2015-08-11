@@ -501,8 +501,10 @@
 // iPad Specific
 - (void) dataLoadingFailure {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication Error" message:@"Cannot get KPIs from the server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    [alert show];
+    UIAlertController* alert = [Utility getSimpleAlertView:@"Communication Error"
+                                                   message:@"Cannot get KPIs from the server."
+                                               actionTitle:@"OK"];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 // iPad Specific

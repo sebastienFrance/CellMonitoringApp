@@ -18,6 +18,7 @@
 #import "AroundMeImpl.h"
 #import "AroundMeViewItf.h"
 #import "UserActivityHelper.h"
+#import "Utility.h"
 
 typedef void(^restorationHandler_t)(NSArray *);
 
@@ -152,6 +153,7 @@ typedef void(^restorationHandler_t)(NSArray *);
                                                                         NSInputStream *inputStream,
                                                                         NSOutputStream *outputStream, NSError *error) {
                 if (error != Nil) {
+ 
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication Error" message:@"Cannot get data to continue the user activity" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
                     [alert show];
                     NSLog(@"%s error with getContinuationStreamsWithCompletionHandler %@", __PRETTY_FUNCTION__,error.localizedDescription);

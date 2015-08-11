@@ -115,8 +115,11 @@
 
 - (void) alarmLoadingFailure {
     self.isCellAlarmsLoading = FALSE;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication failure" message:@"Cell alarms cannot be loaded" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    [alert show];
+    UIAlertController* alert = [Utility getSimpleAlertView:@"Communication failure"
+                                                   message:@"Cell alarms cannot be loaded."
+                                               actionTitle:@"OK"];
+    [self presentViewController:alert animated:YES completion:nil];
+
     self.isCellAlarmsLoading = FALSE;
 }
 - (void) alarmLoaded {

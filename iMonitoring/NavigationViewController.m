@@ -16,6 +16,7 @@
 #import "RouteInformation.h"
 #import "RouteDirectionDataSource.h"
 #import "NavigationViewCell.h"
+#import "Utility.h"
 
 @interface NavigationViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *StartFrom;
@@ -97,8 +98,10 @@
     
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (theError != Nil) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot resolve locations" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Error"
+                                                       message:@"Cannot resolve locations."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
     } else {
         self.routeInfo = route;
         [self.routeDatasource getDirectionsFor:route delegate:self];
@@ -109,8 +112,10 @@
 -(void) routeDirectionResponse:(NSArray*) routes error:(NSError*) theError {
     
     if (theError != Nil) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot build routes" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Error"
+                                                       message:@"Cannot build routes."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     } else {
         self.routes = routes;

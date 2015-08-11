@@ -13,6 +13,7 @@
 #import "SearchAddressViewCell.h"
 #import "CellGroupViewCell.h"
 #import "LocateCellDataSource.h"
+#import "Utility.h"
 
 @interface LocateCellTableViewController ()
 
@@ -35,8 +36,10 @@ NSString *const SCOPE_ADDRESS   = @"Address";
 #pragma mark - LocateCellDelegate protocol
 -(void) cellStartingWithResponse:(NSMutableArray*) cells error:(NSError*) theError {
     if (theError != Nil) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication error" message:@"Cannot collect data from server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Communication Error"
+                                                       message:@"Cannot collect data from server."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     }
     
@@ -215,8 +218,10 @@ NSString *const SCOPE_ADDRESS   = @"Address";
         if (error){
             NSLog(@"Geocode failed with error: %@", error);
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot find the location" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];
+            UIAlertController* alert = [Utility getSimpleAlertView:@"Error"
+                                                           message:@"Cannot find the location."
+                                                       actionTitle:@"OK"];
+            [self presentViewController:alert animated:YES completion:nil];
             return;
         }
         CLPlacemark* currentPlacemark = [placemarks lastObject];

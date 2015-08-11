@@ -17,7 +17,7 @@
 #import "BasicAroundMeImpl.h"
 #import "AroundMeMapViewDelegate.h"
 #import "MapConfigurationUpdate.h"
-
+#import "Utility.h"
 
 @import Foundation;
 
@@ -191,8 +191,10 @@
             break;
         }
         default: {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Activity Warning" message:@"Cannot manage this user activity" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];
+            UIAlertController* alert = [Utility getSimpleAlertView:@"Activity Warning"
+                                                           message:@"Cannot manage this user activity"
+                                                       actionTitle:@"OK"];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }
 }

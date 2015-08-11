@@ -9,6 +9,7 @@
 #import "CreateUserViewController.h"
 #import "MBProgressHUD.h"
 #import "PasswordUtility.h"
+#import "Utility.h"
 
 @interface CreateUserViewController ()
 
@@ -179,9 +180,11 @@
         NSNumber* dataValue = data[@"Status"];
         NSUInteger value = dataValue.intValue;
         if (value != 0) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Execution error" message:@"Cannot add user" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];
-            return;
+            UIAlertController* alert = [Utility getSimpleAlertView:@"Execution error"
+                                                           message:@"Cannot add user."
+                                                       actionTitle:@"OK"];
+            [self presentViewController:alert animated:YES completion:nil];
+           return;
         }
         
         self.hasCreatedNewUsers = TRUE;
@@ -197,21 +200,25 @@
         self.email.text = @"";
         self.administratorSelector.on = FALSE;
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:theSuccessMessage delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
-   
-        
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Success"
+                                                       message:theSuccessMessage
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Execution error" message:@"Cannot add user" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Execution error"
+                                                       message:@"Cannot add user."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
 //  ----------- Cannot retreive the KPI dictionaries from the server ----------
 - (void) connectionFailure:(NSString*) theClientId {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failure" message:@"Cannot add user" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    [alert show];
+    UIAlertController* alert = [Utility getSimpleAlertView:@"Connection Failure"
+                                                   message:@"Cannot add user."
+                                               actionTitle:@"OK"];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

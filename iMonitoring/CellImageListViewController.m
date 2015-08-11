@@ -103,11 +103,15 @@
 
 - (void) connectionFailure:(NSString*) theClientId {
     if ([theClientId isEqualToString:@"deleteImage"]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication error" message:@"Cannot delete image from server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Communication error"
+                                                       message:@"Cannot delete image from server."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
     } else if ([theClientId isEqualToString:@"getImageList"]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication error" message:@"Cannot get image list from server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Communication error"
+                                                       message:@"Cannot get image list from server."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
     } else {
          NSLog(@"%s: Error loading image %@", __PRETTY_FUNCTION__, theClientId);
     }

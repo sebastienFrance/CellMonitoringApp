@@ -10,7 +10,7 @@
 #import "MBProgressHUD.h"
 #import "RequestUtilities.h"
 #import "SWRevealViewController/SWRevealViewController.h"
-
+#import "Utility.h"
 
 @interface AboutViewController ()
 
@@ -62,8 +62,10 @@
 
 - (void) connectionFailure:(NSString*) theClientId {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication Error" message:@"Cannot get data from the server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    [alert show];        
+    UIAlertController* alert = [Utility getSimpleAlertView:@"Communication Error"
+                                                   message:@"Cannot get data from the server."
+                                               actionTitle:@"OK"];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 - (IBAction)menuButtonPushed:(UIBarButtonItem *)sender {
     [self.revealViewController revealToggle:Nil];

@@ -14,6 +14,7 @@
 #import "ZoneTableViewCell.h"
 #import "AroundMeViewController.h"
 #import "ZonesDatasSource.h"
+#import "Utility.h"
 
 @interface ZoneViewController()
 
@@ -101,8 +102,10 @@
 -(void) zonesResponse:(NSError*) theError {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (theError != Nil) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failure" message:@"Cannot get Object & Working Zones" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Connection Failure"
+                                                       message:@"Cannot get Object & Working Zones."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
     } else {
         self.listOfWorkingZones = self.datasource.listOfWorkingZones;
         self.listOfObjectZones = self.datasource.listOfObjectZones;
