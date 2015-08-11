@@ -56,11 +56,19 @@
 
 - (void) connectionSuccess {
     if ([DataCenter sharedInstance].isDemoSession) {
-        [[UserHelp sharedInstance] startHelpWithoutLogin];
+        [[UserHelp sharedInstance] startHelpWithoutLogin:self];
     } else {
-        [[UserHelp sharedInstance] startHelp];
+        [[UserHelp sharedInstance] startHelp:self];
     }
-    
+
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information"
+                                                    message:@"Swipe graphic to increase/decrease time period"
+                                                   delegate:Nil
+                                          cancelButtonTitle:@"ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+
+
     [self doConnectionSuccess];
 }
 

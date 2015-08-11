@@ -116,7 +116,7 @@
         });
     });
     
-    [[UserHelp sharedInstance] iPadHelpForCellDashboardView];
+    [[UserHelp sharedInstance] iPadHelpForCellDashboardView:self];
 }
 
 - (void) initializePages {

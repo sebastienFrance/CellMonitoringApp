@@ -12,11 +12,11 @@
 
 + (UserHelp*) sharedInstance;
 
--(void) startHelp;
--(void) startHelpWithoutLogin;
+-(void) startHelp:(UIViewController*) controller;
+-(void) startHelpWithoutLogin:(UIViewController*) controller;
 
--(void) helpForGenericGraphicKPI;
--(void) iPadHelpForDashboardView;
--(void) iPadHelpForCellDashboardView;
+-(void) helpForGenericGraphicKPI:(UIViewController*) controller;
+-(void) iPadHelpForDashboardView:(UIViewController*) controller;
+-(void) iPadHelpForCellDashboardView:(UIViewController*) controller;
 
 @end

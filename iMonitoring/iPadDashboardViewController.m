@@ -84,7 +84,7 @@
     [self initialisePageController];
     
     
-    [[UserHelp sharedInstance] iPadHelpForDashboardView];
+    [[UserHelp sharedInstance] iPadHelpForDashboardView:self];
 }
 
 -(void) viewDidAppear:(BOOL)animated {

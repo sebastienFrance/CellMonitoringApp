@@ -8,6 +8,7 @@
 
 #import "UserHelp.h"
 #import "UserPreferences.h"
+#import "Utility.h"
 
 @implementation UserHelp
 
@@ -29,72 +30,54 @@
     return self;
 }
 
--(void) startHelp {
+-(void) startHelp:(UIViewController*) controller {
     if ([UserPreferences sharedInstance].startHelp) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information"
-                                                        message:@"Try to locate cells in NYC, SF, Washington, Seattle, Paris, Lyon...\n\nEnjoy!"
-                                                       delegate:Nil cancelButtonTitle:@"ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-        
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Information"
+                                                       message:@"Try to locate cells in NYC, SF, Washington, Seattle, Paris, Lyon...\n\nEnjoy!"
+                                                   actionTitle:@"OK"];
+        [controller presentViewController:alert animated:YES completion:nil];
         [UserPreferences sharedInstance].startHelp = FALSE;
     }
 }
 
--(void) startHelpWithoutLogin {
+-(void) startHelpWithoutLogin:(UIViewController*) controller {
     if ([UserPreferences sharedInstance].startWithoutLicenseHelp) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information"
-                                                        message:@"Try to locate cells in NYC, SF, Washington, Seattle, Paris, Lyon...\n\nYour session will expires in 5mn!"
-                                                       delegate:Nil
-                                              cancelButtonTitle:@"ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-        
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Information"
+                                                       message:@"Try to locate cells in NYC, SF, Washington, Seattle, Paris, Lyon...\n\nYour session will expires in 5mn!"
+                                                   actionTitle:@"OK"];
+        [controller presentViewController:alert animated:YES completion:nil];
         [UserPreferences sharedInstance].startWithoutLicenseHelp = FALSE;
     }
 }
 
--(void) iPadHelpForDashboardView {
+-(void) iPadHelpForDashboardView:(UIViewController*) controller {
     if ([UserPreferences sharedInstance].iPadDashboardHelp) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information"
-                                                        message:@"Pinch graphics to zoom in/out\n\nTouch graphic for details"
-                                                       delegate:Nil
-                                              cancelButtonTitle:@"ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-        
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Information"
+                                                       message:@"Pinch graphics to zoom in/out\n\nTouch graphic for details"
+                                                   actionTitle:@"OK"];
+        [controller presentViewController:alert animated:YES completion:nil];
         [UserPreferences sharedInstance].iPadDashboardHelp = FALSE;
     }
 }
 
--(void) iPadHelpForCellDashboardView {
+-(void) iPadHelpForCellDashboardView:(UIViewController*) controller {
     if ([UserPreferences sharedInstance].iPadCellDashboardHelp) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information"
-                                                        message:@"Pinch graphics to zoom in/out\n\nTouch graphic for details"
-                                                       delegate:Nil
-                                              cancelButtonTitle:@"ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-        
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Information"
+                                                       message:@"Pinch graphics to zoom in/out\n\nTouch graphic for details"
+                                                   actionTitle:@"OK"];
+        [controller presentViewController:alert animated:YES completion:nil];
         [UserPreferences sharedInstance].iPadCellDashboardHelp = FALSE;
     }
 }
 
--(void) helpForGenericGraphicKPI {
+-(void) helpForGenericGraphicKPI:(UIViewController*) controller {
     if ([UserPreferences sharedInstance].helpForGenericGraphicKPI) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information"
-                                                        message:@"Swipe graphic to increase/decrease time period"
-                                                       delegate:Nil
-                                              cancelButtonTitle:@"ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-        
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Information"
+                                                       message:@"Swipe graphic to increase/decrease time period"
+                                                   actionTitle:@"OK"];
+        [controller presentViewController:alert animated:YES completion:nil];
         [UserPreferences sharedInstance].helpForGenericGraphicKPI = FALSE;
     }
-    
 }
 
 

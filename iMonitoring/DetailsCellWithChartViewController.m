@@ -318,7 +318,7 @@
     
     [super viewDidLoad];
     
-    [[UserHelp sharedInstance] helpForGenericGraphicKPI];
+    [[UserHelp sharedInstance] helpForGenericGraphicKPI:self];
 }
 
 -(void) viewDidAppear:(BOOL)animated {

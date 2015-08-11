@@ -148,8 +148,10 @@
     NSLog(@"%s: %@", __PRETTY_FUNCTION__, theClientId);
     [MBProgressHUD hideAllHUDsForView:self.view animated:TRUE];
     if ([theClientId isEqualToString:@"Send Photos"]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication error" message:@"Cannot upload the photo on server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Communication error"
+                                                       message:@"Cannot upload the photo on server."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 

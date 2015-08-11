@@ -60,8 +60,10 @@
 - (void) mapInfoLoaded:(NSError*) theError {
     [MBProgressHUD hideAllHUDsForView:self.view animated:FALSE];
     if (theError != Nil) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication error" message:@"Cannot collect data from server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Communication error"
+                                                       message:@"Cannot collect data from server."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     } else {
         self.dataSourceReady = TRUE;
