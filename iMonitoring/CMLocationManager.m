@@ -17,8 +17,6 @@
 
 @implementation CMLocationManager
 
-
-
 -(void) startLocation:(id<LocationManagerDelegate>) delegate {
     self.delegate = delegate;
     if ([CLLocationManager locationServicesEnabled] == FALSE) {

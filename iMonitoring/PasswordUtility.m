@@ -66,6 +66,7 @@
 
 + (void) showAlert:(NSString*) title message:(NSString*) theMessage {
 #if TARGET_OS_IPHONE
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:theMessage delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
     [alert show];
 #else

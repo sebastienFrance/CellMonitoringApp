@@ -7,6 +7,7 @@
 //
 
 #import "RequestLicense.h"
+#import "Utility.h"
 
 @interface RequestLicense()
 
@@ -22,8 +23,10 @@
     self.presentingVC = parentViewController;
     
     if ([MFMailComposeViewController canSendMail] == FALSE) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Mail error" message:@"Your device cannot send an email" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Mail error"
+                                                       message:@"Your device cannot send an email."
+                                                   actionTitle:@"OK"];
+        [parentViewController presentViewController:alert animated:YES completion:nil];
     } else {
         MFMailComposeViewController* mailViewController = [[MFMailComposeViewController alloc] init];
         mailViewController.mailComposeDelegate = self;
