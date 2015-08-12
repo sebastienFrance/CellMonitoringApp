@@ -10,8 +10,21 @@
 
 @interface PasswordUtility : NSObject
 
+typedef NS_ENUM(NSInteger, PasswordValidityStatus) {
+    MainPasswordInvalid,
+    MainPasswordTooShort,
+    RetypePasswordInvalid,
+    RetypePasswordTooShort,
+    MainRetypePasswordNotEquals,
+    validPasswords
+};
 
-+ (Boolean) checkPasswordValidity:(const NSString*) password retype:(const NSString*) reTypePassword;
++ (NSUInteger) minPasswordLength;
++(NSUInteger) minUserNameLength;
+
++ (PasswordValidityStatus) checkPasswordValidity:(const NSString*) password retype:(const NSString*) reTypePassword;
++(NSString*) getPasswordErrorMessage:(PasswordValidityStatus) status;
+
 + (Boolean) checkUserNameValidity:(const NSString*) userName;
 
 #pragma mark - Hashing functions

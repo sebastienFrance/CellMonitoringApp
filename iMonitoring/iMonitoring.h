@@ -15,7 +15,7 @@
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic) NSArray* navigationCells;
+@property (nonatomic) NSArray<NavCell*>* navigationCells;
 
 @property (copy, nonatomic) void (^completionHandler)();
 

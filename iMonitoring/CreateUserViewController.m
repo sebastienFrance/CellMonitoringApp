@@ -128,13 +128,24 @@
 - (IBAction)CreateUserPushed:(UIBarButtonItem *)sender {
     
     if ([PasswordUtility checkUserNameValidity:self.userName.text] == FALSE) {
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Invalid user name"
+                                                       message:@"It must contain at least 5 characters with only lower case letter and/or numbers."
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
+
         return;
     }
-    
-    if ([PasswordUtility checkPasswordValidity:self.password.text retype:self.retypePassword.text] == FALSE) {
+
+    PasswordValidityStatus passwordStatus = [PasswordUtility checkPasswordValidity:self.password.text
+                                                                            retype:self.retypePassword.text];
+    if (passwordStatus != validPasswords) {
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Password error"
+                                                       message:[PasswordUtility getPasswordErrorMessage:passwordStatus]
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     }
-    
+
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = [NSString stringWithFormat:@"Add User %@", self.userName.text];
     

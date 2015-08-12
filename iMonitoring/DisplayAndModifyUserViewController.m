@@ -180,7 +180,14 @@
     
     NSString* hashPassword = @"";
     if (self.password.text.length > 0) {
-        if ([PasswordUtility checkPasswordValidity:self.password.text retype:self.retypePassword.text] == FALSE) {
+
+        PasswordValidityStatus passwordStatus = [PasswordUtility checkPasswordValidity:self.password.text
+                                                                                retype:self.retypePassword.text];
+        if (passwordStatus != validPasswords) {
+            UIAlertController* alert = [Utility getSimpleAlertView:@"Password error"
+                                                           message:[PasswordUtility getPasswordErrorMessage:passwordStatus]
+                                                       actionTitle:@"OK"];
+            [self presentViewController:alert animated:YES completion:nil];
             return;
         }
         hashPassword = [PasswordUtility hashStringForPassword:self.password.text];

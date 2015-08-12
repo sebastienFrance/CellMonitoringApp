@@ -13,67 +13,70 @@
 
 @implementation PasswordUtility
 
-+ (Boolean) checkPasswordValidity:(const NSString*) password retype:(const NSString*) reTypePassword {
-    
-    if (password == Nil || reTypePassword == Nil) {
-        [PasswordUtility showAlert:@"Missing data" message:@"Enter a valid password"];
-        return FALSE;
-    }
-    
-    if ([password isEqualToString:@""]) {
-        [PasswordUtility showAlert:@"Missing data" message:@"Enter a valid password"];
-        return FALSE;
-    }
-    
-    if (password.length < 5) {
-        [PasswordUtility showAlert:@"Missing data" message:@"Password must be at least 5 characters"];
-        return FALSE;
-    }
-    
-    if ([reTypePassword isEqualToString:@""]) {
-        [PasswordUtility showAlert:@"Missing data" message:@"Enter a valid retype password"];
-        return FALSE;
-    }
-    
-    if ([password isEqualToString:(NSString*)reTypePassword] == FALSE) {
-        [PasswordUtility showAlert:@"Incorrect data" message:@"New passwords are not indentical"];
-        return FALSE;
-    }
-    
-    return TRUE;
++(NSUInteger) minPasswordLength {
+    return 5;
 }
+
++ (PasswordValidityStatus) checkPasswordValidity:(const NSString*) password retype:(const NSString*) reTypePassword {
+
+    if (password == Nil || [password isEqualToString:@""]) {
+        return MainPasswordInvalid;
+    }
+
+    if (password.length < [PasswordUtility minPasswordLength]) {
+        return MainPasswordTooShort;
+    }
+
+    if (reTypePassword == Nil || [reTypePassword isEqualToString:@""]) {
+        return RetypePasswordInvalid;
+    }
+
+    if (reTypePassword.length < [PasswordUtility minPasswordLength]) {
+        return RetypePasswordTooShort;
+    }
+
+    if ([password isEqualToString:(NSString*)reTypePassword] == FALSE) {
+        return MainRetypePasswordNotEquals;
+    }
+
+    return validPasswords;
+}
+
++(NSString*) getPasswordErrorMessage:(PasswordValidityStatus) status {
+    switch (status) {
+        case MainPasswordInvalid: return @"Password must not be empty.";
+        case MainPasswordTooShort: return [NSString stringWithFormat:@"Password must be at least %lu characters.",(unsigned long)[PasswordUtility minPasswordLength]];
+        case RetypePasswordInvalid: return @"Retype password must not be empty.";
+        case RetypePasswordTooShort: return [NSString stringWithFormat:@"Retype password must be at least %lu characters.",(unsigned long)[PasswordUtility minPasswordLength]];
+        case MainRetypePasswordNotEquals: return @"Password and Retype Password must be equals.";
+        case validPasswords: return @"Passwords are valid.";
+        default: return @"Uknown status";
+    }
+}
+
+
++(NSUInteger) minUserNameLength {
+    return 5;
+}
+
 
 + (Boolean) checkUserNameValidity:(const NSString*) userName {
     if (userName == Nil) {
-        [PasswordUtility showAlert:@"Incorrect user name" message:@"User name must be at least 5 characters long."];
         return FALSE;
     }
     
-    if (userName.length < 5) {
-        [PasswordUtility showAlert:@"Incorrect user name" message:@"User name must be at least 5 characters long."];
+    if (userName.length < [PasswordUtility minUserNameLength]) {
         return FALSE;
     }
     
     NSCharacterSet * set = [[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyz0123456789"] invertedSet];
     if ([userName rangeOfCharacterFromSet:set].location != NSNotFound) {
-        [PasswordUtility showAlert:@"Incorrect user name" message:@"User name must contains only lower case letter and/or numbers"];
         return FALSE;
     }
     
     return TRUE;
 }
 
-
-+ (void) showAlert:(NSString*) title message:(NSString*) theMessage {
-#if TARGET_OS_IPHONE
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:theMessage delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    [alert show];
-#else
-    NSAlert* alert = [NSAlert alertWithMessageText:title defaultButton:@"ok" alternateButton:Nil otherButton:Nil informativeTextWithFormat:@"%@",theMessage];
-    [alert runModal];
-#endif
-}
 
 #pragma mark - Hashing functions
 

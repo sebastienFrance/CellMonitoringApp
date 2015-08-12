@@ -56,14 +56,25 @@ typedef void(^restorationHandler_t)(NSArray *);
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    _navigationCells = [NavDataParsing parseNavigationData:url];
-    if ((_navigationCells == Nil) || (_navigationCells.count <= 0)) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Navigation Failure" message:@"Incorrect navigation data" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
-        return FALSE;
-    } else {
-        return TRUE;
+
+    NavDataParsing* parser = [[NavDataParsing alloc] init];
+    NavDataParsingStatus status = [parser parseNavigationData:url];
+
+    switch (status) {
+        case InitializationError: {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Navigation data" message:@"Initialization error" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+            [alert show];
+            return FALSE;
+        }
+        case ParseError: {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Navigation data" message:@"Parsing error" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+            [alert show];
+            return FALSE;
+        }
+        case Success: {
+            _navigationCells = parser.navigationCells;
+            return TRUE;
+        }
     }
 }
 

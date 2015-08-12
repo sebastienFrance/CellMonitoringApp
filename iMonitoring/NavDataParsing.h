@@ -11,7 +11,16 @@
 
 @interface NavDataParsing : NSObject <NSXMLParserDelegate>
 
+typedef NS_ENUM(NSInteger, NavDataParsingStatus) {
+    Success,
+    InitializationError,
+    ParseError
+};
 
-+ (NSArray*) parseNavigationData:(NSURL*) url;
+@property(nonatomic, readonly) NSArray<NavCell*> *navigationCells;
+
+//- (NSArray<NavCell*>*) parseNavigationData:(NSURL*) url;
+- (NavDataParsingStatus) parseNavigationData:(NSURL*) url;
+
 
 @end

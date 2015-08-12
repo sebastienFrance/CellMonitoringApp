@@ -10,7 +10,7 @@
 
 @interface NavDataParsing ()
 
-@property (nonatomic) NSMutableArray* navCells;
+@property (nonatomic) NSMutableArray<NavCell*> *navCells;
 
 @end
 
@@ -18,7 +18,31 @@
 @implementation NavDataParsing
 
 #pragma mark - Interface
-+ (NSArray*)  parseNavigationData:(NSURL*) url {
+
+- (NavDataParsingStatus)  parseNavigationData:(NSURL*) url {
+    NSXMLParser *XMLParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    if (XMLParser == Nil) {
+        return InitializationError;
+    }
+
+
+    NavDataParsing *xmlDelegate = [NavDataParsing alloc];
+    [XMLParser setDelegate:xmlDelegate];
+    [XMLParser setShouldResolveExternalEntities:NO];
+    Boolean success = [XMLParser parse];
+    if (success == FALSE) {
+        return ParseError;
+    }
+
+    return Success;
+}
+
+-(NSArray<NavCell*>*) navigationCells {
+    return _navCells;
+}
+
+/*
++ (NSArray<NavCell*>*)  parseNavigationData:(NSURL*) url {
     NSXMLParser *XMLParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     if (XMLParser == Nil) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Navigation data" message:@"Initialization error" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
@@ -39,7 +63,7 @@
     
     return xmlDelegate.navCells;
 }
-
+*/
 
 
 #pragma mark - Parser implementation
@@ -72,7 +96,7 @@
     
     if ( [cellLabel isEqualToString:elementName]) {
         NavCell* theNewCell = [[NavCell alloc] init:attributeDict[idLabel] latitude:attributeDict[latitudeLabel] longitude:attributeDict[longitudeLabel]];
-        [self.navCells addObject:theNewCell];
+        [_navCells addObject:theNewCell];
     } 
 }
 

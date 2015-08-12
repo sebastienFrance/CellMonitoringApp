@@ -68,11 +68,17 @@
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
-    
-    if ([PasswordUtility checkPasswordValidity:self.theNewPasswordTextField.text retype:self.reTypeNewPasswordTextField.text] == FALSE) {
+
+    PasswordValidityStatus passwordStatus = [PasswordUtility checkPasswordValidity:self.theNewPasswordTextField.text
+                                                                            retype:self.reTypeNewPasswordTextField.text];
+    if (passwordStatus != validPasswords) {
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Password error"
+                                                       message:[PasswordUtility getPasswordErrorMessage:passwordStatus]
+                                                   actionTitle:@"OK"];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     }
-    
+
     if ([self.theNewPasswordTextField.text isEqualToString:self.oldPasswordTextField.text]) {
         UIAlertController* alert = [Utility getSimpleAlertView:@"Incorrect data"
                                                        message:@"New and old password must be different."
