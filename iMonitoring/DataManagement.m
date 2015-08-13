@@ -63,61 +63,61 @@ NSString *const kuseiCloud              = @"iCloud.useiCloud";
     
 }
 
-- (void) initializeWithiCloud {
-    
-    id currentiCloudToken = [[NSFileManager defaultManager] ubiquityIdentityToken];
-    
-    if (currentiCloudToken) {
-        NSLog(@"%s iCloud is available", __PRETTY_FUNCTION__);
-        NSData *newTokenData = [NSKeyedArchiver archivedDataWithRootObject: currentiCloudToken];
-        [[NSUserDefaults standardUserDefaults] setObject: newTokenData forKey:kiCloudToken];
-    } else {
-        NSLog(@"%s Warning, iCloud is not available", __PRETTY_FUNCTION__);
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kiCloudToken];
-    }
-    
-    
-    [[NSNotificationCenter defaultCenter] addObserver: self
-                                             selector: @selector(iCloudAccountAvailabilityChanged:)
-                                                 name: NSUbiquityIdentityDidChangeNotification
-                                               object: nil];
-    
-    // If iCloud activated then check if user wants to use it!
-    if (currentiCloudToken) {
-        
-        // Check if user has already selected iCloud previously
-        Boolean firstLaunchWithiCloud;
-        if ([[NSUserDefaults standardUserDefaults] objectForKey:kFirstLaunchWithiCloud] != Nil) {
-            firstLaunchWithiCloud = FALSE;
-        } else {
-            firstLaunchWithiCloud = TRUE;
-            [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:kFirstLaunchWithiCloud];
-        }
-        
-        // If first start with iCloud then request what user wants to do
-        if (firstLaunchWithiCloud) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Choose Storage Option"
-                                                            message: @"Should documents be stored in iCloud and available on all your devices?"
-                                                           delegate: self
-                                                  cancelButtonTitle: @"Local Only"
-                                                  otherButtonTitles: @"Use iCloud", nil];
-            [alert show];
-        } else {
-            
-            // Not the first time user start with iCould, so check what was user choice
-            
-            self.iCloudUsed = [[NSUserDefaults standardUserDefaults] boolForKey:kuseiCloud];
-            if (self.iCloudUsed) {
-                [self initializationWithiCloud];
-            } else {
-                [self initializationWithLocalStore];
-            }
-        }
-    } else {
-        // iCloud not available so start with our local store
-        [self initializationWithLocalStore];
-    }
-}
+//- (void) initializeWithiCloud {
+//    
+//    id currentiCloudToken = [[NSFileManager defaultManager] ubiquityIdentityToken];
+//    
+//    if (currentiCloudToken) {
+//        NSLog(@"%s iCloud is available", __PRETTY_FUNCTION__);
+//        NSData *newTokenData = [NSKeyedArchiver archivedDataWithRootObject: currentiCloudToken];
+//        [[NSUserDefaults standardUserDefaults] setObject: newTokenData forKey:kiCloudToken];
+//    } else {
+//        NSLog(@"%s Warning, iCloud is not available", __PRETTY_FUNCTION__);
+//        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kiCloudToken];
+//    }
+//    
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver: self
+//                                             selector: @selector(iCloudAccountAvailabilityChanged:)
+//                                                 name: NSUbiquityIdentityDidChangeNotification
+//                                               object: nil];
+//    
+//    // If iCloud activated then check if user wants to use it!
+//    if (currentiCloudToken) {
+//        
+//        // Check if user has already selected iCloud previously
+//        Boolean firstLaunchWithiCloud;
+//        if ([[NSUserDefaults standardUserDefaults] objectForKey:kFirstLaunchWithiCloud] != Nil) {
+//            firstLaunchWithiCloud = FALSE;
+//        } else {
+//            firstLaunchWithiCloud = TRUE;
+//            [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:kFirstLaunchWithiCloud];
+//        }
+//        
+//        // If first start with iCloud then request what user wants to do
+//        if (firstLaunchWithiCloud) {
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Choose Storage Option"
+//                                                            message: @"Should documents be stored in iCloud and available on all your devices?"
+//                                                           delegate: self
+//                                                  cancelButtonTitle: @"Local Only"
+//                                                  otherButtonTitles: @"Use iCloud", nil];
+//            [alert show];
+//        } else {
+//            
+//            // Not the first time user start with iCould, so check what was user choice
+//            
+//            self.iCloudUsed = [[NSUserDefaults standardUserDefaults] boolForKey:kuseiCloud];
+//            if (self.iCloudUsed) {
+//                [self initializationWithiCloud];
+//            } else {
+//                [self initializationWithLocalStore];
+//            }
+//        }
+//    } else {
+//        // iCloud not available so start with our local store
+//        [self initializationWithLocalStore];
+//    }
+//}
 
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

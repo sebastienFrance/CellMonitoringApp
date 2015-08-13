@@ -56,6 +56,7 @@ FOUNDATION_EXPORT  NSString *const kZoneTypeObject;
 
 + (NSString*) getTechnoName:(DCTechnologyId) theTechno;
 + (DCTechnologyId) getTechnoFromName:(NSString*) theTechno;
++ (NSArray<NSNumber*>*) getImplementedTechnos;
 + (NSString*) getZoneName:(DCZoneTypeId) theZone;
 + (NSString*) getNRType:(NRTypeId) neighborType;
 + (NRTypeId)  getNRTypeFromSource:(DCTechnologyId) sourceTechno sourceCellFrequency:(NSString*) sourceFrequency

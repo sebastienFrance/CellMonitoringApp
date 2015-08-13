@@ -14,6 +14,7 @@
 #import "WorstKPIDataSource.h"
 #import "iPadImonitoringViewController.h"
 #import "iPadAroundMeImpl.h"
+#import "Utility.h"
 
 @interface DashboardViewSelection ()
 
@@ -33,7 +34,7 @@
     self.alert = Nil;
 }
 
-- (void) openView:(UIBarButtonItem*) sourceButton{
+- (void) openView:(UIBarButtonItem*) sourceButton viewController:(UIViewController*) theViewController {
     
     // cancelButtonTitle must be set to nil on the iPad because it's presented in a Popover
     self.alert = [[UIActionSheet alloc] initWithTitle:@"Dashboard" delegate:self cancelButtonTitle:Nil destructiveButtonTitle:Nil otherButtonTitles:Nil];
@@ -42,11 +43,71 @@
     
     NSInteger index;
     DCTechnologyId technoId = DCTechnologyUNKNOWN;
-    
+
     cellDataSource* aroundMeDataSource = [DataCenter sharedInstance].aroundMeItf.datasource;
     
     Boolean hasCells = FALSE;
+
+    for (NSNumber* techno in [BasicTypes getImplementedTechnos]) {
+        DCTechnologyId currentTechno = [techno integerValue];
+
+        NSUInteger cellCount = [aroundMeDataSource getFilteredCellCountForTechnoId:currentTechno];
+        if (cellCount > 0) {
+            NSString* buttonString = [NSString stringWithFormat:@"%@ (%lu cells)",[BasicTypes getTechnoName:currentTechno], (unsigned long)cellCount];
+            index = [self.alert addButtonWithTitle:buttonString];
+            technoId = currentTechno;
+            mappingButton[@(index)] = @(technoId);
+            hasCells = TRUE;
+        }
+    }
+
+    WorstKPIDataSource* lastWorstKPIs = [DataCenter sharedInstance].aroundMeItf.lastWorstKPIs;
+    if (lastWorstKPIs != Nil) {
+        NSString* dateRequest = [DateUtility  getDate:lastWorstKPIs.requestDate option:withHHmm];
+        NSString* buttonString = [NSString stringWithFormat:@"%@ from %@",[BasicTypes getTechnoName:lastWorstKPIs.technology], dateRequest];
+        index = [self.alert addButtonWithTitle:buttonString];
+        mappingButton[@(index)] = @(DCTechnologyLatestUsed);
+    }
     
+    // Warning: compare with 1 because on iPad there is no Cancel button for it
+    if (self.alert.numberOfButtons > 1) {
+        // Display the Alert View else compute directly worst cell for the only one techno available
+        self.mappingAlertViewButton = mappingButton;
+        
+        if (self.alert != Nil) {
+            self.alert.delegate = self;
+            
+            [self.alert showFromBarButtonItem:sourceButton animated:TRUE];
+        }
+    } else {
+        iPadAroundMeImpl* aroundMe = (iPadAroundMeImpl*) [DataCenter sharedInstance].aroundMeItf;
+        if (hasCells == TRUE) {
+            [aroundMe cancelDashboardView];
+            [aroundMe openDashboardView:technoId];
+        } else {
+            UIAlertController* alert = [Utility getSimpleAlertView:@"Invalid data"
+                                                           message:@"Cannot compute on an empty cell zone"
+                                                       actionTitle:@"OK"];
+            [theViewController presentViewController:alert animated:YES completion:nil];
+            [aroundMe cancelDashboardView];
+        }
+    }
+}
+/*
+- (void) openView:(UIBarButtonItem*) sourceButton viewController:(UIViewController*) theViewController {
+
+    // cancelButtonTitle must be set to nil on the iPad because it's presented in a Popover
+    self.alert = [[UIActionSheet alloc] initWithTitle:@"Dashboard" delegate:self cancelButtonTitle:Nil destructiveButtonTitle:Nil otherButtonTitles:Nil];
+
+    NSMutableDictionary* mappingButton = [[NSMutableDictionary alloc] init ];
+
+    NSInteger index;
+    DCTechnologyId technoId = DCTechnologyUNKNOWN;
+
+    cellDataSource* aroundMeDataSource = [DataCenter sharedInstance].aroundMeItf.datasource;
+
+    Boolean hasCells = FALSE;
+
     NSString *buttonString;
     NSUInteger cellCount = [aroundMeDataSource getFilteredCellCountForTechnoId:DCTechnologyLTE];
     if (cellCount > 0) {
@@ -78,7 +139,7 @@
         switch (lastWorstKPIs.technology) {
             case DCTechnologyLTE: {
                 buttonString = [NSString stringWithFormat:@"%@ from %@",kTechnoLTE, dateRequest];
-                
+
                 break;
             }
             case DCTechnologyWCDMA: {
@@ -96,15 +157,15 @@
         index = [self.alert addButtonWithTitle:buttonString];
         mappingButton[@(index)] = @(DCTechnologyLatestUsed);
     }
-    
+
     // Warning: compare with 1 because on iPad there is no Cancel button for it
     if (self.alert.numberOfButtons > 1) {
         // Display the Alert View else compute directly worst cell for the only one techno available
         self.mappingAlertViewButton = mappingButton;
-        
+
         if (self.alert != Nil) {
             self.alert.delegate = self;
-            
+
             [self.alert showFromBarButtonItem:sourceButton animated:TRUE];
         }
     } else {
@@ -113,12 +174,16 @@
             [aroundMe cancelDashboardView];
             [aroundMe openDashboardView:technoId];
         } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid data" message:@"Cannot compute on an empty cell zone" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];                    
+            UIAlertController* alert = [Utility getSimpleAlertView:@"Invalid data"
+                                                           message:@"Cannot compute on an empty cell zone"
+                                                       actionTitle:@"OK"];
+            [theViewController presentViewController:alert animated:YES completion:nil];
             [aroundMe cancelDashboardView];
         }
     }
 }
+*/
+
 
 #pragma mark - UIActionSheetDelegate protocol
 

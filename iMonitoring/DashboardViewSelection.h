@@ -15,7 +15,7 @@
 
 
 
-- (void) openView:(UIBarButtonItem*) sourceButton;
+- (void) openView:(UIBarButtonItem*) sourceButton viewController:(UIViewController*) theViewController;
 - (void) dismiss;
 
 @end

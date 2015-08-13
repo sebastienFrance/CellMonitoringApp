@@ -18,6 +18,11 @@ NSString *const kTechnoUNKNOWN                = @"UNKNOWN";
 NSString *const kZoneTypeWorking              = @"WZ";
 NSString *const kZoneTypeObject               = @"OZ";
 
++(NSArray<NSNumber*>*) getImplementedTechnos {
+    NSArray<NSNumber*>* realTechnos = @[@(DCTechnologyLTE), @(DCTechnologyWCDMA), @(DCTechnologyGSM)];
+    return realTechnos;
+}
+
 + (NSString*) getTechnoName:(DCTechnologyId) theTechno {
     NSString* technoName = Nil;
     

@@ -78,7 +78,7 @@
     [self dismissAllPopovers];
     if (self.alertViewForWorstCell == Nil) {
         self.alertViewForWorstCell = [[DashboardViewSelection alloc] init];
-        [self.alertViewForWorstCell openView:sender];
+        [self.alertViewForWorstCell openView:sender viewController:self];
     }
 }
 - (IBAction)preferencesButtonPressed:(UIBarButtonItem *)sender {
