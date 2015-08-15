@@ -35,9 +35,9 @@
 
 - (IBAction)wortButton:(UIBarButtonItem *)sender {
     id<AroundMeViewItf> aroundMe = [DataCenter sharedInstance].aroundMeItf;
-    _alertViewForWorstCell = [[WorstViewSelection alloc] init:aroundMe viewController:self];
+    _alertViewForWorstCell = [[WorstViewSelection alloc] init:aroundMe];
 
-    [_alertViewForWorstCell openView:aroundMe.lastWorstKPIs];
+    [_alertViewForWorstCell openView:aroundMe.lastWorstKPIs barButtton:sender viewController:self];
 }
 
 #pragma mark - Constructor

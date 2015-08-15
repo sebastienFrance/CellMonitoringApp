@@ -12,7 +12,7 @@
 @class WorstKPIDataSource;
 
 @interface WorstViewSelection : NSObject<UIAlertViewDelegate> 
-- (id) init:(id<AroundMeViewItf>) aroundMeVC viewController:(UIViewController*) viewControllerDelegate;
-- (void) openView:(WorstKPIDataSource*) lastWorstKPIs;
+- (id) init:(id<AroundMeViewItf>) aroundMeVC;
+- (void) openView:(WorstKPIDataSource*) lastWorstKPIs barButtton:(UIBarButtonItem*) sourceButton viewController:(UIViewController*) theViewController;
 
 @end

@@ -29,7 +29,7 @@
 - (void) openView:(UIBarButtonItem*) sourceButton viewController:(UIViewController*) theViewController {
 
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Dashboard"
-                                                                   message:@"Select a Technology"
+                                                                   message:@"Select technology for the analysis"
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
 
     NSInteger buttonIndex = 0;

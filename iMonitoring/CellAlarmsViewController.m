@@ -13,6 +13,7 @@
 #import "CellAlarmDatasource.h"
 #import "MailCellAlarms.h"
 #import "DateUtility.h"
+#import "Utility.h"
 
 @interface CellAlarmsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *theTable;
@@ -32,9 +33,11 @@
 
 - (void) alarmLoadingFailure {
     [self.refreshControl endRefreshing];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication failure" message:@"Alarms cannot be loaded" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    [alert show];
+
+    UIAlertController* alert = [Utility getSimpleAlertView:@"Communication failure"
+                                                   message:@"Alarms cannot be loaded."
+                                               actionTitle:@"OK"];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 - (void) alarmLoaded {
     [self.theTable reloadData];

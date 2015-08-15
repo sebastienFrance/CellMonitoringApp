@@ -11,123 +11,87 @@
 #import "cellDataSource.h"
 #import "DateUtility.h"
 #import "WorstKPIDataSource.h"
+#import "Utility.h"
 
 @interface WorstViewSelection()
 
-@property (nonatomic) NSDictionary* mappingAlertViewButton;
 @property (nonatomic, weak) id<AroundMeViewItf> delegate;
-@property (nonatomic, weak) UIViewController* theViewControllerDelegate;
 
 @end
 
 @implementation WorstViewSelection 
 
-- (id) init:(id<AroundMeViewItf>) aroundMeVC viewController:(UIViewController*) viewControllerDelegate {
+- (id) init:(id<AroundMeViewItf>) aroundMeVC  {
     if (self = [super init]) {
         _delegate = aroundMeVC;
-        _theViewControllerDelegate = viewControllerDelegate;
     }
     
     return self;
     
 }
+- (void) openView:(WorstKPIDataSource*) lastWorstKPIs barButtton:(UIBarButtonItem*) sourceButton viewController:(UIViewController*) theViewController {
 
-- (void) openView:(WorstKPIDataSource*) lastWorstKPIs {
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Cell Dashboard" message:@"Select technology for the analysis" delegate:Nil cancelButtonTitle:@"Cancel" otherButtonTitles:Nil];
-    
-    NSMutableDictionary* mappingButton = [[NSMutableDictionary alloc] init ];
-    
-    NSInteger index;
-    DCTechnologyId technoId = DCTechnologyUNKNOWN;
-    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Cell Dashboard"
+                                                                   message:@"Select technology for the analysis"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
     cellDataSource* aroundMeDataSource = [self.delegate datasource];
     
+    NSInteger index = 0;
+    DCTechnologyId technoId = DCTechnologyUNKNOWN;
     Boolean hasCells = FALSE;
-    
-    NSString *buttonString;
-    NSUInteger cellCount = [aroundMeDataSource getFilteredCellCountForTechnoId:DCTechnologyLTE];
-    if (cellCount > 0) {
-        buttonString = [NSString stringWithFormat:@"%@ (%lu cells)",kTechnoLTE, (unsigned long)cellCount];
-        index = [alert addButtonWithTitle:buttonString];
-        technoId = DCTechnologyLTE;
-        mappingButton[@(index)] = @(technoId);
-        hasCells = TRUE;
+
+   for (NSNumber* techno in [BasicTypes getImplementedTechnos]) {
+       DCTechnologyId currentTechno = [techno intValue];
+
+       NSUInteger cellCount = [aroundMeDataSource getFilteredCellCountForTechnoId:currentTechno];
+       if (cellCount > 0) {
+           NSString *buttonString = [NSString stringWithFormat:@"%@ (%lu cells)",[BasicTypes getTechnoName:currentTechno], (unsigned long)cellCount];
+           UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:buttonString style:UIAlertActionStyleDefault
+                                                                 handler:^(UIAlertAction * action) {
+                                                                     [theViewController performSegueWithIdentifier:@"openCellsKPIs" sender:@(currentTechno)];                                                                 }];
+           [alert addAction:defaultAction];
+           index++;
+           technoId = currentTechno;
+           hasCells = TRUE;
+       }
     }
-    cellCount = [aroundMeDataSource getFilteredCellCountForTechnoId:DCTechnologyWCDMA];
-    if (cellCount > 0) {
-        buttonString = [NSString stringWithFormat:@"%@ (%lu cells)",kTechnoWCDMA, (unsigned long)cellCount];
-        index = [alert addButtonWithTitle:buttonString];
-        technoId = DCTechnologyWCDMA;
-        mappingButton[@(index)] = @(technoId);
-        hasCells = TRUE;
-    }
-    cellCount = [aroundMeDataSource getFilteredCellCountForTechnoId:DCTechnologyGSM];
-    if (cellCount > 0) {
-        buttonString = [NSString stringWithFormat:@"%@ (%lu cells)",kTechnoGSM, (unsigned long)cellCount];
-        index = [alert addButtonWithTitle:buttonString];
-        technoId = DCTechnologyGSM;
-        mappingButton[@(index)] = @(technoId);
-        hasCells = TRUE;
-    }
-    
+
     if (lastWorstKPIs != Nil) {
         NSString* dateRequest = [DateUtility  getDate:lastWorstKPIs.requestDate option:withHHmm];
-        switch (lastWorstKPIs.technology) {
-            case DCTechnologyLTE: {
-                buttonString = [NSString stringWithFormat:@"%@ from %@",kTechnoLTE, dateRequest];
-                
-                break;
-            }
-            case DCTechnologyWCDMA: {
-                buttonString = [NSString stringWithFormat:@"%@ from %@",kTechnoWCDMA, dateRequest];
-                break;
-            }
-            case DCTechnologyGSM: {
-                buttonString = [NSString stringWithFormat:@"%@ from %@",kTechnoGSM, dateRequest];
-                break;
-            }
-            default: {
-                break;
-            }
-        }
-        index = [alert addButtonWithTitle:buttonString];
-        mappingButton[@(index)] = @(DCTechnologyLatestUsed);
+        NSString* buttonString = [NSString stringWithFormat:@"%@ from %@",[BasicTypes getTechnoName:lastWorstKPIs.technology], dateRequest];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:buttonString style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  [theViewController performSegueWithIdentifier:@"openCellsKPIs" sender:@(DCTechnologyLatestUsed)];                                                              }];
+        [alert addAction:defaultAction];
+        index++;
     }
-    
+
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [alert dismissViewControllerAnimated:TRUE completion:Nil];
+                                                          }];
+    [alert addAction:cancelAction];
+    index++;
+
     // 2 because there're the "Cancel button" and the button for at least 1 techno
-    if (alert.numberOfButtons > 2) {
+    if (index > 2) {
         // Display the Alert View else compute directly worst cell for the only one techno available
-        self.mappingAlertViewButton = mappingButton;
-        
-        if (alert != Nil) {
-            alert.delegate = self;
-            [alert show];        
-        }
-    } else {
+        UIPopoverPresentationController* popover = alert.popoverPresentationController;
+        popover.barButtonItem = sourceButton;
+        [theViewController presentViewController:alert animated:YES completion:nil];
+     } else {
         if (hasCells == TRUE) {
-            [self.theViewControllerDelegate performSegueWithIdentifier:@"openCellsKPIs" sender:@(technoId)];
+            [theViewController performSegueWithIdentifier:@"openCellsKPIs" sender:@(technoId)];
         } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid data" message:@"Cannot compute on an empty cell zone" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];                    
+            UIAlertController* alert = [Utility getSimpleAlertView:@"Invalid data"
+                                                           message:@"Cannot compute on an empty cell zone."
+                                                       actionTitle:@"OK"];
+            [theViewController presentViewController:alert animated:YES completion:nil];
         }
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    // If Cancel button is pressed, just do nothing!
-    if (buttonIndex ==0) {
-        return;
-    }
-    
-    NSNumber* technoNumber = self.mappingAlertViewButton[@(buttonIndex)];
-    DCTechnologyId technoId = [technoNumber shortValue];
-    
-    self.mappingAlertViewButton = Nil;
-    
-    [self.theViewControllerDelegate performSegueWithIdentifier:@"openCellsKPIs" sender:@(technoId)];
-    
-}
 
 
 @end
