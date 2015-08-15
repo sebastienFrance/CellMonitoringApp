@@ -231,9 +231,10 @@
     
     [MBProgressHUD hideAllHUDsForView:self.aroundMeViewController.view animated:YES];
     if (theError != Nil) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication error" message:@"Cannot collect data from server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Communication error"
+                                                       message:@"Cannot collect data from server"
+                                                   actionTitle:@"OK"];
+        [self.aroundMeViewController presentViewController:alert animated:YES completion:nil];
     } else {
         if (self.isPreparingNeighborDisplay) {
             self.isPreparingNeighborDisplay = FALSE;

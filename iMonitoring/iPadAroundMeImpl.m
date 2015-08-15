@@ -101,8 +101,10 @@
 
 - (void) dataLoadingFailure {
     [MBProgressHUD hideHUDForView:self.aroundMeViewController.view animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication Error" message:@"Cannot get KPIs from the server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    [alert show];
+    UIAlertController* alert = [Utility getSimpleAlertView:@"Communication error"
+                                                   message:@"Cannot get KPIs from the server."
+                                               actionTitle:@"OK"];
+    [self.aroundMeViewController presentViewController:alert animated:YES completion:nil];
 }
 
 - (void) timezoneIsLoaded:(NSString*) theTimeZone {
@@ -138,8 +140,10 @@
     [MBProgressHUD hideHUDForView:self.aroundMeViewController.view animated:YES];
 
     if (theError != Nil) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication Error" message:@"Cannot get KPIs from the server" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alert = [Utility getSimpleAlertView:@"Communication error"
+                                                       message:@"Cannot get KPIs from the server."
+                                                   actionTitle:@"OK"];
+        [self.aroundMeViewController presentViewController:alert animated:YES completion:nil];
     } else {
         [(iPadImonitoringViewController*) self.aroundMeViewController showDashboard:self.lastWorstKPIs];
     }
