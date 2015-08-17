@@ -28,7 +28,7 @@
 @property (nonatomic) UIViewController* theSearchPopover;
 @property (nonatomic) UIViewController* theOptionsPopover;
 @property (nonatomic) UIViewController* theAboutPopover;
-@property (nonatomic) UIPopoverController* theCellPopover;
+@property (nonatomic) UIViewController* theCellPopover;
 @property (nonatomic) UIViewController* theUserMgtPopover;
 
 @property (nonatomic) WorstViewSelection* alertViewForWorstCell;
@@ -57,19 +57,26 @@
     }
 }
 
+#pragma mark - UIPopoverPresentationControllerDelegate protocol
+
+- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController * _Nonnull)popoverPresentationController {
+    [self dismissAllPopovers];
+}
+
+
 
 #pragma mark - Popover Mgt
 
 - (IBAction)searchButtonPressed:(UIBarButtonItem *)sender {
     [self dismissAllPopovers];
     self.theSearchPopover = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverSearchControllerId"];
-    [self presentInPopover:self.theSearchPopover item:sender];
+    [self presentViewControllerInPopover:self.theSearchPopover item:sender];
 }
 
 - (IBAction)bookmarkButtonPressed:(UIBarButtonItem *)sender {
     [self dismissAllPopovers];
     self.theBookmarkPopover = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverBookmarkControllerId"];
-    [self presentInPopover:self.theBookmarkPopover item:sender];
+    [self presentViewControllerInPopover:self.theBookmarkPopover item:sender];
 }
 - (IBAction)dashboardButtonPressed:(UIBarButtonItem *)sender {
     
@@ -80,20 +87,19 @@
     }
 }
 
-
-
 - (IBAction)preferencesButtonPressed:(UIBarButtonItem *)sender {
     [self dismissAllPopovers];
 
     self.thePreferencesPopover = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverPreferencesControllerId"];
-    [self presentInPopover:self.thePreferencesPopover item:sender];
+    [self presentViewControllerInPopover:self.thePreferencesPopover item:sender];
 }
 
--(void) presentInPopover:(UIViewController*) contentController item:(UIBarButtonItem *)theItem {
+-(void) presentViewControllerInPopover:(UIViewController*) contentController item:(UIBarButtonItem *)theItem {
     contentController.modalPresentationStyle = UIModalPresentationPopover;
     UIPopoverPresentationController* popPC = contentController.popoverPresentationController;
     popPC.barButtonItem = theItem;
     popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popPC.delegate = self;
     [self presentViewController:contentController animated:TRUE completion:Nil];
 
 }
@@ -112,35 +118,30 @@
 //    }
 #warning SEB: doesn't work correctly when the poposer is dismissed!
     self.theOptionsPopover = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverMapConfigurationControllerId"];
-    [self presentInPopover:self.theOptionsPopover item:sender];
+
+    // Get the NavigationController from the Popover
+    UINavigationController* navc = (UINavigationController*)self.theOptionsPopover;
+
+    // Get the MapConfigurationViewController that is at the top of the NavigationController
+    MapFilteringViewController* controller = (MapFilteringViewController*)navc.topViewController;
+    [controller initFromPopover:self.mapConfUpdate];
+
+    // 
+
+    [self presentViewControllerInPopover:self.theOptionsPopover item:sender];
 }
 
 - (IBAction)aboutButtonPressed:(UIBarButtonItem *)sender {
     [self dismissAllPopovers];
     self.theAboutPopover = [self.storyboard instantiateViewControllerWithIdentifier:@"iPadAboutControllerId"];
-    [self presentInPopover:self.theAboutPopover item:sender];
+    [self presentViewControllerInPopover:self.theAboutPopover item:sender];
 }
 - (IBAction)userMgtButtonPressed:(UIBarButtonItem *)sender {
     [self dismissAllPopovers];
     self.theUserMgtPopover = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverUserMgtId"];
-    [self presentInPopover:self.theUserMgtPopover item:sender];
+    [self presentViewControllerInPopover:self.theUserMgtPopover item:sender];
 }
 
-- (UIPopoverController*) initializePopoverWithId:(NSString*) controllerId sender:(UIBarButtonItem *) theSender {
-    UIViewController *viewControllerForPopover = [self.storyboard instantiateViewControllerWithIdentifier:controllerId];
-    return [self initialiazePopoverController:viewControllerForPopover sender:theSender];
-}
-
-- (UIPopoverController*) initialiazePopoverController:(UIViewController*) theViewController sender:(UIBarButtonItem *) theSender{
-    UIPopoverController* thePopover = [[UIPopoverController alloc] initWithContentViewController:theViewController];
-    thePopover.delegate = self;
-    [thePopover presentPopoverFromBarButtonItem:theSender permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
-    return thePopover;
-}
-
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
-    [self dismissAllPopovers];
-}
 
 - (void) dismissAllPopovers{
     if (self.theSearchPopover != Nil) {
@@ -150,9 +151,6 @@
         [self.theBookmarkPopover dismissViewControllerAnimated:TRUE completion:Nil];
         self.theBookmarkPopover = Nil;
     } else if (self.theOptionsPopover != nil) {
-//        [self.theOptionsPopover dismissPopoverAnimated:TRUE];
-//        self.theOptionsPopover = Nil;
-//        [self.mapConfUpdate updateConfiguration];
         [self.theOptionsPopover dismissViewControllerAnimated:TRUE completion:Nil];
         self.theOptionsPopover = Nil;
         [self.mapConfUpdate updateConfiguration];
@@ -162,7 +160,7 @@
     } else if (self.alertViewForWorstCell != Nil) {
         [self dismissDashboardView];
     } else if (self.theCellPopover != Nil) {
-        [self.theCellPopover dismissPopoverAnimated:TRUE];
+        [self.theCellPopover dismissViewControllerAnimated:TRUE completion:Nil];
         self.theCellPopover = Nil;
     }  else if (self.theUserMgtPopover != Nil) {
         [self.theUserMgtPopover dismissViewControllerAnimated:TRUE completion:Nil];
@@ -221,25 +219,23 @@
 - (void) showCellGroupOnMap:(CellMonitoringGroup *)theSelectedCellGroup annotationView:(MKAnnotationView *)view {
     
     [self showToolbar];
-    
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:[NSBundle mainBundle]];
-    UINavigationController *detailsMap = [sb instantiateViewControllerWithIdentifier:@"PopoverCellGroupMenuId"];
-    
+
+    UINavigationController *detailsMap = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverCellGroupMenuId"];
+
     CellGroupViewController* topView = (CellGroupViewController* )detailsMap.topViewController;
     
     id<AroundMeViewItf> aroundMe = [DataCenter sharedInstance].aroundMeItf;
     [topView initialize:theSelectedCellGroup delegate:aroundMe];
 
 
-    UIPopoverController* poc = [[UIPopoverController alloc] initWithContentViewController:detailsMap];
-    
-    [self setTheCellPopover:poc];
-    
-    [poc presentPopoverFromRect:view.bounds
-                         inView:view
-       permittedArrowDirections:UIPopoverArrowDirectionAny
-                       animated:YES];
+    detailsMap.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController* popPC = detailsMap.popoverPresentationController;
+    popPC.sourceView = view;
+    popPC.sourceRect = view.bounds;
+    popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    [self presentViewController:detailsMap animated:TRUE completion:Nil];
 
+    self.theCellPopover = detailsMap;
 }
 
 #pragma mark - DashboardSelectionDelegate protocol

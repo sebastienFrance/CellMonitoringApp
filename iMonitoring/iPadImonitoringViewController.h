@@ -22,7 +22,7 @@
 @class CellMonitoringGroup;
 
 
-@interface iPadImonitoringViewController : BasicAroundMeViewController <UIPopoverControllerDelegate, DashboardSelectionDelegate>
+@interface iPadImonitoringViewController : BasicAroundMeViewController <UIPopoverPresentationControllerDelegate, DashboardSelectionDelegate>
 
 
 
@@ -32,7 +32,6 @@
 
 - (void) dismissAllPopovers;
 - (void) dismissDashboardView;
-- (void) setTheCellPopover:(UIPopoverController*) theCellPopover;
 
 -(void) showDetailsKPIs:(CellKPIsDataSource*) cellDatasource;
 -(void) showDashboard:(WorstKPIDataSource*) worstKPIs;
