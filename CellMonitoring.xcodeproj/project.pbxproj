@@ -32,7 +32,6 @@
 		BE07324E15D7B2EB00FFB074 /* WorstKPIDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BE07324D15D7B2EB00FFB074 /* WorstKPIDataSource.m */; };
 		BE08223217399BF700E0FACD /* GraphicConfigTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE08223117399BF700E0FACD /* GraphicConfigTableViewController.m */; };
 		BE086FF016E6785B0048BDC3 /* RegionBookmark+MarkedRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = BE086FEF16E6785B0048BDC3 /* RegionBookmark+MarkedRegion.m */; };
-		BE09388815FA64CC0059F480 /* DashboardViewSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09388715FA64CC0059F480 /* DashboardViewSelection.m */; };
 		BE09388C15FA83990059F480 /* iPadDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09388B15FA83990059F480 /* iPadDashboardViewController.m */; };
 		BE09A5BE1517CA1A00A12C4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE09A5BD1517CA1A00A12C4B /* UIKit.framework */; };
 		BE09A5C01517CA1A00A12C4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE09A5BF1517CA1A00A12C4B /* Foundation.framework */; };
@@ -436,8 +435,6 @@
 		BE08223117399BF700E0FACD /* GraphicConfigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicConfigTableViewController.m; sourceTree = "<group>"; };
 		BE086FEE16E6785B0048BDC3 /* RegionBookmark+MarkedRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RegionBookmark+MarkedRegion.h"; sourceTree = "<group>"; };
 		BE086FEF16E6785B0048BDC3 /* RegionBookmark+MarkedRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RegionBookmark+MarkedRegion.m"; sourceTree = "<group>"; };
-		BE09388615FA64CC0059F480 /* DashboardViewSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewSelection.h; sourceTree = "<group>"; };
-		BE09388715FA64CC0059F480 /* DashboardViewSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewSelection.m; sourceTree = "<group>"; };
 		BE09388A15FA83980059F480 /* iPadDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadDashboardViewController.h; sourceTree = "<group>"; };
 		BE09388B15FA83990059F480 /* iPadDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadDashboardViewController.m; sourceTree = "<group>"; };
 		BE09A5B91517CA1A00A12C4B /* CellMonitoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CellMonitoring.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1552,8 +1549,6 @@
 				BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */,
 				BEE445B715FA2E4E00FA1F47 /* iPadBookmarkMenuViewController.h */,
 				BEE445B815FA2E4E00FA1F47 /* iPadBookmarkMenuViewController.m */,
-				BE09388615FA64CC0059F480 /* DashboardViewSelection.h */,
-				BE09388715FA64CC0059F480 /* DashboardViewSelection.m */,
 				BE6455CB1696181D00557654 /* iPadDashboardScopeViewNRCell.h */,
 				BE6455CC1696181D00557654 /* iPadDashboardScopeViewNRCell.m */,
 				BEC006011A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.h */,
@@ -2850,7 +2845,6 @@
 				BEE445B915FA2E4E00FA1F47 /* iPadBookmarkMenuViewController.m in Sources */,
 				BE06ADDC190D2D380026E1F1 /* SessionURLRequestHandler.m in Sources */,
 				BE56727518717968006EDFD0 /* ReverseGeoCodeRouteDataSource.m in Sources */,
-				BE09388815FA64CC0059F480 /* DashboardViewSelection.m in Sources */,
 				BE09388C15FA83990059F480 /* iPadDashboardViewController.m in Sources */,
 				BE10C07415FC8DC7003835D6 /* iPadDashboardWorstDetailsViewController.m in Sources */,
 				BE10C07815FCE7D9003835D6 /* iPadDashboardScopeViewController.m in Sources */,
@@ -3667,6 +3661,7 @@
 				BEF679561B77EC3400073C66 /* Deployment ALU */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

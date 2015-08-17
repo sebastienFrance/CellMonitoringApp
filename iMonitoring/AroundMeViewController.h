@@ -10,10 +10,11 @@
 #import <MapKit/MapKit.h>
 #import "CMLocationManager.h"
 #import "BasicAroundMeViewController.h"
+#import "WorstViewSelection.h"
 
 @class CellMonitoringGroup;
 
-@interface AroundMeViewController : BasicAroundMeViewController 
+@interface AroundMeViewController : BasicAroundMeViewController<DashboardSelectionDelegate>
 
 
 - (void) showCellGroupOnMap:(CellMonitoringGroup *)theSelectedCellGroup annotationView:(MKAnnotationView *)view;

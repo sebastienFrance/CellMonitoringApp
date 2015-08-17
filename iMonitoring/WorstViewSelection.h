@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "AroundMeViewItf.h"
 
+@protocol DashboardSelectionDelegate<NSObject>
+
+-(void) cancel;
+-(void) showSelectedDashboard:(DCTechnologyId) selectedTechno;
+-(UIViewController*) getViewController;
+
+@end
+
 @class WorstKPIDataSource;
 
 @interface WorstViewSelection : NSObject<UIAlertViewDelegate> 
-- (id) init:(id<AroundMeViewItf>) aroundMeVC;
-- (void) openView:(WorstKPIDataSource*) lastWorstKPIs barButtton:(UIBarButtonItem*) sourceButton viewController:(UIViewController*) theViewController;
+
+- (void) openView:(UIBarButtonItem*) sourceButton viewController:(id<DashboardSelectionDelegate>) theDelegate cancelButton:(Boolean) hasCancelButton;
 
 @end

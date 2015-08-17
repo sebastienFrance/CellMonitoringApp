@@ -34,10 +34,23 @@
 
 
 - (IBAction)wortButton:(UIBarButtonItem *)sender {
-    id<AroundMeViewItf> aroundMe = [DataCenter sharedInstance].aroundMeItf;
-    _alertViewForWorstCell = [[WorstViewSelection alloc] init:aroundMe];
+    _alertViewForWorstCell = [[WorstViewSelection alloc] init];
 
-    [_alertViewForWorstCell openView:aroundMe.lastWorstKPIs barButtton:sender viewController:self];
+    [_alertViewForWorstCell openView:sender viewController:self cancelButton:TRUE];
+}
+
+#pragma mark - DashboardSelectionDelegate protocol
+
+-(void) cancel {
+
+}
+
+-(void) showSelectedDashboard:(DCTechnologyId) selectedTechno {
+    [self performSegueWithIdentifier:@"openCellsKPIs" sender:@(selectedTechno)];
+}
+
+-(UIViewController*) getViewController {
+    return self;
 }
 
 #pragma mark - Constructor

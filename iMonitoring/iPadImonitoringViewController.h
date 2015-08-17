@@ -17,11 +17,12 @@
 #import "WorstKPIDataSource.h"
 #import "CMLocationManager.h"
 #import "BasicAroundMeViewController.h"
+#import "WorstViewSelection.h"
 
 @class CellMonitoringGroup;
 
 
-@interface iPadImonitoringViewController : BasicAroundMeViewController <UIPopoverControllerDelegate>
+@interface iPadImonitoringViewController : BasicAroundMeViewController <UIPopoverControllerDelegate, DashboardSelectionDelegate>
 
 
 
