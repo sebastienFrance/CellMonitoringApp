@@ -30,11 +30,7 @@
 
 @interface iPadCellDetailsAndKPIsViewControllerView () 
 
-@property (nonatomic) UIPopoverController* thePopover;
-@property (nonatomic) UIPopoverController* theViewPopover;
-@property (nonatomic) UIPopoverController* thePreferencesPopover;
-@property (nonatomic) UIPopoverController* theCellInfoPopover;
-@property (nonatomic) UIPopoverController* theActivityPopover;
+@property (nonatomic) UIViewController* currentPopover;
 
 @property (nonatomic) NSUInteger numberOfRows;
 @property (nonatomic) NSUInteger numberOfColumns;
@@ -142,33 +138,48 @@
     self.title = [NSString stringWithFormat:@"Cell %@ / %@", _theCell.id ,viewScope];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
-}
-
 #pragma mark - Button callback
 - (IBAction)viewButtonPressed:(UIBarButtonItem *)sender {
-    [self dismissAllPopovers];
-    if (self.theViewPopover == Nil) {
-        iPadCellDetailsAndKPIsViewTableViewController *viewControllerForPopover = 
-        [self.storyboard instantiateViewControllerWithIdentifier:@"iPadCellDetailsAndKPIsViewTableViewControllerId"];
-        [viewControllerForPopover initialize:self];
-        self.theViewPopover = [[UIPopoverController alloc] initWithContentViewController:viewControllerForPopover];
-        self.theViewPopover.delegate = self;
-        [self.theViewPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+    iPadCellDetailsAndKPIsViewTableViewController *viewControllerForPopover =
+    [self.storyboard instantiateViewControllerWithIdentifier:@"iPadCellDetailsAndKPIsViewTableViewControllerId"];
+    [viewControllerForPopover initialize:self];
+
+    [self presentViewControllerInPopover:viewControllerForPopover
+                                    item:sender];
+}
+
+#pragma mark - Popover Mgt
+
+- (void) dismissAllPopovers{
+    if (self.currentPopover != Nil) {
+        [self.currentPopover dismissViewControllerAnimated:TRUE completion:Nil];
+        self.currentPopover = Nil;
     }
 }
 
 
+-(void) presentViewControllerInPopover:(UIViewController*) contentController item:(UIBarButtonItem *)theItem {
+    [self dismissAllPopovers];
+
+    self.currentPopover = contentController;
+
+    contentController.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController* popPC = contentController.popoverPresentationController;
+    popPC.barButtonItem = theItem;
+    popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popPC.delegate = self;
+    [self presentViewController:contentController animated:TRUE completion:Nil];
+}
+
+#pragma mark - UIPopoverPresentationControllerDelegate protocol
+
+- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController * _Nonnull)popoverPresentationController {
+    [self dismissAllPopovers];
+}
 
 #pragma mark - MarkedCell protocol
 - (void) marked:(UIColor*) theColor userText:(NSString*) theText {
-    [self.thePopover dismissPopoverAnimated:YES];
+    [self dismissAllPopovers];
     self.MarkButton.title = @"Unmark";
     
     [CellBookmark createCellBookmark:_theCell comments:theText color:theColor];
@@ -192,36 +203,24 @@
 }
 
 -(void) displayMarkViewController:(UIBarButtonItem *) sender  {
-    [self dismissAllPopovers];
-
-    UINavigationController *viewControllerForPopover =
+    UINavigationController *viewController =
     [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverCellBookmarkId"];
 
-    MarkViewController* modal = (MarkViewController*) viewControllerForPopover.topViewController;
+    MarkViewController* modal = (MarkViewController*) viewController.topViewController;
     modal.delegate = self;
     modal.theCell = _theCell;
 
-    self.thePopover = [[UIPopoverController alloc] initWithContentViewController:viewControllerForPopover];
-    [self.thePopover presentPopoverFromBarButtonItem:sender
-                            permittedArrowDirections:UIPopoverArrowDirectionDown
-                                            animated:YES];
+    [self presentViewControllerInPopover:viewController item:sender];
 }
 
 
 - (IBAction)cellInfosButtonPushed:(UIBarButtonItem *)sender {
-    [self dismissAllPopovers];
-    
     UINavigationController *detailsMap = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverCellMenuId"];
     
     iPadCellDetailsPopoverMenuViewController* topView = (iPadCellDetailsPopoverMenuViewController* )detailsMap.topViewController;
     
     [topView initializeWithSimpleCellInfo:_theCell];
-    
-    self.thePopover = [[UIPopoverController alloc] initWithContentViewController:detailsMap];
-    
-    [self.thePopover presentPopoverFromBarButtonItem:sender
-                            permittedArrowDirections:UIPopoverArrowDirectionDown
-                                            animated:YES];
+    [self presentViewControllerInPopover:detailsMap item:sender];
 }
 
 
@@ -306,30 +305,6 @@
                         [self.theCollectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
                     }
                     completion:nil];
-}
-
-
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
-    [self dismissAllPopovers];
-}
-
-- (void) dismissAllPopovers{
-    if (self.theViewPopover != Nil) {
-        [self.theViewPopover dismissPopoverAnimated:TRUE];
-        self.theViewPopover = Nil;
-    } else if (self.thePopover != Nil) {
-        [self.thePopover dismissPopoverAnimated:TRUE];
-        self.thePopover = Nil;
-    } else if (self.thePreferencesPopover != Nil) {
-        [self.thePreferencesPopover dismissPopoverAnimated:TRUE];
-        self.thePreferencesPopover = Nil;
-    } else if (self.theCellInfoPopover != Nil) {
-        [self.theCellInfoPopover dismissPopoverAnimated:TRUE];
-        self.theCellInfoPopover = Nil;
-    } else if (self.theActivityPopover != Nil) {
-        [self.theActivityPopover dismissPopoverAnimated:TRUE];
-        self.theActivityPopover = Nil;
-    }
 }
 
 
@@ -431,7 +406,7 @@
 #pragma mark - Mail methods
 - (IBAction)sendMail:(UIBarButtonItem *)sender {
     
-    [self dismissAllPopovers];
+ //   [self dismissAllPopovers];
     
     KPIDictionary* dictionary = [KPIDictionaryManager sharedInstance].defaultKPIDictionary;
 #warning SEB:to be completed for alarms export
@@ -439,7 +414,7 @@
                                      monitoringPeriod:self.currentMonitoringPeriod alarms:Nil];
     [mailbody setImagesForPDF:self.currentBarChartViews title:_theCell.id];
     
-    self.theActivityPopover = [mailbody presentActivityViewFromPopover:sender];
+    [self presentViewControllerInPopover:[mailbody getActivityViewController] item:sender];
 }
 
 

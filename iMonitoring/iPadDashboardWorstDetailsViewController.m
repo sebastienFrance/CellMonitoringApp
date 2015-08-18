@@ -23,7 +23,7 @@
 
 @interface iPadDashboardWorstDetailsViewController()
 
-@property (nonatomic) UIPopoverController* theMailPopover;
+@property (nonatomic) UIViewController* theMailPopover;
 
 @end
 
@@ -41,13 +41,22 @@
 - (void) openMail:(UIBarButtonItem *)sender mail:(MailAbstract*) theMail {
     
     if (self.theMailPopover != Nil) {
-        [self.theMailPopover dismissPopoverAnimated:TRUE];
+        [self.theMailPopover dismissViewControllerAnimated:TRUE completion:Nil];
         self.theMailPopover = Nil;
     }
     
-    self.theMailPopover = [theMail presentActivityViewFromPopover:sender];
+    self.theMailPopover = [theMail getActivityViewController];
+    [self presentViewControllerInPopover:self.theMailPopover item:sender];
 }
 
+-(void) presentViewControllerInPopover:(UIViewController*) contentController item:(UIBarButtonItem *)theItem {
+
+    contentController.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController* popPC = contentController.popoverPresentationController;
+    popPC.barButtonItem = theItem;
+    popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    [self presentViewController:contentController animated:TRUE completion:Nil];
+}
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

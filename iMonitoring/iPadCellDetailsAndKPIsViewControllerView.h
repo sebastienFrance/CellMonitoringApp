@@ -12,7 +12,7 @@
 #import "MarkViewController.h"
 
 @class KPIChart;
-@interface iPadCellDetailsAndKPIsViewControllerView : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, MarkedCell,UIPopoverControllerDelegate>
+@interface iPadCellDetailsAndKPIsViewControllerView : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, MarkedCell,UIPopoverPresentationControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIPageControl *thePageControl;

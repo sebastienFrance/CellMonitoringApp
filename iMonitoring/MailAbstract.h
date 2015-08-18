@@ -17,12 +17,12 @@
 @property (nonatomic) NSString* graphImageName;
 
 
-//- (MFMailComposeViewController*) getMail:(id<MFMailComposeViewControllerDelegate>) delegate;
 - (void) setGraphImageAttachment:(CPTXYGraph*) theGrah title:(NSString*) graphTitleName;
 - (void) setImagesForPDF:(NSArray*) images title:(NSString*) PDFTitle;
 
 - (void) presentActivityViewFrom:(UIViewController*) currentView;
 - (UIPopoverController*) presentActivityViewFromPopover:(UIBarButtonItem*) button;
+-(UIActivityViewController*) getActivityViewController;
 
 // Private methods
 - (NSString*) buildMailBody;

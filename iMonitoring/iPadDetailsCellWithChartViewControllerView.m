@@ -22,8 +22,7 @@
 
 @interface iPadDetailsCellWithChartViewControllerView ()
 
-
-@property (nonatomic) UIPopoverController* mailPopover;
+@property(nonatomic) UIViewController* mailPopover;
 
 @end
 
@@ -34,7 +33,6 @@
     [self dismissViewControllerAnimated:TRUE completion:Nil];
 }
 
-
 - (float) getRowHeightForDetailedView {
     return 70.0;
 }
@@ -43,29 +41,26 @@
     return 46.0;
 }
 
-
-// Differences
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
-}
-
-
 - (void) opendMail:(UIBarButtonItem *)sender mail:(MailAbstract*) theMail{
     
     if (self.mailPopover != Nil) {
-        [self.mailPopover dismissPopoverAnimated:TRUE];
+        [self.mailPopover dismissViewControllerAnimated:TRUE completion:Nil];
         self.mailPopover = Nil;
     }
-    
-    
-    self.mailPopover = [theMail presentActivityViewFromPopover:sender];
-    
+
+    self.mailPopover = [theMail getActivityViewController];
+    [self presentViewControllerInPopover:self.mailPopover item:sender];
 }
+
+-(void) presentViewControllerInPopover:(UIViewController*) contentController item:(UIBarButtonItem *)theItem {
+
+    contentController.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController* popPC = contentController.popoverPresentationController;
+    popPC.barButtonItem = theItem;
+    popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    [self presentViewController:contentController animated:TRUE completion:Nil];
+}
+
 
 -(void) customizeChartDisplayProperties:(KPIBarChart*) theChart {
     theChart.yTitleDisplacement = -5.0f;

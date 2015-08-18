@@ -99,6 +99,11 @@
     return thePopover;
 }
 
+-(UIActivityViewController*) getActivityViewController {
+    return [self buildActivity];
+}
+
+
 - (UIActivityViewController*) buildActivity {
     NSMutableArray* activityItems = [[NSMutableArray alloc] init];
     

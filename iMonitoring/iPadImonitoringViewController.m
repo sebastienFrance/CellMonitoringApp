@@ -80,7 +80,6 @@
                                     item:sender];
 }
 
-
 - (IBAction)optionsButtonPressed:(UIBarButtonItem *)sender {
     UINavigationController* navc = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverMapConfigurationControllerId"];
 
@@ -129,7 +128,6 @@
             [self.mapConfUpdate updateConfiguration];
         }
     }
-
 }
 
 - (void) dismissDashboardView {
@@ -157,7 +155,6 @@
     [super viewDidLoad];
 }
 
-
 -(id<configurationUpdated>) initializeMapConfigurationUpdate:(id<MapModeItf>) theMapMode
                                                      refresh:(id<MapRefreshItf>) theMapRefresh
                                                          map:(MKMapView*) theMapView {
@@ -174,8 +171,6 @@
     }
     return self;
 }
-
-
 
 #pragma mark - Override
 
@@ -216,7 +211,6 @@
     return self;
 }
 
-
 #pragma mark - Others
 
 -(void) showDetailsKPIs:(CellKPIsDataSource*) cellDatasource {
@@ -226,7 +220,6 @@
 -(void) showDashboard:(WorstKPIDataSource *)worstKPIs {
     [self performSegueWithIdentifier:@"openDashboard" sender:worstKPIs];
 }
-
 
 
 #pragma mark - Segue
