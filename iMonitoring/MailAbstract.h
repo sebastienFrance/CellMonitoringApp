@@ -21,7 +21,6 @@
 - (void) setImagesForPDF:(NSArray*) images title:(NSString*) PDFTitle;
 
 - (void) presentActivityViewFrom:(UIViewController*) currentView;
-- (UIPopoverController*) presentActivityViewFromPopover:(UIBarButtonItem*) button;
 -(UIActivityViewController*) getActivityViewController;
 
 // Private methods

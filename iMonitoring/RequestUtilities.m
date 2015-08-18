@@ -494,7 +494,7 @@
     NSString* url = [NSString stringWithFormat:@"http://where.yahooapis.com/geocode?appid=yourappid&flags=JT&gflags=R&location=%f+%f",
                      coordinate.latitude,
                      coordinate.longitude];
-    url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     id<HTMLRequest> request = [RequestURLUtilities instantiateRequest:delegate clientId:theClientId];
     [request sendBasicRequest:url];

@@ -88,17 +88,6 @@
     [currentView presentViewController:activityViewController animated:YES completion:nil];
 }
 
-- (UIPopoverController*) presentActivityViewFromPopover:(UIBarButtonItem*) button {
-    
-    UIActivityViewController* activityViewController = [self buildActivity];
-    
-    UIPopoverController* thePopover = [[UIPopoverController alloc]
-                       initWithContentViewController:activityViewController];
-    [thePopover presentPopoverFromBarButtonItem:button permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-    
-    return thePopover;
-}
-
 -(UIActivityViewController*) getActivityViewController {
     return [self buildActivity];
 }

@@ -36,8 +36,8 @@
 @interface iPadDashboardViewController()
 
 @property(nonatomic) DCMonitoringPeriodView currentMonitoringPeriod;
-@property(nonatomic) UIPopoverController* theScopePopover;
-@property(nonatomic) UIPopoverController* theActivityPopover;
+
+@property(nonatomic) UIViewController* currentPopover;
 
 @property(nonatomic) Boolean pageControlUsed;
 
@@ -182,31 +182,37 @@
 }
 
 - (IBAction)scopeButtonPressed:(UIBarButtonItem *)sender {
-    if (self.theScopePopover != Nil) {
-        [self dismissAllPopovers];
-    } else {
-        [self dismissAllPopovers];
-
-        iPadDashboardScopeViewController *viewControllerForPopover = [self.storyboard instantiateViewControllerWithIdentifier:@"DashboardScopeViewControllerId"];
-        [viewControllerForPopover initialize:self];
-        self.theScopePopover = [[UIPopoverController alloc] initWithContentViewController:viewControllerForPopover];
-        self.theScopePopover.delegate = self;
-        [self.theScopePopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
-    }
-    
+    iPadDashboardScopeViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DashboardScopeViewControllerId"];
+    [viewController initialize:self];
+    [self presentViewControllerInPopover:viewController item:sender];
 }
+
+#pragma mark - Popover Mgt
 
 - (void) dismissAllPopovers{
-    if (self.theScopePopover != Nil) {
-        [self.theScopePopover dismissPopoverAnimated:TRUE];
-        self.theScopePopover = Nil;
-    } else if (self.theActivityPopover != Nil) {
-        [self.theActivityPopover dismissPopoverAnimated:TRUE];
-        self.theActivityPopover = Nil;
+    if (self.currentPopover != Nil) {
+        [self.currentPopover dismissViewControllerAnimated:TRUE completion:Nil];
+        self.currentPopover = Nil;
     }
 }
 
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+
+-(void) presentViewControllerInPopover:(UIViewController*) contentController item:(UIBarButtonItem *)theItem {
+    [self dismissAllPopovers];
+
+    self.currentPopover = contentController;
+
+    contentController.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController* popPC = contentController.popoverPresentationController;
+    popPC.barButtonItem = theItem;
+    popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popPC.delegate = self;
+    [self presentViewController:contentController animated:TRUE completion:Nil];
+}
+
+#pragma mark - UIPopoverPresentationControllerDelegate protocol
+
+- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController * _Nonnull)popoverPresentationController {
     [self dismissAllPopovers];
 }
 
@@ -415,10 +421,6 @@
 #pragma mark - Mail
 - (IBAction)sendMail:(UIBarButtonItem *)sender {
     
-    if (self.theActivityPopover != Nil) {
-        [self dismissAllPopovers];
-    }
-    
     DashboardScopeId defaultScope = [UserPreferences sharedInstance].ZoneDashboardDefaultScope;
     
     MailAbstract* mail;
@@ -443,7 +445,7 @@
         }
     }
     
-    self.theActivityPopover = [mail presentActivityViewFromPopover:sender];
+    [self presentViewControllerInPopover:[mail getActivityViewController] item:sender];
 }
 
 #pragma mark - Segue

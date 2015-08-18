@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *theTable;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *theSwitch;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *theActivityButton; // only for iPad
-@property (nonatomic) UIPopoverController* theActivityPopover;
 
 @property (nonatomic) UIRefreshControl* refreshControl;
 @property (nonatomic, readonly) NSArray* cellAlarms;
@@ -105,10 +104,18 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [mailbody presentActivityViewFrom:self];
     } else {
-        self.theActivityPopover = [mailbody presentActivityViewFromPopover:self.theActivityButton];
+        UIViewController* viewController = [mailbody getActivityViewController];
+        [self presentViewControllerInPopover:viewController item:self.theActivityButton];
     }
 }
 
+-(void) presentViewControllerInPopover:(UIViewController*) contentController item:(UIBarButtonItem *)theItem {
+    contentController.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController* popPC = contentController.popoverPresentationController;
+    popPC.barButtonItem = theItem;
+    popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    [self presentViewController:contentController animated:TRUE completion:Nil];
+}
 
 - (IBAction)switchButtonPushed:(UISegmentedControl *)sender {
     [self.theTable reloadData];

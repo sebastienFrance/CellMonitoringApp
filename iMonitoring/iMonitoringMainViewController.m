@@ -51,7 +51,7 @@
 
 - (void)viewDidLoad
 {
-   [super viewDidLoad];
+    [super viewDidLoad];
     self.mapNavigationController = (UINavigationController *)self.revealViewController.frontViewController;
 
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];

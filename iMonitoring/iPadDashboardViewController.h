@@ -14,7 +14,7 @@
 #import "ZoneKPIDataSource.h"
 
 
-@interface iPadDashboardViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, CellKPIsLoadingItf, UIPopoverControllerDelegate>
+@interface iPadDashboardViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, CellKPIsLoadingItf, UIPopoverPresentationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIPageControl *thePageControl;
 @property (weak, nonatomic) IBOutlet UICollectionView *theCollectionView;
