@@ -10,7 +10,6 @@
 		BE008A6A15C9BDE500DD3F19 /* ConfigViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = BE008A6915C9BDE500DD3F19 /* ConfigViewData.m */; };
 		BE0397C01855041C00CDF354 /* PasswordUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0397BF1855041C00CDF354 /* PasswordUtility.m */; };
 		BE0397C3185505C700CDF354 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0397C2185505C700CDF354 /* ConnectionManager.m */; };
-		BE0397C4185507C300CDF354 /* BasicHTMLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE942F817C1245E009787AD /* BasicHTMLRequest.m */; };
 		BE0397C5185507D700CDF354 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0397C2185505C700CDF354 /* ConnectionManager.m */; };
 		BE0397C6185507DC00CDF354 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBB69F7155BAE47001A5D8A /* Utility.m */; };
 		BE0397C71855082C00CDF354 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE942F517C00D4F009787AD /* SSZipArchive.m */; };
@@ -353,7 +352,6 @@
 		BEE942F217C00D44009787AD /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = BEE942EC17C00D44009787AD /* unzip.c */; };
 		BEE942F317C00D44009787AD /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = BEE942EE17C00D44009787AD /* zip.c */; };
 		BEE942F617C00D4F009787AD /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE942F517C00D4F009787AD /* SSZipArchive.m */; };
-		BEE942F917C1245E009787AD /* BasicHTMLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE942F817C1245E009787AD /* BasicHTMLRequest.m */; };
 		BEEE3A8915F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */; };
 		BEF0A75315E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0A75215E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m */; };
 		BEF0D9AD15D83A880080E31A /* CellKPIsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0D9AC15D83A880080E31A /* CellKPIsDataSource.m */; };
@@ -964,8 +962,6 @@
 		BEE942EF17C00D44009787AD /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		BEE942F417C00D4F009787AD /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		BEE942F517C00D4F009787AD /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
-		BEE942F717C1245E009787AD /* BasicHTMLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicHTMLRequest.h; sourceTree = "<group>"; };
-		BEE942F817C1245E009787AD /* BasicHTMLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicHTMLRequest.m; sourceTree = "<group>"; };
 		BEE942FD17C14F8D009787AD /* HTMLRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLRequest.h; sourceTree = "<group>"; };
 		BEEE3A8715F9DC7C00CAA6D4 /* iPadSearchMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadSearchMenuViewController.h; sourceTree = "<group>"; };
 		BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadSearchMenuViewController.m; sourceTree = "<group>"; };
@@ -1259,7 +1255,6 @@
 				BE06ADDE190D309A0026E1F1 /* RequestURLUtilities.m */,
 				BED4A7D41AAB3B800086BD70 /* RequestParameters.h */,
 				BED4A7D51AAB3B800086BD70 /* RequestParameters.m */,
-				BEB2D9DE190D689A00918F69 /* URLConnection */,
 				BEB2D9DD190D688600918F69 /* Session */,
 			);
 			name = HTTPRequests;
@@ -2081,15 +2076,6 @@
 			name = Session;
 			sourceTree = "<group>";
 		};
-		BEB2D9DE190D689A00918F69 /* URLConnection */ = {
-			isa = PBXGroup;
-			children = (
-				BEE942F717C1245E009787AD /* BasicHTMLRequest.h */,
-				BEE942F817C1245E009787AD /* BasicHTMLRequest.m */,
-			);
-			name = URLConnection;
-			sourceTree = "<group>";
-		};
 		BEB4678D19B25AC000D4F808 /* TechnoFiltering */ = {
 			isa = PBXGroup;
 			children = (
@@ -2873,7 +2859,6 @@
 				BE94C4B61620927E00554CBC /* MailZoneKPIDetails.m in Sources */,
 				BE0F558C17D7CBEA0050D178 /* CellAlarmsViewController.m in Sources */,
 				BE694254162176FD002FB55B /* MailAbstract.m in Sources */,
-				BEE942F917C1245E009787AD /* BasicHTMLRequest.m in Sources */,
 				BE9A75F816405F15005F2B2B /* NeighborsLocateViewCell.m in Sources */,
 				BECA020F17E0FB5B0027A6BD /* MailCellAlarms.m in Sources */,
 				BE9D6922164FC9C4007C68C5 /* SearchAddressViewCell.m in Sources */,
@@ -2975,7 +2960,6 @@
 				BEBB34A9187F3DD300F22720 /* ExtendedTableView.m in Sources */,
 				BEF2337E185E0EA10071402F /* NeighborsDataSource.m in Sources */,
 				BEB0930718B6A53600A40FEE /* NavigationViewCell.m in Sources */,
-				BE0397C4185507C300CDF354 /* BasicHTMLRequest.m in Sources */,
 				BE77ED611888843D000BFE33 /* CellKPIDatasource.m in Sources */,
 				BEBB58FC1877566E00E6EFD4 /* DashboardWorstCellWindowController.m in Sources */,
 				BE0397C91855090E00CDF354 /* ioapi.c in Sources */,
