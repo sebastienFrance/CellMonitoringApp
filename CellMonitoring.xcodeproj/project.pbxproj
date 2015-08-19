@@ -355,6 +355,9 @@
 		BEEE3A8915F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */; };
 		BEF0A75315E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0A75215E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m */; };
 		BEF0D9AD15D83A880080E31A /* CellKPIsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0D9AC15D83A880080E31A /* CellKPIsDataSource.m */; };
+		BEF0FF121B8515AB00B15CD8 /* UserPreferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */; };
+		BEF0FF141B85172400B15CD8 /* UsersManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */; };
+		BEF0FF161B85187400B15CD8 /* MapFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF0FF151B85187400B15CD8 /* MapFilter.storyboard */; };
 		BEF2337D185E0E9D0071402F /* cellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3901C715CD127900F2305C /* cellDataSource.m */; };
 		BEF2337E185E0EA10071402F /* NeighborsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BE13CEAB15F2735500587EE0 /* NeighborsDataSource.m */; };
 		BEF2337F185E113D0071402F /* VisitedCells.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8145A71730417800CB16E0 /* VisitedCells.m */; };
@@ -969,6 +972,9 @@
 		BEF0A75215E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoneKPIsAverageViewCell.m; sourceTree = "<group>"; };
 		BEF0D9AB15D83A880080E31A /* CellKPIsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellKPIsDataSource.h; sourceTree = "<group>"; };
 		BEF0D9AC15D83A880080E31A /* CellKPIsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellKPIsDataSource.m; sourceTree = "<group>"; };
+		BEF0FF111B8515AB00B15CD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/UserPreferences.storyboard; sourceTree = "<group>"; };
+		BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UsersManagement.storyboard; sourceTree = "<group>"; };
+		BEF0FF151B85187400B15CD8 /* MapFilter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapFilter.storyboard; sourceTree = "<group>"; };
 		BEF23388185E26110071402F /* MapModeItf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapModeItf.h; sourceTree = "<group>"; };
 		BEF653DF179D8E0700D36CAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BEF6794C1B77EC3400073C66 /* CellMonitoringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CellMonitoringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1209,6 +1215,9 @@
 			isa = PBXGroup;
 			children = (
 				BE09A5D21517CA1B00A12C4B /* MainStoryboard.storyboard */,
+				BEF0FF151B85187400B15CD8 /* MapFilter.storyboard */,
+				BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */,
+				BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */,
 				BEDF753718D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard */,
 				BE63AA3018154906002D7E09 /* UserManagement */,
 				BE8B80CB15658245008379C4 /* Locate */,
@@ -2615,8 +2624,11 @@
 			files = (
 				BE09A5C81517CA1B00A12C4B /* InfoPlist.strings in Resources */,
 				BEDF753818D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard in Resources */,
+				BEF0FF121B8515AB00B15CD8 /* UserPreferences.storyboard in Resources */,
 				BE09A5D41517CA1B00A12C4B /* MainStoryboard.storyboard in Resources */,
 				BE339E02179D813A00B199E3 /* Images.xcassets in Resources */,
+				BEF0FF161B85187400B15CD8 /* MapFilter.storyboard in Resources */,
+				BEF0FF141B85172400B15CD8 /* UsersManagement.storyboard in Resources */,
 				BE821BA0155FD58D00057C60 /* LTE_logo.jpg in Resources */,
 				BE821BA3155FD59B00057C60 /* logo_3g_150.jpg in Resources */,
 				BE5E60831906BDCB00805423 /* CellMonitoringMac-Info.plist in Resources */,
@@ -3100,6 +3112,14 @@
 				BE53BBF3190856260041FB20 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEF0FF111B8515AB00B15CD8 /* en */,
+			);
+			name = UserPreferences.storyboard;
 			sourceTree = "<group>";
 		};
 		BEFCDD9316C6BDC600B72A04 /* InfoPlist.strings */ = {
