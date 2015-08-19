@@ -44,19 +44,25 @@
                     <toolbarItems>
                         <barButtonItem title="About" id="gNs-AZ-gpB">
                             <connections>
-                                <action selector="aboutButtonPressed:" destination="2" id="n87-Gv-9OL"/>
+                                <segue destination="bdG-vY-6BZ" kind="popoverPresentation" identifier="openAboutPopoverId" popoverAnchorBarButtonItem="gNs-AZ-gpB" id="6CL-6s-Il3">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                         <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="nnt-ue-Wal"/>
                         <barButtonItem title="Preferences" id="Rvj-Me-Hd8">
                             <connections>
-                                <action selector="preferencesButtonPressed:" destination="2" id="LQz-3f-xbr"/>
+                                <segue destination="Ich-Y2-Odn" kind="popoverPresentation" identifier="openPreferencesPopoverId" popoverAnchorBarButtonItem="Rvj-Me-Hd8" id="aAR-Oo-Efn">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Vvl-Df-qom"/>
                         <barButtonItem title="User Mgt" id="P4Z-ho-ukm">
                             <connections>
-                                <action selector="userMgtButtonPressed:" destination="2" id="fe9-zw-oCM"/>
+                                <segue destination="aEU-Qj-iOe" kind="popoverPresentation" identifier="openUserMgtPopoverId" popoverAnchorBarButtonItem="P4Z-ho-ukm" id="F8O-Xb-lp0">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="yJj-gJ-gcS"/>
@@ -74,13 +80,17 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="A2J-ku-9BE"/>
                         <barButtonItem systemItem="bookmarks" id="4DN-3q-MBy">
                             <connections>
-                                <action selector="bookmarkButtonPressed:" destination="2" id="zO3-u9-r4f"/>
+                                <segue destination="8Zh-mC-awP" kind="popoverPresentation" identifier="openBookmarkPopoverId" popoverAnchorBarButtonItem="4DN-3q-MBy" id="aCw-Up-AVK">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                         <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="vGQ-5z-26d"/>
                         <barButtonItem systemItem="search" id="YPf-YF-4Kk">
                             <connections>
-                                <action selector="searchButtonPressed:" destination="2" id="6Ba-wE-ne3"/>
+                                <segue destination="clX-j6-m9B" kind="popoverPresentation" identifier="openSearchPopoverId" popoverAnchorBarButtonItem="YPf-YF-4Kk" id="tRX-G7-N3C">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                         <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="HDo-FQ-Oh5"/>
@@ -92,7 +102,9 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="BHa-XF-ewC"/>
                         <barButtonItem title="Filter" id="0Fy-pX-lfC">
                             <connections>
-                                <action selector="optionsButtonPressed:" destination="2" id="x8V-KO-5ap"/>
+                                <segue destination="rqX-QX-HCE" kind="popoverPresentation" identifier="openFilterMapId" popoverAnchorBarButtonItem="0Fy-pX-lfC" id="zbp-Bh-TGN">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -1319,7 +1331,7 @@ To restart a session you must stop and restart the App.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qz9-cH-iNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3312" y="1814"/>
+            <point key="canvasLocation" x="3187" y="1804"/>
         </scene>
         <!--Preferences-->
         <scene sceneID="cha-KL-rSf">
@@ -1872,11 +1884,11 @@ To restart a session you must stop and restart the App.</string>
                         <viewControllerLayoutGuide type="bottom" id="4s0-zG-8Mi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" placeholderIntrinsicWidth="360" placeholderIntrinsicHeight="444" id="3aM-0j-uiH">
-                        <rect key="frame" x="0.0" y="44" width="320" height="515"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="224"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QZ7-hd-ZBX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="515"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -2091,7 +2103,7 @@ To restart a session you must stop and restart the App.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAY-vT-cLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-384" y="-1672"/>
+            <point key="canvasLocation" x="856" y="-8"/>
         </scene>
         <!--Options-->
         <scene sceneID="I9c-tP-pe0">
@@ -3830,7 +3842,7 @@ To restart a session you must stop and restart the App.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vln-bB-oEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1789" y="2579"/>
+            <point key="canvasLocation" x="1625" y="2609"/>
         </scene>
         <!--Cell Bookmarks-->
         <scene sceneID="Ddc-du-VWA">
@@ -4172,7 +4184,7 @@ To restart a session you must stop and restart the App.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxa-hn-9dI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-778" y="2671"/>
+            <point key="canvasLocation" x="-945" y="2650"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fSC-FV-SUq">
@@ -4763,7 +4775,7 @@ To restart a session you must stop and restart the App.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trJ-uz-odq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="181" y="-929"/>
+            <point key="canvasLocation" x="503" y="-733"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="wEe-CO-NCW">
@@ -6023,7 +6035,7 @@ To restart a session you must stop and restart the App.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Pj-Tb-3N6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2576" y="4062"/>
+            <point key="canvasLocation" x="2354" y="4046"/>
         </scene>
         <!--Users-->
         <scene sceneID="Fl1-Bq-CEn">
@@ -7609,10 +7621,10 @@ To restart a session you must stop and restart the App.</string>
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="brv-bN-Xrl"/>
-        <segue reference="l7D-pS-mWF"/>
-        <segue reference="TLB-1P-lKz"/>
+        <segue reference="Vwh-qX-X8u"/>
         <segue reference="pQw-Hl-cZv"/>
-        <segue reference="E85-Pc-gVI"/>
+        <segue reference="Mtu-Fh-ZKS"/>
+        <segue reference="TgM-5l-Ohc"/>
+        <segue reference="brv-bN-Xrl"/>
     </inferredMetricsTieBreakers>
 </document>

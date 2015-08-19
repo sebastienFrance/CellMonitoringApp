@@ -59,59 +59,12 @@
 
 #pragma mark - Popover Mgt
 
-- (IBAction)searchButtonPressed:(UIBarButtonItem *)sender {
-    [self presentViewControllerInPopover:[self.storyboard instantiateViewControllerWithIdentifier:@"PopoverSearchControllerId"]
-                                    item:sender];
-}
 
-- (IBAction)bookmarkButtonPressed:(UIBarButtonItem *)sender {
-    [self presentViewControllerInPopover:[self.storyboard instantiateViewControllerWithIdentifier:@"PopoverBookmarkControllerId"]
-                                    item:sender];
-}
 - (IBAction)dashboardButtonPressed:(UIBarButtonItem *)sender {
     if (self.alertViewForWorstCell == Nil) {
         self.alertViewForWorstCell = [[WorstViewSelection alloc] init];
         [self.alertViewForWorstCell openView:sender viewController:self cancelButton:FALSE];
     }
-}
-
-- (IBAction)preferencesButtonPressed:(UIBarButtonItem *)sender {
-    [self presentViewControllerInPopover:[self.storyboard instantiateViewControllerWithIdentifier:@"PopoverPreferencesControllerId"]
-                                    item:sender];
-}
-
-- (IBAction)optionsButtonPressed:(UIBarButtonItem *)sender {
-    UINavigationController* navc = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverMapConfigurationControllerId"];
-
-    // Get the MapConfigurationViewController that is at the top of the NavigationController
-    MapFilteringViewController* controller = (MapFilteringViewController*)navc.topViewController;
-    [controller initFromPopover:self.mapConfUpdate];
-
-    // 
-    self.isMapOptionsPopover = TRUE;
-    [self presentViewControllerInPopover:navc item:sender];
-}
-
-- (IBAction)aboutButtonPressed:(UIBarButtonItem *)sender {
-    [self presentViewControllerInPopover:[self.storyboard instantiateViewControllerWithIdentifier:@"iPadAboutControllerId"]
-                                    item:sender];
-}
-- (IBAction)userMgtButtonPressed:(UIBarButtonItem *)sender {
-    [self presentViewControllerInPopover:[self.storyboard instantiateViewControllerWithIdentifier:@"PopoverUserMgtId"]
-                                    item:sender];
-}
-
--(void) presentViewControllerInPopover:(UIViewController*) contentController item:(UIBarButtonItem *)theItem {
-    [self dismissAllPopovers];
-
-    self.currentPopover = contentController;
-
-    contentController.modalPresentationStyle = UIModalPresentationPopover;
-    UIPopoverPresentationController* popPC = contentController.popoverPresentationController;
-    popPC.barButtonItem = theItem;
-    popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
-    popPC.delegate = self;
-    [self presentViewController:contentController animated:TRUE completion:Nil];
 }
 
 - (void) dismissAllPopovers{
@@ -236,7 +189,28 @@
         MapInformationViewController* controller = segue.destinationViewController;
         id<AroundMeViewItf> aroundMe = [DataCenter sharedInstance].aroundMeItf;
         controller.listOfCells = aroundMe.datasource.filteredCells;
+    } else if ([segue.identifier isEqualToString:@"openPreferencesPopoverId"] ||
+               [segue.identifier isEqualToString:@"openBookmarkPopoverId"] ||
+               [segue.identifier isEqualToString:@"openAboutPopoverId"] ||
+               [segue.identifier isEqualToString:@"openUserMgtPopoverId"] ||
+               [segue.identifier isEqualToString:@"openSearchPopoverId"]) {
+        [self preparePopover:segue.destinationViewController];
+    } else if ([segue.identifier isEqualToString:@"openFilterMapId"]) {
+        // Get the MapConfigurationViewController that is at the top of the NavigationController
+        UINavigationController* navc = segue.destinationViewController;
+        MapFilteringViewController* controller = (MapFilteringViewController*)navc.topViewController;
+        [controller initFromPopover:self.mapConfUpdate];
+        self.isMapOptionsPopover = TRUE;
+
+        [self preparePopover:segue.destinationViewController];
     }
+}
+
+-(void) preparePopover:(UIViewController*) contentController {
+    [self dismissAllPopovers];
+    self.currentPopover = contentController;
+    UIPopoverPresentationController* popPC = self.currentPopover.popoverPresentationController;
+    popPC.delegate = self;
 }
 
 @end
