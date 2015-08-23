@@ -40,15 +40,6 @@
     }
 }
 
--(void) startHelpWithoutLogin:(UIViewController*) controller {
-    if ([UserPreferences sharedInstance].startWithoutLicenseHelp) {
-        UIAlertController* alert = [Utility getSimpleAlertView:@"Information"
-                                                       message:@"Try to locate cells in NYC, SF, Washington, Seattle, Paris, Lyon...\n\nYour session will expires in 5mn!"
-                                                   actionTitle:@"OK"];
-        [controller presentViewController:alert animated:YES completion:nil];
-        [UserPreferences sharedInstance].startWithoutLicenseHelp = FALSE;
-    }
-}
 
 -(void) iPadHelpForDashboardView:(UIViewController*) controller {
     if ([UserPreferences sharedInstance].iPadDashboardHelp) {

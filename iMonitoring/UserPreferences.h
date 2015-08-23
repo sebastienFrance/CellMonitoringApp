@@ -79,7 +79,6 @@
 
 #pragma mark - Help options
 @property (nonatomic) Boolean startHelp;
-@property (nonatomic) Boolean startWithoutLicenseHelp;
 @property (nonatomic) Boolean iPadDashboardHelp;
 @property (nonatomic) Boolean iPadCellDashboardHelp;
 @property (nonatomic) Boolean helpForGenericGraphicKPI;

@@ -138,15 +138,6 @@
     self.title = [NSString stringWithFormat:@"Cell %@ / %@", _theCell.id ,viewScope];
 }
 
-#pragma mark - Button callback
-- (IBAction)viewButtonPressed:(UIBarButtonItem *)sender {
-    iPadCellDetailsAndKPIsViewTableViewController *viewControllerForPopover =
-    [self.storyboard instantiateViewControllerWithIdentifier:@"iPadCellDetailsAndKPIsViewTableViewControllerId"];
-    [viewControllerForPopover initialize:self];
-
-    [self presentViewControllerInPopover:viewControllerForPopover
-                                    item:sender];
-}
 
 #pragma mark - Popover Mgt
 
@@ -211,16 +202,6 @@
     modal.theCell = _theCell;
 
     [self presentViewControllerInPopover:viewController item:sender];
-}
-
-
-- (IBAction)cellInfosButtonPushed:(UIBarButtonItem *)sender {
-    UINavigationController *detailsMap = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverCellMenuId"];
-    
-    iPadCellDetailsPopoverMenuViewController* topView = (iPadCellDetailsPopoverMenuViewController* )detailsMap.topViewController;
-    
-    [topView initializeWithSimpleCellInfo:_theCell];
-    [self presentViewControllerInPopover:detailsMap item:sender];
 }
 
 
@@ -426,9 +407,27 @@
         self.currentMonitoringPeriod = [UserPreferences sharedInstance].CellDashboardDefaultViewScope;
         NSIndexPath* index = (NSIndexPath*) sender;
         [modal initialize:self.theDatasource initialMonitoringPeriod:[UserPreferences sharedInstance].CellDashboardDefaultViewScope initialIndex:index];
+    } else if ([segue.identifier isEqualToString:@"openViewScopeKPIsPopoverId"]) {
+        iPadCellDetailsAndKPIsViewTableViewController *viewControllerForPopover =segue.destinationViewController;
+        [viewControllerForPopover initialize:self];
+
+        [self preparePopover:segue.destinationViewController];
+    } else if ([segue.identifier isEqualToString:@"openCellInfoPopoverId"]) {
+        UINavigationController *detailsMap = segue.destinationViewController;
+
+        iPadCellDetailsPopoverMenuViewController* topView = (iPadCellDetailsPopoverMenuViewController* )detailsMap.topViewController;
+
+        [topView initializeWithSimpleCellInfo:_theCell];
+        [self preparePopover:segue.destinationViewController];
     }
 }
 
+-(void) preparePopover:(UIViewController*) contentController {
+    [self dismissAllPopovers];
+    self.currentPopover = contentController;
+    UIPopoverPresentationController* popPC = self.currentPopover.popoverPresentationController;
+    popPC.delegate = self;
+}
 
 
 @end

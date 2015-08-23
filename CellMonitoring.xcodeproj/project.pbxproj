@@ -84,6 +84,7 @@
 		BE2BBEC416E23BF800D66E8D /* MailCellDetailedKPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2BBEC316E23BF800D66E8D /* MailCellDetailedKPI.m */; };
 		BE2BCA4D1544728E00D0AA64 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2BCA4C1544728E00D0AA64 /* CoreLocation.framework */; };
 		BE31D71D15E4019B008864E8 /* ZoneKPIsAverageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE31D71C15E4019B008864E8 /* ZoneKPIsAverageViewController.m */; };
+		BE31F4881B876BB600404C19 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE31F4861B876BB600404C19 /* UserLogin.storyboard */; };
 		BE339E02179D813A00B199E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE339E01179D813A00B199E3 /* Images.xcassets */; };
 		BE33E9BF154D157400B3FC0E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE33E9BE154D157400B3FC0E /* MessageUI.framework */; };
 		BE34D1811595AB92001E864D /* DetailsWorstKPIViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE34D1801595AB92001E864D /* DetailsWorstKPIViewCell.m */; };
@@ -202,6 +203,7 @@
 		BE8D17B015666A3D004A00D0 /* CellsOnCoverageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D17AF15666A3D004A00D0 /* CellsOnCoverageViewController.m */; };
 		BE8D17B31566DFAD004A00D0 /* CellDetailsAndKPIsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D17B21566DFAD004A00D0 /* CellDetailsAndKPIsViewController.m */; };
 		BE8D98CC15E573C800A99DC3 /* ZoneKPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D98CB15E573C800A99DC3 /* ZoneKPI.m */; };
+		BE8E25B71B8A443C004DD887 /* MapFilterOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8E25B61B8A443C004DD887 /* MapFilterOptions.storyboard */; };
 		BE8EB26D1A928F0300DDBE96 /* MailCellNeighborsRelationsWithAllHistoricalDiffs.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EB26C1A928F0300DDBE96 /* MailCellNeighborsRelationsWithAllHistoricalDiffs.m */; };
 		BE8EB3DE15DF8B2D0072ED98 /* MailCellKPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EB3DD15DF8B2D0072ED98 /* MailCellKPI.m */; };
 		BE8F59D915DEDB56002C8827 /* iPadCellDetailsAndKPIsViewControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8F59D815DEDB56002C8827 /* iPadCellDetailsAndKPIsViewControllerView.m */; };
@@ -294,7 +296,6 @@
 		BEBBF47718567BEF0046E023 /* BasicTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBBF46C18566A650046E023 /* BasicTypes.m */; };
 		BEBCA88118BD248600C2BA54 /* NavigationViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBCA87A18BD232100C2BA54 /* NavigationViewCell.m */; };
 		BEBD67671857A4D800A38958 /* UserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A0F6816FD9C90007D088E /* UserPreferences.m */; };
-		BEBD7C5418D4A96F00CD705A /* EndDemoSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD7C5318D4A96F00CD705A /* EndDemoSessionViewController.m */; };
 		BEBD7C5B18D4B25F00CD705A /* RequestLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD7C5A18D4B25F00CD705A /* RequestLicense.m */; };
 		BEBF96F1185A5BCB00543F4D /* MainMapWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBF96F0185A5BCB00543F4D /* MainMapWindowController.m */; };
 		BEC006031A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC006021A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.m */; };
@@ -357,7 +358,6 @@
 		BEF0D9AD15D83A880080E31A /* CellKPIsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0D9AC15D83A880080E31A /* CellKPIsDataSource.m */; };
 		BEF0FF121B8515AB00B15CD8 /* UserPreferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */; };
 		BEF0FF141B85172400B15CD8 /* UsersManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */; };
-		BEF0FF161B85187400B15CD8 /* MapFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF0FF151B85187400B15CD8 /* MapFilter.storyboard */; };
 		BEF2337D185E0E9D0071402F /* cellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3901C715CD127900F2305C /* cellDataSource.m */; };
 		BEF2337E185E0EA10071402F /* NeighborsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BE13CEAB15F2735500587EE0 /* NeighborsDataSource.m */; };
 		BEF2337F185E113D0071402F /* VisitedCells.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8145A71730417800CB16E0 /* VisitedCells.m */; };
@@ -535,6 +535,8 @@
 		BE2BCA4C1544728E00D0AA64 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BE31D71B15E4019B008864E8 /* ZoneKPIsAverageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoneKPIsAverageViewController.h; sourceTree = "<group>"; };
 		BE31D71C15E4019B008864E8 /* ZoneKPIsAverageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoneKPIsAverageViewController.m; sourceTree = "<group>"; };
+		BE31F4871B876BB600404C19 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/UserLogin.storyboard; sourceTree = "<group>"; };
+		BE31F4891B87709500404C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserLogin.storyboard; sourceTree = "<group>"; };
 		BE339E01179D813A00B199E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE33E9BE154D157400B3FC0E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		BE34D17F1595AB92001E864D /* DetailsWorstKPIViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsWorstKPIViewCell.h; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 		BE8D17B21566DFAD004A00D0 /* CellDetailsAndKPIsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellDetailsAndKPIsViewController.m; sourceTree = "<group>"; };
 		BE8D98CA15E573C800A99DC3 /* ZoneKPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoneKPI.h; sourceTree = "<group>"; };
 		BE8D98CB15E573C800A99DC3 /* ZoneKPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoneKPI.m; sourceTree = "<group>"; };
+		BE8E25B61B8A443C004DD887 /* MapFilterOptions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapFilterOptions.storyboard; sourceTree = "<group>"; };
 		BE8EB26B1A928F0300DDBE96 /* MailCellNeighborsRelationsWithAllHistoricalDiffs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailCellNeighborsRelationsWithAllHistoricalDiffs.h; sourceTree = "<group>"; };
 		BE8EB26C1A928F0300DDBE96 /* MailCellNeighborsRelationsWithAllHistoricalDiffs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCellNeighborsRelationsWithAllHistoricalDiffs.m; sourceTree = "<group>"; };
 		BE8EB3DC15DF8B2D0072ED98 /* MailCellKPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailCellKPI.h; sourceTree = "<group>"; };
@@ -735,6 +738,7 @@
 		BE8F59D715DEDB56002C8827 /* iPadCellDetailsAndKPIsViewControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadCellDetailsAndKPIsViewControllerView.h; sourceTree = "<group>"; };
 		BE8F59D815DEDB56002C8827 /* iPadCellDetailsAndKPIsViewControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadCellDetailsAndKPIsViewControllerView.m; sourceTree = "<group>"; };
 		BE90D5F115CE8188004519E9 /* AroundMeViewItf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AroundMeViewItf.h; sourceTree = "<group>"; };
+		BE92A8391B866DF700F59F3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserPreferences.storyboard; sourceTree = "<group>"; };
 		BE93ECC11578037E00BEF8B8 /* MarkedRegionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkedRegionsViewController.h; sourceTree = "<group>"; };
 		BE93ECC21578037E00BEF8B8 /* MarkedRegionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkedRegionsViewController.m; sourceTree = "<group>"; };
 		BE93ECC41578052100BEF8B8 /* MarkedRegionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkedRegionTableViewCell.h; sourceTree = "<group>"; };
@@ -864,8 +868,6 @@
 		BEBBF474185673A20046E023 /* KPIDictionaryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPIDictionaryManager.m; sourceTree = "<group>"; };
 		BEBCA87918BD232100C2BA54 /* NavigationViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewCell.h; sourceTree = "<group>"; };
 		BEBCA87A18BD232100C2BA54 /* NavigationViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewCell.m; sourceTree = "<group>"; };
-		BEBD7C5218D4A96F00CD705A /* EndDemoSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndDemoSessionViewController.h; sourceTree = "<group>"; };
-		BEBD7C5318D4A96F00CD705A /* EndDemoSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndDemoSessionViewController.m; sourceTree = "<group>"; };
 		BEBD7C5918D4B25F00CD705A /* RequestLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestLicense.h; sourceTree = "<group>"; };
 		BEBD7C5A18D4B25F00CD705A /* RequestLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestLicense.m; sourceTree = "<group>"; };
 		BEBF96EF185A5BCB00543F4D /* MainMapWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMapWindowController.h; sourceTree = "<group>"; };
@@ -974,7 +976,6 @@
 		BEF0D9AC15D83A880080E31A /* CellKPIsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellKPIsDataSource.m; sourceTree = "<group>"; };
 		BEF0FF111B8515AB00B15CD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/UserPreferences.storyboard; sourceTree = "<group>"; };
 		BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UsersManagement.storyboard; sourceTree = "<group>"; };
-		BEF0FF151B85187400B15CD8 /* MapFilter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapFilter.storyboard; sourceTree = "<group>"; };
 		BEF23388185E26110071402F /* MapModeItf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapModeItf.h; sourceTree = "<group>"; };
 		BEF653DF179D8E0700D36CAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BEF6794C1B77EC3400073C66 /* CellMonitoringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CellMonitoringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1215,10 +1216,11 @@
 			isa = PBXGroup;
 			children = (
 				BE09A5D21517CA1B00A12C4B /* MainStoryboard.storyboard */,
-				BEF0FF151B85187400B15CD8 /* MapFilter.storyboard */,
+				BE31F4861B876BB600404C19 /* UserLogin.storyboard */,
 				BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */,
 				BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */,
 				BEDF753718D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard */,
+				BE8E25B61B8A443C004DD887 /* MapFilterOptions.storyboard */,
 				BE63AA3018154906002D7E09 /* UserManagement */,
 				BE8B80CB15658245008379C4 /* Locate */,
 				BE8A266615610BAB00EF61A1 /* AroundMe */,
@@ -1908,8 +1910,6 @@
 				BE14D0961556B4920074686F /* ConfigViewController.m */,
 				BE008A6815C9BDE500DD3F19 /* ConfigViewData.h */,
 				BE008A6915C9BDE500DD3F19 /* ConfigViewData.m */,
-				BEBD7C5218D4A96F00CD705A /* EndDemoSessionViewController.h */,
-				BEBD7C5318D4A96F00CD705A /* EndDemoSessionViewController.m */,
 				BEC1C93818C7C12B000B6C83 /* website */,
 			);
 			name = Connection;
@@ -2627,7 +2627,8 @@
 				BEF0FF121B8515AB00B15CD8 /* UserPreferences.storyboard in Resources */,
 				BE09A5D41517CA1B00A12C4B /* MainStoryboard.storyboard in Resources */,
 				BE339E02179D813A00B199E3 /* Images.xcassets in Resources */,
-				BEF0FF161B85187400B15CD8 /* MapFilter.storyboard in Resources */,
+				BE31F4881B876BB600404C19 /* UserLogin.storyboard in Resources */,
+				BE8E25B71B8A443C004DD887 /* MapFilterOptions.storyboard in Resources */,
 				BEF0FF141B85172400B15CD8 /* UsersManagement.storyboard in Resources */,
 				BE821BA0155FD58D00057C60 /* LTE_logo.jpg in Resources */,
 				BE821BA3155FD59B00057C60 /* logo_3g_150.jpg in Resources */,
@@ -2797,7 +2798,6 @@
 				BEA31AAF183138A800532C63 /* BasicMapViewDelegate.m in Sources */,
 				BE2098BE1594BA5500C4E4BD /* WorstKPIsCell.m in Sources */,
 				BE2098C21594C04200C4E4BD /* CellWithKPIValues.m in Sources */,
-				BEBD7C5418D4A96F00CD705A /* EndDemoSessionViewController.m in Sources */,
 				BE34D1811595AB92001E864D /* DetailsWorstKPIViewCell.m in Sources */,
 				BE36681415A0DCC400FA0E93 /* Model.xcdatamodeld in Sources */,
 				BE47FEF115BC687900DDCE55 /* UIColorRGBValueTransformer.m in Sources */,
@@ -3082,6 +3082,15 @@
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
+		BE31F4861B876BB600404C19 /* UserLogin.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE31F4871B876BB600404C19 /* en */,
+				BE31F4891B87709500404C19 /* Base */,
+			);
+			name = UserLogin.storyboard;
+			sourceTree = "<group>";
+		};
 		BE3B26021854D4A5003160FA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3118,6 +3127,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BEF0FF111B8515AB00B15CD8 /* en */,
+				BE92A8391B866DF700F59F3A /* Base */,
 			);
 			name = UserPreferences.storyboard;
 			sourceTree = "<group>";

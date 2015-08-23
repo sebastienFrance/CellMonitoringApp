@@ -26,32 +26,9 @@
     if (self = [super init] ) {
 
         _isAppStarting = TRUE;
-        _isDemoSession = FALSE;
     }
     
     return self;
 }
-
-
-- (void) startDemoSessionWithTimer {
-    _isDemoSession = TRUE;
-    [NSTimer scheduledTimerWithTimeInterval:(300) target:self selector:@selector(timerFireMethod:) userInfo:Nil repeats:FALSE];
-}
-
-- (void) timerFireMethod:(NSTimer *)timer {
-    
-    [self.aroundMeItf stopDemoSession];
-    
-}
-
-
-- (void) dealloc {
-    // implement -dealloc & remove abort() when refactoring for
-    // non-singleton use.
-    abort();
-}
-
-
-
 
 @end

@@ -40,16 +40,13 @@
 
 - (void) openConnection:(NSString*) theIPAddress portNumber:(NSString*) thePortNumber userName:(NSString*) theUserName password:(NSString*) thePassword {
 
-    if ([DataCenter sharedInstance].isDemoSession == FALSE) {
-        UserPreferences* userPrefs = [UserPreferences sharedInstance];
+    UserPreferences* userPrefs = [UserPreferences sharedInstance];
 
-        userPrefs.ServerPortNumber  = [thePortNumber intValue];
-        userPrefs.ServerIPAddress   = theIPAddress;
-        userPrefs.ServerUserName    = theUserName;
-        userPrefs.ServerPassword    = thePassword;
-    }
+    userPrefs.ServerPortNumber  = [thePortNumber intValue];
+    userPrefs.ServerIPAddress   = theIPAddress;
+    userPrefs.ServerUserName    = theUserName;
+    userPrefs.ServerPassword    = thePassword;
 
-    
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:[_delegate getView] animated:YES];
     hud.labelText = @"Loading Configuration";
     

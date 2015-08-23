@@ -18,15 +18,12 @@
 #import "CellGroupViewController.h"
 #import "DataCenter.h"
 #import "RouteInformation.h"
-#import "EndDemoSessionViewController.h"
 #import "RequestURLUtilities.h"
 #import "Utility.h"
 
 @interface iPadAroundMeImpl()
 
 @property (nonatomic) CellKPIsDataSource* cellDatasource;
-@property (nonatomic) EndDemoSessionViewController* endDemoVC;
-
 @end
 
 @implementation iPadAroundMeImpl
@@ -41,24 +38,6 @@
     }
     return self;
 }
-
-#pragma mark - AroundMeViewItf protocol
-- (void) stopDemoSession {
-    UIWindow* theWindow = [UIApplication sharedApplication].windows[0];
-    UINavigationController* navController = (UINavigationController*)theWindow.rootViewController;
-    UIViewController* currentViewController= navController.visibleViewController;
-    
-    [MBProgressHUD hideAllHUDsForView:currentViewController.view animated:FALSE];
-    
-    
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil];
-    
-    self.endDemoVC = [storyboard instantiateViewControllerWithIdentifier:@"EndDemoSession"];
-    
-    [currentViewController presentViewController:self.endDemoVC animated:TRUE completion:Nil];
-
-}
-
 
 #pragma mark - Override
 - (void) loadViewContent {

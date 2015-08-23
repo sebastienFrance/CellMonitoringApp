@@ -55,12 +55,8 @@
 
 
 - (void) connectionSuccess {
-    if ([DataCenter sharedInstance].isDemoSession) {
-        [[UserHelp sharedInstance] startHelpWithoutLogin:self];
-    } else {
-        [[UserHelp sharedInstance] startHelp:self];
-    }
-    
+    [[UserHelp sharedInstance] startHelp:self];
+
     [self doConnectionSuccess];
 }
 
@@ -109,14 +105,6 @@
     [self.requestALicence requestLicenseByMail:self];
 }
 
-- (IBAction)tryWithoutLicensePushed:(UIButton *)sender {
-
-    [[DataCenter sharedInstance] startDemoSessionWithTimer];
-
-    [self.theData openConnection:@"91.121.68.70" portNumber:@"8443" userName:@"democell" password:@"demoUser1234"];
-}
-
-
 - (void) viewWillAppear:(BOOL)animated {
     _theData = [[ConfigViewData alloc] init:self];
     
@@ -141,8 +129,6 @@
     if (userPrefs.touchIdEnabled) {
         [self authenticateWithTouchId];
     }
-
-
 }
 
 
@@ -156,8 +142,10 @@
                 localizedReason:@"To connect CellMonitoring" reply:^(BOOL success, NSError *authenticationError) {
                     if (success) {
                         UserPreferences* userPrefs = [UserPreferences sharedInstance];
-                        [self.theData openConnection:self.IPAddress.text portNumber:self.portNumber.text userName:self.userName.text password:userPrefs.ServerPassword];
-                        
+                        [self.theData openConnection:self.IPAddress.text
+                                          portNumber:self.portNumber.text
+                                            userName:self.userName.text
+                                            password:userPrefs.ServerPassword];
                     } else {
                         NSLog(@"Authentication with Touch ID failed");
                     }

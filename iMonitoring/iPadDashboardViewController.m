@@ -181,12 +181,6 @@
 
 }
 
-- (IBAction)scopeButtonPressed:(UIBarButtonItem *)sender {
-    iPadDashboardScopeViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DashboardScopeViewControllerId"];
-    [viewController initialize:self];
-    [self presentViewControllerInPopover:viewController item:sender];
-}
-
 #pragma mark - Popover Mgt
 
 - (void) dismissAllPopovers{
@@ -196,6 +190,12 @@
     }
 }
 
+-(void) preparePopover:(UIViewController*) contentController {
+    [self dismissAllPopovers];
+    self.currentPopover = contentController;
+    UIPopoverPresentationController* popPC = self.currentPopover.popoverPresentationController;
+    popPC.delegate = self;
+}
 
 -(void) presentViewControllerInPopover:(UIViewController*) contentController item:(UIBarButtonItem *)theItem {
     [self dismissAllPopovers];
@@ -487,9 +487,13 @@
         iPadCellDetailsAndKPIsViewControllerView* controller = segue.destinationViewController;
         controller.theCell = self.cellDatasource.theCell;
         controller.theDatasource = self.cellDatasource;
+    } else if ([segue.identifier isEqualToString:@"openViewDashboardPopoverId"]) {
+        iPadDashboardScopeViewController *viewController = segue.destinationViewController;
+        [viewController initialize:self];
+        [self preparePopover:segue.destinationViewController];
     }
-        
 }
+
 
 #pragma mark - CellDetailsItf protocol
 // iPad Specific

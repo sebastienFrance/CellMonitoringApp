@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A243d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2l1-b8-lJu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A262e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2l1-b8-lJu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -127,9 +127,9 @@
                         <outlet property="theMapView" destination="44K-dN-YpQ" id="u1j-ND-q4D"/>
                         <outlet property="userLocationButton" destination="dNv-po-2ON" id="pC1-HQ-cBN"/>
                         <outlet property="userMgtButton" destination="P4Z-ho-ukm" id="VhG-Pw-24h"/>
-                        <segue destination="3t8-hU-TOK" kind="presentation" identifier="openConnectId" modalPresentationStyle="formSheet" id="S8g-hQ-CYc"/>
                         <segue destination="um4-5A-h3F" kind="show" identifier="iPadOpenDetailsKPIs" id="Mtu-Fh-ZKS"/>
                         <segue destination="v5C-pd-T9p" kind="show" identifier="openDashboard" id="AcR-pU-3Kr"/>
+                        <segue destination="BI5-9U-jlL" kind="presentation" identifier="openConnectId" modalPresentationStyle="formSheet" id="QOg-t0-JXs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -599,309 +599,6 @@
             </objects>
             <point key="canvasLocation" x="759" y="-1392"/>
         </scene>
-        <!--Connection-->
-        <scene sceneID="p0E-qq-he1">
-            <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" title="Connection" modalPresentationStyle="formSheet" id="3t8-hU-TOK" customClass="ConfigViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cT5-bJ-7dh"/>
-                        <viewControllerLayoutGuide type="bottom" id="xcL-41-0y2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qYp-aM-mZq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yH-Le-2wN">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <barButtonItem systemItem="done" id="vWZ-Tv-RSr">
-                                        <connections>
-                                            <action selector="ApplyCallback:" destination="3t8-hU-TOK" id="kQ0-9K-sl0"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="IP Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mph-5e-Epd">
-                                <rect key="frame" x="20" y="44" width="82" height="20"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="S5G-ql-cwb">
-                                <rect key="frame" x="20" y="110" width="82" height="20"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="awQ-N1-PUu">
-                                <rect key="frame" x="20" y="72" width="253" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jD6-yc-BXv">
-                                <rect key="frame" x="20" y="138" width="253" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="CellMonitoringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="myc-iX-qb9">
-                                <rect key="frame" x="30" y="424" width="540" height="176"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="540" id="A15-Q4-WJg"/>
-                                    <constraint firstAttribute="height" constant="176" id="PNh-aG-WNR"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjT-NS-TLb">
-                                <rect key="frame" x="20" y="176" width="59" height="32"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Website">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="wok-mf-fTV" kind="presentation" id="pQw-Hl-cZv"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rx9-Z1-GGE">
-                                <rect key="frame" x="291" y="110" width="74" height="20"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8080" borderStyle="roundedRect" placeholder="Port" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pyc-v7-MkZ">
-                                <rect key="frame" x="291" y="72" width="289" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eEZ-L1-joG">
-                                <rect key="frame" x="291" y="138" width="289" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zU-Hr-XNZ">
-                                <rect key="frame" x="417" y="176" width="163" height="32"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Try it without account!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="tryWithoutLicensePushed:" destination="3t8-hU-TOK" eventType="touchUpInside" id="CMj-pt-g7z"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWC-CD-A6i">
-                                <rect key="frame" x="273" y="78" width="18" height="18"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="18" id="kp4-D4-jDs"/>
-                                    <constraint firstAttribute="height" constant="18" id="uGH-SC-l0j"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Port" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aZQ-I6-uc7">
-                                <rect key="frame" x="291" y="44" width="33" height="20"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-De-k0x">
-                                <rect key="frame" x="452" y="208" width="128" height="32"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Request a license">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="requestLicensePushed:" destination="3t8-hU-TOK" eventType="touchUpInside" id="jPM-Db-EXv"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Pyc-v7-MkZ" firstAttribute="width" secondItem="eEZ-L1-joG" secondAttribute="width" id="0w5-ZM-UMK"/>
-                            <constraint firstItem="tWC-CD-A6i" firstAttribute="top" secondItem="awQ-N1-PUu" secondAttribute="top" constant="6" id="1bA-Lf-Dz4"/>
-                            <constraint firstItem="S5G-ql-cwb" firstAttribute="leading" secondItem="jD6-yc-BXv" secondAttribute="leading" id="1i1-U4-zal"/>
-                            <constraint firstAttribute="centerX" secondItem="myc-iX-qb9" secondAttribute="centerX" id="2J8-6t-ln6"/>
-                            <constraint firstAttribute="trailing" secondItem="2yH-Le-2wN" secondAttribute="trailing" id="9qa-2s-u3l"/>
-                            <constraint firstItem="rx9-Z1-GGE" firstAttribute="leading" secondItem="eEZ-L1-joG" secondAttribute="leading" id="Dq0-c0-d6H"/>
-                            <constraint firstItem="rx9-Z1-GGE" firstAttribute="leading" secondItem="Pyc-v7-MkZ" secondAttribute="leading" id="Kz5-GZ-6Et"/>
-                            <constraint firstItem="S5G-ql-cwb" firstAttribute="top" secondItem="awQ-N1-PUu" secondAttribute="bottom" constant="8" symbolic="YES" id="MQL-WU-4Mz"/>
-                            <constraint firstAttribute="centerX" secondItem="tWC-CD-A6i" secondAttribute="centerX" constant="18" id="SgL-XM-Rtf"/>
-                            <constraint firstItem="xcL-41-0y2" firstAttribute="top" secondItem="myc-iX-qb9" secondAttribute="bottom" id="V2c-7Z-WqB"/>
-                            <constraint firstItem="jD6-yc-BXv" firstAttribute="baseline" secondItem="eEZ-L1-joG" secondAttribute="baseline" id="VLL-go-Gou"/>
-                            <constraint firstItem="2yH-Le-2wN" firstAttribute="top" secondItem="cT5-bJ-7dh" secondAttribute="bottom" id="Va5-Yx-sp8"/>
-                            <constraint firstItem="rx9-Z1-GGE" firstAttribute="baseline" secondItem="S5G-ql-cwb" secondAttribute="baseline" id="W9g-1s-G8q"/>
-                            <constraint firstItem="2yH-Le-2wN" firstAttribute="leading" secondItem="qYp-aM-mZq" secondAttribute="leading" id="WF2-15-ed2"/>
-                            <constraint firstItem="awQ-N1-PUu" firstAttribute="leading" secondItem="mph-5e-Epd" secondAttribute="leading" id="XHr-du-6B7"/>
-                            <constraint firstItem="8zU-Hr-XNZ" firstAttribute="trailing" secondItem="eEZ-L1-joG" secondAttribute="trailing" id="bjH-cK-gtq"/>
-                            <constraint firstItem="mph-5e-Epd" firstAttribute="leading" secondItem="qYp-aM-mZq" secondAttribute="leadingMargin" id="d8f-bE-rCf"/>
-                            <constraint firstItem="8zU-Hr-XNZ" firstAttribute="trailing" secondItem="hpc-De-k0x" secondAttribute="trailing" id="dKv-gg-y3t"/>
-                            <constraint firstItem="aZQ-I6-uc7" firstAttribute="leading" secondItem="Pyc-v7-MkZ" secondAttribute="leading" id="er6-pX-B2g"/>
-                            <constraint firstItem="Pyc-v7-MkZ" firstAttribute="leading" secondItem="tWC-CD-A6i" secondAttribute="trailing" id="glZ-Vd-mB1"/>
-                            <constraint firstItem="cjT-NS-TLb" firstAttribute="top" secondItem="jD6-yc-BXv" secondAttribute="bottom" constant="8" symbolic="YES" id="j1Z-UD-WAK"/>
-                            <constraint firstItem="awQ-N1-PUu" firstAttribute="width" secondItem="jD6-yc-BXv" secondAttribute="width" id="lKV-dM-Y49"/>
-                            <constraint firstItem="hpc-De-k0x" firstAttribute="top" secondItem="8zU-Hr-XNZ" secondAttribute="bottom" id="npa-pD-Ip6"/>
-                            <constraint firstItem="tWC-CD-A6i" firstAttribute="leading" secondItem="awQ-N1-PUu" secondAttribute="trailing" id="ooI-hR-5SI"/>
-                            <constraint firstItem="jD6-yc-BXv" firstAttribute="top" secondItem="S5G-ql-cwb" secondAttribute="bottom" constant="8" symbolic="YES" id="pXC-W0-6g1"/>
-                            <constraint firstItem="awQ-N1-PUu" firstAttribute="top" secondItem="mph-5e-Epd" secondAttribute="bottom" constant="8" symbolic="YES" id="pnM-Rf-Vpc"/>
-                            <constraint firstItem="cjT-NS-TLb" firstAttribute="leading" secondItem="jD6-yc-BXv" secondAttribute="leading" id="qSn-qh-sHG"/>
-                            <constraint firstItem="aZQ-I6-uc7" firstAttribute="baseline" secondItem="mph-5e-Epd" secondAttribute="baseline" id="x4X-dK-KAv"/>
-                            <constraint firstItem="8zU-Hr-XNZ" firstAttribute="top" secondItem="eEZ-L1-joG" secondAttribute="bottom" constant="8" symbolic="YES" id="y8h-Wr-10H"/>
-                            <constraint firstItem="awQ-N1-PUu" firstAttribute="leading" secondItem="S5G-ql-cwb" secondAttribute="leading" id="yTa-V6-Ukq"/>
-                            <constraint firstItem="mph-5e-Epd" firstAttribute="top" secondItem="2yH-Le-2wN" secondAttribute="bottom" symbolic="YES" id="yWb-9I-k4u"/>
-                            <constraint firstItem="Pyc-v7-MkZ" firstAttribute="baseline" secondItem="awQ-N1-PUu" secondAttribute="baseline" id="zM7-cZ-0yu"/>
-                            <constraint firstItem="Pyc-v7-MkZ" firstAttribute="trailing" secondItem="qYp-aM-mZq" secondAttribute="trailingMargin" id="zxM-Ay-cJC"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="IPAddress" destination="awQ-N1-PUu" id="ssB-1c-kDu"/>
-                        <outlet property="password" destination="eEZ-L1-joG" id="cga-PT-Qww"/>
-                        <outlet property="portNumber" destination="Pyc-v7-MkZ" id="9a1-82-14w"/>
-                        <outlet property="userName" destination="jD6-yc-BXv" id="jTi-YJ-cU7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gL7-pg-gp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1811" y="-967"/>
-        </scene>
-        <!--Website View Controller-->
-        <scene sceneID="1Cg-04-CK3">
-            <objects>
-                <viewController id="wok-mf-fTV" customClass="WebsiteViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zaF-aV-sIi"/>
-                        <viewControllerLayoutGuide type="bottom" id="LGU-yw-QAD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KOh-nu-sQP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygH-qz-kJk">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <barButtonItem systemItem="done" id="lGD-gh-bI2">
-                                        <connections>
-                                            <action selector="closePushed:" destination="wok-mf-fTV" id="SPP-KL-hfR"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nrh-CS-blm">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <animations/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Nrh-CS-blm" firstAttribute="trailing" secondItem="ygH-qz-kJk" secondAttribute="trailing" id="5qi-sG-ajC"/>
-                            <constraint firstItem="ygH-qz-kJk" firstAttribute="leading" secondItem="KOh-nu-sQP" secondAttribute="leading" id="7wn-lb-BhZ"/>
-                            <constraint firstItem="ygH-qz-kJk" firstAttribute="top" secondItem="zaF-aV-sIi" secondAttribute="bottom" id="MT8-EL-btJ"/>
-                            <constraint firstAttribute="trailing" secondItem="ygH-qz-kJk" secondAttribute="trailing" id="Xkb-D5-cgc"/>
-                            <constraint firstItem="Nrh-CS-blm" firstAttribute="top" secondItem="ygH-qz-kJk" secondAttribute="bottom" id="mIv-fQ-NIu"/>
-                            <constraint firstItem="Nrh-CS-blm" firstAttribute="leading" secondItem="ygH-qz-kJk" secondAttribute="leading" id="mk1-1n-ahk"/>
-                            <constraint firstAttribute="bottom" secondItem="Nrh-CS-blm" secondAttribute="bottom" id="uK2-1D-aAp"/>
-                        </constraints>
-                    </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <outlet property="theWebView" destination="Nrh-CS-blm" id="AmZ-zH-5al"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dxm-68-biw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2585" y="-1633"/>
-        </scene>
-        <!--End Demo Session View Controller-->
-        <scene sceneID="rVa-He-FDu">
-            <objects>
-                <viewController storyboardIdentifier="EndDemoSession" modalPresentationStyle="formSheet" id="OaF-9G-Any" customClass="EndDemoSessionViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6fv-Sa-tBf"/>
-                        <viewControllerLayoutGuide type="bottom" id="OWB-jL-RkW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gzy-eo-CrG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="CellMonitoringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="0Fs-L9-hDa">
-                                <rect key="frame" x="0.0" y="424" width="600" height="176"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="176" id="Vq2-Cl-LmG"/>
-                                </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voB-ii-ntz">
-                                <rect key="frame" x="15" y="28" width="569" height="124"/>
-                                <animations/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="124" id="auG-va-Mkt"/>
-                                </constraints>
-                                <string key="text">Your session has expired.
-
-We hope it was a nice experience.
-
-To restart a session you must stop and restart the App.</string>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRt-TE-RaK">
-                                <rect key="frame" x="15" y="199" width="56" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Website">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="wok-mf-fTV" kind="presentation" id="XwP-yy-zJa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JE8-J9-qcH">
-                                <rect key="frame" x="463" y="199" width="121" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Request a license">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="requestLicensePushed:" destination="3t8-hU-TOK" eventType="touchUpInside" id="XLy-0e-CCv"/>
-                                    <action selector="requestLicensePushed:" destination="OaF-9G-Any" eventType="touchUpInside" id="xJ2-O4-ekq"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="OWB-jL-RkW" firstAttribute="top" secondItem="0Fs-L9-hDa" secondAttribute="bottom" id="0gA-6q-LtJ"/>
-                            <constraint firstItem="voB-ii-ntz" firstAttribute="leading" secondItem="kRt-TE-RaK" secondAttribute="leading" id="4DL-lE-sQp"/>
-                            <constraint firstItem="voB-ii-ntz" firstAttribute="leading" secondItem="gzy-eo-CrG" secondAttribute="leading" constant="15" id="9ae-eM-99f"/>
-                            <constraint firstItem="0Fs-L9-hDa" firstAttribute="leading" secondItem="gzy-eo-CrG" secondAttribute="leading" id="FWO-5J-xW6"/>
-                            <constraint firstItem="voB-ii-ntz" firstAttribute="trailing" secondItem="JE8-J9-qcH" secondAttribute="trailing" id="ILF-fh-M09"/>
-                            <constraint firstAttribute="trailing" secondItem="voB-ii-ntz" secondAttribute="trailing" constant="16" id="XZj-bd-Bbo"/>
-                            <constraint firstItem="voB-ii-ntz" firstAttribute="top" secondItem="6fv-Sa-tBf" secondAttribute="bottom" constant="8" id="bW1-ln-VWT"/>
-                            <constraint firstItem="kRt-TE-RaK" firstAttribute="top" secondItem="voB-ii-ntz" secondAttribute="bottom" constant="47" id="cMy-IS-v1g"/>
-                            <constraint firstItem="JE8-J9-qcH" firstAttribute="top" secondItem="voB-ii-ntz" secondAttribute="bottom" constant="47" id="dr1-4a-4tY"/>
-                            <constraint firstAttribute="trailing" secondItem="0Fs-L9-hDa" secondAttribute="trailing" id="eTB-PD-yfA"/>
-                        </constraints>
-                    </view>
-                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="plp-ln-vtx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1811" y="-1633"/>
-        </scene>
         <!--iPad Details Cell With Chart View Controller View-->
         <scene sceneID="vac-tF-zFm">
             <objects>
@@ -1271,13 +968,17 @@ To restart a session you must stop and restart the App.</string>
                     <toolbarItems>
                         <barButtonItem title="View" id="KHa-Zl-xMW">
                             <connections>
-                                <action selector="viewButtonPressed:" destination="um4-5A-h3F" id="H0P-kx-T14"/>
+                                <segue destination="pTn-Sv-2k8" kind="popoverPresentation" identifier="openViewScopeKPIsPopoverId" popoverAnchorBarButtonItem="KHa-Zl-xMW" id="0Si-9v-lVA">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="qxM-Ud-KXx"/>
                         <barButtonItem title="Cell infos" id="g1G-W4-J4k">
                             <connections>
-                                <action selector="cellInfosButtonPushed:" destination="um4-5A-h3F" id="81t-SB-fL2"/>
+                                <segue destination="UQD-4L-euI" kind="popoverPresentation" identifier="openCellInfoPopoverId" popoverAnchorBarButtonItem="g1G-W4-J4k" id="Zwn-Vb-btc">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                         <barButtonItem title="Mark" id="x7U-YB-y1f">
@@ -2417,7 +2118,7 @@ To restart a session you must stop and restart the App.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDf-HZ-DHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1349" y="1248"/>
+            <point key="canvasLocation" x="-1392" y="910"/>
         </scene>
         <!--Bookmarks & History-->
         <scene sceneID="lRN-Wl-CoJ">
@@ -3620,7 +3321,9 @@ To restart a session you must stop and restart the App.</string>
                     <toolbarItems>
                         <barButtonItem title="View" id="rGy-43-1XS">
                             <connections>
-                                <action selector="scopeButtonPressed:" destination="v5C-pd-T9p" id="Kqf-7R-KnO"/>
+                                <segue destination="G1s-sN-yNg" kind="popoverPresentation" identifier="openViewDashboardPopoverId" popoverAnchorBarButtonItem="rGy-43-1XS" id="2Em-bn-MbZ">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -3705,7 +3408,7 @@ To restart a session you must stop and restart the App.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXy-m1-e41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2859" y="-1117"/>
+            <point key="canvasLocation" x="2293" y="1299"/>
         </scene>
         <!--iPad Dashboard Worst Details View Controller-->
         <scene sceneID="c01-vu-U9M">
@@ -4150,7 +3853,7 @@ To restart a session you must stop and restart the App.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmL-o0-ul8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2457" y="-1071"/>
+            <point key="canvasLocation" x="2653" y="144"/>
         </scene>
         <!--Last Visited Cells-->
         <scene sceneID="3cf-ko-EYd">
@@ -5566,7 +5269,7 @@ To restart a session you must stop and restart the App.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FS9-VC-7B4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="1537"/>
+            <point key="canvasLocation" x="2765" y="1553"/>
         </scene>
         <!--PopoverPreferencesControllerId-->
         <scene sceneID="WSb-LU-iHN">
@@ -5584,10 +5287,10 @@ To restart a session you must stop and restart the App.</string>
             </objects>
             <point key="canvasLocation" x="1755" y="-522"/>
         </scene>
-        <!--PopoverMapConfigurationControllerId-->
+        <!--PopoverMapConfigurationControllerOptionId-->
         <scene sceneID="myO-no-qHw">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PopoverMapConfigurationControllerId" storyboardName="MapFilter" referencedIdentifier="PopoverMapConfigurationControllerId" id="fGu-GL-vsa" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="PopoverMapConfigurationControllerId" storyboardName="MapFilterOptions" referencedIdentifier="PopoverMapConfigurationControllerOptionId" id="fGu-GL-vsa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOO-PJ-ceD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1875.5" y="-452"/>
@@ -5599,6 +5302,14 @@ To restart a session you must stop and restart the App.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aue-13-1dP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1993.5" y="-553"/>
+        </scene>
+        <!--UserLogin-->
+        <scene sceneID="H7l-pd-GzF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserLogin" id="BI5-9U-jlL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZr-wd-8fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="-655"/>
         </scene>
     </scenes>
     <resources>
@@ -5613,10 +5324,9 @@ To restart a session you must stop and restart the App.</string>
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TLB-1P-lKz"/>
-        <segue reference="KvB-rT-JBR"/>
+        <segue reference="Mtu-Fh-ZKS"/>
         <segue reference="Vwh-qX-X8u"/>
-        <segue reference="pQw-Hl-cZv"/>
-        <segue reference="E85-Pc-gVI"/>
+        <segue reference="KvB-rT-JBR"/>
+        <segue reference="TLB-1P-lKz"/>
     </inferredMetricsTieBreakers>
 </document>

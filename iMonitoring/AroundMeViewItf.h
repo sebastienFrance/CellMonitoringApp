@@ -48,9 +48,6 @@
 - (void) initiliazeWithNeighborsOf:(CellMonitoring*) theCell;
 - (void) initializeWithBeighborsOfFromCell:(NSString*) theCell;
 
-#pragma mark - Only for demo
-- (void) stopDemoSession;
-
 #pragma mark - Refresh Map view
 - (void) loadViewContent;
 

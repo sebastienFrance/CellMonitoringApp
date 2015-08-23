@@ -776,15 +776,6 @@ NSString *const khelpForGenericGraphicKPI       = @"help.common.helpForGenericGr
     return [[NSUserDefaults standardUserDefaults] boolForKey:kstartHelp];
 }
 
-- (void) setStartWithoutLicenseHelp:(Boolean)startWithoutLicenseHelp {
-    [[NSUserDefaults standardUserDefaults] setBool:startWithoutLicenseHelp forKey:kstartWithoutLicenseHelp];
-}
-
-- (Boolean) startWithoutLicenseHelp {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kstartWithoutLicenseHelp];
-}
-
-
 - (void) setIPadDashboardHelp:(Boolean)iPadDashboardHelp {
     [[NSUserDefaults standardUserDefaults] setBool:iPadDashboardHelp forKey:kiPadDashboardHelp];
 }

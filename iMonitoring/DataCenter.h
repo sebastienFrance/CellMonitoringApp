@@ -26,7 +26,6 @@
 @property (nonatomic) Boolean  isAdminUser;
 
 @property (nonatomic, assign) Boolean isAppStarting;
-@property (nonatomic, readonly) Boolean isDemoSession;
 
 @property (nonatomic) id<AroundMeViewItf> aroundMeItf;
 @property (nonatomic) SWRevealViewController* slidingViewController;
@@ -34,7 +33,5 @@
 
 
 + (DataCenter*) sharedInstance;
-
-- (void) startDemoSessionWithTimer;
 
 @end

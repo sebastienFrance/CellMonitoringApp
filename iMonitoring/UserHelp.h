@@ -13,7 +13,6 @@
 + (UserHelp*) sharedInstance;
 
 -(void) startHelp:(UIViewController*) controller;
--(void) startHelpWithoutLogin:(UIViewController*) controller;
 
 -(void) helpForGenericGraphicKPI:(UIViewController*) controller;
 -(void) iPadHelpForDashboardView:(UIViewController*) controller;
