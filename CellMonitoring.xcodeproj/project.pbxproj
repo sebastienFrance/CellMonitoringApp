@@ -60,6 +60,7 @@
 		BE19CCA11606170F00D7F31E /* ZoneKPIsAverageMail.m in Sources */ = {isa = PBXBuildFile; fileRef = BE19CCA01606170F00D7F31E /* ZoneKPIsAverageMail.m */; };
 		BE19CCA516062A3E00D7F31E /* HTMLMailUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = BE19CCA416062A3E00D7F31E /* HTMLMailUtility.m */; };
 		BE19CCA9160633F800D7F31E /* MailOverviewWorstCellsKPIs.m in Sources */ = {isa = PBXBuildFile; fileRef = BE19CCA8160633F700D7F31E /* MailOverviewWorstCellsKPIs.m */; };
+		BE1B816D1B8CE7DC00385DB4 /* SearchCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1B816C1B8CE7DC00385DB4 /* SearchCells.storyboard */; };
 		BE1C27F6158F60DA001220A0 /* iPadImonitoringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1C27F5158F60DA001220A0 /* iPadImonitoringViewController.m */; };
 		BE1CAEB81811C82C002B522E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1CAEB71811C82C002B522E /* Security.framework */; };
 		BE1CC1DF1AB22E71008CF784 /* Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1CC1DE1AB22E71008CF784 /* Parameters.m */; };
@@ -494,6 +495,7 @@
 		BE19CCA416062A3E00D7F31E /* HTMLMailUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLMailUtility.m; sourceTree = "<group>"; };
 		BE19CCA7160633F600D7F31E /* MailOverviewWorstCellsKPIs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailOverviewWorstCellsKPIs.h; sourceTree = "<group>"; };
 		BE19CCA8160633F700D7F31E /* MailOverviewWorstCellsKPIs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailOverviewWorstCellsKPIs.m; sourceTree = "<group>"; };
+		BE1B816C1B8CE7DC00385DB4 /* SearchCells.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchCells.storyboard; sourceTree = "<group>"; };
 		BE1C27F4158F60DA001220A0 /* iPadImonitoringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadImonitoringViewController.h; sourceTree = "<group>"; };
 		BE1C27F5158F60DA001220A0 /* iPadImonitoringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadImonitoringViewController.m; sourceTree = "<group>"; };
 		BE1CAEB71811C82C002B522E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -1219,6 +1221,7 @@
 				BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */,
 				BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */,
 				BEDF753718D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard */,
+				BE1B816C1B8CE7DC00385DB4 /* SearchCells.storyboard */,
 				BEF02F491B8BADFD003FDCF8 /* Bookmark.storyboard */,
 				BE8E25B61B8A443C004DD887 /* MapFilterOptions.storyboard */,
 				BE63AA3018154906002D7E09 /* UserManagement */,
@@ -2632,6 +2635,7 @@
 				BE821BA0155FD58D00057C60 /* LTE_logo.jpg in Resources */,
 				BE821BA3155FD59B00057C60 /* logo_3g_150.jpg in Resources */,
 				BE5E60831906BDCB00805423 /* CellMonitoringMac-Info.plist in Resources */,
+				BE1B816D1B8CE7DC00385DB4 /* SearchCells.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
