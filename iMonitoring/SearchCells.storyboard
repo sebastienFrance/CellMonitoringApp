@@ -329,23 +329,6 @@
             </objects>
             <point key="canvasLocation" x="4391" y="-2578"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="PBD-iP-oFy">
-            <objects>
-                <navigationController storyboardIdentifier="NavigationToNeighborListViewController" id="i6o-Tf-ABK" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wzi-xd-jZ6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="e0b-ZY-CzN" kind="relationship" relationship="rootViewController" id="hv4-eD-9Oe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ye6-6r-kqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3666" y="-1855"/>
-        </scene>
         <!--Route-->
         <scene sceneID="tZm-hl-vj2">
             <objects>

@@ -1686,10 +1686,10 @@
             </objects>
             <point key="canvasLocation" x="1029" y="818"/>
         </scene>
-        <!--NavigationToNeighborListViewController-->
+        <!--SearchCells-->
         <scene sceneID="7lY-GS-ThQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="SearchCells" referencedIdentifier="NavigationToNeighborListViewController" id="nNM-Ed-9hN" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SearchCells" id="nNM-Ed-9hN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="McT-d8-Cax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1674.5" y="-868"/>
@@ -3561,8 +3561,8 @@
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="E85-Pc-gVI"/>
         <segue reference="brv-bN-Xrl"/>
         <segue reference="VeU-cF-Cu2"/>
+        <segue reference="Mtu-Fh-ZKS"/>
     </inferredMetricsTieBreakers>
 </document>
