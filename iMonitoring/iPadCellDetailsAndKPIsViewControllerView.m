@@ -194,8 +194,10 @@
 }
 
 -(void) displayMarkViewController:(UIBarButtonItem *) sender  {
-    UINavigationController *viewController =
-    [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverCellBookmarkId"];
+    //UINavigationController *viewController =
+  //  [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverCellBookmarkId"];
+    UIStoryboard* theStoryBoard = [UIStoryboard storyboardWithName:@"Bookmark" bundle:Nil];
+    UINavigationController *viewController = [theStoryBoard instantiateViewControllerWithIdentifier:@"PopoverCellBookmarkId"];
 
     MarkViewController* modal = (MarkViewController*) viewController.topViewController;
     modal.delegate = self;

@@ -340,7 +340,6 @@
 		BEE0EFB71AACED0600A8590A /* HistoricalOverviewParametersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE0EFB61AACED0600A8590A /* HistoricalOverviewParametersViewController.m */; };
 		BEE336851708448600E29F09 /* AroundMeMapViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE336841708448600E29F09 /* AroundMeMapViewDelegate.m */; };
 		BEE3787A15CD793D0092FEA6 /* AroundMeViewMgt.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE3787915CD793D0092FEA6 /* AroundMeViewMgt.m */; };
-		BEE445B915FA2E4E00FA1F47 /* iPadBookmarkMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE445B815FA2E4E00FA1F47 /* iPadBookmarkMenuViewController.m */; };
 		BEE44B4D16F3508B00877F0E /* CellBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE44B4C16F3508B00877F0E /* CellBookmark.m */; };
 		BEE47D47188C3C9F006E576A /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE47D46188C3C9F006E576A /* MainMenuController.m */; };
 		BEE47D4A188C478D006E576A /* DashboardSelectionPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE47D49188C478D006E576A /* DashboardSelectionPopoverViewController.m */; };
@@ -354,6 +353,7 @@
 		BEE942F317C00D44009787AD /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = BEE942EE17C00D44009787AD /* zip.c */; };
 		BEE942F617C00D4F009787AD /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE942F517C00D4F009787AD /* SSZipArchive.m */; };
 		BEEE3A8915F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */; };
+		BEF02F4A1B8BADFD003FDCF8 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF02F491B8BADFD003FDCF8 /* Bookmark.storyboard */; };
 		BEF0A75315E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0A75215E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m */; };
 		BEF0D9AD15D83A880080E31A /* CellKPIsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0D9AC15D83A880080E31A /* CellKPIsDataSource.m */; };
 		BEF0FF121B8515AB00B15CD8 /* UserPreferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */; };
@@ -937,8 +937,6 @@
 		BEE336841708448600E29F09 /* AroundMeMapViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundMeMapViewDelegate.m; sourceTree = "<group>"; };
 		BEE3787815CD793D0092FEA6 /* AroundMeViewMgt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundMeViewMgt.h; sourceTree = "<group>"; };
 		BEE3787915CD793D0092FEA6 /* AroundMeViewMgt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundMeViewMgt.m; sourceTree = "<group>"; };
-		BEE445B715FA2E4E00FA1F47 /* iPadBookmarkMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadBookmarkMenuViewController.h; sourceTree = "<group>"; };
-		BEE445B815FA2E4E00FA1F47 /* iPadBookmarkMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadBookmarkMenuViewController.m; sourceTree = "<group>"; };
 		BEE44B4B16F3508B00877F0E /* CellBookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellBookmark.h; sourceTree = "<group>"; };
 		BEE44B4C16F3508B00877F0E /* CellBookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellBookmark.m; sourceTree = "<group>"; };
 		BEE47D45188C3C9F006E576A /* MainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuController.h; sourceTree = "<group>"; };
@@ -970,6 +968,7 @@
 		BEE942FD17C14F8D009787AD /* HTMLRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLRequest.h; sourceTree = "<group>"; };
 		BEEE3A8715F9DC7C00CAA6D4 /* iPadSearchMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadSearchMenuViewController.h; sourceTree = "<group>"; };
 		BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadSearchMenuViewController.m; sourceTree = "<group>"; };
+		BEF02F491B8BADFD003FDCF8 /* Bookmark.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bookmark.storyboard; sourceTree = "<group>"; };
 		BEF0A75115E6B8CB00A0777C /* ZoneKPIsAverageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoneKPIsAverageViewCell.h; sourceTree = "<group>"; };
 		BEF0A75215E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoneKPIsAverageViewCell.m; sourceTree = "<group>"; };
 		BEF0D9AB15D83A880080E31A /* CellKPIsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellKPIsDataSource.h; sourceTree = "<group>"; };
@@ -1220,6 +1219,7 @@
 				BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */,
 				BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */,
 				BEDF753718D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard */,
+				BEF02F491B8BADFD003FDCF8 /* Bookmark.storyboard */,
 				BE8E25B61B8A443C004DD887 /* MapFilterOptions.storyboard */,
 				BE63AA3018154906002D7E09 /* UserManagement */,
 				BE8B80CB15658245008379C4 /* Locate */,
@@ -1553,8 +1553,6 @@
 			children = (
 				BEEE3A8715F9DC7C00CAA6D4 /* iPadSearchMenuViewController.h */,
 				BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */,
-				BEE445B715FA2E4E00FA1F47 /* iPadBookmarkMenuViewController.h */,
-				BEE445B815FA2E4E00FA1F47 /* iPadBookmarkMenuViewController.m */,
 				BE6455CB1696181D00557654 /* iPadDashboardScopeViewNRCell.h */,
 				BE6455CC1696181D00557654 /* iPadDashboardScopeViewNRCell.m */,
 				BEC006011A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.h */,
@@ -2626,6 +2624,7 @@
 				BEDF753818D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard in Resources */,
 				BEF0FF121B8515AB00B15CD8 /* UserPreferences.storyboard in Resources */,
 				BE09A5D41517CA1B00A12C4B /* MainStoryboard.storyboard in Resources */,
+				BEF02F4A1B8BADFD003FDCF8 /* Bookmark.storyboard in Resources */,
 				BE339E02179D813A00B199E3 /* Images.xcassets in Resources */,
 				BE31F4881B876BB600404C19 /* UserLogin.storyboard in Resources */,
 				BE8E25B71B8A443C004DD887 /* MapFilterOptions.storyboard in Resources */,
@@ -2840,7 +2839,6 @@
 				BEDF62D017FB6EE400233A63 /* iMonMailContentActivity.m in Sources */,
 				BEA9FF75199A9FE80050970C /* MapInfoDatasource.m in Sources */,
 				BEEE3A8915F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m in Sources */,
-				BEE445B915FA2E4E00FA1F47 /* iPadBookmarkMenuViewController.m in Sources */,
 				BE06ADDC190D2D380026E1F1 /* SessionURLRequestHandler.m in Sources */,
 				BE56727518717968006EDFD0 /* ReverseGeoCodeRouteDataSource.m in Sources */,
 				BE09388C15FA83990059F480 /* iPadDashboardViewController.m in Sources */,
