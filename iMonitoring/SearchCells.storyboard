@@ -118,10 +118,10 @@
                         <viewControllerLayoutGuide type="bottom" id="PRH-OV-ks3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mcb-pc-KGa">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qIU-mR-TyC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qIU-mR-TyC">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="443"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -273,7 +273,7 @@
                                 </prototypes>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yoc-jp-rfS">
-                                <rect key="frame" x="0.0" y="443" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="v8O-Le-bLO"/>
@@ -838,6 +838,148 @@
             </objects>
             <point key="canvasLocation" x="5205" y="-1043"/>
         </scene>
+        <!--NR Historical-->
+        <scene sceneID="UHl-aX-3W6">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bOx-zx-j29" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="HistoricalNRs" id="dB2-P4-KUJ" customClass="HistoricalNRsOverviewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jv9-Zl-YAA"/>
+                        <viewControllerLayoutGuide type="bottom" id="6J1-FO-i6f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="daz-Jh-pae">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="fUQ-eh-8a6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HistoricalNRsOverviewCellId" rowHeight="114" id="8wi-Wl-Enf" customClass="HistoricalNRsOverviewCell">
+                                        <rect key="frame" x="0.0" y="10" width="600" height="114"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8wi-Wl-Enf" id="Hha-AY-sua">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="113"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="H5M-yy-LHH">
+                                                    <rect key="frame" x="8" y="8" width="39" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Intra-Frequencies:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTw-5A-bLZ">
+                                                    <rect key="frame" x="8" y="37" width="119" height="17"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Inter-Frequencies:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiC-bm-Ge3">
+                                                    <rect key="frame" x="8" y="57" width="119" height="17"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Inter-RAT:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJH-al-hEI">
+                                                    <rect key="frame" x="8" y="76" width="65" height="17"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50 (added 30 / removed 10)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDL-YY-b2h">
+                                                    <rect key="frame" x="140" y="37" width="180" height="17"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50 (added 30 / removed 10)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34L-d8-eGO">
+                                                    <rect key="frame" x="140" y="57" width="180" height="17"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50 (added 30 / removed 10)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEJ-Ly-Ucb">
+                                                    <rect key="frame" x="140" y="76" width="180" height="17"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdy-z2-pSP">
+                                                    <rect key="frame" x="475" y="4" width="92" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="All Neighbors">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonDisplayAllPushed:" destination="dB2-P4-KUJ" eventType="touchUpInside" id="Kl6-nU-ZWo"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="VJH-al-hEI" firstAttribute="top" secondItem="hiC-bm-Ge3" secondAttribute="bottom" constant="2" id="2aS-jw-mMz"/>
+                                                <constraint firstItem="UTw-5A-bLZ" firstAttribute="baseline" secondItem="dDL-YY-b2h" secondAttribute="baseline" id="9Xu-U0-rq8"/>
+                                                <constraint firstItem="hiC-bm-Ge3" firstAttribute="baseline" secondItem="34L-d8-eGO" secondAttribute="baseline" id="9uL-Qg-aRi"/>
+                                                <constraint firstItem="H5M-yy-LHH" firstAttribute="top" secondItem="sdy-z2-pSP" secondAttribute="top" constant="4" id="DXJ-Iy-z9E"/>
+                                                <constraint firstItem="dDL-YY-b2h" firstAttribute="leading" secondItem="34L-d8-eGO" secondAttribute="leading" id="ENb-F6-LcO"/>
+                                                <constraint firstItem="UTw-5A-bLZ" firstAttribute="top" secondItem="H5M-yy-LHH" secondAttribute="bottom" constant="8" symbolic="YES" id="L31-8S-Caj"/>
+                                                <constraint firstItem="34L-d8-eGO" firstAttribute="leading" secondItem="hEJ-Ly-Ucb" secondAttribute="leading" id="Ofe-1f-k9D"/>
+                                                <constraint firstItem="hiC-bm-Ge3" firstAttribute="leading" secondItem="VJH-al-hEI" secondAttribute="leading" id="Y0X-gc-itl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sdy-z2-pSP" secondAttribute="trailing" constant="-8" id="fcp-HC-AxI"/>
+                                                <constraint firstItem="H5M-yy-LHH" firstAttribute="top" secondItem="Hha-AY-sua" secondAttribute="topMargin" id="k5a-C1-XnO"/>
+                                                <constraint firstItem="hiC-bm-Ge3" firstAttribute="leading" secondItem="UTw-5A-bLZ" secondAttribute="leading" id="lx8-Rr-IJ2"/>
+                                                <constraint firstItem="hiC-bm-Ge3" firstAttribute="top" secondItem="UTw-5A-bLZ" secondAttribute="bottom" constant="3" id="ow8-mD-DUj"/>
+                                                <constraint firstItem="H5M-yy-LHH" firstAttribute="leading" secondItem="UTw-5A-bLZ" secondAttribute="leading" id="pD9-Yw-yYM"/>
+                                                <constraint firstItem="VJH-al-hEI" firstAttribute="baseline" secondItem="hEJ-Ly-Ucb" secondAttribute="baseline" id="vRF-bR-mfM"/>
+                                                <constraint firstItem="dDL-YY-b2h" firstAttribute="leading" secondItem="UTw-5A-bLZ" secondAttribute="trailing" constant="13" id="xiZ-sr-x9b"/>
+                                                <constraint firstItem="H5M-yy-LHH" firstAttribute="leading" secondItem="Hha-AY-sua" secondAttribute="leadingMargin" id="y3u-uB-Qif"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="InterFrequenciesNRs" destination="34L-d8-eGO" id="c1l-VY-kr0"/>
+                                            <outlet property="InterRatNRs" destination="hEJ-Ly-Ucb" id="pVw-IY-F3s"/>
+                                            <outlet property="IntraFrequenciesNRs" destination="dDL-YY-b2h" id="RMA-OB-Dwb"/>
+                                            <outlet property="buttonAll" destination="sdy-z2-pSP" id="bBf-An-UFj"/>
+                                            <outlet property="theDate" destination="H5M-yy-LHH" id="Sna-4H-OXa"/>
+                                            <segue destination="mVK-Dm-8Zd" kind="show" identifier="openNREventsView" id="KYv-E0-F6s"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fUQ-eh-8a6" secondAttribute="trailing" id="dCC-5d-qMl"/>
+                            <constraint firstItem="fUQ-eh-8a6" firstAttribute="top" secondItem="daz-Jh-pae" secondAttribute="top" id="dRt-Mp-nqi"/>
+                            <constraint firstItem="6J1-FO-i6f" firstAttribute="top" secondItem="fUQ-eh-8a6" secondAttribute="bottom" id="oBm-ms-dVd"/>
+                            <constraint firstItem="fUQ-eh-8a6" firstAttribute="leading" secondItem="daz-Jh-pae" secondAttribute="leading" id="yWj-TX-Jxj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="NR Historical" id="xRF-na-hPB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="WM4-5f-GJG">
+                            <connections>
+                                <action selector="sendMail:" destination="dB2-P4-KUJ" id="2hj-FP-YBi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="theTable" destination="fUQ-eh-8a6" id="xaP-k1-4Ud"/>
+                        <segue destination="mVK-Dm-8Zd" kind="show" identifier="showAllHistoricalNRs" id="MLa-hI-A1B"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3189" y="-2570"/>
+        </scene>
     </scenes>
     <resources>
         <image name="8_purple" width="28" height="51"/>
@@ -846,4 +988,7 @@
         <image name="polyline" width="25" height="25"/>
         <image name="radio_tower" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MLa-hI-A1B"/>
+    </inferredMetricsTieBreakers>
 </document>
