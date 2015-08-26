@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A262e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nJv-4Y-q9a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="15A262e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nJv-4Y-q9a">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="WCG-2z-cV5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Y8-0o-7rb">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SLR-HD-Rv5">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="442"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="506"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -89,7 +89,7 @@
                                 </prototypes>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MML-wz-z5x">
-                                <rect key="frame" x="0.0" y="442" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="506" width="600" height="44"/>
                                 <animations/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="0KF-1m-4yK"/>
@@ -128,7 +128,6 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Cells" image="Bookmarks" id="5xm-jm-Fhe"/>
                     <navigationItem key="navigationItem" title="Cell Bookmarks" id="uEu-tI-fnn"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="theTable" destination="SLR-HD-Rv5" id="UTR-Wc-uGz"/>
@@ -144,7 +143,6 @@
                 <tabBarController storyboardIdentifier="UITabBarController-nJv-4Y-q9a" definesPresentationContext="YES" id="nJv-4Y-q9a" customClass="BookmarkEntryPoint" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Bookmarks" id="Vzx-CK-Hih"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JUH-vk-qAt">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -172,10 +170,10 @@
                         <viewControllerLayoutGuide type="bottom" id="bSO-8S-gCF"/>
                     </layoutGuides>
                     <view key="view" alpha="0.99999999999999989" contentMode="scaleToFill" id="WnD-EH-fS6">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="at0-4n-nw8">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="at0-4n-nw8">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <animations/>
                                 <items>
@@ -210,7 +208,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2TU-Hy-t8N" userLabel="RedView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TU-Hy-t8N" userLabel="RedView">
                                 <rect key="frame" x="20" y="74" width="106" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohL-tA-jUA" userLabel="RedButton">
@@ -239,7 +237,7 @@
                                     <constraint firstItem="ohL-tA-jUA" firstAttribute="leading" secondItem="2TU-Hy-t8N" secondAttribute="leading" constant="4" id="W5z-aK-rgT"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="83d-gM-j99" userLabel="OrangeView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83d-gM-j99" userLabel="OrangeView">
                                 <rect key="frame" x="134" y="74" width="105" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmI-2G-s3q" userLabel="OrangeButton">
@@ -268,7 +266,7 @@
                                     <constraint firstAttribute="bottom" secondItem="mmI-2G-s3q" secondAttribute="bottom" constant="4" id="qjx-4h-gP4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aqn-8U-BGj" userLabel="YellowView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqn-8U-BGj" userLabel="YellowView">
                                 <rect key="frame" x="247" y="74" width="106" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1n5-yb-jD7" userLabel="YellowButton">
@@ -297,7 +295,7 @@
                                     <constraint firstAttribute="bottom" secondItem="1n5-yb-jD7" secondAttribute="bottom" constant="4" id="Zdc-HS-EuL"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-qS-Qvf" userLabel="GreenView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-qS-Qvf" userLabel="GreenView">
                                 <rect key="frame" x="361" y="74" width="105" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CM4-IY-LoT" userLabel="GreenButton">
@@ -326,7 +324,7 @@
                                     <constraint firstItem="CM4-IY-LoT" firstAttribute="leading" secondItem="s1e-qS-Qvf" secondAttribute="leading" constant="4" id="qOr-3g-8uS"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oO4-kx-wOm" userLabel="BlueView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oO4-kx-wOm" userLabel="BlueView">
                                 <rect key="frame" x="474" y="74" width="106" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmd-GP-RiR" userLabel="BlueButton">
@@ -355,7 +353,7 @@
                                     <constraint firstItem="Jmd-GP-RiR" firstAttribute="top" secondItem="oO4-kx-wOm" secondAttribute="top" constant="4" id="xPd-JH-OYn"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your short comment" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bd5-nB-TQ2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your short comment" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bd5-nB-TQ2">
                                 <rect key="frame" x="20" y="137" width="560" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -413,23 +411,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5i-hg-68q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5785" y="2607"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="KPF-06-kiD">
-            <objects>
-                <navigationController storyboardIdentifier="PopoverCellBookmarkId" id="6au-Wf-4O2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="akc-b8-aKn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="g3e-AO-jmN" kind="relationship" relationship="rootViewController" id="MsR-lr-7qg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fOe-R5-EKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4561" y="2607"/>
         </scene>
         <!--Region Bookmarks-->
         <scene sceneID="Ksn-6d-O8i">
@@ -546,11 +527,11 @@
                         <viewControllerLayoutGuide type="bottom" id="MfF-Z0-Y5Q"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="axQ-Mh-r9j">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BB1-HL-BLq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="442"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="506"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -640,7 +621,7 @@
                                 </prototypes>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcG-Vq-Z1C">
-                                <rect key="frame" x="0.0" y="442" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="506" width="600" height="44"/>
                                 <animations/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="n1j-ct-jzz"/>
@@ -680,7 +661,6 @@
                     <tabBarItem key="tabBarItem" systemItem="mostRecent" id="UDk-m9-w68"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Last Visited Cells" id="kHB-sb-iuU"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="theSegmentForOrdering" destination="ac8-JZ-epO" id="ASf-oO-GNG"/>
@@ -697,7 +677,4 @@
         <image name="Bookmarks" width="25" height="22"/>
         <image name="World_Times" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="MsR-lr-7qg"/>
-    </inferredMetricsTieBreakers>
 </document>

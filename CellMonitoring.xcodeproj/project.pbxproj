@@ -178,6 +178,7 @@
 		BE821BA3155FD59B00057C60 /* logo_3g_150.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE821BA2155FD59B00057C60 /* logo_3g_150.jpg */; };
 		BE821BAE155FDF7F00057C60 /* KPIPrefConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BE821BAD155FDF7F00057C60 /* KPIPrefConfiguration.m */; };
 		BE821BB2155FE11E00057C60 /* KPIsPrefListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE821BB1155FE11E00057C60 /* KPIsPrefListViewController.m */; };
+		BE82B0081B8E48D300DBCD6F /* CellParameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE82B0071B8E48D300DBCD6F /* CellParameters.storyboard */; settings = {ASSET_TAGS = (); }; };
 		BE858AAD186D7FD50056CFA1 /* CellsOnCoverageWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE858AAC186D7FD50056CFA1 /* CellsOnCoverageWindow.xib */; };
 		BE858AB2186D81BA0056CFA1 /* CellsOnCoverageWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE858AB1186D81BA0056CFA1 /* CellsOnCoverageWindowController.m */; };
 		BE858ABC186DDA8D0056CFA1 /* RouteInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE858ABB186DDA8D0056CFA1 /* RouteInformation.m */; };
@@ -682,6 +683,7 @@
 		BE821BAD155FDF7F00057C60 /* KPIPrefConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPIPrefConfiguration.m; sourceTree = "<group>"; };
 		BE821BB0155FE11E00057C60 /* KPIsPrefListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPIsPrefListViewController.h; sourceTree = "<group>"; };
 		BE821BB1155FE11E00057C60 /* KPIsPrefListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPIsPrefListViewController.m; sourceTree = "<group>"; };
+		BE82B0071B8E48D300DBCD6F /* CellParameters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CellParameters.storyboard; sourceTree = "<group>"; };
 		BE858AAC186D7FD50056CFA1 /* CellsOnCoverageWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellsOnCoverageWindow.xib; sourceTree = "<group>"; };
 		BE858AB0186D81BA0056CFA1 /* CellsOnCoverageWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellsOnCoverageWindowController.h; sourceTree = "<group>"; };
 		BE858AB1186D81BA0056CFA1 /* CellsOnCoverageWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellsOnCoverageWindowController.m; sourceTree = "<group>"; };
@@ -1221,6 +1223,7 @@
 				BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */,
 				BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */,
 				BEDF753718D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard */,
+				BE82B0071B8E48D300DBCD6F /* CellParameters.storyboard */,
 				BE1B816C1B8CE7DC00385DB4 /* SearchCells.storyboard */,
 				BEF02F491B8BADFD003FDCF8 /* Bookmark.storyboard */,
 				BE8E25B61B8A443C004DD887 /* MapFilterOptions.storyboard */,
@@ -2623,6 +2626,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE82B0081B8E48D300DBCD6F /* CellParameters.storyboard in Resources */,
 				BE09A5C81517CA1B00A12C4B /* InfoPlist.strings in Resources */,
 				BEDF753818D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard in Resources */,
 				BEF0FF121B8515AB00B15CD8 /* UserPreferences.storyboard in Resources */,

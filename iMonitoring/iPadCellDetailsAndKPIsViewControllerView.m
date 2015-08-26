@@ -197,11 +197,12 @@
     //UINavigationController *viewController =
   //  [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverCellBookmarkId"];
     UIStoryboard* theStoryBoard = [UIStoryboard storyboardWithName:@"Bookmark" bundle:Nil];
-    UINavigationController *viewController = [theStoryBoard instantiateViewControllerWithIdentifier:@"PopoverCellBookmarkId"];
+  //  UINavigationController *viewController = [theStoryBoard instantiateViewControllerWithIdentifier:@"AddCellBookmark"];
+    MarkViewController *viewController = [theStoryBoard instantiateViewControllerWithIdentifier:@"AddCellBookmark"];
 
-    MarkViewController* modal = (MarkViewController*) viewController.topViewController;
-    modal.delegate = self;
-    modal.theCell = _theCell;
+   // MarkViewController* modal = (MarkViewController*) viewController.topViewController;
+    viewController.delegate = self;
+    viewController.theCell = _theCell;
 
     [self presentViewControllerInPopover:viewController item:sender];
 }
