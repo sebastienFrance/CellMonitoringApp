@@ -14,7 +14,7 @@
 
 @class CellMonitoring;
 
-@interface iPadCellDetailsPopoverMenuViewController : CellDetailsInfoBasicViewController< CellTimezoneDataSourceDelegate>
+@interface iPadCellDetailsPopoverMenuViewController : CellDetailsInfoBasicViewController<CellTimezoneDataSourceDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *theTable;
