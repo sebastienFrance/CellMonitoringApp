@@ -507,7 +507,7 @@
 + (NSString*) getKPIsForCell:(CellMonitoring*) cell {
     KPIDictionaryManager* center = [KPIDictionaryManager sharedInstance];
   
-    NSArray* theKPIs = [center.defaultKPIDictionary getKPIs:cell.cellTechnology];
+    NSArray<KPI*>* theKPIs = [center.defaultKPIDictionary getKPIs:cell.cellTechnology];
     
     NSMutableString* KPIs = [[NSMutableString alloc] init];
     Boolean isTheFirstKPI = TRUE;
@@ -528,7 +528,7 @@
 + (NSString*) getKPIsWithDirectionForCell:(CellMonitoring*) cell {
     KPIDictionaryManager* center = [KPIDictionaryManager sharedInstance];
     
-    NSArray* theKPIs = [center.defaultKPIDictionary getKPIs:cell.cellTechnology];
+    NSArray<KPI*>* theKPIs = [center.defaultKPIDictionary getKPIs:cell.cellTechnology];
     
     NSMutableString* KPIs = [[NSMutableString alloc] init];
     Boolean isTheFirstKPI = TRUE;

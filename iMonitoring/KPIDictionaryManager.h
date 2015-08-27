@@ -15,7 +15,7 @@
 
 
 @property (nonatomic) KPIDictionary* defaultKPIDictionary;
-@property (nonatomic, readonly) NSArray* KPIDictionaries;
+@property (nonatomic, readonly) NSArray<KPIDictionary*>* KPIDictionaries;
 @property (nonatomic, readonly) NSString* defaultKPIDictionaryName;
 
 + (KPIDictionaryManager*) sharedInstance;

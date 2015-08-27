@@ -84,7 +84,7 @@ static NSUInteger const KPI_NUMBER_PER_DOMAIN = 4;
 }
 
 - (void)testMethods {
-    NSArray* LTEKPIs = [self.theKPIDictionary getKPIs:DCTechnologyLTE];
+    NSArray<KPI*>* LTEKPIs = [self.theKPIDictionary getKPIs:DCTechnologyLTE];
     KPI* theKPI;
 
     XCTAssertEqual(LTEKPIs.count, LTE_KPI_NUMBER * KPI_NUMBER_PER_DOMAIN, @"Wrong number of KPIs in LTE dictionary");
@@ -92,7 +92,7 @@ static NSUInteger const KPI_NUMBER_PER_DOMAIN = 4;
     theKPI = LTEKPIs[0];
     XCTAssertEqual(theKPI.technology, DCTechnologyLTE, @"Wrong technology for KPI in LTE Dictionary");
     
-    NSDictionary* KPIPerDomain = [self.theKPIDictionary getKPIsPerDomain:DCTechnologyLTE];
+    NSDictionary<NSString*, NSArray<KPI*>*> *KPIPerDomain = [self.theKPIDictionary getKPIsPerDomain:DCTechnologyLTE];
     XCTAssertEqual(KPIPerDomain.count, KPI_NUMBER_PER_DOMAIN,  @"Wrong number of domain in LTE Dictionary");
 
     theKPI = [self.theKPIDictionary findKPIbyInternalName:@"unknown"];
@@ -102,7 +102,7 @@ static NSUInteger const KPI_NUMBER_PER_DOMAIN = 4;
     XCTAssertFalse(theKPI == Nil, @"Cannot find KPI in LTE Dictionary by internal name");
     XCTAssertEqualObjects(theKPI.internalName, @"KPIInternalName_LTE_1_2" , @"Found KPI has not the right internal name");
     
-    NSArray* sectionsHeader = [self.theKPIDictionary getSectionsHeader:DCTechnologyLTE];
+    NSArray<NSString*> *sectionsHeader = [self.theKPIDictionary getSectionsHeader:DCTechnologyLTE];
     XCTAssertEqual(sectionsHeader.count, KPI_NUMBER_PER_DOMAIN, @"Wrong number of section header");
     
     NSString* header = sectionsHeader[0];

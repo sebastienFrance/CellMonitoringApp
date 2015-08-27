@@ -32,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self showToolbar];
 
     self.timezoneDatasource = [[CellTimezoneDataSource alloc] initWithDelegate:self cell:self.theCell];
     [self.timezoneDatasource loadTimeZone];
@@ -39,9 +40,15 @@
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
+    [self showToolbar];
+}
+
+-(void) showToolbar {
     [self.navigationController setToolbarHidden:TRUE];
+    self.navigationController.hidesBarsOnSwipe = FALSE;
     self.navigationController.hidesBarsOnTap = FALSE;
 }
+
 
 #pragma mark - Table view data source
 

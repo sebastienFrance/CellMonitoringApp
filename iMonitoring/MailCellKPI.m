@@ -21,10 +21,10 @@
 
 // Index: KPI Domain name
 // Object list of KPIs of the domain
-@property (nonatomic) NSDictionary* KPIDictionary;
+@property (nonatomic) NSDictionary<NSString*, NSArray<KPI*>*> *KPIDictionary;
 
 // contains the name of sections header for KPIs only (KPI domains)
-@property (nonatomic) NSArray* sectionsHeader;
+@property (nonatomic) NSArray<NSString*> *sectionsHeader;
 @property (nonatomic) CellMonitoring* theCell;
 @property (nonatomic) CellKPIsDataSource* datasource;
 @property (nonatomic) DCMonitoringPeriodView currentMonitoringPeriod;
@@ -81,7 +81,7 @@
 
 
 - (NSString*) convertKPIsFromDomainToHTML:(NSString*) domainName {
-    NSArray* sectionContent = self.KPIDictionary[domainName];
+    NSArray<KPI*>* sectionContent = self.KPIDictionary[domainName];
 
     KPIs2HTMLTable* HTMLTable = [[KPIs2HTMLTable alloc] init:self.datasource.requestDate timezone:self.theCell.timezone monitoringPeriod:self.currentMonitoringPeriod];
 

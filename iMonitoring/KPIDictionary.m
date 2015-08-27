@@ -12,14 +12,14 @@
 
 @interface KPIDictionary ()
 
-@property (nonatomic) NSMutableArray* lteKPIs;
-@property (nonatomic) NSMutableDictionary* lteKPIsPerDomain;
+@property (nonatomic) NSMutableArray<KPI*> *lteKPIs;
+@property (nonatomic) NSMutableDictionary<NSString*,NSMutableArray<KPI*>*> *lteKPIsPerDomain;
 
-@property (nonatomic) NSMutableArray* wcdmaKPIs;
-@property (nonatomic) NSMutableDictionary* wcdmaKPIsPerDomain;
+@property (nonatomic) NSMutableArray<KPI*> *wcdmaKPIs;
+@property (nonatomic) NSMutableDictionary<NSString*,NSMutableArray<KPI*>*> *wcdmaKPIsPerDomain;
 
-@property (nonatomic) NSMutableArray* gsmKPIs;
-@property (nonatomic) NSMutableDictionary* gsmKPIsPerDomain;
+@property (nonatomic) NSMutableArray<KPI*> *gsmKPIs;
+@property (nonatomic) NSMutableDictionary<NSString*,NSMutableArray<KPI*>*> *gsmKPIsPerDomain;
 
 @end
 
@@ -28,7 +28,7 @@
 
 #pragma mark - Get KPIs
 
-- (NSArray*) getKPIs:(DCTechnologyId) theTechno {
+- (NSArray<KPI*>*) getKPIs:(DCTechnologyId) theTechno {
     switch (theTechno) {
         case DCTechnologyLTE:
             return _lteKPIs;
@@ -41,7 +41,7 @@
     }
 }
 
-- (NSDictionary*) getKPIsPerDomain:(DCTechnologyId) theTechno {
+- (NSDictionary<NSString*,NSArray<KPI*>*>*) getKPIsPerDomain:(DCTechnologyId) theTechno {
     switch (theTechno) {
         case DCTechnologyLTE:
             return _lteKPIsPerDomain;
@@ -80,7 +80,7 @@
 
 - (KPI*) findKPIbyInternalName:(NSString*) theKPIName forTechno:(DCTechnologyId) technology  {
     
-    NSArray* KPIsToLookFor = Nil;
+    NSArray<KPI*> *KPIsToLookFor = Nil;
     switch (technology) {
         case DCTechnologyLTE: {
             KPIsToLookFor =  _lteKPIs;
@@ -129,7 +129,7 @@
         return Nil;
     }
     
-    NSDictionary* theKPIDictionary = [self getKPIsPerDomain:theTechno];
+    NSDictionary<NSString*,NSArray<KPI*>*> *theKPIDictionary = [self getKPIsPerDomain:theTechno];
     
     NSInteger currentRow = [KPIDictionary row:currentIndex];
     NSInteger currentSection = [KPIDictionary section:currentIndex];
@@ -157,14 +157,14 @@
         return Nil;
     }
 
-    NSDictionary* theKPIDictionary = [self getKPIsPerDomain:theTechno];
+    NSDictionary<NSString*,NSArray<KPI*>*> *theKPIDictionary = [self getKPIsPerDomain:theTechno];
 
     NSInteger currentRow = [KPIDictionary row:currentIndex];
     NSInteger currentSection = [KPIDictionary section:currentIndex];
 
     
-    NSArray* sectionsHeader = [self getSectionsHeader:theTechno];
-    NSArray* sectionContent = theKPIDictionary[sectionsHeader[(currentSection)]];
+    NSArray<NSString*> *sectionsHeader = [self getSectionsHeader:theTechno];
+    NSArray<KPI*> *sectionContent = theKPIDictionary[sectionsHeader[(currentSection)]];
     
     // increment the row in the same section
     currentRow++;
@@ -179,32 +179,31 @@
             // End reach
             return Nil;
         }
-        
     }
 }
 
 - (NSIndexPath*) getLastKPIbyDomain:(DCTechnologyId) theTechno {
-    NSDictionary* theKPIDictionary = [self getKPIsPerDomain:theTechno];
-    NSArray* sectionsHeader = [self getSectionsHeader:theTechno];
-    NSArray* sectionContent = theKPIDictionary[sectionsHeader[(sectionsHeader.count - 1)]];
+    NSDictionary<NSString*,NSArray<KPI*>*> *theKPIDictionary = [self getKPIsPerDomain:theTechno];
+    NSArray<NSString*> *sectionsHeader = [self getSectionsHeader:theTechno];
+    NSArray<KPI*> *sectionContent = theKPIDictionary[sectionsHeader[(sectionsHeader.count - 1)]];
     
     return  [KPIDictionary indexPathForRow:(sectionContent.count-1) inSection:(sectionsHeader.count -1)];
 
 }
 
 - (KPI*) getKPIbyDomain:(NSIndexPath*) index  techno:(DCTechnologyId) theTechno{
-    NSDictionary* theKPIDictionary = [self getKPIsPerDomain:theTechno];
-    NSArray* sectionsHeader = [self getSectionsHeader:theTechno];
-    NSArray* sectionContent = theKPIDictionary[sectionsHeader[[KPIDictionary section:index]]];
+    NSDictionary<NSString*,NSArray<KPI*>*> *theKPIDictionary = [self getKPIsPerDomain:theTechno];
+    NSArray<NSString*> *sectionsHeader = [self getSectionsHeader:theTechno];
+    NSArray<KPI*> *sectionContent = theKPIDictionary[sectionsHeader[[KPIDictionary section:index]]];
     
     KPI* cellKPI = sectionContent[[KPIDictionary row:index]];
     return cellKPI;
 }
 
 
-- (NSArray*) getSectionsHeader:(DCTechnologyId) theTechno {
-    NSDictionary* KPIDictionary = [self getKPIsPerDomain:theTechno];
-    NSArray* sectionsHeader = [KPIDictionary allKeys];
+- (NSArray<NSString*>*) getSectionsHeader:(DCTechnologyId) theTechno {
+    NSDictionary<NSString*,NSArray<KPI*>*> *KPIDictionary = [self getKPIsPerDomain:theTechno];
+    NSArray<NSString*>* sectionsHeader = [KPIDictionary allKeys];
     return [sectionsHeader sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 
 }
@@ -281,7 +280,7 @@
     switch (theKPI.technology) {
         case DCTechnologyLTE: {
             [self.lteKPIs addObject:theKPI];
-            NSMutableArray* currDomainList = self.lteKPIsPerDomain[theKPI.domain];
+            NSMutableArray<KPI*>* currDomainList = self.lteKPIsPerDomain[theKPI.domain];
             if (currDomainList == Nil) {
                 currDomainList =[[NSMutableArray alloc] init];
                 
@@ -292,7 +291,7 @@
         }
         case DCTechnologyWCDMA: {
             [self.wcdmaKPIs addObject:theKPI];
-            NSMutableArray* currDomainList = self.wcdmaKPIsPerDomain[theKPI.domain];
+            NSMutableArray<KPI*>* currDomainList = self.wcdmaKPIsPerDomain[theKPI.domain];
             if (currDomainList == Nil) {
                 currDomainList =[[NSMutableArray alloc] init];
                 
@@ -303,7 +302,7 @@
         }
         case DCTechnologyGSM: {
             [self.gsmKPIs addObject:theKPI];
-            NSMutableArray* currDomainList = self.gsmKPIsPerDomain[theKPI.domain];
+            NSMutableArray<KPI*>* currDomainList = self.gsmKPIsPerDomain[theKPI.domain];
             if (currDomainList == Nil) {
                 currDomainList =[[NSMutableArray alloc] init];
                 

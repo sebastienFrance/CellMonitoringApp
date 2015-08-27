@@ -10,7 +10,7 @@
 #import "KPIDictionary.h"
 
 @interface KPIDictionaryManager() {
-    NSMutableArray* _KPIDictionaries;
+    NSMutableArray<KPIDictionary*>* _KPIDictionaries;
 }
 
 @end

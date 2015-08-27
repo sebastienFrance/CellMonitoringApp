@@ -152,7 +152,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSDictionary* KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:self.theCell.cellTechnology];
+    NSDictionary<NSString*,NSArray<KPI*>*> *KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:self.theCell.cellTechnology];
     return (KPIDictionary.count + 2);
 }
 
@@ -165,9 +165,9 @@
         return 3;
     } else  if (section >= SECTION_KPIS) {
         // For others sections the number of row depends on the KPIs in the sections
-        NSDictionary* KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:self.theCell.cellTechnology];
-        NSArray* sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
-        NSArray* sectionContent = KPIDictionary[sectionsHeader[(section-2)]];
+        NSDictionary<NSString*,NSArray<KPI*>*> *KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:self.theCell.cellTechnology];
+        NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
+        NSArray<KPI*> *sectionContent = KPIDictionary[sectionsHeader[(section-2)]];
         return sectionContent.count;
     } else {
         return 0;
@@ -179,7 +179,7 @@
     if (section == SECTION_ADDRESS || section == SECTION_GENERAL) {
         return [super tableView:tableView titleForHeaderInSection:section];
     } else {
-        NSArray* sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
+        NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
         return sectionsHeader[(section - 2)];
     }
 }
@@ -220,10 +220,10 @@
 
     DisplayKPICell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdKPI forIndexPath:indexPath];
     
-    NSDictionary* KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:self.theCell.cellTechnology];
-    NSArray* sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
+    NSDictionary<NSString*,NSArray<KPI*>*> *KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:self.theCell.cellTechnology];
+    NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
     
-    NSArray* sectionContent = KPIDictionary[sectionsHeader[(indexPath.section -2)]];
+    NSArray<KPI*> *sectionContent = KPIDictionary[sectionsHeader[(indexPath.section -2)]];
     KPI* cellKPI = sectionContent[indexPath.row];
     
     cell.kpiName.text = cellKPI.name;

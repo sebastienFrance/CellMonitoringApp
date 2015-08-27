@@ -27,8 +27,8 @@
 - (KPI*) findKPIbyInternalName:(NSString*) theKPIName;
 - (KPI*) findKPIbyInternalName:(NSString*) theKPIName forTechno:(DCTechnologyId) technology;
 
-- (NSArray*) getKPIs:(DCTechnologyId) theTechno;
-- (NSDictionary*) getKPIsPerDomain:(DCTechnologyId) theTechno;
+- (NSArray<KPI*>*) getKPIs:(DCTechnologyId) theTechno;
+- (NSDictionary<NSString*, NSArray<KPI*>*>*) getKPIsPerDomain:(DCTechnologyId) theTechno;
 
 // currentIndex:
 //  - First index is the Domain of the KPI
@@ -38,5 +38,5 @@
 - (NSIndexPath*) getLastKPIbyDomain:(DCTechnologyId) theTechno;
 - (KPI*) getKPIbyDomain:(NSIndexPath*) index  techno:(DCTechnologyId) theTechno;
 
-- (NSArray*) getSectionsHeader:(DCTechnologyId) theTechno;
+- (NSArray<NSString*>*) getSectionsHeader:(DCTechnologyId) theTechno;
 @end

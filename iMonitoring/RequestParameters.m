@@ -163,7 +163,7 @@
     
     KPIDictionaryManager* center = [KPIDictionaryManager sharedInstance];
     
-    NSArray* theKPIs = [center.defaultKPIDictionary getKPIs:cell.cellTechnology];
+    NSArray<KPI*>* theKPIs = [center.defaultKPIDictionary getKPIs:cell.cellTechnology];
     
     Boolean isTheFirstKPI = TRUE;
     for (KPI* currentKPI in theKPIs) {

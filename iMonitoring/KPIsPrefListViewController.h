@@ -14,7 +14,7 @@
 @interface KPIsPrefListViewController : UITableViewController {
 @private
     NSArray* _sectionsHeader;
-    NSDictionary* _KPIDictionary;
+    NSDictionary<NSString*, NSArray<KPI*>*> *_KPIDictionary;
 }
 
 - (void) initTechno:(DCTechnologyId) theTechno;
