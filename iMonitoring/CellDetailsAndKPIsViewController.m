@@ -41,7 +41,6 @@
                                      monitoringPeriod:[[MonitoringPeriodUtility sharedInstance] monitoringPeriod]
                                                alarms:self.alarmDatasource.alarmsOrderedByDate];
     
-    
     [mailbody presentActivityViewFrom:self];
  }
 
@@ -129,13 +128,8 @@
     if (section == SECTION_ADDRESS || section == SECTION_GENERAL) {
         return [super tableView:tableView titleForHeaderInSection:section];
     } else {
-        return [self titleForKPIsInSection:section];
+        return [CellDetailsAndKPIsViewController titleForKPIsInSection:section tehcnology:self.theCell.cellTechnology];
     }
-}
-
--(NSString*) titleForKPIsInSection:(NSInteger) section {
-    NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
-    return sectionsHeader[(section - 2)];
 }
 
 // Specific
@@ -168,17 +162,25 @@
     }
 }
 
-+(NSArray<KPI*>*) getKPIsFromSection:(NSInteger) section technology:(DCTechnologyId) cellTechnology {
-    NSDictionary<NSString*,NSArray<KPI*>*> *KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:cellTechnology];
++(NSString*) titleForKPIsInSection:(NSInteger) section tehcnology:(DCTechnologyId) cellTechnology {
     NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:cellTechnology];
+    return sectionsHeader[[CellDetailsAndKPIsViewController getKPISectionIndex:section]];
+}
 
-   return KPIDictionary[sectionsHeader[(section - 2)]];
++(NSArray<KPI*>*) getKPIsFromSection:(NSInteger) section technology:(DCTechnologyId) cellTechnology {
+    return [[KPIDictionaryManager sharedInstance] getKPIsFromSection:[CellDetailsAndKPIsViewController getKPISectionIndex:section]
+                                                          technology:cellTechnology];
 }
 
 +(KPI*) getKPI:(DCTechnologyId) cellTechnology indexPath:(NSIndexPath*) indexPath {
-    NSArray<KPI*> *sectionContent = [CellDetailsAndKPIsViewController getKPIsFromSection:indexPath.section technology:cellTechnology];
-    KPI* cellKPI = sectionContent[indexPath.row];
-    return cellKPI;
+    NSIndexPath* realIndexPath = [NSIndexPath indexPathForRow:indexPath.row
+                                                    inSection:[CellDetailsAndKPIsViewController getKPISectionIndex:indexPath.section]];
+
+    return [[KPIDictionaryManager sharedInstance] getKPI:cellTechnology indexPath:realIndexPath];
+}
+
++(NSInteger) getKPISectionIndex:(NSUInteger) section {
+    return (section - 2);
 }
 
 

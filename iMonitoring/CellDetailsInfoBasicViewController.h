@@ -37,7 +37,4 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 
 -(void) displayCellTimezone:(NSString*) timeZone;
 
-- (UITableViewCell *) buildCellForGeneralSection:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
-
-
 @end

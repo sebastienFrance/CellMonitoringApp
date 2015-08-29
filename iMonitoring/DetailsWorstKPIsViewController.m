@@ -480,8 +480,6 @@
         
         CellDetailsAndKPIsViewController *details = segue.destinationViewController;
         [details initialize:sender delegate:[DataCenter sharedInstance].aroundMeItf];
-//        details.theCell = sender;
-//        details.delegate = [DataCenter sharedInstance].aroundMeItf;
     }
 }
 

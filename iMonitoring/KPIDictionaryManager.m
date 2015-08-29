@@ -51,5 +51,17 @@
     return _defaultKPIDictionary.name;
 }
 
+-(NSArray<KPI*>*) getKPIsFromSection:(NSInteger) section technology:(DCTechnologyId) cellTechnology {
+    NSDictionary<NSString*,NSArray<KPI*>*> *KPIDictionary = [self.defaultKPIDictionary getKPIsPerDomain:cellTechnology];
+    NSArray<NSString*> *sectionsHeader = [self.defaultKPIDictionary getSectionsHeader:cellTechnology];
+
+    return KPIDictionary[sectionsHeader[section]];
+}
+
+-(KPI*) getKPI:(DCTechnologyId) cellTechnology indexPath:(NSIndexPath*) indexPath {
+    NSArray<KPI*> *sectionContent = [self getKPIsFromSection:indexPath.section technology:cellTechnology];
+    KPI* cellKPI = sectionContent[indexPath.row];
+    return cellKPI;
+}
 
 @end

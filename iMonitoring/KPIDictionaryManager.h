@@ -10,6 +10,7 @@
 #import "BasicTypes.h"
 
 @class KPIDictionary;
+@class KPI;
 
 @interface KPIDictionaryManager : NSObject
 
@@ -21,5 +22,6 @@
 + (KPIDictionaryManager*) sharedInstance;
 
 - (void) addKPIDictionary:(KPIDictionary*) dictionary;
-
+-(NSArray<KPI*>*) getKPIsFromSection:(NSInteger) section technology:(DCTechnologyId) cellTechnology;
+-(KPI*) getKPI:(DCTechnologyId) cellTechnology indexPath:(NSIndexPath*) indexPath;
 @end

@@ -167,16 +167,9 @@
     CellMonitoring* selectedCell = self.displayCells[self.theTableView.indexPathForSelectedRow.row];
     [VisitedCells createVisitedCells:selectedCell];
     
-    // Segue for iPad
-    if ([segue.identifier isEqualToString:@"CellGroupToCellId"]) {
- 
-         iPadCellDetailsPopoverMenuViewController* details = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"pushCellDetails"]) {
 
-        [details initialize:selectedCell delegate:self.delegate];
-    // Segue for iPhone
-    } else if ([segue.identifier isEqualToString:@"pushCellDetails"]) {
-        
-        CellDetailsAndKPIsViewController *details = segue.destinationViewController;
+        CellDetailsInfoBasicViewController *details = segue.destinationViewController;
         [details initialize:selectedCell delegate:self.delegate];
     }
 }

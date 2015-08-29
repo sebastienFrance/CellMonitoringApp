@@ -1088,7 +1088,7 @@
                                             <outlet property="releaseName" destination="DJN-Kq-OmZ" id="Sev-31-3fO"/>
                                             <outlet property="site" destination="Lpp-XC-siq" id="dVa-id-fXE"/>
                                             <outlet property="techno" destination="1fB-c1-udz" id="JXV-rc-sxs"/>
-                                            <segue destination="tzA-HF-XTN" kind="show" identifier="CellGroupToCellId" id="brv-bN-Xrl"/>
+                                            <segue destination="tzA-HF-XTN" kind="show" identifier="pushCellDetails" id="brv-bN-Xrl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
