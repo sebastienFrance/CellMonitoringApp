@@ -23,7 +23,7 @@
 
 
 
-@interface CellDetailsAndKPIsViewController : CellDetailsInfoBasicViewController<CellKPIsLoadingItf, MarkedCell>
+@interface CellDetailsAndKPIsViewController : CellDetailsInfoBasicViewController<CellKPIsLoadingItf>
 
 @property (weak, nonatomic) IBOutlet UITableView *theTable;
 

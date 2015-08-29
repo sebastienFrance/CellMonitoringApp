@@ -25,43 +25,14 @@
 
 @interface CellDetailsAndKPIsViewController ()
 
-@property(nonatomic) MarkViewController* markVC;
-
 @property(nonatomic) CellKPIsDataSource* datasource;
 
 @end
 
 @implementation CellDetailsAndKPIsViewController
 
-#pragma mark - MarkedCell
 
--(void) marked:(UIColor*) theColor userText:(NSString*) theText {
-
-    [CellBookmark createCellBookmark:self.theCell comments:theText color:theColor];
-    NSIndexPath* AddressIndex = [NSIndexPath indexPathForRow:SECTION_ADDRESS_ROW_CELL_ADDRESS inSection:SECTION_ADDRESS];
-    [self.theTable reloadRowsAtIndexPaths:@[AddressIndex] withRowAnimation:FALSE];
-
-    // Refresh the map content if filtering based on Marked cells
-    [self.delegate refreshMapWithFilter:TRUE overlays:FALSE];
-}
-
-- (void) cancel {
-}
-
-#pragma mark - Buttons
-
-- (IBAction)markButtonPushed:(UIButton *)sender {
-    if ([CellBookmark isCellMarked:self.theCell]) {
-        [CellBookmark removeCellBookmark:self.theCell.id];
-        NSIndexPath* AddressIndex = [NSIndexPath indexPathForRow:SECTION_ADDRESS_ROW_CELL_ADDRESS inSection:SECTION_ADDRESS];
-        [self.theTable reloadRowsAtIndexPaths:@[AddressIndex] withRowAnimation:FALSE];
-
-        // Refresh the map content if filtering based on Marked cells
-        [self.delegate refreshMapWithFilter:TRUE overlays:FALSE];
-    } else {
-        [self performSegueWithIdentifier:@"openMarkCell" sender:self];
-    }
-}
+#pragma mark - Send mail
 - (IBAction)sendMail:(UIBarButtonItem *)sender {
     KPIDictionary* dictionary = [KPIDictionaryManager sharedInstance].defaultKPIDictionary;
     MailCellKPI* mailbody = [[MailCellKPI alloc] init:self.theCell
@@ -91,11 +62,7 @@
 }
 
 - (void) timezoneIsLoaded:(NSString*) theTimeZone {
-    
-    CellAddressDetails* cell = (CellAddressDetails*) [self.theTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    if (cell != Nil) {
-        cell.timezone.text = theTimeZone;
-    }
+    [self displayCellTimezone:theTimeZone];
 }
 
 
@@ -111,33 +78,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self showToolbar];
-  
+
     [self initAndLoadCellDetails];
 }
-
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self showToolbar];   
-}
-
--(void) showToolbar {
-    [self.navigationController setToolbarHidden:TRUE];
-    self.navigationController.hidesBarsOnSwipe = FALSE;
-    self.navigationController.hidesBarsOnTap = FALSE;
-}
-
 
 -(void) initAndLoadCellDetails {
     CellKPIsDataSource* cache = [self.theCell getCache];
     if (cache != Nil) {
         self.datasource = cache;
         [self.theTable reloadData];
-        CellAddressDetails* cell = (CellAddressDetails*) [self.theTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        if (cell != Nil) {
-            cell.timezone.text = self.theCell.timezone;
-        }
+        [self displayCellTimezone:self.theCell.timezone];
     } else {
         MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.labelText = @"Loading KPIs";
@@ -164,14 +114,14 @@
     } if (section == SECTION_GENERAL) {
         return 3;
     } else  if (section >= SECTION_KPIS) {
-        // For others sections the number of row depends on the KPIs in the sections
-        NSDictionary<NSString*,NSArray<KPI*>*> *KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:self.theCell.cellTechnology];
-        NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
-        NSArray<KPI*> *sectionContent = KPIDictionary[sectionsHeader[(section-2)]];
-        return sectionContent.count;
+        return [self numberOfRowsForKPIsInSection:section];
     } else {
         return 0;
     }
+}
+
+-(NSInteger) numberOfRowsForKPIsInSection:(NSInteger) section {
+    return [CellDetailsAndKPIsViewController getKPIsFromSection:section technology:self.theCell.cellTechnology].count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -179,9 +129,13 @@
     if (section == SECTION_ADDRESS || section == SECTION_GENERAL) {
         return [super tableView:tableView titleForHeaderInSection:section];
     } else {
-        NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
-        return sectionsHeader[(section - 2)];
+        return [self titleForKPIsInSection:section];
     }
+}
+
+-(NSString*) titleForKPIsInSection:(NSInteger) section {
+    NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
+    return sectionsHeader[(section - 2)];
 }
 
 // Specific
@@ -214,18 +168,26 @@
     }
 }
 
++(NSArray<KPI*>*) getKPIsFromSection:(NSInteger) section technology:(DCTechnologyId) cellTechnology {
+    NSDictionary<NSString*,NSArray<KPI*>*> *KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:cellTechnology];
+    NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:cellTechnology];
+
+   return KPIDictionary[sectionsHeader[(section - 2)]];
+}
+
++(KPI*) getKPI:(DCTechnologyId) cellTechnology indexPath:(NSIndexPath*) indexPath {
+    NSArray<KPI*> *sectionContent = [CellDetailsAndKPIsViewController getKPIsFromSection:indexPath.section technology:cellTechnology];
+    KPI* cellKPI = sectionContent[indexPath.row];
+    return cellKPI;
+}
+
 
 -(UITableViewCell *) buildCellForKPIsSection:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdKPI = @"CellKPIId";
 
     DisplayKPICell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdKPI forIndexPath:indexPath];
-    
-    NSDictionary<NSString*,NSArray<KPI*>*> *KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:self.theCell.cellTechnology];
-    NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:self.theCell.cellTechnology];
-    
-    NSArray<KPI*> *sectionContent = KPIDictionary[sectionsHeader[(indexPath.section -2)]];
-    KPI* cellKPI = sectionContent[indexPath.row];
-    
+
+    KPI* cellKPI = [CellDetailsAndKPIsViewController getKPI:self.theCell.cellTechnology indexPath:indexPath];
     cell.kpiName.text = cellKPI.name;
     cell.kpiDescription.text = cellKPI.shortDescription;
     
@@ -237,18 +199,15 @@
         
         if (kpiValues != Nil) {
             NSString* lastValue = [cellKPI getDisplayableValueFromNumber:[kpiValues lastObject]];
+            NSString* beforeLastValue = Nil;
             if (kpiValues.count > 1) {
-                NSString* beforeLastValue = [cellKPI getDisplayableValueFromNumber:kpiValues[(kpiValues.count - 2)]];
-                cell.kpiValue.text = [KPI displayCurrentAndPreviousValue:lastValue
-                                                                preValue:beforeLastValue
-                                                        monitoringPeriod:theMP.monitoringPeriod
-                                                             requestDate:self.datasource.requestDate];
-            } else {
-                cell.kpiValue.text = [KPI displayCurrentAndPreviousValue:lastValue
-                                                                preValue:Nil
-                                                        monitoringPeriod:theMP.monitoringPeriod
-                                                             requestDate:self.datasource.requestDate];
+                beforeLastValue = [cellKPI getDisplayableValueFromNumber:kpiValues[(kpiValues.count - 2)]];
             }
+            cell.kpiValue.text = [KPI displayCurrentAndPreviousValue:lastValue
+                                                            preValue:beforeLastValue
+                                                    monitoringPeriod:theMP.monitoringPeriod
+                                                         requestDate:self.datasource.requestDate];
+
             if (cellKPI.hasDirection) {
                 cell.severity.hidden = FALSE;
                 cell.severity.backgroundColor = [cellKPI getColorValueFromNumber:[kpiValues lastObject]];

@@ -23,7 +23,7 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 
 
 
-@interface CellDetailsInfoBasicViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CellAlarmListener, CellParametersDataSourceDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, HTMLDataResponse>
+@interface CellDetailsInfoBasicViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CellAlarmListener, CellParametersDataSourceDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, HTMLDataResponse, MarkedCell>
 
 
 @property(nonatomic, readonly) CellMonitoring* theCell;
@@ -34,6 +34,8 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 
 -(void) initialize:(CellMonitoring*) theCell delegate:(id<AroundMeViewItf>) theDelegate;
 -(void) initializeWithSimpleCellInfo:(CellMonitoring *)theCell;
+
+-(void) displayCellTimezone:(NSString*) timeZone;
 
 - (UITableViewCell *) buildCellForGeneralSection:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 

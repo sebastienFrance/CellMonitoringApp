@@ -21,6 +21,11 @@
 #import "Utility.h"
 #import "CellImageListViewController.h"
 #import "UserPreferences.h"
+#import "CellBookmark+MarkedCell.h"
+#import "MailCellKPI.h"
+#import "MailActivity.h"
+#import "KPIDictionaryManager.h"
+
 
 @interface CellDetailsInfoBasicViewController()
 
@@ -111,6 +116,37 @@
     }
 }
 
+#pragma mark - MarkedCell
+
+-(void) marked:(UIColor*) theColor userText:(NSString*) theText {
+
+    [CellBookmark createCellBookmark:self.theCell comments:theText color:theColor];
+    NSIndexPath* AddressIndex = [NSIndexPath indexPathForRow:SECTION_ADDRESS_ROW_CELL_ADDRESS inSection:SECTION_ADDRESS];
+    [self.theTable reloadRowsAtIndexPaths:@[AddressIndex] withRowAnimation:FALSE];
+
+    // Refresh the map content if filtering based on Marked cells
+    [self.delegate refreshMapWithFilter:TRUE overlays:FALSE];
+}
+
+- (void) cancel {
+}
+
+#pragma mark - Buttons
+
+- (IBAction)markButtonPushed:(UIButton *)sender {
+    if ([CellBookmark isCellMarked:self.theCell]) {
+        [CellBookmark removeCellBookmark:self.theCell.id];
+        NSIndexPath* AddressIndex = [NSIndexPath indexPathForRow:SECTION_ADDRESS_ROW_CELL_ADDRESS inSection:SECTION_ADDRESS];
+        [self.theTable reloadRowsAtIndexPaths:@[AddressIndex] withRowAnimation:FALSE];
+
+        // Refresh the map content if filtering based on Marked cells
+        [self.delegate refreshMapWithFilter:TRUE overlays:FALSE];
+    } else {
+        [self performSegueWithIdentifier:@"openMarkCell" sender:self];
+    }
+}
+
+
 #pragma  mark - AlarmListener protocol
 
 - (void) alarmLoadingFailure {
@@ -175,7 +211,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self showToolbar];
+
     self.title = self.theCell.id;
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
@@ -187,6 +224,20 @@
     
     [RequestUtilities getDefaultSiteImage:self.theCell.siteId quality:LowRes delegate:self clientId:@"getDefaultImage"];
 }
+
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [self showToolbar];
+}
+
+
+-(void) showToolbar {
+    [self.navigationController setToolbarHidden:TRUE];
+    self.navigationController.hidesBarsOnSwipe = FALSE;
+    self.navigationController.hidesBarsOnTap = FALSE;
+}
+
 
 -(void) initAndLoadCellParameters {
     if (self.theCell.parametersBySection == Nil) {
@@ -270,6 +321,13 @@
     }
     
     return cell;
+}
+
+-(void) displayCellTimezone:(NSString*) timeZone {
+    CellAddressDetails* cell = (CellAddressDetails*) [self.theTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    if (cell != Nil) {
+        cell.timezone.text = timeZone;
+    }
 }
 
 - (UITableViewCell *) buildCellForAddress:(UITableView *)tableView  cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -21,34 +21,16 @@
 
 #pragma mark - CellTimezoneDataSourceDelegate delegate
 - (void) cellTimezoneResponse:(CellMonitoring*) cell error:(NSError*) theError {
-    CellAddressDetails* addressDetails = (CellAddressDetails*) [self.theTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    if (theError == Nil) {
-        addressDetails.timezone.text = cell.timezone;
-    } else {
-        addressDetails.timezone.text = @"Timezone not found";
-    }
+    [self displayCellTimezone:cell.timezone];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self showToolbar];
 
     self.timezoneDatasource = [[CellTimezoneDataSource alloc] initWithDelegate:self cell:self.theCell];
     [self.timezoneDatasource loadTimeZone];
 }
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
-    [self showToolbar];
-}
-
--(void) showToolbar {
-    [self.navigationController setToolbarHidden:TRUE];
-    self.navigationController.hidesBarsOnSwipe = FALSE;
-    self.navigationController.hidesBarsOnTap = FALSE;
-}
-
 
 #pragma mark - Table view data source
 
