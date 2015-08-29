@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CellAlarmDatasource.h"
 #import "CellParametersDataSource.h"
+#import "CellKPIsDataSource.h"
 #import "CellMonitoring.h"
 #import "AroundMeViewItf.h"
 
@@ -23,7 +24,8 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 
 
 
-@interface CellDetailsInfoBasicViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CellAlarmListener, CellParametersDataSourceDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, HTMLDataResponse, MarkedCell>
+@interface CellDetailsInfoBasicViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CellAlarmListener, CellParametersDataSourceDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, HTMLDataResponse, MarkedCell,
+CellKPIsLoadingItf>
 
 
 @property(nonatomic, readonly) CellMonitoring* theCell;
@@ -36,5 +38,7 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 -(void) initializeWithSimpleCellInfo:(CellMonitoring *)theCell;
 
 -(void) displayCellTimezone:(NSString*) timeZone;
+
+-(UITableViewCell *) buildCellForKPIsSection:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

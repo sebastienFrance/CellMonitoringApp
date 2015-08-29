@@ -1019,7 +1019,7 @@
                     <navigationItem key="navigationItem" title="KPIs" id="94v-f4-ChE">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="UM4-Op-2eh">
                             <connections>
-                                <action selector="sendMail:" destination="Q7U-dT-cbS" id="Kzv-OD-yKk"/>
+                                <action selector="sendMail:" destination="Q7U-dT-cbS" id="iGj-3I-X4I"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -23,79 +23,8 @@
 #import "MailActivity.h"
 #import "KPIDictionaryManager.h"
 
-@interface CellDetailsAndKPIsViewController ()
-
-@property(nonatomic) CellKPIsDataSource* datasource;
-
-@end
 
 @implementation CellDetailsAndKPIsViewController
-
-
-#pragma mark - Send mail
-- (IBAction)sendMail:(UIBarButtonItem *)sender {
-    KPIDictionary* dictionary = [KPIDictionaryManager sharedInstance].defaultKPIDictionary;
-    MailCellKPI* mailbody = [[MailCellKPI alloc] init:self.theCell
-                                           datasource:self.datasource
-                                        KPIDictionary:dictionary
-                                     monitoringPeriod:[[MonitoringPeriodUtility sharedInstance] monitoringPeriod]
-                                               alarms:self.alarmDatasource.alarmsOrderedByDate];
-    
-    [mailbody presentActivityViewFrom:self];
- }
-
-
-
-#pragma mark - CellKPIsLoadingItf
-- (void) dataIsLoaded {
-    [self.theTable reloadData];
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-}
-
-- (void) dataLoadingFailure {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    UIAlertController* alert = [Utility getSimpleAlertView:@"Communication Error"
-                                                   message:@"Cannot get KPIs from the server."
-                                               actionTitle:@"OK"];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (void) timezoneIsLoaded:(NSString*) theTimeZone {
-    [self displayCellTimezone:theTimeZone];
-}
-
-
-#pragma mark - Initialization
-
-- (id)initWithCoder:(NSCoder*)coder
-{
-    if ((self = [super initWithCoder:coder])) {
-        _datasource = [[CellKPIsDataSource alloc] init:self];
-    }
-    return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    [self initAndLoadCellDetails];
-}
-
--(void) initAndLoadCellDetails {
-    CellKPIsDataSource* cache = [self.theCell getCache];
-    if (cache != Nil) {
-        self.datasource = cache;
-        [self.theTable reloadData];
-        [self displayCellTimezone:self.theCell.timezone];
-    } else {
-        MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"Loading KPIs";
-        
-        [self.datasource loadData:self.theCell];
-    }
-}
-
-
 
 #pragma mark - Table view data source
 
@@ -172,83 +101,10 @@
                                                           technology:cellTechnology];
 }
 
-+(KPI*) getKPI:(DCTechnologyId) cellTechnology indexPath:(NSIndexPath*) indexPath {
-    NSIndexPath* realIndexPath = [NSIndexPath indexPathForRow:indexPath.row
-                                                    inSection:[CellDetailsAndKPIsViewController getKPISectionIndex:indexPath.section]];
-
-    return [[KPIDictionaryManager sharedInstance] getKPI:cellTechnology indexPath:realIndexPath];
-}
 
 +(NSInteger) getKPISectionIndex:(NSUInteger) section {
     return (section - 2);
 }
-
-
--(UITableViewCell *) buildCellForKPIsSection:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdKPI = @"CellKPIId";
-
-    DisplayKPICell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdKPI forIndexPath:indexPath];
-
-    KPI* cellKPI = [CellDetailsAndKPIsViewController getKPI:self.theCell.cellTechnology indexPath:indexPath];
-    cell.kpiName.text = cellKPI.name;
-    cell.kpiDescription.text = cellKPI.shortDescription;
-    
-    MonitoringPeriodUtility* theMP = [MonitoringPeriodUtility sharedInstance];
-    NSDictionary* KPIs = [self.datasource getKPIsForMonitoringPeriod:[theMP monitoringPeriod]];
-    
-    if (KPIs != Nil) {
-        NSArray* kpiValues = KPIs[cellKPI.internalName];
-        
-        if (kpiValues != Nil) {
-            NSString* lastValue = [cellKPI getDisplayableValueFromNumber:[kpiValues lastObject]];
-            NSString* beforeLastValue = Nil;
-            if (kpiValues.count > 1) {
-                beforeLastValue = [cellKPI getDisplayableValueFromNumber:kpiValues[(kpiValues.count - 2)]];
-            }
-            cell.kpiValue.text = [KPI displayCurrentAndPreviousValue:lastValue
-                                                            preValue:beforeLastValue
-                                                    monitoringPeriod:theMP.monitoringPeriod
-                                                         requestDate:self.datasource.requestDate];
-
-            if (cellKPI.hasDirection) {
-                cell.severity.hidden = FALSE;
-                cell.severity.backgroundColor = [cellKPI getColorValueFromNumber:[kpiValues lastObject]];
-            } else {
-                cell.severity.hidden = TRUE;
-            }
-            
-        } else {
-            cell.kpiValue.text = @"No value";
-            cell.severity.hidden = TRUE;
-        }
-    } else {
-        cell.kpiValue.text = @"KPI is loading...";
-        cell.severity.hidden = TRUE;
-    }
-    
-    return cell;
-  
-}
-
-
-#pragma mark - Segue
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"openCellKPIDetailsId"]) {
-        DetailsCellWithChartViewController* modal = segue.destinationViewController;
-        
-        NSIndexPath* selectedIndexInFullTable = [self.theTable indexPathForSelectedRow];
-        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:selectedIndexInFullTable.row inSection:(selectedIndexInFullTable.section - 2)];
-        
-        [modal initialize:self.datasource initialMonitoringPeriod:[[MonitoringPeriodUtility sharedInstance] monitoringPeriod] initialIndex:indexPath];
-    } else if ([segue.identifier isEqualToString:@"openMarkCell"]) {
-        MarkViewController* modal = segue.destinationViewController;
-        modal.delegate = self;
-        modal.theCell = self.theCell;
-    } else {
-        [super prepareForSegue:segue sender:sender];
-    }
-}
-
 
 
 
