@@ -34,21 +34,20 @@
 #import "KPIDictionaryManager.h"
 #import "iPadAroundMeImpl.h"
 
+
+
 @interface CellDetailsInfoBasicViewController()
 
 
 @property(nonatomic) Boolean isCellParametersLoading;
 @property(nonatomic) Boolean isCellAlarmsLoading;
 
+// Datasources
 @property(nonatomic) CellAlarmDatasource* alarmDatasource;
 @property(nonatomic) CellParametersDataSource* parameterDatasource;
 
 @property(nonatomic) CellKPIsDataSource* datasource;
 @property (nonatomic) CellTimezoneDataSource* timezoneDatasource;
-
-
-@property (weak, nonatomic) IBOutlet UITableView *theTable;
-
 
 @property (nonatomic) CellMonitoring* theCell;
 @property (nonatomic,weak) id<AroundMeViewItf> delegate;
@@ -61,8 +60,19 @@
 
 @property(nonatomic) Boolean hasImage;
 
+@property (weak, nonatomic) IBOutlet UITableView *theTable;
 
 @end
+
+static const NSInteger SECTION_ADDRESS = 0;
+static const NSInteger SECTION_ADDRESS_ROW_CELL_ADDRESS = 0;
+static const NSInteger SECTION_GENERAL = 1;
+static const NSInteger SECTION_GENERAL_ROW_NEIGHBORS_RELATIONS = 0;
+static const NSInteger SECTION_GENERAL_ROW_PARAMETERS = 1;
+static const NSInteger SECTION_GENERAL_ROW_ALARMS = 2;
+static const NSInteger SECTION_GENERAL_ROW_ACTIONS_KPIS = 3; // Specific for iPad
+static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
+
 
 @implementation CellDetailsInfoBasicViewController
 
@@ -414,7 +424,6 @@
     }
     
     return cell;
-    
 }
 
 - (UITableViewCell *) buildCellForGeneralSection:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -599,34 +608,6 @@
     }
 }
 
-/* For iPad
- // Specific
- - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
- if (indexPath.section == 0) {
- return 180.0;
- } else {
- switch (indexPath.row) {
- case SECTION_GENERAL_ROW_PARAMETERS: {
- return 65.0;
- }
- case SECTION_GENERAL_ROW_ALARMS: {
- return 110.0;
- }
- case SECTION_GENERAL_ROW_ACTIONS_KPIS: {
- return 65.0;
- }
- case SECTION_GENERAL_ROW_NEIGHBORS_RELATIONS: {
- return 110;
- }
- default:
- return 65.0;
- }
- }
- }
-
- */
-
-
 #pragma mark - Segue
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"openParametersValueId"]) {
@@ -655,7 +636,5 @@
         modal.theCell = self.theCell;
     }
 }
-
-
 
 @end
