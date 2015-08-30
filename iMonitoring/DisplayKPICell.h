@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MonitoringPeriodUtility.h"
+
+@class KPI;
+
 
 @interface DisplayKPICell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel* kpiName;
 
-@property (weak, nonatomic) IBOutlet UILabel* kpiValue;
-
-@property (weak, nonatomic) IBOutlet UILabel* kpiDescription;
-@property (weak, nonatomic) IBOutlet UIView* severity;
-
+-(void) initWith:(KPI*) cellKPI monitoringPeriod:(DCMonitoringPeriodView) monitoringPeriod KPIValues:(NSArray<NSNumber*>*) kpiValues date:(NSDate*) requestDate;
+-(void) isStillLoading;
 @end

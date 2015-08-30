@@ -16,7 +16,7 @@
 
 // Index: Name of the Monitoring Period
 // Object : a NSMutableDictionary with the KPI values
-@property (nonatomic) NSMutableDictionary* KPIsAllMonitoringPeriod;
+@property (nonatomic) NSMutableDictionary<NSString*,NSMutableDictionary<NSString*,NSArray<NSNumber*>*>*> *KPIsAllMonitoringPeriod;
 
 @property (nonatomic) NSUInteger onGoingRequest;
 @property (nonatomic) Boolean hasFailedDuringLoading;
@@ -53,12 +53,12 @@
         }
         
     //NSLog(@"CellDetails data: %@", data);
-        NSMutableDictionary* KPIs = [[NSMutableDictionary alloc] initWithCapacity:data.count];
+        NSMutableDictionary<NSString*,NSArray<NSNumber*>*>* KPIs = [[NSMutableDictionary alloc] initWithCapacity:data.count];
         
         for (int i = 0 ; i < data.count; i++) {
             NSDictionary* currCell = data[i];
             NSString* KPIName = currCell[@"KPIName"];
-            NSArray* values = currCell[@"KPIValues"];
+            NSArray<NSNumber*> *values = currCell[@"KPIValues"];
             
             // Add in the dictionary a KPI (the Key) and the list of values (the value)
             KPIs[KPIName] = values;
@@ -145,7 +145,7 @@
 
 }
 
-- (NSDictionary*) getKPIsForMonitoringPeriod:(DCMonitoringPeriodView) monitoringPeriod {
+-(NSDictionary<NSString*,NSArray<NSNumber*>*>*) getKPIsForMonitoringPeriod:(DCMonitoringPeriodView) monitoringPeriod {
     NSString* MonitoringPeriodName = [MonitoringPeriodUtility getInternalStringForMonitoringPeriod:monitoringPeriod];
     return self.KPIsAllMonitoringPeriod[MonitoringPeriodName];
 }

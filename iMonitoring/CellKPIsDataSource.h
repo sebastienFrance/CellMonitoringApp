@@ -18,7 +18,7 @@
 
 - (id) init:(id<CellKPIsLoadingItf>) delegate;
 - (void) loadData:(CellMonitoring*) theCell;
-- (NSDictionary*) getKPIsForMonitoringPeriod:(DCMonitoringPeriodView) monitoringPeriod;
+- (NSDictionary<NSString*,NSArray<NSNumber*>*>*) getKPIsForMonitoringPeriod:(DCMonitoringPeriodView) monitoringPeriod;
 
 @end
 

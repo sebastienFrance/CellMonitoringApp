@@ -438,44 +438,17 @@
     DisplayKPICell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdKPI forIndexPath:indexPath];
 
     KPI* cellKPI = [CellDetailsInfoBasicViewController getKPI:self.theCell.cellTechnology indexPath:indexPath];
-    cell.kpiName.text = cellKPI.name;
-    cell.kpiDescription.text = cellKPI.shortDescription;
 
     MonitoringPeriodUtility* theMP = [MonitoringPeriodUtility sharedInstance];
-    NSDictionary* KPIs = [self.datasource getKPIsForMonitoringPeriod:[theMP monitoringPeriod]];
-
+    NSDictionary<NSString*,NSArray<NSNumber*>*>* KPIs = [self.datasource getKPIsForMonitoringPeriod:[theMP monitoringPeriod]];
     if (KPIs != Nil) {
-        NSArray* kpiValues = KPIs[cellKPI.internalName];
+        NSArray<NSNumber*>* kpiValues = KPIs[cellKPI.internalName];
 
-        if (kpiValues != Nil) {
-            NSString* lastValue = [cellKPI getDisplayableValueFromNumber:[kpiValues lastObject]];
-            NSString* beforeLastValue = Nil;
-            if (kpiValues.count > 1) {
-                beforeLastValue = [cellKPI getDisplayableValueFromNumber:kpiValues[(kpiValues.count - 2)]];
-            }
-            cell.kpiValue.text = [KPI displayCurrentAndPreviousValue:lastValue
-                                                            preValue:beforeLastValue
-                                                    monitoringPeriod:theMP.monitoringPeriod
-                                                         requestDate:self.datasource.requestDate];
-
-            if (cellKPI.hasDirection) {
-                cell.severity.hidden = FALSE;
-                cell.severity.backgroundColor = [cellKPI getColorValueFromNumber:[kpiValues lastObject]];
-            } else {
-                cell.severity.hidden = TRUE;
-            }
-
-        } else {
-            cell.kpiValue.text = @"No value";
-            cell.severity.hidden = TRUE;
-        }
+        [cell initWith:cellKPI monitoringPeriod:[theMP monitoringPeriod] KPIValues:kpiValues date:self.datasource.requestDate];
     } else {
-        cell.kpiValue.text = @"KPI is loading...";
-        cell.severity.hidden = TRUE;
+        [cell isStillLoading];
     }
-
     return cell;
-    
 }
 
 
