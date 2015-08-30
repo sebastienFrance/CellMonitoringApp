@@ -12,6 +12,7 @@
 #import "CellKPIsDataSource.h"
 #import "CellMonitoring.h"
 #import "AroundMeViewItf.h"
+#import "CellTimezoneDataSource.h"
 
 static const NSInteger SECTION_ADDRESS = 0;
 static const NSInteger SECTION_ADDRESS_ROW_CELL_ADDRESS = 0;
@@ -25,7 +26,7 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 
 
 @interface CellDetailsInfoBasicViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CellAlarmListener, CellParametersDataSourceDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, HTMLDataResponse, MarkedCell,
-CellKPIsLoadingItf>
+CellKPIsLoadingItf, CellTimezoneDataSourceDelegate>
 
 
 @property(nonatomic, readonly) CellMonitoring* theCell;

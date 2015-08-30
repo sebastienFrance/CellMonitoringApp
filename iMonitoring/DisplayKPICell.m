@@ -12,9 +12,7 @@
 @interface DisplayKPICell()
 
 @property (weak, nonatomic) IBOutlet UILabel* kpiName;
-
 @property (weak, nonatomic) IBOutlet UILabel* kpiValue;
-
 @property (weak, nonatomic) IBOutlet UILabel* kpiDescription;
 @property (weak, nonatomic) IBOutlet UIView* severity;
 

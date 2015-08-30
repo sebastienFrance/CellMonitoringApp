@@ -30,6 +30,9 @@
 #import "KPI.h"
 #import "DetailsCellWithChartViewController.h"
 #import "MarkViewController.h"
+#import "KPIDictionary.h"
+#import "KPIDictionaryManager.h"
+#import "iPadAroundMeImpl.h"
 
 @interface CellDetailsInfoBasicViewController()
 
@@ -41,6 +44,7 @@
 @property(nonatomic) CellParametersDataSource* parameterDatasource;
 
 @property(nonatomic) CellKPIsDataSource* datasource;
+@property (nonatomic) CellTimezoneDataSource* timezoneDatasource;
 
 
 @property (weak, nonatomic) IBOutlet UITableView *theTable;
@@ -50,6 +54,7 @@
 @property (nonatomic,weak) id<AroundMeViewItf> delegate;
 
 @property(nonatomic) Boolean isBasicCellInfos;
+@property(nonatomic) Boolean isKPIsDisplayed;
 
 // Images properties
 @property(nonatomic) UIImage* defaultCellImage;
@@ -227,6 +232,11 @@
     [self displayCellTimezone:theTimeZone];
 }
 
+#pragma mark - CellTimezoneDataSourceDelegate delegate
+- (void) cellTimezoneResponse:(CellMonitoring*) cell error:(NSError*) theError {
+    [self displayCellTimezone:cell.timezone];
+}
+
 
 
 #pragma mark - Initialization
@@ -279,6 +289,7 @@
 
 -(void) initAndLoadCellDetails {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.isKPIsDisplayed = TRUE;
         _datasource = [[CellKPIsDataSource alloc] init:self];
 
         CellKPIsDataSource* cache = [self.theCell getCache];
@@ -292,6 +303,10 @@
 
             [self.datasource loadData:self.theCell];
         }
+    } else {
+        self.isKPIsDisplayed = false;
+        self.timezoneDatasource = [[CellTimezoneDataSource alloc] initWithDelegate:self cell:self.theCell];
+        [self.timezoneDatasource loadTimeZone];
     }
 }
 
@@ -313,6 +328,7 @@
     self.isCellAlarmsLoading = TRUE;
     [self.alarmDatasource loadAlarms];
 }
+
 
 #pragma mark - Cell builders
 -(UITableViewCell*) buildCellForNRs:(UITableView*) tableView {
@@ -456,12 +472,38 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return 2;
+    if (self.isKPIsDisplayed) {
+        NSDictionary<NSString*,NSArray<KPI*>*> *KPIDictionary = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getKPIsPerDomain:self.theCell.cellTechnology];
+        return (KPIDictionary.count + 2);
+    } else {
+        return 2;
+    }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == SECTION_ADDRESS) {
+        return 1;
+    } if (section == SECTION_GENERAL) {
+        if (self.isBasicCellInfos == FALSE) {
+            return 4;
+        } else {
+            return 3;
+        }
+    } else  if (section >= SECTION_KPIS) {
+        return [self numberOfRowsForKPIsInSection:section];
+    } else {
+        return 0;
+    }
+}
+
+-(NSInteger) numberOfRowsForKPIsInSection:(NSInteger) section {
+    return [CellDetailsInfoBasicViewController getKPIsFromSection:section technology:self.theCell.cellTechnology].count;
+}
+
++(NSArray<KPI*>*) getKPIsFromSection:(NSInteger) section technology:(DCTechnologyId) cellTechnology {
+    return [[KPIDictionaryManager sharedInstance] getKPIsFromSection:[CellDetailsInfoBasicViewController getKPISectionIndex:section]
+                                                          technology:cellTechnology];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -475,12 +517,22 @@
             break;
         }
         default:{
-            return @"Unknown";
+            if (self.isKPIsDisplayed) {
+                return [CellDetailsInfoBasicViewController titleForKPIsInSection:section tehcnology:self.theCell.cellTechnology];
+            } else {
+                return @"Uknown";
+            }
             break;
         }
-            
+
     }
 }
+
++(NSString*) titleForKPIsInSection:(NSInteger) section tehcnology:(DCTechnologyId) cellTechnology {
+    NSArray<NSString*> *sectionsHeader = [[KPIDictionaryManager sharedInstance].defaultKPIDictionary getSectionsHeader:cellTechnology];
+    return sectionsHeader[[CellDetailsInfoBasicViewController getKPISectionIndex:section]];
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -492,7 +544,11 @@
             return [self buildCellForGeneralSection:tableView cellForRowAtIndexPath:indexPath];
         }
         default: {
-            return Nil;
+            if (self.isKPIsDisplayed) {
+                return [self buildCellForKPIsSection:tableView cellForRowAtIndexPath:indexPath];
+            } else {
+                return Nil;
+            }
         }
     }
 }
@@ -509,11 +565,67 @@
                     return;
                 }
                 [self performSegueWithIdentifier:@"openAlarmsId" sender:self];
-                
+                break;
+            }
+            case SECTION_GENERAL_ROW_ACTIONS_KPIS: {
+                iPadAroundMeImpl* mainEntry = (iPadAroundMeImpl*) self.delegate;
+                [mainEntry openDetailedKPIsView:self.theCell];
+                break;
+            }
+            default: {
+                NSLog(@"%s unknown case", __PRETTY_FUNCTION__);
             }
         }
     }
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.section) {
+        case SECTION_ADDRESS: {
+            return 180.0;
+        }
+        case SECTION_GENERAL: {
+            if (indexPath.row == SECTION_GENERAL_ROW_NEIGHBORS_RELATIONS) {
+                return 125.0;
+            } else if (indexPath.row == SECTION_GENERAL_ROW_ALARMS) {
+                return 103.0;
+            } else {
+                return 58.0;
+            }
+        }
+        default: {
+            return 97.0;
+        }
+    }
+}
+
+/* For iPad
+ // Specific
+ - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (indexPath.section == 0) {
+ return 180.0;
+ } else {
+ switch (indexPath.row) {
+ case SECTION_GENERAL_ROW_PARAMETERS: {
+ return 65.0;
+ }
+ case SECTION_GENERAL_ROW_ALARMS: {
+ return 110.0;
+ }
+ case SECTION_GENERAL_ROW_ACTIONS_KPIS: {
+ return 65.0;
+ }
+ case SECTION_GENERAL_ROW_NEIGHBORS_RELATIONS: {
+ return 110;
+ }
+ default:
+ return 65.0;
+ }
+ }
+ }
+
+ */
+
 
 #pragma mark - Segue
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

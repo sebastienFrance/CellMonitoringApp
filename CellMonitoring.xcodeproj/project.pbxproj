@@ -204,7 +204,6 @@
 		BE8CA9AF15E2C959006FD4E0 /* MailWorstCellsKPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8CA9AE15E2C959006FD4E0 /* MailWorstCellsKPI.m */; };
 		BE8CEBED15DFFE670040FDB4 /* iPadDetailsCellWithChartViewControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8CEBEC15DFFE660040FDB4 /* iPadDetailsCellWithChartViewControllerView.m */; };
 		BE8D17B015666A3D004A00D0 /* CellsOnCoverageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D17AF15666A3D004A00D0 /* CellsOnCoverageViewController.m */; };
-		BE8D17B31566DFAD004A00D0 /* CellDetailsAndKPIsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D17B21566DFAD004A00D0 /* CellDetailsAndKPIsViewController.m */; };
 		BE8D98CC15E573C800A99DC3 /* ZoneKPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D98CB15E573C800A99DC3 /* ZoneKPI.m */; };
 		BE8E25B71B8A443C004DD887 /* MapFilterOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8E25B61B8A443C004DD887 /* MapFilterOptions.storyboard */; };
 		BE8EB26D1A928F0300DDBE96 /* MailCellNeighborsRelationsWithAllHistoricalDiffs.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EB26C1A928F0300DDBE96 /* MailCellNeighborsRelationsWithAllHistoricalDiffs.m */; };
@@ -301,7 +300,6 @@
 		BEBD67671857A4D800A38958 /* UserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A0F6816FD9C90007D088E /* UserPreferences.m */; };
 		BEBD7C5B18D4B25F00CD705A /* RequestLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD7C5A18D4B25F00CD705A /* RequestLicense.m */; };
 		BEBF96F1185A5BCB00543F4D /* MainMapWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBF96F0185A5BCB00543F4D /* MainMapWindowController.m */; };
-		BEC006031A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC006021A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.m */; };
 		BEC105E319C62AFA00C72451 /* MapFilteringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC105E219C62AFA00C72451 /* MapFilteringViewController.m */; };
 		BEC1595A1AAE34EA006603AF /* CellParameterUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC159591AAE34EA006603AF /* CellParameterUtility.m */; };
 		BEC159631AAE371A006603AF /* CellParametersHistoricalDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC159621AAE371A006603AF /* CellParametersHistoricalDataSource.m */; };
@@ -732,8 +730,6 @@
 		BE8CEBEC15DFFE660040FDB4 /* iPadDetailsCellWithChartViewControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadDetailsCellWithChartViewControllerView.m; sourceTree = "<group>"; };
 		BE8D17AE15666A3C004A00D0 /* CellsOnCoverageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellsOnCoverageViewController.h; sourceTree = "<group>"; };
 		BE8D17AF15666A3D004A00D0 /* CellsOnCoverageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellsOnCoverageViewController.m; sourceTree = "<group>"; };
-		BE8D17B11566DFAD004A00D0 /* CellDetailsAndKPIsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellDetailsAndKPIsViewController.h; sourceTree = "<group>"; };
-		BE8D17B21566DFAD004A00D0 /* CellDetailsAndKPIsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellDetailsAndKPIsViewController.m; sourceTree = "<group>"; };
 		BE8D98CA15E573C800A99DC3 /* ZoneKPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoneKPI.h; sourceTree = "<group>"; };
 		BE8D98CB15E573C800A99DC3 /* ZoneKPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoneKPI.m; sourceTree = "<group>"; };
 		BE8E25B61B8A443C004DD887 /* MapFilterOptions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapFilterOptions.storyboard; sourceTree = "<group>"; };
@@ -878,8 +874,6 @@
 		BEBD7C5A18D4B25F00CD705A /* RequestLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestLicense.m; sourceTree = "<group>"; };
 		BEBF96EF185A5BCB00543F4D /* MainMapWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMapWindowController.h; sourceTree = "<group>"; };
 		BEBF96F0185A5BCB00543F4D /* MainMapWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapWindowController.m; sourceTree = "<group>"; };
-		BEC006011A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadCellDetailsPopoverMenuViewController.h; sourceTree = "<group>"; };
-		BEC006021A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadCellDetailsPopoverMenuViewController.m; sourceTree = "<group>"; };
 		BEC105E119C62AFA00C72451 /* MapFilteringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapFilteringViewController.h; sourceTree = "<group>"; };
 		BEC105E219C62AFA00C72451 /* MapFilteringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapFilteringViewController.m; sourceTree = "<group>"; };
 		BEC159581AAE34EA006603AF /* CellParameterUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellParameterUtility.h; sourceTree = "<group>"; };
@@ -1199,8 +1193,6 @@
 			children = (
 				BE1FFDDF1A5880C800C9646E /* CellDetailsInfoBasicViewController.h */,
 				BE1FFDE01A5880C900C9646E /* CellDetailsInfoBasicViewController.m */,
-				BE8D17B11566DFAD004A00D0 /* CellDetailsAndKPIsViewController.h */,
-				BE8D17B21566DFAD004A00D0 /* CellDetailsAndKPIsViewController.m */,
 				BEB9DAF4156A4AF800B6D9A9 /* DisplayKPICell.h */,
 				BEB9DAF5156A4AF800B6D9A9 /* DisplayKPICell.m */,
 				BE4250961568566F00B55BE6 /* CellAddressDetails.h */,
@@ -1564,8 +1556,6 @@
 				BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */,
 				BE6455CB1696181D00557654 /* iPadDashboardScopeViewNRCell.h */,
 				BE6455CC1696181D00557654 /* iPadDashboardScopeViewNRCell.m */,
-				BEC006011A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.h */,
-				BEC006021A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.m */,
 			);
 			name = Popovers;
 			sourceTree = "<group>";
@@ -2759,7 +2749,6 @@
 				BE8B80D51566306D008379C4 /* RequestUtilities.m in Sources */,
 				BE63AA38181551D4002D7E09 /* UserDescription.m in Sources */,
 				BE8D17B015666A3D004A00D0 /* CellsOnCoverageViewController.m in Sources */,
-				BE8D17B31566DFAD004A00D0 /* CellDetailsAndKPIsViewController.m in Sources */,
 				BEDF62CA17FB6D3200233A63 /* iMonPDFActivity.m in Sources */,
 				BEC2C73418E8659800B58CD9 /* AzimuthsOverlay.m in Sources */,
 				BEBCA88118BD248600C2BA54 /* NavigationViewCell.m in Sources */,
@@ -2805,7 +2794,6 @@
 				BEC159661AAE3E58006603AF /* HistoricalParameters.m in Sources */,
 				BE298C1D1590F3BE00A0E8F8 /* NeighborsLocateViewController.m in Sources */,
 				BE8937571592612800D949DB /* KPIsViewController.m in Sources */,
-				BEC006031A53235F00EE5313 /* iPadCellDetailsPopoverMenuViewController.m in Sources */,
 				BEA31AAF183138A800532C63 /* BasicMapViewDelegate.m in Sources */,
 				BE2098BE1594BA5500C4E4BD /* WorstKPIsCell.m in Sources */,
 				BE2098C21594C04200C4E4BD /* CellWithKPIValues.m in Sources */,

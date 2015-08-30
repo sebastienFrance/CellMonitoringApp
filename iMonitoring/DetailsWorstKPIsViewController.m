@@ -25,9 +25,9 @@
 #import "UserPreferences.h"
 #import "AroundMeViewController.h"
 #import "CellKPIsDataSource.h"
-#import "CellDetailsAndKPIsViewController.h"
 #import "DataCenter.h"
 #import "WorstCellSource.h"
+#import "CellDetailsInfoBasicViewController.h"
 
 @interface DetailsWorstKPIsViewController()
 
@@ -478,7 +478,7 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DashboardToCellKPIs"]) {
         
-        CellDetailsAndKPIsViewController *details = segue.destinationViewController;
+        CellDetailsInfoBasicViewController *details = segue.destinationViewController;
         [details initialize:sender delegate:[DataCenter sharedInstance].aroundMeItf];
     }
 }

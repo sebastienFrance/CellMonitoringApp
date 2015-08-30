@@ -26,7 +26,7 @@
 #import "KPIDictionaryManager.h"
 #import "DashboardCellDetailsHelper.h"
 #import "UserHelp.h"
-#import "iPadCellDetailsPopoverMenuViewController.h"
+#import "CellDetailsInfoBasicViewController.h"
 
 @interface iPadCellDetailsAndKPIsViewControllerView () 
 
@@ -418,7 +418,7 @@
     } else if ([segue.identifier isEqualToString:@"openCellInfoPopoverId"]) {
         UINavigationController *detailsMap = segue.destinationViewController;
 
-        iPadCellDetailsPopoverMenuViewController* topView = (iPadCellDetailsPopoverMenuViewController* )detailsMap.topViewController;
+        CellDetailsInfoBasicViewController* topView = (CellDetailsInfoBasicViewController* )detailsMap.topViewController;
 
         [topView initializeWithSimpleCellInfo:_theCell];
         [self preparePopover:segue.destinationViewController];

@@ -10,11 +10,10 @@
 #import "CellMonitoringGroup.h"
 #import "CellMonitoring.h"
 #import "CellGroupViewCell.h"
-#import "CellDetailsAndKPIsViewController.h"
 #import "VisitedCells+History.h"
 #import "DataCenter.h"
 #import "AroundMeViewItf.h"
-#import "iPadCellDetailsPopoverMenuViewController.h"
+#import "CellDetailsInfoBasicViewController.h"
 
 @interface CellGroupViewController ()
 

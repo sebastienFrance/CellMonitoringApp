@@ -505,7 +505,7 @@
         <!--KPIs-->
         <scene sceneID="Hg7-S0-sva">
             <objects>
-                <viewController storyboardIdentifier="CellWithAllDetails" id="Q7U-dT-cbS" customClass="CellDetailsAndKPIsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CellWithAllDetails" id="Q7U-dT-cbS" customClass="CellDetailsInfoBasicViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N6F-rA-9Kk"/>
                         <viewControllerLayoutGuide type="bottom" id="Kc1-0a-QGN"/>
