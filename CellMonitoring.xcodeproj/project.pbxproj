@@ -226,6 +226,7 @@
 		BE9B45BD1717FB8200FB7D5E /* CellGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9B45BC1717FB8200FB7D5E /* CellGroupViewController.m */; };
 		BE9B45C21717FEBF00FB7D5E /* CellGroupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9B45C11717FEBF00FB7D5E /* CellGroupViewCell.m */; };
 		BE9D6922164FC9C4007C68C5 /* SearchAddressViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9D6921164FC9C4007C68C5 /* SearchAddressViewCell.m */; };
+		BE9F472C1B94E572009F95E8 /* CellAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F472B1B94E571009F95E8 /* CellAddressTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		BEA059BD155FE8F600A5F794 /* KPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA059BC155FE8F600A5F794 /* KPI.m */; };
 		BEA294A11881A46300CAFEC7 /* ZoneAverageDetailsCellWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA294A01881A46300CAFEC7 /* ZoneAverageDetailsCellWindow.m */; };
 		BEA294AA1881B4A500CAFEC7 /* ZoneKPISource.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA294A91881B4A500CAFEC7 /* ZoneKPISource.m */; };
@@ -772,6 +773,8 @@
 		BE9D6920164FC9C4007C68C5 /* SearchAddressViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchAddressViewCell.h; sourceTree = "<group>"; };
 		BE9D6921164FC9C4007C68C5 /* SearchAddressViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchAddressViewCell.m; sourceTree = "<group>"; };
 		BE9DACD216412E8500A7C608 /* AroundMeProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AroundMeProtocols.h; sourceTree = "<group>"; };
+		BE9F472A1B94E571009F95E8 /* CellAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellAddressTableViewCell.h; sourceTree = "<group>"; };
+		BE9F472B1B94E571009F95E8 /* CellAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellAddressTableViewCell.m; sourceTree = "<group>"; };
 		BEA059BB155FE8F600A5F794 /* KPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPI.h; sourceTree = "<group>"; };
 		BEA059BC155FE8F600A5F794 /* KPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPI.m; sourceTree = "<group>"; };
 		BEA2949F1881A46300CAFEC7 /* ZoneAverageDetailsCellWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoneAverageDetailsCellWindow.h; sourceTree = "<group>"; };
@@ -1197,6 +1200,8 @@
 				BEB9DAF5156A4AF800B6D9A9 /* DisplayKPICell.m */,
 				BE4250961568566F00B55BE6 /* CellAddressDetails.h */,
 				BE4250971568566F00B55BE6 /* CellAddressDetails.m */,
+				BE9F472A1B94E571009F95E8 /* CellAddressTableViewCell.h */,
+				BE9F472B1B94E571009F95E8 /* CellAddressTableViewCell.m */,
 				BE178C8817DB1335004D1D27 /* CellAlarmsOverview.h */,
 				BE178C8917DB1335004D1D27 /* CellAlarmsOverview.m */,
 				BE8998CB158924DD007EA27E /* CellProperties.h */,
@@ -2750,6 +2755,7 @@
 				BE63AA38181551D4002D7E09 /* UserDescription.m in Sources */,
 				BE8D17B015666A3D004A00D0 /* CellsOnCoverageViewController.m in Sources */,
 				BEDF62CA17FB6D3200233A63 /* iMonPDFActivity.m in Sources */,
+				BE9F472C1B94E572009F95E8 /* CellAddressTableViewCell.m in Sources */,
 				BEC2C73418E8659800B58CD9 /* AzimuthsOverlay.m in Sources */,
 				BEBCA88118BD248600C2BA54 /* NavigationViewCell.m in Sources */,
 				BE1CC1DF1AB22E71008CF784 /* Parameters.m in Sources */,

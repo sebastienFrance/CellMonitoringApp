@@ -33,6 +33,7 @@
 #import "KPIDictionary.h"
 #import "KPIDictionaryManager.h"
 #import "iPadAroundMeImpl.h"
+#import "CellAddressTableViewCell.h"
 
 
 
@@ -62,10 +63,13 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *theTable;
 
+
+
 @end
 
 static const NSInteger SECTION_ADDRESS = 0;
-static const NSInteger SECTION_ADDRESS_ROW_CELL_ADDRESS = 0;
+static const NSInteger SECTION_ADDRESS_ROW_CELL_INFO = 0;
+static const NSInteger SECTION_ADDRESS_ROW_CELL_ADDRESS = 1;
 static const NSInteger SECTION_GENERAL = 1;
 static const NSInteger SECTION_GENERAL_ROW_NEIGHBORS_RELATIONS = 0;
 static const NSInteger SECTION_GENERAL_ROW_PARAMETERS = 1;
@@ -314,7 +318,8 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
             [self.datasource loadData:self.theCell];
         }
     } else {
-        self.isKPIsDisplayed = false;
+        [self.navigationItem setRightBarButtonItems:nil animated:YES]; // hide mail buttonItem
+        self.isKPIsDisplayed = FALSE;
         self.timezoneDatasource = [[CellTimezoneDataSource alloc] initWithDelegate:self cell:self.theCell];
         [self.timezoneDatasource loadTimeZone];
     }
@@ -408,9 +413,9 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 }
 
 -(void) displayCellTimezone:(NSString*) timeZone {
-    CellAddressDetails* cell = (CellAddressDetails*) [self.theTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    CellAddressTableViewCell* cell = (CellAddressTableViewCell*) [self.theTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     if (cell != Nil) {
-        cell.timezone.text = timeZone;
+        cell.theTimezone.text = timeZone;
     }
 }
 
@@ -425,6 +430,22 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
     
     return cell;
 }
+
+- (UITableViewCell *) buildCellAddress:(UITableView *)tableView  cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"CellAddressId";
+    CellAddressTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+    Boolean displayBookmarkButton = FALSE;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        displayBookmarkButton = TRUE;
+    } else {
+
+    }
+   [cell initializeCellAddress:self.theCell showBookmarkButton:displayBookmarkButton];
+
+    return cell;
+}
+
 
 - (UITableViewCell *) buildCellForGeneralSection:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
@@ -492,7 +513,7 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == SECTION_ADDRESS) {
-        return 1;
+        return 2;
     } if (section == SECTION_GENERAL) {
         if (self.isBasicCellInfos == FALSE) {
             return 4;
@@ -547,7 +568,11 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 {
     switch (indexPath.section) {
         case SECTION_ADDRESS: {
-            return [self buildCellForAddress:tableView cellForRowAtIndexPath:indexPath];
+            if (indexPath.row == SECTION_ADDRESS_ROW_CELL_INFO) {
+                return [self buildCellForAddress:tableView cellForRowAtIndexPath:indexPath];
+            } else {
+                return [self buildCellAddress:tableView cellForRowAtIndexPath:indexPath];
+            }
         }
         case SECTION_GENERAL: {
             return [self buildCellForGeneralSection:tableView cellForRowAtIndexPath:indexPath];
@@ -591,7 +616,11 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case SECTION_ADDRESS: {
-            return 180.0;
+            if (indexPath.row == SECTION_ADDRESS_ROW_CELL_INFO) {
+                return 147.0;
+            } else {
+                return 143.0;
+            }
         }
         case SECTION_GENERAL: {
             if (indexPath.row == SECTION_GENERAL_ROW_NEIGHBORS_RELATIONS) {

@@ -21,16 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *cellSite;
 @property (weak, nonatomic) IBOutlet UILabel *cellRelease;
 
-@property (weak, nonatomic) IBOutlet UILabel* street;
-@property (weak, nonatomic) IBOutlet UILabel* city;
-@property (weak, nonatomic) IBOutlet UILabel* country;
 
-@property (weak, nonatomic) IBOutlet UILabel* timezone;
-@property (weak, nonatomic) IBOutlet CoolButton *directionButton;
 @property (weak, nonatomic) IBOutlet UILabel *dlFrequency;
 
-// iPhone Only
-@property (weak, nonatomic) IBOutlet UIButton *markButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *sitePicture;
 
