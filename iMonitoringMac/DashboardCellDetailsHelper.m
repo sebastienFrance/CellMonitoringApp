@@ -38,7 +38,7 @@
 }
 
 
-- (NSArray*) createChartForMonitoringPeriod:(CellKPIsDataSource*) cellDatasource monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod {
+- (NSArray<UIImage*>*) createChartForMonitoringPeriod:(CellKPIsDataSource*) cellDatasource monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod {
     NSMutableArray* barCharImages = [[NSMutableArray alloc] init];
     
     KPIDictionary* dictionary = [KPIDictionaryManager sharedInstance].defaultKPIDictionary;

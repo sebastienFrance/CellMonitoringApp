@@ -37,9 +37,8 @@
 
 @property (nonatomic) Boolean usedPageControl;
 
-@property (nonatomic) NSArray* currentBarChartViews;
-
-@property (nonatomic) NSMutableArray* barChartViewsDic;
+@property (nonatomic) NSArray<UIImage*>* currentBarChartViews;
+@property (nonatomic) NSMutableArray<NSArray<UIImage*>*> *barChartViewsDic;
 
 @property (nonatomic) DCMonitoringPeriodView currentMonitoringPeriod;
 
@@ -49,19 +48,18 @@
 
 @property (nonatomic) CGSize cellSizeAtStartPinchGesture;
 
+@property (weak, nonatomic) IBOutlet UIPageControl *thePageControl;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *MarkButton;
+@property (weak, nonatomic) IBOutlet UICollectionView *theCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *theFlowLayout;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *viewScopeButton;
+
 @end
 
 @implementation iPadCellDetailsAndKPIsViewControllerView
 
 
 #pragma mark - Initializations
-- (id)initWithCoder:(NSCoder*)coder
-{
-    if ((self = [super initWithCoder:coder])) {
-    }
-    return self;
-}
-
 
 - (void)viewDidLoad
 {
@@ -84,15 +82,7 @@
     [self buildChartForCurrentMonitoringPeriod];
     
     [self initializeTitle];
-    
-    self.isMarked = FALSE;
-    
-    self.initialMarkedValue = [CellBookmark isCellMarked:_theCell];
-    if (self.initialMarkedValue) {
-        self.MarkButton.title = @"Unmark";
-        
-        self.isMarked = TRUE;
-    }
+    [self initializeBookmark];
 
     self.viewScopeButton.enabled = FALSE;
 
@@ -100,7 +90,7 @@
     dispatch_async(buildImagesQueue, ^{
 
         for (NSUInteger i = 0; i < self.barChartViewsDic.count; i++) {
-            if (self.barChartViewsDic[i] == [NSNull null]) {
+            if (self.barChartViewsDic[i] == (NSArray<UIImage*>*)[NSNull null]) {
                 DashboardCellDetailsHelper* helper = [[DashboardCellDetailsHelper alloc] init:306 height:207];
                 self.barChartViewsDic[i] = [helper createChartForMonitoringPeriod:self.theDatasource
                                                                  monitoringPeriod:i];
@@ -115,21 +105,20 @@
     [[UserHelp sharedInstance] iPadHelpForCellDashboardView:self];
 }
 
+
 - (void) initializePages {
     
     NSDictionary* theKPIsValuesForCurrentPeriod = [self.theDatasource getKPIsForMonitoringPeriod:self.currentMonitoringPeriod];
     
     NSUInteger numberOfKPIs = theKPIsValuesForCurrentPeriod.count;
-    
-    
-    
+
     NSUInteger numberOfPages = numberOfKPIs / (self.numberOfColumns*self.numberOfRows);
     if ((numberOfKPIs % (self.numberOfColumns*self.numberOfRows)) != 0) {
         numberOfPages++;
     }
     
-    _thePageControl.numberOfPages = numberOfPages;
-    _thePageControl.currentPage = 0;
+    self.thePageControl.numberOfPages = numberOfPages;
+    self.thePageControl.currentPage = 0;
 }
 
 - (void) initializeTitle {
@@ -138,6 +127,16 @@
     self.title = [NSString stringWithFormat:@"Cell %@ / %@", _theCell.id ,viewScope];
 }
 
+-(void) initializeBookmark {
+    self.isMarked = FALSE;
+
+    self.initialMarkedValue = [CellBookmark isCellMarked:self.theCell];
+    if (self.initialMarkedValue) {
+        self.MarkButton.title = @"Unmark";
+
+        self.isMarked = TRUE;
+    }
+}
 
 #pragma mark - Popover Mgt
 
@@ -270,7 +269,6 @@
                         _theFlowLayout.itemSize = cellSize;
                     }
                     completion:nil];
-    
 }
 
 #pragma mark - Popover callbacks
@@ -284,7 +282,7 @@
  
     [UIView transitionWithView:self.theCollectionView
                       duration:1.0f
-                       options:oldMonitoringPeriod < self.currentMonitoringPeriod ? UIViewAnimationOptionTransitionCurlUp :  UIViewAnimationOptionTransitionCurlDown //UIViewAnimationOptionTransitionFlipFromLeft
+                       options:oldMonitoringPeriod < self.currentMonitoringPeriod ? UIViewAnimationOptionTransitionCurlUp :  UIViewAnimationOptionTransitionCurlDown
                     animations:^() {
                         [self.theCollectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
                     }
@@ -394,9 +392,9 @@
     
     KPIDictionary* dictionary = [KPIDictionaryManager sharedInstance].defaultKPIDictionary;
 #warning SEB:to be completed for alarms export
-    MailCellKPI* mailbody = [[MailCellKPI alloc] init:_theCell datasource:self.theDatasource KPIDictionary:dictionary
+    MailCellKPI* mailbody = [[MailCellKPI alloc] init:self.theCell datasource:self.theDatasource KPIDictionary:dictionary
                                      monitoringPeriod:self.currentMonitoringPeriod alarms:Nil];
-    [mailbody setImagesForPDF:self.currentBarChartViews title:_theCell.id];
+    [mailbody setImagesForPDF:self.currentBarChartViews title:self.theCell.id];
     
     [self presentViewControllerInPopover:[mailbody getActivityViewController] item:sender];
 }

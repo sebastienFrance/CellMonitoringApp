@@ -22,6 +22,6 @@
 @property (nonatomic) Boolean fillWithGradient;
 
 - (id) init:(CGFloat) theWidth height:(CGFloat) theHeight;
-- (NSArray*) createChartForMonitoringPeriod:(CellKPIsDataSource*) cellDatasource monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod;
+- (NSArray<UIImage*>*) createChartForMonitoringPeriod:(CellKPIsDataSource*) cellDatasource monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod;
 
 @end

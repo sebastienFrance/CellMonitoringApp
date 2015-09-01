@@ -14,14 +14,8 @@
 @class KPIChart;
 @interface iPadCellDetailsAndKPIsViewControllerView : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, MarkedCell,UIPopoverPresentationControllerDelegate>
 
-
-@property (weak, nonatomic) IBOutlet UIPageControl *thePageControl;
 @property (nonatomic) CellMonitoring* theCell;
 @property (nonatomic) CellKPIsDataSource* theDatasource;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *MarkButton;
-@property (weak, nonatomic) IBOutlet UICollectionView *theCollectionView;
-@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *theFlowLayout;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *viewScopeButton;
 
 
 
