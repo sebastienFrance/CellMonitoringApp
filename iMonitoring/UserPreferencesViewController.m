@@ -11,7 +11,6 @@
 #import "KPIsPrefListViewController.h"
 #import "DataCenter.h"
 #import "MonitoringPeriodViewController.h"
-#import "iPadAroundMeImpl.h"
 #import "TouchIdCell.h"
 #import "SWRevealViewController/SWRevealViewController.h"
 #import "KPIDictionaryManager.h"
@@ -21,8 +20,8 @@
 @interface UserPreferencesViewController ()
 
 @property (nonatomic) KPIsPrefListViewController* currentKPIsController;
-@property (nonatomic) NSArray* technoLabel;
-@property (nonatomic) NSArray* imageLabel;
+@property (nonatomic) NSArray<NSString*>* technoLabel;
+@property (nonatomic) NSArray<UIImage*>* imageLabel;
 
 @property (nonatomic, strong) UIPanGestureRecognizer *dynamicTransitionPanGesture;
 
@@ -60,7 +59,11 @@ static NSUInteger _technoMapping[] =  { DCTechnologyLTE, DCTechnologyWCDMA, DCTe
     
     preferencesTableView.dataSource = self;
     preferencesTableView.delegate = self;
-    
+
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self.navigationItem setLeftBarButtonItems:nil animated:YES]; // hide Side Menu button
+    }
+
     self.title = @"Preferences";
 
 }
@@ -71,13 +74,8 @@ static NSUInteger _technoMapping[] =  { DCTechnologyLTE, DCTechnologyWCDMA, DCTe
     if (self.revealViewController != Nil) {
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
 - (IBAction)menuButtonPushed:(id)sender {
     [self.revealViewController revealToggle:Nil];
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A262e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ich-Y2-Odn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ich-Y2-Odn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -50,13 +50,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6vo-FL-nq4">
-                                                    <rect key="frame" x="20" y="24" width="45" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8Y-RN-axf">
                                                     <rect key="frame" x="226" y="5" width="61" height="59"/>
                                                     <animations/>
@@ -65,12 +58,20 @@
                                                         <constraint firstAttribute="height" constant="59" id="ecK-XT-eZb"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6vo-FL-nq4">
+                                                    <rect key="frame" x="8" y="24" width="210" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="6vo-FL-nq4" firstAttribute="top" secondItem="5rE-V6-XJR" secondAttribute="top" constant="24" id="2N3-ku-fue"/>
-                                                <constraint firstItem="6vo-FL-nq4" firstAttribute="leading" secondItem="5rE-V6-XJR" secondAttribute="leading" constant="20" id="Ltn-Yk-3KS"/>
-                                                <constraint firstItem="6vo-FL-nq4" firstAttribute="centerY" secondItem="C8Y-RN-axf" secondAttribute="centerY" id="OG9-KX-oEs"/>
+                                                <constraint firstItem="C8Y-RN-axf" firstAttribute="leading" secondItem="6vo-FL-nq4" secondAttribute="trailing" constant="8" symbolic="YES" id="Fnl-BH-5Vp"/>
+                                                <constraint firstItem="6vo-FL-nq4" firstAttribute="leading" secondItem="5rE-V6-XJR" secondAttribute="leadingMargin" id="Ltn-Yk-3KS"/>
+                                                <constraint firstItem="C8Y-RN-axf" firstAttribute="centerY" secondItem="5rE-V6-XJR" secondAttribute="centerY" id="T46-CG-l2C"/>
+                                                <constraint firstItem="6vo-FL-nq4" firstAttribute="centerY" secondItem="5rE-V6-XJR" secondAttribute="centerY" id="V1f-mC-Zpw"/>
                                                 <constraint firstAttribute="trailing" secondItem="C8Y-RN-axf" secondAttribute="trailing" id="trB-p7-COt"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -132,6 +133,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4SW-mX-a3G">
                                                     <rect key="frame" x="263" y="24" width="51" height="31"/>
                                                     <animations/>
+                                                    <connections>
+                                                        <action selector="touchIdPressed:" destination="VeX-Aw-drM" eventType="valueChanged" id="idF-2v-J7B"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <animations/>

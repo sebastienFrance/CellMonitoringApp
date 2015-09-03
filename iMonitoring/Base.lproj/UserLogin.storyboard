@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A262e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3t8-hU-TOK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3t8-hU-TOK">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -54,11 +54,10 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="CellMonitoringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="myc-iX-qb9">
-                                <rect key="frame" x="30" y="424" width="540" height="176"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" image="CellMonitoringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="myc-iX-qb9">
+                                <rect key="frame" x="20" y="424" width="560" height="176"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="540" id="A15-Q4-WJg"/>
                                     <constraint firstAttribute="height" constant="176" id="PNh-aG-WNR"/>
                                 </constraints>
                             </imageView>
@@ -147,6 +146,7 @@
                             <constraint firstItem="jD6-yc-BXv" firstAttribute="top" secondItem="S5G-ql-cwb" secondAttribute="bottom" constant="8" symbolic="YES" id="pXC-W0-6g1"/>
                             <constraint firstItem="awQ-N1-PUu" firstAttribute="top" secondItem="mph-5e-Epd" secondAttribute="bottom" constant="8" symbolic="YES" id="pnM-Rf-Vpc"/>
                             <constraint firstItem="cjT-NS-TLb" firstAttribute="leading" secondItem="jD6-yc-BXv" secondAttribute="leading" id="qSn-qh-sHG"/>
+                            <constraint firstItem="myc-iX-qb9" firstAttribute="trailing" secondItem="qYp-aM-mZq" secondAttribute="trailingMargin" id="w5U-zp-MUK"/>
                             <constraint firstItem="aZQ-I6-uc7" firstAttribute="baseline" secondItem="mph-5e-Epd" secondAttribute="baseline" id="x4X-dK-KAv"/>
                             <constraint firstItem="awQ-N1-PUu" firstAttribute="leading" secondItem="S5G-ql-cwb" secondAttribute="leading" id="yTa-V6-Ukq"/>
                             <constraint firstItem="mph-5e-Epd" firstAttribute="top" secondItem="2yH-Le-2wN" secondAttribute="bottom" symbolic="YES" id="yWb-9I-k4u"/>

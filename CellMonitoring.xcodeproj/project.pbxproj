@@ -538,7 +538,6 @@
 		BE2BCA4C1544728E00D0AA64 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BE31D71B15E4019B008864E8 /* ZoneKPIsAverageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoneKPIsAverageViewController.h; sourceTree = "<group>"; };
 		BE31D71C15E4019B008864E8 /* ZoneKPIsAverageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoneKPIsAverageViewController.m; sourceTree = "<group>"; };
-		BE31F4871B876BB600404C19 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/UserLogin.storyboard; sourceTree = "<group>"; };
 		BE31F4891B87709500404C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserLogin.storyboard; sourceTree = "<group>"; };
 		BE339E01179D813A00B199E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE33E9BE154D157400B3FC0E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -976,7 +975,6 @@
 		BEF0A75215E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoneKPIsAverageViewCell.m; sourceTree = "<group>"; };
 		BEF0D9AB15D83A880080E31A /* CellKPIsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellKPIsDataSource.h; sourceTree = "<group>"; };
 		BEF0D9AC15D83A880080E31A /* CellKPIsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellKPIsDataSource.m; sourceTree = "<group>"; };
-		BEF0FF111B8515AB00B15CD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/UserPreferences.storyboard; sourceTree = "<group>"; };
 		BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UsersManagement.storyboard; sourceTree = "<group>"; };
 		BEF23388185E26110071402F /* MapModeItf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapModeItf.h; sourceTree = "<group>"; };
 		BEF653DF179D8E0700D36CAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -3089,7 +3087,6 @@
 		BE31F4861B876BB600404C19 /* UserLogin.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BE31F4871B876BB600404C19 /* en */,
 				BE31F4891B87709500404C19 /* Base */,
 			);
 			name = UserLogin.storyboard;
@@ -3130,7 +3127,6 @@
 		BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BEF0FF111B8515AB00B15CD8 /* en */,
 				BE92A8391B866DF700F59F3A /* Base */,
 			);
 			name = UserPreferences.storyboard;

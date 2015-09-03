@@ -66,7 +66,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your location will be used to find cells around you</string>
+	<string>Your location will be used to find cells around your position</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>SebCompany.CellMonitoring.viewing-cells</string>
