@@ -515,7 +515,7 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
     if (section == SECTION_ADDRESS) {
         return 2;
     } if (section == SECTION_GENERAL) {
-        if (self.isBasicCellInfos == FALSE) {
+        if (self.isBasicCellInfos == FALSE && self.isKPIsDisplayed == FALSE) {
             return 4;
         } else {
             return 3;

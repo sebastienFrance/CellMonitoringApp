@@ -40,7 +40,7 @@
     
     self.CriticalNBLabel.text = [NSString stringWithFormat:@" %lu ", (unsigned long)alarmDatasource.criticalAlarmCounter];
     if (alarmDatasource.criticalAlarmCounter >0) {
-        self.CriticalNBLabel.backgroundColor = [CellAlarm getColorForSeverity:Critical];
+       self.CriticalNBLabel.backgroundColor = [CellAlarm getColorForSeverity:Critical];
     }
     
     self.MajorNBLabel.text = [NSString stringWithFormat:@" %lu ", (unsigned long)alarmDatasource.majorAlarmCounter];
