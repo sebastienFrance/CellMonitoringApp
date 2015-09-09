@@ -44,15 +44,21 @@
         return timezoneId;
     }
 }
-
-+(NSString*) extractLongTimezoneFrom:(NSTimeZone*)timezoneData {
-    return [timezoneData localizedName:NSTimeZoneNameStyleGeneric
-                                locale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+// returns timezone like Europe/Paris
++(NSString*) extractRegionTimezoneFrom:(NSTimeZone*)timezoneData {
+    return timezoneData.name;
 }
 
+// return timezone like Central European Time
++(NSString*) extractLongTimezoneFrom:(NSTimeZone*)timezoneData {
+    return [timezoneData localizedName:NSTimeZoneNameStyleGeneric
+                                locale:[NSLocale localeWithLocaleIdentifier:[NSLocale currentLocale].localeIdentifier]]; //@"en_US"
+}
+
+// returns timezone like CET
 +(NSString*) extractShortTimezoneFrom:(NSTimeZone*) timezoneData {
     return [timezoneData localizedName:NSTimeZoneNameStyleShortStandard
-                                locale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+                                locale:[NSLocale localeWithLocaleIdentifier:[NSLocale currentLocale].localeIdentifier]];
 }
 
 #pragma mark - Yahoo!

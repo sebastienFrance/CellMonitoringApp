@@ -24,6 +24,7 @@
 
 
 +(NSString*) extractTimezoneFromData:(id) theData;
++(NSString*) extractRegionTimezoneFrom:(NSTimeZone*)timezoneData;
 +(NSString*) extractLongTimezoneFrom:(NSTimeZone*)timezoneData;
 +(NSString*) extractShortTimezoneFrom:(NSTimeZone*) timezoneData;
 

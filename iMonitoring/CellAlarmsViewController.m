@@ -64,7 +64,11 @@
     tableViewController.refreshControl = self.refreshControl;
     
     [self.alarmDatasource subscribe:self];
-    
+
+    self.theTable.estimatedRowHeight = 151.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
+
+
     [super viewDidLoad];
 }
 

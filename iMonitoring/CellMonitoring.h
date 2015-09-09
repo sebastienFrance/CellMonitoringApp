@@ -39,6 +39,7 @@
 @property (nonatomic, readonly) NSString* country;
 
 @property (nonatomic, readonly) Boolean hasTimezone;
+@property (nonatomic) NSString* timezoneRegion;
 @property (nonatomic) NSString* timezone;
 @property (nonatomic, readonly) NSString* timezoneAbbreviation;
 

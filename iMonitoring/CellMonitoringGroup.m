@@ -118,7 +118,7 @@
 
 
 - (void) initializeTimezone:(NSTimeZone *)timezone {
-
+    _timezoneRegion = [Utility extractRegionTimezoneFrom:timezone];
     _timezone = [Utility extractLongTimezoneFrom:timezone];
     _timezoneAbbreviation = [Utility extractShortTimezoneFrom:timezone];
 }

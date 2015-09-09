@@ -294,7 +294,14 @@
     
     self.theKPITable.delegate = self;
     self.theKPITable.dataSource = self;
-    
+    if (([self.datasource getMonitoringPeriod] == last6Hours15MnView) ||
+        ([self.datasource getMonitoringPeriod] == last24HoursHourlyView)) {
+        self.theKPITable.estimatedRowHeight = 78.0;
+    } else {
+        self.theKPITable.estimatedRowHeight = 48;
+    }
+    self.theKPITable.rowHeight = UITableViewAutomaticDimension;
+
     [self displayChart:TRUE];
     
     self.displayingPrimary = TRUE;
@@ -403,7 +410,7 @@
     }
     
     cell.dateLocalTime.text = [DateUtility configureTimeDetailsCell:self.dateOfKPIsValues row:indexPath.row monitoringPeriod:[self.datasource getMonitoringPeriod]];
-    cell.dateCellLocalTime.text = [DateUtility configureTimeDetailsCellWithTimezone:self.dateOfKPIsValues timezone:self.theCell.timezone row:indexPath.row monitoringPeriod:[self.datasource getMonitoringPeriod]];
+    cell.dateCellLocalTime.text = [DateUtility configureTimeDetailsCellWithTimezone:self.dateOfKPIsValues timezone:self.theCell.timezoneRegion row:indexPath.row monitoringPeriod:[self.datasource getMonitoringPeriod]];
     
     KPI* theKPI = [self.datasource getKPI];
     KPI* theRelatedKPI = theKPI.theRelatedKPI;

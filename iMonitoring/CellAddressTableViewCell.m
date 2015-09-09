@@ -73,7 +73,7 @@
     self.theStreet.text = theCell.street;
     self.theCity.text = theCell.city;
     self.theCountry.text = theCell.country;
-    self.theTimezone.text = theCell.timezone;
+    self.theTimezone.text = [NSString stringWithFormat:@"%@ (%@)", theCell.timezone, theCell.timezoneAbbreviation];
 }
 
 

@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) NSArray* filteredCells;
 @property (nonatomic, readonly) NSString* annotationIdentifier;
 @property (nonatomic, readonly, getter = hasVisibleCells) Boolean visibleCells;
+@property (nonatomic, readonly) NSString* timezoneRegion;
 @property (nonatomic, readonly) NSString* timezone;
 @property (nonatomic, readonly) NSString* timezoneAbbreviation;
 @property (nonatomic, readonly) Boolean hasTimezone;

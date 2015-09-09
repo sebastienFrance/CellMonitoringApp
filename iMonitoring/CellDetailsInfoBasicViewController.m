@@ -243,12 +243,12 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 }
 
 - (void) timezoneIsLoaded:(NSString*) theTimeZone {
-    [self displayCellTimezone:theTimeZone];
+    [self displayCellTimezone];
 }
 
 #pragma mark - CellTimezoneDataSourceDelegate delegate
 - (void) cellTimezoneResponse:(CellMonitoring*) cell error:(NSError*) theError {
-    [self displayCellTimezone:cell.timezone];
+    [self displayCellTimezone];
 }
 
 
@@ -277,7 +277,10 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
     self.title = self.theCell.id;
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
-    
+
+    self.theTable.estimatedRowHeight = 147.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
+
     [self initAndLoadCellParameters];
     [self initAndLoadAlarms];
     [self initAndLoadCellDetails];
@@ -310,7 +313,7 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
         if (cache != Nil) {
             self.datasource = cache;
             [self.theTable reloadData];
-            [self displayCellTimezone:self.theCell.timezone];
+            [self displayCellTimezone];
         } else {
             MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.labelText = @"Loading KPIs";
@@ -412,10 +415,10 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
     return cell;
 }
 
--(void) displayCellTimezone:(NSString*) timeZone {
+-(void) displayCellTimezone {
     CellAddressTableViewCell* cell = (CellAddressTableViewCell*) [self.theTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     if (cell != Nil) {
-        cell.theTimezone.text = timeZone;
+        cell.theTimezone.text = [NSString stringWithFormat:@"%@ (%@)", self.theCell.timezone, self.theCell.timezoneAbbreviation];
     }
 }
 

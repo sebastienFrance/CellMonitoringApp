@@ -16,8 +16,7 @@
 
 
 
-@interface CellDetailsInfoBasicViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CellAlarmListener, CellParametersDataSourceDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, HTMLDataResponse, MarkedCell,
-CellKPIsLoadingItf, CellTimezoneDataSourceDelegate>
+@interface CellDetailsInfoBasicViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CellAlarmListener, CellParametersDataSourceDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, HTMLDataResponse, MarkedCell, CellKPIsLoadingItf, CellTimezoneDataSourceDelegate>
 
 
 @property(nonatomic, readonly) CellMonitoring* theCell;
