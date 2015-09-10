@@ -514,7 +514,7 @@
 }
 
 // iPad Specific
-- (void) timezoneIsLoaded:(NSString*) theTimeZone {
+- (void) timezoneIsLoaded:(NSTimeZone*) theTimeZone {
     // Nothing has to be done
 }
 

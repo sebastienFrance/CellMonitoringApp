@@ -39,8 +39,7 @@
 - (void) dataReady: (id) theData clientId:(NSString *)theClientId {
     
     if ([theClientId isEqualToString:@"getTimeZone"]) {
-        NSString* timezone = [Utility extractTimezoneFromData:theData];
-        self.theCell.timezone = timezone;
+        self.theCell.theTimezone= [Utility extractTimezoneFromData:theData];
         [self.delegate cellTimezoneResponse:self.theCell error:Nil];
     } else {
         NSError* error = [[NSError alloc] initWithDomain:@"Communication Error" code:1 userInfo:Nil];

@@ -9,6 +9,7 @@
 #import "DateUtility.h"
 #import <math.h>
 #import "MonitoringPeriodUtility.h"
+#import "Utility.h"
 @implementation DateUtility
 
 
@@ -58,22 +59,22 @@
     return [format stringFromDate:date];
 }
 
-+ (NSString*) getDateWithTimeZone:(NSDate*) date timezone:(NSString*) zone option:(DateDisplayOptions) theOption {
++ (NSString*) getDateWithRealTimeZone:(NSDate*) date timezone:(NSTimeZone*) timeZone option:(DateDisplayOptions) theOption {
     if (date == Nil) {
         return Nil;
     }
 
     NSDateFormatter* format = [[NSDateFormatter alloc] init];
-    
-    NSTimeZone* timezone = [NSTimeZone timeZoneWithName:zone];
-    if (timezone != Nil) {
-        [format setTimeZone:timezone];
+
+     if (timeZone != Nil) {
+        [format setTimeZone:timeZone];
         [DateUtility configureDateFormat:format withOption:theOption];
         return [format stringFromDate:date];
     } else {
         return @"Not Available";
     }
 }
+
 
 +(void) configureDateFormat:(NSDateFormatter*) format withOption:(DateDisplayOptions) theOption {
     switch (theOption) {
@@ -273,7 +274,7 @@
 
 #pragma mark - Get string with time to be displayed based on monitoring period
 
-+ (NSString*) configureTimeDetailsCellWithTimezone:(NSDate*) theRequestedDate timezone:(NSString*) theTimezone row:(NSInteger) theRow monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod {
++ (NSString*) configureTimeDetailsCellWithTimezone:(NSDate*) theRequestedDate timezone:(NSTimeZone*) theTimezone row:(NSInteger) theRow monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod {
     
     double durationToRemove;
     double durationToRemoveForEnd;
@@ -303,9 +304,9 @@
     NSString* dateAndTime;
     
     if (theTimezone != nil) {
-        NSString* localEndDate = [DateUtility getDateWithTimeZone:end timezone:theTimezone option:displayMinute];
-        NSString* localStartDate = [DateUtility getDateWithTimeZone:from timezone:theTimezone option:displayMinute];
-        dateAndTime = [NSString stringWithFormat:@"%@ - %@ (%@)", localStartDate, localEndDate, theTimezone ];
+        NSString* localEndDate = [DateUtility getDateWithRealTimeZone:end timezone:theTimezone option:displayMinute];
+        NSString* localStartDate = [DateUtility getDateWithRealTimeZone:from timezone:theTimezone option:displayMinute];
+        dateAndTime = [NSString stringWithFormat:@"%@ - %@ (%@)", localStartDate, localEndDate, [Utility extractShortTimezoneFrom:theTimezone] ];
     } else {
         dateAndTime = [NSString stringWithFormat:@"%@ - %@ (Local Time)", startDate, endDate ];
     }

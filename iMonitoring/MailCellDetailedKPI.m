@@ -60,7 +60,7 @@
 
 - (NSString*) convertKPIsFromDomainToHTML {
     
-    KPIs2HTMLTable* HTMLTable = [[KPIs2HTMLTable alloc] init:_requestDate timezone:_theCell.timezone monitoringPeriod:_currentMonitoringPeriod];
+    KPIs2HTMLTable* HTMLTable = [[KPIs2HTMLTable alloc] init:_requestDate timezone:_theCell.theTimezone monitoringPeriod:_currentMonitoringPeriod];
     
     [HTMLTable appendRowKPIValues:_theKPI KPIValues:_theKPIValues];
     

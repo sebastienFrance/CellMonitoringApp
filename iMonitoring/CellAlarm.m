@@ -10,6 +10,7 @@
 #import "HTMLMailUtility.h"
 #import "CellMonitoring.h"
 #import "DateUtility.h"
+#import "Utility.h"
 
 @implementation CellAlarm
 
@@ -104,8 +105,8 @@ static NSString *severityConstantString[] = { @"Cleared", @"Warning", @"Minor",@
 
 - (NSString*) getAlarmDate:(CellMonitoring*) sourceCell {
     if (sourceCell.hasTimezone) {
-        return [NSString stringWithFormat:@"%@",[DateUtility getDateWithTimeZone:self.dateAndTime
-                                                                        timezone:sourceCell.timezone
+        return [NSString stringWithFormat:@"%@",[DateUtility getDateWithRealTimeZone:self.dateAndTime
+                                                                        timezone:sourceCell.theTimezone
                                                                           option:withHHmmss]];
     } else {
         return [NSString stringWithFormat:@"%@ (LT)",[DateUtility getDate:self.dateAndTime option:withHHmmss]];

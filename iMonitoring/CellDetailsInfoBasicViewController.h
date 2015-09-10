@@ -28,8 +28,6 @@
 -(void) initialize:(CellMonitoring*) theCell delegate:(id<AroundMeViewItf>) theDelegate;
 -(void) initializeWithSimpleCellInfo:(CellMonitoring *)theCell;
 
--(void) displayCellTimezone:(NSString*) timeZone;
-
 -(UITableViewCell *) buildCellForKPIsSection:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

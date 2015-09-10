@@ -205,7 +205,7 @@
 #pragma mark - CellTimezoneDataSourceDelegate delegate
 - (void) cellTimezoneResponse:(CellMonitoring*) cell error:(NSError*) theError {
     if (theError == Nil) {
-        self.cellTimezoneLabel.stringValue = cell.timezone;
+        self.cellTimezoneLabel.stringValue = [Utility extractLongTimezoneFrom:cell.theTimezone];
     } else {
         self.cellTimezoneLabel.stringValue = @"unknown timezone";
     }
@@ -347,7 +347,7 @@
     NSLog(@"Cell Details have  failed");
 }
 
-- (void) timezoneIsLoaded:(NSString*) theTimeZone {
+- (void) timezoneIsLoaded:(NSTimeZone*) theTimeZone {
     // Nothing has to be done
 }
 

@@ -8,6 +8,7 @@
 
 #import "CellAlarms2HTMLTable.h"
 #import "DateUtility.h"
+#import "Utility.h"
 
 @implementation CellAlarms2HTMLTable
 
@@ -26,7 +27,7 @@
         [HTMLAlarms appendFormat:@"<tr>"];
         
         //th style="width:300px"
-        [HTMLAlarms appendFormat:@"<th> Date (%@)</th>", theCell.timezone];
+        [HTMLAlarms appendFormat:@"<th> Date (%@)</th>", [Utility extractLongTimezoneFrom:theCell.theTimezone]];
         [HTMLAlarms appendFormat:@"<th> Probable Cause </th>"];
         [HTMLAlarms appendFormat:@"<th> Alarm Type </th>"];
         [HTMLAlarms appendFormat:@"<th> Acknowledged </th>"];
@@ -51,7 +52,7 @@
     
     [HTMLAlarm appendFormat:@"<tr>"];
     [HTMLAlarm appendFormat:@"<td style=\"background-color:%@\">%@</td>", theAlarm.severityHTMLColor,
-     [DateUtility getDateWithTimeZone:theAlarm.dateAndTime timezone:theCell.timezone option:withHHmmss]];
+     [DateUtility getDateWithRealTimeZone:theAlarm.dateAndTime timezone:theCell.theTimezone option:withHHmmss]];
     [HTMLAlarm appendFormat:@"<td>%@</td>", theAlarm.probableCause];
     [HTMLAlarm appendFormat:@"<td>%@</td>", theAlarm.alarmTypeString];
     [HTMLAlarm appendFormat:@"<td>%@</td>", theAlarm.isAcknowledged ? @"True" : @"False"];

@@ -25,5 +25,5 @@
 @protocol CellKPIsLoadingItf 
 - (void) dataIsLoaded;
 - (void) dataLoadingFailure;
-- (void) timezoneIsLoaded:(NSString*) theTimeZone;
+- (void) timezoneIsLoaded:(NSTimeZone*) theTimeZone;
 @end

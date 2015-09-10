@@ -23,10 +23,11 @@
 #pragma mark - utility methods
 
 
-+(NSString*) extractTimezoneFromData:(id) theData;
++(NSTimeZone*) extractTimezoneFromData:(id) theData;
 +(NSString*) extractRegionTimezoneFrom:(NSTimeZone*)timezoneData;
 +(NSString*) extractLongTimezoneFrom:(NSTimeZone*)timezoneData;
 +(NSString*) extractShortTimezoneFrom:(NSTimeZone*) timezoneData;
++(NSString*) extractLongDetailedTimezoneFrom:(NSTimeZone*) timezoneData;
 
 // Index to get the min / max entry from the NSArray result
 typedef NS_ENUM(NSUInteger, ArrayMinMaxEntry)  {

@@ -9,10 +9,11 @@
 #import "HTMLMailUtility.h"
 
 #import "DateUtility.h"
+#import "Utility.h"
 
 
 @implementation HTMLMailUtility
-+ (NSString*) getDateForHourlyAnd15mn:(NSUInteger) row requestDate:(NSDate*) theRequestDate timezone:(NSString*) theTimezone {
++ (NSString*) getDateForHourlyAnd15mn:(NSUInteger) row requestDate:(NSDate*) theRequestDate timezone:(NSTimeZone*) theTimezone {
     double durationToRemove;
     DateDisplayOptions displayMinute = withHH00;
     
@@ -30,20 +31,20 @@
     
     NSDate* from = [sourceDate dateByAddingTimeInterval:-durationToRemove];
     if (theTimezone != Nil) {
-        NSString* localDate = [DateUtility getDateWithTimeZone:from timezone:theTimezone option:displayMinute];
-        return [NSString stringWithFormat:@"%@ (%@)", localDate, theTimezone];
+        NSString* localDate = [DateUtility getDateWithRealTimeZone:from timezone:theTimezone option:displayMinute];
+        return [NSString stringWithFormat:@"%@ (%@)", localDate, [Utility extractShortTimezoneFrom:theTimezone]];
     } else {
         NSString* localDate =  [DateUtility getDate:from option:displayMinute];
         return [NSString stringWithFormat:@"%@ (localTime)", localDate];
     }
 }
 
-+ (NSString*) convertKPIsTableHeader:(NSDate*) theRequestDate timezone:(NSString*) theTimezone  {
++ (NSString*) convertKPIsTableHeader:(NSDate*) theRequestDate timezone:(NSTimeZone*) theTimezone  {
     return [HTMLMailUtility convertKPIsTableHeader:theRequestDate timezone:theTimezone monitoringPeriod:[MonitoringPeriodUtility sharedInstance].monitoringPeriod];
 }
 
 
-+ (NSString*) convertKPIsTableHeader:(NSDate*) theRequestDate timezone:(NSString*) theTimezone monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod {
++ (NSString*) convertKPIsTableHeader:(NSDate*) theRequestDate timezone:(NSTimeZone*) theTimezone monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod {
     NSMutableString* HTMLKPIDomain = [[NSMutableString alloc] init];
     
     switch (theMonitoringPeriod) {

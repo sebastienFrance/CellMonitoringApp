@@ -242,7 +242,7 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (void) timezoneIsLoaded:(NSString*) theTimeZone {
+- (void) timezoneIsLoaded:(NSTimeZone*) theTimeZone {
     [self displayCellTimezone];
 }
 
@@ -418,7 +418,7 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 -(void) displayCellTimezone {
     CellAddressTableViewCell* cell = (CellAddressTableViewCell*) [self.theTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     if (cell != Nil) {
-        cell.theTimezone.text = [NSString stringWithFormat:@"%@ (%@)", self.theCell.timezone, self.theCell.timezoneAbbreviation];
+        cell.theTimezone.text = [Utility extractLongDetailedTimezoneFrom:self.theCell.theTimezone];
     }
 }
 

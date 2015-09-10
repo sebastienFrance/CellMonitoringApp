@@ -410,7 +410,7 @@
     }
     
     cell.dateLocalTime.text = [DateUtility configureTimeDetailsCell:self.dateOfKPIsValues row:indexPath.row monitoringPeriod:[self.datasource getMonitoringPeriod]];
-    cell.dateCellLocalTime.text = [DateUtility configureTimeDetailsCellWithTimezone:self.dateOfKPIsValues timezone:self.theCell.timezoneRegion row:indexPath.row monitoringPeriod:[self.datasource getMonitoringPeriod]];
+    cell.dateCellLocalTime.text = [DateUtility configureTimeDetailsCellWithTimezone:self.dateOfKPIsValues timezone:self.theCell.theTimezone row:indexPath.row monitoringPeriod:[self.datasource getMonitoringPeriod]];
     
     KPI* theKPI = [self.datasource getKPI];
     KPI* theRelatedKPI = theKPI.theRelatedKPI;
@@ -566,7 +566,7 @@
         NSString* startDate = [DateUtility getDate:from option:displayMinute];
         
         if ([self.theCell hasTimezone]) {
-            NSString* localStartDate = [DateUtility getDateWithTimeZone:from timezone:self.theCell.timezone option:displayMinute];
+            NSString* localStartDate = [DateUtility getDateWithRealTimeZone:from timezone:self.theCell.theTimezone option:displayMinute];
             return [NSString stringWithFormat:@"%@", localStartDate];
         } else {
             return [NSString stringWithFormat:@"%@ (LT)", startDate];

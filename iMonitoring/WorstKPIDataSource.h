@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) DCTechnologyId technology;
 @property (nonatomic, readonly) NSDate* requestDate;
 @property (nonatomic, readonly) NSDictionary* zoneKPIs;
-@property (nonatomic, readonly) NSString* timezone;
+@property (nonatomic, readonly) NSTimeZone* timezone;
 
 @property (nonatomic, weak) id<WorstKPIDataLoadingItf> delegate;
 

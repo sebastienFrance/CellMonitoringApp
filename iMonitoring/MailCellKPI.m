@@ -16,6 +16,7 @@
 #import "KPIs2HTMLTable.h"
 #import "CellAlarm.h"
 #import "CellAlarms2HTMLTable.h"
+#import "Utility.h"
 
 @interface MailCellKPI()
 
@@ -83,7 +84,7 @@
 - (NSString*) convertKPIsFromDomainToHTML:(NSString*) domainName {
     NSArray<KPI*>* sectionContent = self.KPIDictionary[domainName];
 
-    KPIs2HTMLTable* HTMLTable = [[KPIs2HTMLTable alloc] init:self.datasource.requestDate timezone:self.theCell.timezone monitoringPeriod:self.currentMonitoringPeriod];
+    KPIs2HTMLTable* HTMLTable = [[KPIs2HTMLTable alloc] init:self.datasource.requestDate timezone:self.theCell.theTimezone monitoringPeriod:self.currentMonitoringPeriod];
 
     NSDictionary* KPIs = [self.datasource getKPIsForMonitoringPeriod:_currentMonitoringPeriod];
     for (KPI* currentKPI in sectionContent) {

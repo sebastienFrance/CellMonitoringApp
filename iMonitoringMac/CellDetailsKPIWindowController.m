@@ -170,7 +170,7 @@
     CellDetailsKPICellWindow *cellView = [tableView makeViewWithIdentifier:@"CellDetails" owner:self];
    
     cellView.dateInCellTimezone.stringValue = [DateUtility configureTimeDetailsCellWithTimezone:self.dateOfKPIs
-                                                                                       timezone:self.theCell.timezone
+                                                                                       timezone:self.theCell.theTimezone
                                                                                             row:row
                                                                                monitoringPeriod:[self.datasource getMonitoringPeriod]];
 

@@ -109,18 +109,11 @@
 }
 
 - (Boolean) hasTimezone {
-    if (_timezone == Nil) {
+    if (_theTimezone == Nil) {
         return FALSE;
     } else {
         return TRUE;
     }
-}
-
-
-- (void) initializeTimezone:(NSTimeZone *)timezone {
-    _timezoneRegion = [Utility extractRegionTimezoneFrom:timezone];
-    _timezone = [Utility extractLongTimezoneFrom:timezone];
-    _timezoneAbbreviation = [Utility extractShortTimezoneFrom:timezone];
 }
 
 - (Boolean) hasAddress {
@@ -157,7 +150,7 @@
     
     _country = [NSString stringWithFormat:@"%@",currentPlacemark.country];
 
-    [self initializeTimezone:currentPlacemark.timeZone];
+    _theTimezone = currentPlacemark.timeZone;
 }
 
 + (MKCoordinateRegion) getRegionThatFitsCells:(NSArray*) theCellGroupList {

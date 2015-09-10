@@ -12,7 +12,7 @@
 
 @implementation KPIs2HTMLTable
 
-- (id) init:(NSDate*) theDate timezone:(NSString*) theTimezone monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod {
+- (id) init:(NSDate*) theDate timezone:(NSTimeZone*) theTimezone monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod {
     if (self = [super init]) {
         _endTableAdded = FALSE;
         _theHTML = [[NSMutableString alloc] init];

@@ -12,8 +12,8 @@
 
 @interface HTMLMailUtility : NSObject
 
-+ (NSString*) convertKPIsTableHeader:(NSDate*) theRequestDate timezone:(NSString*) theTimezone;
-+ (NSString*) convertKPIsTableHeader:(NSDate*) theRequestDate timezone:(NSString*) theTimezone monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod;
++ (NSString*) convertKPIsTableHeader:(NSDate*) theRequestDate timezone:(NSTimeZone*) theTimezone;
++ (NSString*) convertKPIsTableHeader:(NSDate*) theRequestDate timezone:(NSTimeZone*) theTimezone monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod;
 
 + (NSString*) getGreenColorCode;
 + (NSString*) getYellowColorCode;

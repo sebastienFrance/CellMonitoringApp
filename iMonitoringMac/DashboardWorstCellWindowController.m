@@ -64,7 +64,7 @@
     
     NSString* windowTitle = [NSString stringWithFormat:@"%@ Dashboard / %@ (LT) / %@ (%@)",[BasicTypes getTechnoName:self.datasource.technology],
                              [DateUtility getDate:self.datasource.requestDate option:withHHmmss],
-                             [DateUtility getDateWithTimeZone:self.datasource.requestDate timezone:self.datasource.timezone option:withHHmmss],
+                             [DateUtility getDateWithRealTimeZone:self.datasource.requestDate timezone:self.datasource.timezone option:withHHmmss],
                              self.datasource.timezone];
     
     [self.window setTitle:windowTitle];

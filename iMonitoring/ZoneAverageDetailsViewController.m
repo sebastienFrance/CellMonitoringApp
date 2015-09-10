@@ -26,7 +26,7 @@
 
 @property(nonatomic) NSDate* requestDate;
 @property(nonatomic) Boolean displayingPrimary;
-@property(nonatomic) NSString* timezone;
+@property(nonatomic) NSTimeZone* timezone;
 @property(nonatomic) ZoneKPISource* dataSource;
 
 @property(nonatomic) NSLayoutConstraint* addedConstraint;
@@ -358,7 +358,7 @@
     
     NSString* finalDateString = Nil;
     if (_timezone != nil) {
-        NSString* localStartDate = [DateUtility getDateWithTimeZone:from timezone:_timezone option:displayMinute];
+        NSString* localStartDate = [DateUtility getDateWithRealTimeZone:from timezone:_timezone option:displayMinute];
         finalDateString = [NSString stringWithFormat:@"%@", localStartDate];
     } else {
         finalDateString = [NSString stringWithFormat:@"%@ (LT)", startDate];

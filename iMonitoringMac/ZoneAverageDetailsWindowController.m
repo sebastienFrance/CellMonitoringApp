@@ -23,7 +23,7 @@
 @property(nonatomic) KPIBarChart* theChart;
 
 @property(nonatomic) NSDate* requestDate;
-@property(nonatomic) NSString* timezone;
+@property(nonatomic) NSTimeZone* timezone;
 @property(nonatomic) id<ZoneKPIDataSource> dataSource;
 
 @end
@@ -130,7 +130,8 @@
     if ([identifier isEqualToString:@"CellDate"]) {
         ZoneAverageDetailsCellWindow *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
         cellView.dateCellLocalTime.stringValue = [DateUtility configureTimeDetailsCellWithTimezone:self.requestDate
-                                                                                          timezone:self.timezone row:row
+                                                                                          timezone:self.timezone
+                                                                                               row:row
                                                                                   monitoringPeriod:[[MonitoringPeriodUtility sharedInstance] monitoringPeriod]];
         cellView.dateLocalTime.stringValue = [DateUtility configureTimeDetailsCell:self.requestDate
                                                                                row:row

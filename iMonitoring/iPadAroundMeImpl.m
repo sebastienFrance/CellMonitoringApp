@@ -86,7 +86,7 @@
     [self.aroundMeViewController presentViewController:alert animated:YES completion:nil];
 }
 
-- (void) timezoneIsLoaded:(NSString*) theTimeZone {
+- (void) timezoneIsLoaded:(NSTimeZone*) theTimeZone {
     // Nothing has to be done
 }
 

@@ -12,9 +12,9 @@
 @implementation Utility
 
 
-+ (NSString*) extractTimezoneFromData:(id) theData {
++ (NSTimeZone*) extractTimezoneFromData:(id) theData {
     //return [Utility extractTimezoneFromGoogleData:theData];
-    return [Utility extractLongTimezoneFrom:theData];
+    return (NSTimeZone*) theData;
 }
 
 
@@ -46,19 +46,39 @@
 }
 // returns timezone like Europe/Paris
 +(NSString*) extractRegionTimezoneFrom:(NSTimeZone*)timezoneData {
-    return timezoneData.name;
+    if (timezoneData != nil) {
+        return timezoneData.name;
+    } else {
+        return @"Not available";
+    }
 }
 
 // return timezone like Central European Time
 +(NSString*) extractLongTimezoneFrom:(NSTimeZone*)timezoneData {
-    return [timezoneData localizedName:NSTimeZoneNameStyleGeneric
-                                locale:[NSLocale localeWithLocaleIdentifier:[NSLocale currentLocale].localeIdentifier]]; //@"en_US"
+    if (timezoneData != nil) {
+        return [timezoneData localizedName:NSTimeZoneNameStyleGeneric
+                                    locale:[NSLocale localeWithLocaleIdentifier:[NSLocale currentLocale].localeIdentifier]];
+    } else {
+        return @"Not available";
+    }
 }
 
 // returns timezone like CET
 +(NSString*) extractShortTimezoneFrom:(NSTimeZone*) timezoneData {
-    return [timezoneData localizedName:NSTimeZoneNameStyleShortStandard
-                                locale:[NSLocale localeWithLocaleIdentifier:[NSLocale currentLocale].localeIdentifier]];
+    if (timezoneData != Nil) {
+        return [timezoneData localizedName:NSTimeZoneNameStyleShortStandard
+                                    locale:[NSLocale localeWithLocaleIdentifier:[NSLocale currentLocale].localeIdentifier]];
+    } else {
+        return @"Not available";
+    }
+}
+
++(NSString*) extractLongDetailedTimezoneFrom:(NSTimeZone*) timezoneData {
+    if (timezoneData != Nil) {
+        return [NSString stringWithFormat:@"%@ (%@)", [Utility extractLongTimezoneFrom:timezoneData], [Utility extractShortTimezoneFrom:timezoneData]];
+    } else {
+        return @"Not available";
+    }
 }
 
 #pragma mark - Yahoo!

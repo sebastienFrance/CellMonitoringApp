@@ -169,20 +169,16 @@ static const NSString* PARAM_numberInterRATNR = @"numberInterRATNR";
     [self.parentGroup initialiazeAddress:placemark];
 }
 
+- (NSTimeZone*) theTimezone {
+    return self.parentGroup.theTimezone;
+}
+
+-(void) setTheTimezone:(NSTimeZone *)theTimezone {
+    self.parentGroup.theTimezone = theTimezone;
+}
+
 - (Boolean) hasTimezone {
     return self.parentGroup.hasTimezone;
-}
-
-- (NSString*) timezoneRegion {
-    return self.parentGroup.timezoneRegion;
-}
-
-- (NSString*) timezone {
-    return self.parentGroup.timezone;
-}
-
-- (NSString*) timezoneAbbreviation {
-    return self.parentGroup.timezoneAbbreviation;
 }
 
 
@@ -349,7 +345,7 @@ static const NSString* PARAM_numberInterRATNR = @"numberInterRATNR";
     }
     
     if (self.hasTimezone) {
-        [HTMLCell appendFormat:@"<li>Time zone: %@</li>", self.timezone];
+        [HTMLCell appendFormat:@"<li>Time zone: %@</li>", [Utility extractLongTimezoneFrom:self.theTimezone]];
     } else {
         [HTMLCell appendFormat:@"<li>Time zone: Not available</li>"];
     }

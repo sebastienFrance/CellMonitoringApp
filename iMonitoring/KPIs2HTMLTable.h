@@ -20,7 +20,7 @@
 }
 
 
-- (id) init:(NSDate*) theDate timezone:(NSString*) theTimezone monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod;
+- (id) init:(NSDate*) theDate timezone:(NSTimeZone*) theTimezone monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod;
 - (void) appendRowKPIValues:(KPI*) theKPI KPIValues:(NSArray*) theKPIValues;
 - (NSString*) getHTMLTable;
 

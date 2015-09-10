@@ -44,7 +44,7 @@ typedef NS_ENUM(NSUInteger, DateDisplayOptions) {
 
 + (NSString*) getSimpleLocalizedDate:(NSDate*) date;
 + (NSString*) getDate:(NSDate*) date option:(DateDisplayOptions) theOption;
-+ (NSString*) getDateWithTimeZone:(NSDate*) date timezone:(NSString*) zone option:(DateDisplayOptions) theOption;
++ (NSString*) getDateWithRealTimeZone:(NSDate*) date timezone:(NSTimeZone*) timeZone option:(DateDisplayOptions) theOption;
 
 + (NSString*) getGMTDate:(NSDate*) date;
 + (NSString*) getShortGMTDate:(NSDate*) date;
@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, DateDisplayOptions) {
 #pragma mark - Get string with time to be displayed based on monitoring period
 
 + (NSString*) configureTimeDetailsCellWithTimezone:(NSDate*) theRequestedDate
-                                          timezone:(NSString*) theTimezone
+                                          timezone:(NSTimeZone*) theTimezone
                                                row:(NSInteger) theRow
                                   monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod;
 

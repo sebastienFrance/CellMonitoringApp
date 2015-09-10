@@ -9,6 +9,7 @@
 #import "AlarmViewCell.h"
 #import "DateUtility.h"
 #import "CellMonitoring.h"
+#import "Utility.h"
 
 @implementation AlarmViewCell
 
@@ -37,7 +38,7 @@
     self.contentView.backgroundColor = theAlarm.severityLightColor;
    
     if (theCell.hasTimezone) {
-        self.dateAndTimeLabel.text = [NSString stringWithFormat:@"%@ (%@)",[DateUtility getDateWithTimeZone:theAlarm.dateAndTime timezone:theCell.timezone option:withHHmmss], theCell.timezone];
+        self.dateAndTimeLabel.text = [NSString stringWithFormat:@"%@ (%@)",[DateUtility getDateWithRealTimeZone:theAlarm.dateAndTime timezone:theCell.theTimezone option:withHHmmss], [Utility extractLongTimezoneFrom:theCell.theTimezone]];
     } else {
         self.dateAndTimeLocalTimeLabel.text = @"No cell local time";
     }

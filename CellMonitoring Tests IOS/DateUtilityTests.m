@@ -70,10 +70,11 @@
     XCTAssertTrue([dateStringResult isEqualToString:@"2014-05-18 21:00"], @"getDate withHH00 format is ok");
     XCTAssertFalse([dateStringResult isEqualToString:@"2014-05-18 21:03"], @"getDate withHH00 format is ok");
 
-    nilString = [DateUtility getDateWithTimeZone:Nil timezone:@"UTC" option:withHHmmss];
+    NSTimeZone* timezone = [NSTimeZone timeZoneWithName:@"UTC"];
+    nilString = [DateUtility getDateWithRealTimeZone:Nil timezone:timezone option:withHHmmss];
     XCTAssertNil(nilString, @"getDateWithTimeZone returned Nil with initial date nil");
 
-    dateStringResult = [DateUtility getDateWithTimeZone:self.testDate timezone:@"UTC" option:withHHmmss];
+    dateStringResult = [DateUtility getDateWithRealTimeZone:self.testDate timezone:timezone option:withHHmmss];
     XCTAssertTrue([dateStringResult isEqualToString:@"2014-05-18 19:03:32"], @"getDate withHHmmss format with timezone UTC is ok");
     XCTAssertFalse([dateStringResult isEqualToString:@"2014-05-18 21:03:32"], @"getDate withHHmmss format with timezone UTC is ok");
 
