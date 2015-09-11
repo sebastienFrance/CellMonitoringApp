@@ -243,8 +243,8 @@
                                     <outletCollection property="gestureRecognizers" destination="4Zc-BJ-u9D" appends="YES" id="rGI-vb-oPc"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hFg-XW-aif">
-                                <rect key="frame" x="0.0" y="223" width="600" height="333"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hFg-XW-aif">
+                                <rect key="frame" x="0.0" y="197" width="600" height="295"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -613,6 +613,10 @@
                                                                 </label>
                                                             </subviews>
                                                             <animations/>
+                                                            <constraints>
+                                                                <constraint firstItem="Gk7-OC-e8j" firstAttribute="top" secondItem="oSY-Mm-9ck" secondAttribute="top" id="4Fr-V2-FaQ"/>
+                                                                <constraint firstItem="Gk7-OC-e8j" firstAttribute="leading" secondItem="oSY-Mm-9ck" secondAttribute="leading" id="N3v-UU-evX"/>
+                                                            </constraints>
                                                             <variation key="widthClass=compact" misplaced="YES">
                                                                 <rect key="frame" x="0.0" y="0.0" width="284" height="130"/>
                                                             </variation>
@@ -660,6 +664,8 @@
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="GQP-41-nMU"/>
+                                                                <constraint firstAttribute="trailing" secondItem="P69-Da-dGr" secondAttribute="trailing" id="LMW-CN-c5G"/>
+                                                                <constraint firstItem="P69-Da-dGr" firstAttribute="top" secondItem="dnF-dF-kPL" secondAttribute="top" id="uLk-c5-Yfc"/>
                                                             </constraints>
                                                             <variation key="widthClass=compact" misplaced="YES">
                                                                 <rect key="frame" x="284" y="0.0" width="100" height="130"/>

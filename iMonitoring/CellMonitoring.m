@@ -344,11 +344,7 @@ static const NSString* PARAM_numberInterRATNR = @"numberInterRATNR";
         [HTMLCell appendFormat:@"<li>Address: Not available </li>"];
     }
     
-    if (self.hasTimezone) {
-        [HTMLCell appendFormat:@"<li>Time zone: %@</li>", [Utility extractLongTimezoneFrom:self.theTimezone]];
-    } else {
-        [HTMLCell appendFormat:@"<li>Time zone: Not available</li>"];
-    }
+    [HTMLCell appendFormat:@"<li>Time zone: %@</li>", [Utility extractLongTimezoneFrom:self.theTimezone]];
     [HTMLCell appendFormat:@"<li>Latitude:  %f</li>", self.coordinate.latitude];
     [HTMLCell appendFormat:@"<li>Longitude: %f</li>", self.coordinate.longitude];
     [HTMLCell appendFormat:@"<li>Technology:  %@</li>", self.techno];

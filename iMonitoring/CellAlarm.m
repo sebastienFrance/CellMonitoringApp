@@ -109,7 +109,8 @@ static NSString *severityConstantString[] = { @"Cleared", @"Warning", @"Minor",@
                                                                         timezone:sourceCell.theTimezone
                                                                           option:withHHmmss]];
     } else {
-        return [NSString stringWithFormat:@"%@ (LT)",[DateUtility getDate:self.dateAndTime option:withHHmmss]];
+        return [NSString stringWithFormat:@"%@ (LT)",[DateUtility getDate:self.dateAndTime
+                                                                   option:withHHmmss]];
     }
 
 }

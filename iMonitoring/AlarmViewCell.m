@@ -36,14 +36,12 @@
     self.additionalTextLabel.text = theAlarm.additionalText;
     self.alarmTypeLabel.text = theAlarm.alarmTypeString;
     self.contentView.backgroundColor = theAlarm.severityLightColor;
-   
-    if (theCell.hasTimezone) {
-        self.dateAndTimeLabel.text = [NSString stringWithFormat:@"%@ (%@)",[DateUtility getDateWithRealTimeZone:theAlarm.dateAndTime timezone:theCell.theTimezone option:withHHmmss], [Utility extractLongTimezoneFrom:theCell.theTimezone]];
-    } else {
-        self.dateAndTimeLocalTimeLabel.text = @"No cell local time";
-    }
-    
-    
+
+    self.dateAndTimeLabel.text = [NSString stringWithFormat:@"%@ (%@)",
+                                  [DateUtility getDateWithRealTimeZone:theAlarm.dateAndTime timezone:theCell.theTimezone option:withHHmmss],
+                                  [Utility extractLongTimezoneFrom:theCell.theTimezone]];
+
+
     self.dateAndTimeLocalTimeLabel.text = [NSString stringWithFormat:@"%@ (Local Time)",[DateUtility getDate:theAlarm.dateAndTime option:withHHmmss]];
     self.isAcknowledgedLabel.text = theAlarm.isAcknowledged ? @"True" : @"False";
 }

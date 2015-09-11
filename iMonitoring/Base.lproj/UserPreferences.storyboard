@@ -166,7 +166,13 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Preferences" id="zjS-Jh-yds"/>
+                    <navigationItem key="navigationItem" title="Preferences" id="zjS-Jh-yds">
+                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="3AR-uT-KfB">
+                            <connections>
+                                <action selector="menuButtonPushed:" destination="VeX-Aw-drM" id="um0-Od-fyi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="550"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="550"/>
@@ -719,4 +725,7 @@
             <point key="canvasLocation" x="4910" y="2119"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="reveal-icon" width="22" height="17"/>
+    </resources>
 </document>

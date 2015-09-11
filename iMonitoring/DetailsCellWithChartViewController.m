@@ -563,13 +563,12 @@
         }
         
         NSDate* from = [sourceDate dateByAddingTimeInterval:-durationToRemove];
-        NSString* startDate = [DateUtility getDate:from option:displayMinute];
         
         if ([self.theCell hasTimezone]) {
             NSString* localStartDate = [DateUtility getDateWithRealTimeZone:from timezone:self.theCell.theTimezone option:displayMinute];
             return [NSString stringWithFormat:@"%@", localStartDate];
         } else {
-            return [NSString stringWithFormat:@"%@ (LT)", startDate];
+            return [NSString stringWithFormat:@"%@ (LT)", [DateUtility getDate:from option:displayMinute]];
         }
         
         

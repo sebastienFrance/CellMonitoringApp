@@ -39,7 +39,7 @@
     
     NSString* timezoneId = data[@"timeZoneId"];
     if (timezoneId == Nil) {
-        return  @"Timezone not found";
+        return @"Timezone not available";
     } else {
         return timezoneId;
     }
@@ -49,7 +49,7 @@
     if (timezoneData != nil) {
         return timezoneData.name;
     } else {
-        return @"Not available";
+        return @"Timezone not available";
     }
 }
 
@@ -59,7 +59,7 @@
         return [timezoneData localizedName:NSTimeZoneNameStyleGeneric
                                     locale:[NSLocale localeWithLocaleIdentifier:[NSLocale currentLocale].localeIdentifier]];
     } else {
-        return @"Not available";
+        return @"Timezone not available";
     }
 }
 
@@ -69,7 +69,7 @@
         return [timezoneData localizedName:NSTimeZoneNameStyleShortStandard
                                     locale:[NSLocale localeWithLocaleIdentifier:[NSLocale currentLocale].localeIdentifier]];
     } else {
-        return @"Not available";
+        return @"Timezone not available";
     }
 }
 
@@ -77,7 +77,7 @@
     if (timezoneData != Nil) {
         return [NSString stringWithFormat:@"%@ (%@)", [Utility extractLongTimezoneFrom:timezoneData], [Utility extractShortTimezoneFrom:timezoneData]];
     } else {
-        return @"Not available";
+        return @"Timezone not available";
     }
 }
 

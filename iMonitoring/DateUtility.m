@@ -71,7 +71,7 @@
         [DateUtility configureDateFormat:format withOption:theOption];
         return [format stringFromDate:date];
     } else {
-        return @"Not Available";
+        return @"Date not available";
     }
 }
 

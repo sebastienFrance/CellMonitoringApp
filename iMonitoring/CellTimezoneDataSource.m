@@ -20,7 +20,6 @@
 
 @implementation CellTimezoneDataSource
 
-#warning SEB: Timezone to be removed
 - (id) initWithDelegate:(id<CellTimezoneDataSourceDelegate>) delegate cell:(CellMonitoring*) theCell{
     self = [super init];
     if (self) {

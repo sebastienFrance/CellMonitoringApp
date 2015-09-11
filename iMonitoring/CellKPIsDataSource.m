@@ -92,9 +92,7 @@
 }
 
 
-#warning SEB: Timezone to be changed
 - (void) timezoneReady: (id) theData clientId:(NSString *)theClientId {
-    //_theCell.timezone = [Utility extractTimezoneFromData:theData];
     if (_theCell.hasTimezone) {
         [_delegate timezoneIsLoaded:_theCell.theTimezone];
     }
