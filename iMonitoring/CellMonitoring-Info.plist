@@ -53,6 +53,11 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>sebbrugalieres.fr</key>
+			<dict>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>imon.sebbrugalieres.fr</key>
 			<dict>
 				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>

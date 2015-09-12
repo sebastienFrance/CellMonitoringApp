@@ -301,22 +301,22 @@
                                             <segue destination="Jcc-6v-ZTA" kind="custom" identifier="PushUserPrefsController" customClass="SWRevealViewControllerSeguePushController" id="ZNz-4g-Ywx"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="iMonitoringAboutCellId" rowHeight="75" id="TdL-WB-njs" userLabel="AboutCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="iMonitoringUserPrefsCellId" rowHeight="75" id="0qv-Dd-IlY" userLabel="UserPreferencesCell">
                                         <rect key="frame" x="0.0" y="550" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TdL-WB-njs" id="gqq-Ue-XcM">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0qv-Dd-IlY" id="pA2-dR-msR">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XSZ-MH-UcL">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="frR-1Q-Hz3">
                                                     <rect key="frame" x="8" y="20" width="73" height="30"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                                    <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="network configuration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="n6u-xD-Ex5">
-                                                    <rect key="frame" x="8" y="54" width="150" height="18"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Network information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="x5b-do-h2o">
+                                                    <rect key="frame" x="8" y="54" width="140" height="18"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -328,13 +328,13 @@
                                         <animations/>
                                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="XSZ-MH-UcL" firstAttribute="leading" secondItem="n6u-xD-Ex5" secondAttribute="leading" id="YfA-kL-dOR"/>
-                                            <constraint firstItem="n6u-xD-Ex5" firstAttribute="top" secondItem="XSZ-MH-UcL" secondAttribute="bottom" constant="4" id="fFS-dc-bvp"/>
-                                            <constraint firstItem="XSZ-MH-UcL" firstAttribute="top" secondItem="TdL-WB-njs" secondAttribute="top" constant="20" id="n8I-RX-cVX"/>
-                                            <constraint firstItem="XSZ-MH-UcL" firstAttribute="leading" secondItem="TdL-WB-njs" secondAttribute="leadingMargin" id="y0e-Ri-IRV"/>
+                                            <constraint firstItem="frR-1Q-Hz3" firstAttribute="leading" secondItem="0qv-Dd-IlY" secondAttribute="leadingMargin" id="5Fo-Xd-OXn"/>
+                                            <constraint firstItem="x5b-do-h2o" firstAttribute="top" secondItem="frR-1Q-Hz3" secondAttribute="bottom" constant="4" id="6hn-HL-lxb"/>
+                                            <constraint firstItem="frR-1Q-Hz3" firstAttribute="leading" secondItem="x5b-do-h2o" secondAttribute="leading" id="cba-vv-mOK"/>
+                                            <constraint firstItem="frR-1Q-Hz3" firstAttribute="top" secondItem="0qv-Dd-IlY" secondAttribute="top" constant="20" id="uvW-tZ-G50"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="aL3-QX-eoG" kind="custom" identifier="PushAboutViewController" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="sok-UM-CgV"/>
+                                            <segue destination="aL3-QX-eoG" kind="custom" identifier="PushAboutControllerId" customClass="SWRevealViewControllerSeguePushController" id="7og-2b-1aG"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="iMonitoringUserMgtCellId" rowHeight="75" id="dNA-2j-uvc" userLabel="UserMgtCell">
