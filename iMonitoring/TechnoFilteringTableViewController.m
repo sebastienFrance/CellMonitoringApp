@@ -67,6 +67,9 @@ static const NSUInteger FILTER_SECTION_NUMBER = 2;
 -(void) viewDidLoad {
     [super viewDidLoad];
     self.title = [NSString stringWithFormat:@"%@ Filtering", [BasicTypes getTechnoName:self.infoCells.theTechno]];
+
+    self.tableView.estimatedRowHeight = 62.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 #pragma mark - UITableViewDelegate

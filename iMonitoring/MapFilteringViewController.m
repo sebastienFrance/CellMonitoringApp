@@ -51,6 +51,9 @@
 {
     [super viewDidLoad];
 
+    self.tableView.estimatedRowHeight = 50.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
     [self.navigationController setToolbarHidden:TRUE animated:FALSE];
     self.navigationController.hidesBarsOnTap = FALSE;
 
