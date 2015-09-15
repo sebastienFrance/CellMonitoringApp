@@ -12,7 +12,7 @@
 #import "MarkViewController.h"
 
 @class KPIChart;
-@interface iPadCellDetailsAndKPIsViewControllerView : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, MarkedCell,UIPopoverPresentationControllerDelegate>
+@interface iPadCellDetailsAndKPIsViewControllerView : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, MarkedCell, UIPopoverPresentationControllerDelegate>
 
 @property (nonatomic) CellMonitoring* theCell;
 @property (nonatomic) CellKPIsDataSource* theDatasource;

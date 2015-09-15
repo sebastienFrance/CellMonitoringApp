@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2l1-b8-lJu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2l1-b8-lJu">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -816,14 +816,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KPIChartCollectionImageId" id="PpV-mt-OY5" customClass="iPadDashboardViewImageCollection">
-                                        <rect key="frame" x="0.0" y="0.0" width="336" height="207"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="336" height="207"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="205"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FyD-Zb-Exc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="336" height="207"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="336" height="205"/>
                                                     <animations/>
                                                 </imageView>
                                             </subviews>
@@ -838,7 +838,7 @@
                                             <constraint firstAttribute="bottom" secondItem="FyD-Zb-Exc" secondAttribute="bottom" id="icL-Gv-S2z"/>
                                             <constraint firstItem="FyD-Zb-Exc" firstAttribute="leading" secondItem="PpV-mt-OY5" secondAttribute="leading" id="whF-gO-rGL"/>
                                         </constraints>
-                                        <size key="customSize" width="336" height="207"/>
+                                        <size key="customSize" width="336" height="205"/>
                                         <connections>
                                             <outlet property="theImage" destination="FyD-Zb-Exc" id="JnI-Lw-lEn"/>
                                         </connections>
@@ -863,19 +863,11 @@
                             <constraint firstItem="yV7-j0-0AM" firstAttribute="leading" secondItem="xdY-6q-djH" secondAttribute="leading" id="HPX-wU-yoS"/>
                             <constraint firstItem="yV7-j0-0AM" firstAttribute="top" secondItem="xdY-6q-djH" secondAttribute="top" id="PpH-c0-5RP"/>
                             <constraint firstItem="whm-KZ-exe" firstAttribute="leading" secondItem="xdY-6q-djH" secondAttribute="leading" id="QoL-aF-Whb"/>
-                            <constraint firstItem="DTu-3z-Wkf" firstAttribute="top" secondItem="yV7-j0-0AM" secondAttribute="bottom" id="XQU-n2-UVc"/>
                             <constraint firstItem="whm-KZ-exe" firstAttribute="trailing" secondItem="xdY-6q-djH" secondAttribute="trailing" id="kfR-dL-kxC"/>
                             <constraint firstItem="yV7-j0-0AM" firstAttribute="trailing" secondItem="xdY-6q-djH" secondAttribute="trailing" id="lLN-sX-igR"/>
                             <constraint firstItem="whm-KZ-exe" firstAttribute="top" secondItem="yV7-j0-0AM" secondAttribute="bottom" id="nPe-15-bpn"/>
-                            <constraint firstItem="DTu-3z-Wkf" firstAttribute="top" secondItem="yV7-j0-0AM" secondAttribute="bottom" id="oZB-PF-4no"/>
                             <constraint firstItem="whm-KZ-exe" firstAttribute="bottom" secondItem="DTu-3z-Wkf" secondAttribute="top" id="y4M-9l-37A"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="XQU-n2-UVc"/>
-                                <exclude reference="oZB-PF-4no"/>
-                            </mask>
-                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems>

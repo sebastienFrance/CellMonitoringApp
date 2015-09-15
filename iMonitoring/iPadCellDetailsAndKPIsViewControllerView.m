@@ -34,6 +34,7 @@
 
 @property (nonatomic) NSUInteger numberOfRows;
 @property (nonatomic) NSUInteger numberOfColumns;
+@property (nonatomic) CGSize cellSizeAtStartPinchGesture;
 
 @property (nonatomic) Boolean usedPageControl;
 
@@ -45,19 +46,22 @@
 @property (nonatomic) Boolean isMarked;
 @property (nonatomic) Boolean initialMarkedValue;
 
-
-@property (nonatomic) CGSize cellSizeAtStartPinchGesture;
-
 @property (weak, nonatomic) IBOutlet UIPageControl *thePageControl;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *MarkButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *viewScopeButton;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *theCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *theFlowLayout;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *viewScopeButton;
+@property (nonatomic) Boolean isViewInitialization;
 
 @end
 
 @implementation iPadCellDetailsAndKPIsViewControllerView
 
+static const NSUInteger SCREEN_SIZE = 1024;
+static const NSUInteger CHART_INIT_WIDTH = 336;
+static const NSUInteger CHART_INIT_HEIGHT = 207;
+static const NSUInteger CELL_SIZE_MIN = 205; // Min cell size
 
 #pragma mark - Initializations
 
@@ -65,19 +69,15 @@
 {
     [super viewDidLoad];
 
+    // Bars initialization
     [self.navigationController setToolbarHidden:FALSE];
     self.navigationController.hidesBarsOnTap = FALSE;
 
     self.theCollectionView.dataSource = self;
     self.theCollectionView.delegate = self;
-    
-    self.theFlowLayout.itemSize = [UserPreferences sharedInstance].cellKPISize;
+    self.isViewInitialization = TRUE;
 
-    self.numberOfRows = self.numberOfColumns = 1024 / self.theFlowLayout.itemSize.width;
-    
-    [self initializePages];
-    
-    
+
     self.currentMonitoringPeriod = [UserPreferences sharedInstance].CellDashboardDefaultViewScope;
     [self buildChartForCurrentMonitoringPeriod];
     
@@ -91,7 +91,7 @@
 
         for (NSUInteger i = 0; i < self.barChartViewsDic.count; i++) {
             if (self.barChartViewsDic[i] == (NSArray<UIImage*>*)[NSNull null]) {
-                DashboardCellDetailsHelper* helper = [[DashboardCellDetailsHelper alloc] init:306 height:207];
+                DashboardCellDetailsHelper* helper = [[DashboardCellDetailsHelper alloc] init:CHART_INIT_WIDTH height:CHART_INIT_HEIGHT];
                 self.barChartViewsDic[i] = [helper createChartForMonitoringPeriod:self.theDatasource
                                                                  monitoringPeriod:i];
             }
@@ -105,10 +105,101 @@
     [[UserHelp sharedInstance] iPadHelpForCellDashboardView:self];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 
-- (void) initializePages {
+    NSLog(@"%s CollectionView ========== > height:%f width:%f", __PRETTY_FUNCTION__,self.theCollectionView.bounds.size.height, self.theCollectionView.bounds.size.width);
+
+}
+
+- (void)viewDidLayoutSubviews {
+    [self intializeCollectionView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"%s CollectionView ========== > height:%f width:%f", __PRETTY_FUNCTION__,self.theCollectionView.bounds.size.height, self.theCollectionView.bounds.size.width);
+
+}
+
+-(void) intializeCollectionView {
+
+    if (self.isViewInitialization == TRUE) {
+        NSLog(@"%s CollectionView ========== > height:%f width:%f", __PRETTY_FUNCTION__,self.theCollectionView.bounds.size.height, self.theCollectionView.bounds.size.width);
+        CGSize defaultSize = CGSizeMake(self.theCollectionView.bounds.size.width / 4, (self.theCollectionView.bounds.size.height / 4) - 30);
+
+        self.theFlowLayout.itemSize = defaultSize; //[UserPreferences sharedInstance].cellKPISize;
+
+        self.numberOfRows = self.numberOfColumns = 4; //SCREEN_SIZE / self.theFlowLayout.itemSize.width;
+
+        [self updatePageControl];
+        self.isViewInitialization = FALSE;
+    } else {
+        NSLog(@"%s with transition", __PRETTY_FUNCTION__);
+    }
+}
+
+- (IBAction)pinchGestureCalled:(UIPinchGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        self.cellSizeAtStartPinchGesture = _theFlowLayout.itemSize;
+        return;
+    }
+
+    // base size is the cell size when the Pinch Gesture has started
+    CGSize cellSize;
+    cellSize.width = self.cellSizeAtStartPinchGesture.width * sender.scale;
+
+    if ((sender.scale <= 1) && (cellSize.width > _theFlowLayout.itemSize.width)) {
+        return;
+    }
+
+    if ((sender.scale >= 1) && (cellSize.width < _theFlowLayout.itemSize.width)) {
+        return;
+    }
+
+    // Min Cell size with 5 rows & 5 columns per page
+    if (cellSize.width < CELL_SIZE_MIN) {
+        cellSize.width = CELL_SIZE_MIN;
+    }
+
+    // Max Cell size with 1 row & 1 column per page
+    if (cellSize.width > self.theCollectionView.bounds.size.width) {
+        cellSize.width = self.theCollectionView.bounds.size.width;
+    }
+
+    NSUInteger myRound = round(self.theCollectionView.bounds.size.width / cellSize.width);
+    cellSize.width = self.theCollectionView.bounds.size.width / myRound;
+    cellSize.height = self.theCollectionView.bounds.size.height / myRound;
+    //    if (self.thePageControl.numberOfPages > 1) {
+    //    cellSize.height -= self.thePageControl.bounds.size.height;
+    //    }
+
+    if (cellSize.width == _theFlowLayout.itemSize.width){
+        return;
+    }
+
+    self.numberOfRows = self.numberOfColumns = self.theCollectionView.bounds.size.width / cellSize.width;
+    [UserPreferences sharedInstance].cellKPISize = cellSize;
+
+    [self updatePageControl];
+
+    NSLog(@"%s CollectionView ========== > height:%f width:%f", __PRETTY_FUNCTION__,self.theCollectionView.bounds.size.height, self.theCollectionView.bounds.size.width);
+
+
+    [UIView transitionWithView:self.theCollectionView
+                      duration:0.5f
+                       options:UIViewAnimationOptionCurveLinear
+                    animations:^() {
+                        _theFlowLayout.itemSize = cellSize;
+                    }
+                    completion:Nil];
+}
+
+
+// The number of Pages is computed from the total number of KPIs and number of rows & columns we want to display per pages
+- (void) updatePageControl {
     
-    NSDictionary* theKPIsValuesForCurrentPeriod = [self.theDatasource getKPIsForMonitoringPeriod:self.currentMonitoringPeriod];
+    NSDictionary<NSString*,NSArray<NSNumber*>*>* theKPIsValuesForCurrentPeriod = [self.theDatasource getKPIsForMonitoringPeriod:self.currentMonitoringPeriod];
     
     NSUInteger numberOfKPIs = theKPIsValuesForCurrentPeriod.count;
 
@@ -123,7 +214,6 @@
 
 - (void) initializeTitle {
     NSString* viewScope = [MonitoringPeriodUtility getStringForMonitoringPeriod:[UserPreferences sharedInstance].CellDashboardDefaultViewScope];
-    
     self.title = [NSString stringWithFormat:@"Cell %@ / %@", _theCell.id ,viewScope];
 }
 
@@ -193,20 +283,16 @@
 }
 
 -(void) displayMarkViewController:(UIBarButtonItem *) sender  {
-    //UINavigationController *viewController =
-  //  [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverCellBookmarkId"];
     UIStoryboard* theStoryBoard = [UIStoryboard storyboardWithName:@"Bookmark" bundle:Nil];
-  //  UINavigationController *viewController = [theStoryBoard instantiateViewControllerWithIdentifier:@"AddCellBookmark"];
     MarkViewController *viewController = [theStoryBoard instantiateViewControllerWithIdentifier:@"AddCellBookmark"];
 
-   // MarkViewController* modal = (MarkViewController*) viewController.topViewController;
     viewController.delegate = self;
     viewController.theCell = _theCell;
 
     [self presentViewControllerInPopover:viewController item:sender];
 }
 
-
+#pragma mark - Collection view management
 - (IBAction)moveToPage:(id)sender forEvent:(UIEvent *)event {
  
     self.usedPageControl = TRUE;
@@ -219,56 +305,6 @@
     frame.origin.y = 0;
     [_theCollectionView scrollRectToVisible:frame animated:YES];
     
-}
-- (IBAction)pinchGestureCalled:(UIPinchGestureRecognizer *)sender {
-    if (sender.state == UIGestureRecognizerStateBegan) {
-        self.cellSizeAtStartPinchGesture = _theFlowLayout.itemSize;
-        return;
-    }
-    
-    // base size is the cell size when the Pinch Gesture has started
-    CGSize cellSize;
-    cellSize.width = self.cellSizeAtStartPinchGesture.width * sender.scale;
- 
-    if ((sender.scale <= 1) && (cellSize.width > _theFlowLayout.itemSize.width)) {
-        return;
-    }
-    
-    if ((sender.scale >= 1) && (cellSize.width < _theFlowLayout.itemSize.width)) {
-        return;
-    }
-    
-    // Min Cell size with 5 rows & 5 columns per page
-    if (cellSize.width < 205) {
-        cellSize.width = 205;
-    }
-    
-    // Max Cell size with 1 row & 1 column per page
-    if (cellSize.width > 1024) {
-        cellSize.width = 1024;
-    }
-
-    NSUInteger myRound = round(1024.0 / cellSize.width);
-    cellSize.width = 1024.0 / myRound;
-    cellSize.height = 636.0 / myRound;
-    
-    if (cellSize.width == _theFlowLayout.itemSize.width){
-        return;
-    }
-    
-    self.numberOfRows = self.numberOfColumns = 1024 / cellSize.width;
-    [UserPreferences sharedInstance].cellKPISize = cellSize;
-    
-    [self initializePages];
-    
-    
-    [UIView transitionWithView:self.theCollectionView
-                      duration:0.5f
-                       options:UIViewAnimationOptionCurveLinear
-                    animations:^() {
-                        _theFlowLayout.itemSize = cellSize;
-                    }
-                    completion:nil];
 }
 
 #pragma mark - Popover callbacks
@@ -305,7 +341,7 @@
     
     self.currentBarChartViews = self.barChartViewsDic[self.currentMonitoringPeriod];
     if ([self.currentBarChartViews isEqual:[NSNull null]]) {
-        DashboardCellDetailsHelper* helper = [[DashboardCellDetailsHelper alloc] init:336 height:207];
+        DashboardCellDetailsHelper* helper = [[DashboardCellDetailsHelper alloc] init:CHART_INIT_WIDTH height:CHART_INIT_HEIGHT];
         self.currentBarChartViews = [helper createChartForMonitoringPeriod:self.theDatasource
                                                           monitoringPeriod:self.currentMonitoringPeriod];
         
@@ -387,9 +423,7 @@
 
 #pragma mark - Mail methods
 - (IBAction)sendMail:(UIBarButtonItem *)sender {
-    
- //   [self dismissAllPopovers];
-    
+
     KPIDictionary* dictionary = [KPIDictionaryManager sharedInstance].defaultKPIDictionary;
 #warning SEB:to be completed for alarms export
     MailCellKPI* mailbody = [[MailCellKPI alloc] init:self.theCell datasource:self.theDatasource KPIDictionary:dictionary
