@@ -58,10 +58,12 @@
 
 @implementation iPadCellDetailsAndKPIsViewControllerView
 
-static const NSUInteger SCREEN_SIZE = 1024;
 static const NSUInteger CHART_INIT_WIDTH = 336;
 static const NSUInteger CHART_INIT_HEIGHT = 207;
-static const NSUInteger CELL_SIZE_MIN = 205; // Min cell size
+
+static const NSUInteger MIN_COLUMNS = 1;
+static const NSUInteger MAX_COLUMNS = 5;
+
 
 #pragma mark - Initializations
 
@@ -105,35 +107,15 @@ static const NSUInteger CELL_SIZE_MIN = 205; // Min cell size
     [[UserHelp sharedInstance] iPadHelpForCellDashboardView:self];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-
-    NSLog(@"%s CollectionView ========== > height:%f width:%f", __PRETTY_FUNCTION__,self.theCollectionView.bounds.size.height, self.theCollectionView.bounds.size.width);
-
-}
-
 - (void)viewDidLayoutSubviews {
     [self intializeCollectionView];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    NSLog(@"%s CollectionView ========== > height:%f width:%f", __PRETTY_FUNCTION__,self.theCollectionView.bounds.size.height, self.theCollectionView.bounds.size.width);
-
 }
 
 -(void) intializeCollectionView {
 
     if (self.isViewInitialization == TRUE) {
-        NSLog(@"%s CollectionView ========== > height:%f width:%f", __PRETTY_FUNCTION__,self.theCollectionView.bounds.size.height, self.theCollectionView.bounds.size.width);
-        CGSize defaultSize = CGSizeMake(self.theCollectionView.bounds.size.width / 4, (self.theCollectionView.bounds.size.height / 4) - 30);
-
-        self.theFlowLayout.itemSize = defaultSize; //[UserPreferences sharedInstance].cellKPISize;
-
-        self.numberOfRows = self.numberOfColumns = 4; //SCREEN_SIZE / self.theFlowLayout.itemSize.width;
-
-        [self updatePageControl];
         self.isViewInitialization = FALSE;
+        [self setNewCellSizeForCollectionView:[UserPreferences sharedInstance].cellKPISize.width];
     } else {
         NSLog(@"%s with transition", __PRETTY_FUNCTION__);
     }
@@ -146,71 +128,77 @@ static const NSUInteger CELL_SIZE_MIN = 205; // Min cell size
     }
 
     // base size is the cell size when the Pinch Gesture has started
-    CGSize cellSize;
-    cellSize.width = self.cellSizeAtStartPinchGesture.width * sender.scale;
+    CGFloat cellSize = self.cellSizeAtStartPinchGesture.width * sender.scale;
 
-    if ((sender.scale <= 1) && (cellSize.width > _theFlowLayout.itemSize.width)) {
+    // If we unzoom and the new size is still > current size then nothing to do
+    if ((sender.scale <= 1) && (cellSize > _theFlowLayout.itemSize.width)) {
         return;
     }
 
-    if ((sender.scale >= 1) && (cellSize.width < _theFlowLayout.itemSize.width)) {
+    // If we zoom and te new size is still < current size then nothing to do
+    if ((sender.scale >= 1) && (cellSize < _theFlowLayout.itemSize.width)) {
         return;
     }
 
-    // Min Cell size with 5 rows & 5 columns per page
-    if (cellSize.width < CELL_SIZE_MIN) {
-        cellSize.width = CELL_SIZE_MIN;
-    }
-
-    // Max Cell size with 1 row & 1 column per page
-    if (cellSize.width > self.theCollectionView.bounds.size.width) {
-        cellSize.width = self.theCollectionView.bounds.size.width;
-    }
-
-    NSUInteger myRound = round(self.theCollectionView.bounds.size.width / cellSize.width);
-    cellSize.width = self.theCollectionView.bounds.size.width / myRound;
-    cellSize.height = self.theCollectionView.bounds.size.height / myRound;
-    //    if (self.thePageControl.numberOfPages > 1) {
-    //    cellSize.height -= self.thePageControl.bounds.size.height;
-    //    }
-
-    if (cellSize.width == _theFlowLayout.itemSize.width){
-        return;
-    }
-
-    self.numberOfRows = self.numberOfColumns = self.theCollectionView.bounds.size.width / cellSize.width;
-    [UserPreferences sharedInstance].cellKPISize = cellSize;
-
-    [self updatePageControl];
-
-    NSLog(@"%s CollectionView ========== > height:%f width:%f", __PRETTY_FUNCTION__,self.theCollectionView.bounds.size.height, self.theCollectionView.bounds.size.width);
-
-
-    [UIView transitionWithView:self.theCollectionView
-                      duration:0.5f
-                       options:UIViewAnimationOptionCurveLinear
-                    animations:^() {
-                        _theFlowLayout.itemSize = cellSize;
-                    }
-                    completion:Nil];
+    [self setNewCellSizeForCollectionView:cellSize];
 }
 
+-(void) setNewCellSizeForCollectionView:(CGFloat) newCellSize {
+    NSUInteger newNumberOfColumns = round(self.theCollectionView.bounds.size.width / newCellSize);
 
-// The number of Pages is computed from the total number of KPIs and number of rows & columns we want to display per pages
-- (void) updatePageControl {
-    
+    // Check to not exceed the min or max number of columns
+    if (newNumberOfColumns < MIN_COLUMNS) {
+        newNumberOfColumns = MIN_COLUMNS;
+    } else if (newNumberOfColumns > MAX_COLUMNS) {
+        newNumberOfColumns = MAX_COLUMNS;
+    }
+
+    // If the number of columns per change is changed we need to reset the cellSize and maybe the number of pages
+    if (newNumberOfColumns != self.numberOfRows) {
+
+        // Update the number of pages
+        CGFloat offsetForPageControl = 0;
+        NSUInteger newNumberOfPages = [self numberOfPagesForKPIsWith:newNumberOfColumns rows:newNumberOfColumns];
+        if (newNumberOfPages != self.thePageControl.numberOfPages) {
+            // When we move from 1 pages to several pages the PageControl must be displayed and we need to reduce the height of the collection view
+            if (self.thePageControl.numberOfPages == 1) {
+                offsetForPageControl = 37.0;
+            }
+            self.thePageControl.numberOfPages = newNumberOfPages;
+            self.thePageControl.currentPage = 0;
+        }
+
+        // Compute the new cellSize based on the new number of columns / rows
+        newCellSize = self.theCollectionView.bounds.size.width / newNumberOfColumns;
+        CGSize cellSize = CGSizeMake(self.theCollectionView.bounds.size.width / newNumberOfColumns,
+                                     (self.theCollectionView.bounds.size.height - offsetForPageControl) / newNumberOfColumns);
+
+        self.numberOfRows = self.numberOfColumns = newNumberOfColumns;
+        [UserPreferences sharedInstance].cellKPISize = cellSize;
+
+        [UIView transitionWithView:self.theCollectionView
+                          duration:0.5f
+                           options:UIViewAnimationOptionCurveLinear
+                        animations:^() {
+                            _theFlowLayout.itemSize = cellSize;
+                        }
+                        completion:Nil];
+    }
+}
+
+-(NSUInteger) numberOfPagesForKPIsWith:(NSUInteger) numberOfColumns rows:(NSUInteger) numberOfRows {
     NSDictionary<NSString*,NSArray<NSNumber*>*>* theKPIsValuesForCurrentPeriod = [self.theDatasource getKPIsForMonitoringPeriod:self.currentMonitoringPeriod];
-    
+
     NSUInteger numberOfKPIs = theKPIsValuesForCurrentPeriod.count;
 
-    NSUInteger numberOfPages = numberOfKPIs / (self.numberOfColumns*self.numberOfRows);
-    if ((numberOfKPIs % (self.numberOfColumns*self.numberOfRows)) != 0) {
+    NSUInteger numberOfPages = numberOfKPIs / (numberOfColumns*numberOfRows);
+    if ((numberOfKPIs % (numberOfColumns*numberOfRows)) != 0) {
         numberOfPages++;
     }
-    
-    self.thePageControl.numberOfPages = numberOfPages;
-    self.thePageControl.currentPage = 0;
+
+    return numberOfPages;
 }
+
 
 - (void) initializeTitle {
     NSString* viewScope = [MonitoringPeriodUtility getStringForMonitoringPeriod:[UserPreferences sharedInstance].CellDashboardDefaultViewScope];
