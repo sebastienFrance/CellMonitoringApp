@@ -141,11 +141,14 @@
         [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
                 localizedReason:@"To connect CellMonitoring" reply:^(BOOL success, NSError *authenticationError) {
                     if (success) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
                         UserPreferences* userPrefs = [UserPreferences sharedInstance];
                         [self.theData openConnection:self.IPAddress.text
                                           portNumber:self.portNumber.text
                                             userName:self.userName.text
                                             password:userPrefs.ServerPassword];
+                        });
+
                     } else {
                         NSLog(@"Authentication with Touch ID failed");
                     }
