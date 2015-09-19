@@ -1238,21 +1238,21 @@
                                 <animations/>
                                 <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="wVd-cG-gZI">
-                                    <size key="itemSize" width="336" height="207"/>
+                                    <size key="itemSize" width="336" height="205"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KPIChartCollectionImageId" id="AdX-UZ-Ntj" customClass="iPadDashboardViewImageCollection">
-                                        <rect key="frame" x="0.0" y="0.0" width="336" height="207"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="336" height="207"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="205"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phd-i0-1Wy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="336" height="207"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="336" height="205"/>
                                                     <animations/>
                                                 </imageView>
                                             </subviews>
@@ -1267,7 +1267,7 @@
                                             <constraint firstAttribute="trailing" secondItem="phd-i0-1Wy" secondAttribute="trailing" id="ezF-D0-oTK"/>
                                             <constraint firstItem="phd-i0-1Wy" firstAttribute="leading" secondItem="AdX-UZ-Ntj" secondAttribute="leading" id="r7V-dc-VPK"/>
                                         </constraints>
-                                        <size key="customSize" width="336" height="207"/>
+                                        <size key="customSize" width="336" height="205"/>
                                         <connections>
                                             <outlet property="theImage" destination="phd-i0-1Wy" id="Xre-XW-YyP"/>
                                         </connections>
@@ -1295,7 +1295,7 @@
                             <constraint firstItem="x3Z-5k-cpf" firstAttribute="leading" secondItem="4Y9-v7-adp" secondAttribute="leading" id="QzQ-eT-BOz"/>
                             <constraint firstAttribute="trailing" secondItem="x3Z-5k-cpf" secondAttribute="trailing" id="U6q-xd-Fia"/>
                             <constraint firstItem="x3Z-5k-cpf" firstAttribute="top" secondItem="4Y9-v7-adp" secondAttribute="top" id="fNK-E9-LWr"/>
-                            <constraint firstItem="afq-be-lIa" firstAttribute="top" secondItem="x3Z-5k-cpf" secondAttribute="bottom" id="sYd-Lc-jgZ"/>
+                            <constraint firstItem="x3Z-5k-cpf" firstAttribute="bottom" secondItem="7sp-Ad-cOu" secondAttribute="bottom" id="js2-UR-RUg"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -2152,6 +2152,6 @@
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mtu-Fh-ZKS"/>
+        <segue reference="E85-Pc-gVI"/>
     </inferredMetricsTieBreakers>
 </document>

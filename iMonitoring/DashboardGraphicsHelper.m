@@ -162,8 +162,8 @@ monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod{
     }
     
     -(void) initDefaultForBarChart {
-        _barChartyTitleDisplacement = -10.0f;
-        _barChartitleFontSize = 12.0f;
+        _barChartyTitleDisplacement = -8.0f;
+        _barChartitleFontSize = 10.0f;
         _barCharfillWithGradient = [UserPreferences sharedInstance].isZoneDashboardGradiant;
         
     }
@@ -174,6 +174,12 @@ monitoringPeriod:(DCMonitoringPeriodView) theMonitoringPeriod{
         theChart.yTitleDisplacement = self.barChartyTitleDisplacement;
         theChart.titleFontSize = self.barChartitleFontSize;
         theChart.fillWithGradient = self.barCharfillWithGradient;
+
+        theChart.xAxisAlignment = CPTTextAlignmentRight;
+
+        theChart.xAxisFontSize = 12.0f;
+        theChart.yAxisFontSize = 12.0f;
+
     }
     
     

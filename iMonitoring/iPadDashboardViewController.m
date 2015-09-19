@@ -54,6 +54,9 @@
 // New
 @property(nonatomic) CellKPIsDataSource* cellDatasource;
 
+@property (nonatomic) Boolean isViewInitialization;
+
+
 @end
 
 @implementation iPadDashboardViewController
@@ -73,32 +76,160 @@ static const NSUInteger MAX_COLUMNS = 5;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
-    self.theCollectionView.dataSource = self;
-    self.theCollectionView.delegate = self;
-    
-    _theFlowLayout.itemSize = [UserPreferences sharedInstance].zoneCellSize;
-    
-    self.numberOfRows = self.numberOfColumns = 1024 / _theFlowLayout.itemSize.width;
-
-    
-    self.currentMonitoringPeriod = [MonitoringPeriodUtility sharedInstance].monitoringPeriod;
-
-    [self.theCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"MY_CELL"];
-    
-    [self displayChartForCurrentScope];
-    [self initialisePageController];
-    
-    
-    [[UserHelp sharedInstance] iPadHelpForDashboardView:self];
-}
-
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 
     [self.navigationController setToolbarHidden:FALSE];
     self.navigationController.hidesBarsOnTap  = FALSE;
+
+    self.theCollectionView.dataSource = self;
+    self.theCollectionView.delegate = self;
+    self.isViewInitialization = TRUE;
+
+    self.currentMonitoringPeriod = [MonitoringPeriodUtility sharedInstance].monitoringPeriod;
+
+    [self displayChartForCurrentScope];
+
+    [[UserHelp sharedInstance] iPadHelpForDashboardView:self];
 }
+
+- (void)viewDidLayoutSubviews {
+    [self intializeCollectionView];
+}
+
+-(void) intializeCollectionView {
+
+    if (self.isViewInitialization == TRUE) {
+        self.isViewInitialization = FALSE;
+        [self setNewCellSizeForCollectionView:[UserPreferences sharedInstance].zoneCellSize.width];
+    }
+}
+
+- (IBAction)pinchGestureCalled:(UIPinchGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        self.cellSizeAtStartPinchGesture = _theFlowLayout.itemSize;
+        return;
+    }
+
+    // base size is the cell size when the Pinch Gesture has started
+    CGFloat cellSize = self.cellSizeAtStartPinchGesture.width * sender.scale;
+
+    // If we unzoom and the new size is still > current size then nothing to do
+    if ((sender.scale <= 1) && (cellSize > _theFlowLayout.itemSize.width)) {
+        return;
+    }
+
+    // If we zoom and te new size is still < current size then nothing to do
+    if ((sender.scale >= 1) && (cellSize < _theFlowLayout.itemSize.width)) {
+        return;
+    }
+
+    [self setNewCellSizeForCollectionView:cellSize];
+}
+
+-(void) setNewCellSizeForCollectionView:(CGFloat) newCellSize {
+    NSUInteger newNumberOfColumns = round(self.theCollectionView.bounds.size.width / newCellSize);
+
+    // Check to not exceed the min or max number of columns
+    if (newNumberOfColumns < MIN_COLUMNS) {
+        newNumberOfColumns = MIN_COLUMNS;
+    } else if (newNumberOfColumns > MAX_COLUMNS) {
+        newNumberOfColumns = MAX_COLUMNS;
+    }
+
+    // If the number of columns per change is changed we need to reset the cellSize and maybe the number of pages
+    if (newNumberOfColumns != self.numberOfRows) {
+
+        // Update the number of pages
+        CGFloat offsetForPageControl = 0;
+        NSUInteger newNumberOfPages = [self numberOfPagesForKPIsWith:newNumberOfColumns rows:newNumberOfColumns];
+        if (newNumberOfPages != self.thePageControl.numberOfPages) {
+            // When we move from 1 pages to several pages the PageControl must be displayed and we need to reduce the height of the collection view
+            if (self.thePageControl.numberOfPages == 1) {
+                offsetForPageControl = 37.0;
+            }
+            self.thePageControl.numberOfPages = newNumberOfPages;
+            self.thePageControl.currentPage = 0;
+        }
+
+        // Compute the new cellSize based on the new number of columns / rows
+        newCellSize = self.theCollectionView.bounds.size.width / newNumberOfColumns;
+        CGSize cellSize = CGSizeMake(self.theCollectionView.bounds.size.width / newNumberOfColumns,
+                                     (self.theCollectionView.bounds.size.height - offsetForPageControl) / newNumberOfColumns);
+
+        self.numberOfRows = self.numberOfColumns = newNumberOfColumns;
+        [UserPreferences sharedInstance].zoneCellSize = cellSize;
+
+        [self setCurrentPageControlWithCurrentScrollPosition];
+
+        [UIView transitionWithView:self.theCollectionView
+                          duration:0.5f
+                           options:UIViewAnimationOptionCurveLinear
+                        animations:^() {
+                            _theFlowLayout.itemSize = cellSize;
+                        }
+                        completion:Nil];
+    }
+}
+
+-(NSUInteger) numberOfPagesForKPIsWith:(NSUInteger) numberOfColumns rows:(NSUInteger) numberOfRows {
+    DashboardScopeId defaultScope = [UserPreferences sharedInstance].ZoneDashboardDefaultScope;
+    NSUInteger KPICount = 0;
+    switch (defaultScope) {
+        case DSScopeLastGP: {
+            KPICount = self.worstLastGPCharts.count;
+            break;
+        }
+        case DSScopeLastPeriod: {
+            KPICount = self.worstAverageCharts.count;
+            break;
+        }
+        case DSScopeAverageZoneAndPeriod: {
+            KPICount = self.averageOnZoneCharts.count;
+            break;
+        }
+    }
+
+    NSUInteger numberOfPages = KPICount / (numberOfColumns*numberOfRows);
+    if (KPICount % (numberOfColumns*numberOfRows)) {
+        numberOfPages++;
+    }
+
+    return numberOfPages;
+}
+
+-(void) setCurrentPageControlWithCurrentScrollPosition {
+    if (self.usedPageControl) return;
+
+    CGFloat pageWidth = self.theCollectionView.frame.size.width;
+
+    NSUInteger xoffset = self.theCollectionView.contentOffset.x;
+    int page = floor((xoffset - (pageWidth / 2)) / pageWidth) + 1;
+
+    // Check if we are before the last page
+    if ((page == (self.thePageControl.numberOfPages - 2)) && (xoffset>0)) {
+
+        // compute the first index of the last page if we have
+        NSUInteger numberOfKPIs = [self  collectionView:self.theCollectionView numberOfItemsInSection:0];
+
+        // check if we have an incomplete final page
+        if ((numberOfKPIs % (self.numberOfColumns*self.numberOfRows)) != 0) {
+            NSUInteger numberOfPages = numberOfKPIs / (self.numberOfColumns*self.numberOfRows);
+            NSUInteger indexForLastPage = (self.numberOfColumns*self.numberOfRows) * numberOfPages;
+
+            NSArray* visibleCellIndexPath = [self.theCollectionView indexPathsForVisibleItems];
+            for (NSIndexPath* currentIndex in visibleCellIndexPath) {
+                if (currentIndex.row > (indexForLastPage)) {
+                    page++;
+                    break;
+                }
+            }
+        }
+    }
+    
+    self.thePageControl.currentPage = page;
+}
+
+
+
 
 #pragma mark - Worst Chart
 
@@ -109,21 +240,21 @@ static const NSUInteger MAX_COLUMNS = 5;
     switch (self.currentScope) {
         case DSScopeLastGP: {
             if (self.worstLastGPCharts == Nil) {
-                DashboardGraphicsHelper* graphicHelper = [[DashboardGraphicsHelper alloc] init:336 height:207];
+                DashboardGraphicsHelper* graphicHelper = [[DashboardGraphicsHelper alloc] init:CHART_INIT_WIDTH height:CHART_INIT_HEIGHT];
                 self.worstLastGPCharts = [graphicHelper createAllWorstCharts:self.theDatasource.KPIs scope:DSScopeLastGP];
             }
             break;
         }
         case DSScopeLastPeriod: {
             if (self.worstAverageCharts == Nil) {
-                DashboardGraphicsHelper* graphicHelper = [[DashboardGraphicsHelper alloc] init:336 height:207];
+                DashboardGraphicsHelper* graphicHelper = [[DashboardGraphicsHelper alloc] init:CHART_INIT_WIDTH height:CHART_INIT_HEIGHT];
                 self.worstAverageCharts = [graphicHelper createAllWorstCharts:self.theDatasource.worstAverageKPIs scope:DSScopeLastPeriod];
             }
             break;
         }
         case DSScopeAverageZoneAndPeriod: {
             if (self.averageOnZoneCharts == Nil) {
-                DashboardGraphicsHelper* graphicHelper = [[DashboardGraphicsHelper alloc] init:336 height:207];
+                DashboardGraphicsHelper* graphicHelper = [[DashboardGraphicsHelper alloc] init:CHART_INIT_WIDTH height:CHART_INIT_HEIGHT];
                 
                 self.averageOnZoneCharts = [graphicHelper createAllChartsWithAverageOnZone:self.theDatasource.zoneKPIs.objectEnumerator.allObjects
                                                                                requestDate:self.theDatasource.requestDate
@@ -175,7 +306,7 @@ static const NSUInteger MAX_COLUMNS = 5;
     
     [self displayChartForCurrentScope];
     
-    [self initialisePageController];
+    //[self initialisePageController];
     
     [UIView transitionWithView:self.theCollectionView
                       duration:1.0f
@@ -223,130 +354,16 @@ static const NSUInteger MAX_COLUMNS = 5;
 }
 
 - (IBAction)moveToPage:(id)sender forEvent:(UIEvent *)event {
+
+    self.usedPageControl = TRUE;
+
     NSInteger page = self.thePageControl.currentPage;
-	
-	// update the scroll view to the appropriate page
+
+    // update the scroll view to the appropriate page
     CGRect frame = self.theCollectionView.frame;
     frame.origin.x = frame.size.width * page;
     frame.origin.y = 0;
     [self.theCollectionView scrollRectToVisible:frame animated:YES];
-    
-	// Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
-    self.usedPageControl = YES;
-}
-
-- (IBAction)pinchGestureCalled:(UIPinchGestureRecognizer *)sender {
-    if (sender.state == UIGestureRecognizerStateBegan) {
-        self.cellSizeAtStartPinchGesture = _theFlowLayout.itemSize;
-        return;
-    }
-    
-    // base size is the cell size when the Pinch Gesture has started
-    CGSize cellSize;
-    cellSize.width = self.cellSizeAtStartPinchGesture.width * sender.scale;
-    
-    if ((sender.scale <= 1) && (cellSize.width > _theFlowLayout.itemSize.width)) {
-        return;
-    }
-    
-    if ((sender.scale >= 1) && (cellSize.width < _theFlowLayout.itemSize.width)) {
-        return;
-    }
-    
-    // Min Cell size with 5 rows & 5 columns per page
-    if (cellSize.width < 205) {
-        cellSize.width = 205;
-    }
-    
-    // Max Cell size with 1 row & 1 column per page
-    if (cellSize.width > 1024) {
-        cellSize.width = 1024;
-    }
-    
-    NSUInteger myRound = round(1024.0 / cellSize.width);
-    cellSize.width = 1024.0 / myRound;
-    cellSize.height = 636.0 / myRound;
-    
-    if (cellSize.width == _theFlowLayout.itemSize.width){
-        return;
-    }
-    
-    self.numberOfRows = self.numberOfColumns = 1024 / cellSize.width;
-    [UserPreferences sharedInstance].zoneCellSize = cellSize;
-    
-    [self initialisePageController];
-    
-    [UIView transitionWithView:self.theCollectionView
-                      duration:0.1f
-                       options:UIViewAnimationOptionCurveLinear
-                    animations:^() {
-                        _theFlowLayout.itemSize = cellSize;
-                    }
-                    completion:nil];
-}
-
--(void) setCurrentPageControlWithCurrentScrollPosition {
-    if (self.usedPageControl) return;
-
-    CGFloat pageWidth = self.theCollectionView.frame.size.width;
-
-    NSUInteger xoffset = self.theCollectionView.contentOffset.x;
-    int page = floor((xoffset - (pageWidth / 2)) / pageWidth) + 1;
-
-    // Check if we are before the last page
-    if ((page == (self.thePageControl.numberOfPages - 2)) && (xoffset>0)) {
-
-        // compute the first index of the last page if we have
-        NSUInteger numberOfKPIs = [self  collectionView:self.theCollectionView numberOfItemsInSection:0];
-
-        // check if we have an incomplete final page
-        if ((numberOfKPIs % (self.numberOfColumns*self.numberOfRows)) != 0) {
-            NSUInteger numberOfPages = numberOfKPIs / (self.numberOfColumns*self.numberOfRows);
-            NSUInteger indexForLastPage = (self.numberOfColumns*self.numberOfRows) * numberOfPages;
-
-            NSArray* visibleCellIndexPath = [self.theCollectionView indexPathsForVisibleItems];
-            for (NSIndexPath* currentIndex in visibleCellIndexPath) {
-                if (currentIndex.row > (indexForLastPage)) {
-                    page++;
-                    break;
-                }
-            }
-        }
-    }
-
-    self.thePageControl.currentPage = page;
-}
-
-
-
-#pragma - Create dashboard
-
-- (void) initialisePageController {
-
-    DashboardScopeId defaultScope = [UserPreferences sharedInstance].ZoneDashboardDefaultScope;
-    NSUInteger KPICount = 0;
-    switch (defaultScope) {
-        case DSScopeLastGP: {
-            KPICount = self.worstLastGPCharts.count;
-            break;
-        }
-        case DSScopeLastPeriod: {
-            KPICount = self.worstAverageCharts.count;
-            break;
-        }
-        case DSScopeAverageZoneAndPeriod: {
-            KPICount = self.averageOnZoneCharts.count;
-            break;
-        }
-    }
-
-    NSUInteger numberOfPages = KPICount / (self.numberOfColumns*self.numberOfRows);
-    if (KPICount % (self.numberOfColumns*self.numberOfRows)) {
-        numberOfPages++;
-    }
-    
-    self.thePageControl.numberOfPages = numberOfPages;
-    self.thePageControl.currentPage = 0;
 }
 
 

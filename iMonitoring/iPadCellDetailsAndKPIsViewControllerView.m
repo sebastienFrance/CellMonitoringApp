@@ -116,8 +116,6 @@ static const NSUInteger MAX_COLUMNS = 5;
     if (self.isViewInitialization == TRUE) {
         self.isViewInitialization = FALSE;
         [self setNewCellSizeForCollectionView:[UserPreferences sharedInstance].cellKPISize.width];
-    } else {
-        NSLog(@"%s with transition", __PRETTY_FUNCTION__);
     }
 }
 
@@ -320,13 +318,13 @@ static const NSUInteger MAX_COLUMNS = 5;
  
     self.usedPageControl = TRUE;
 
-    NSInteger page = _thePageControl.currentPage;
+    NSInteger page = self.thePageControl.currentPage;
 
 	// update the scroll view to the appropriate page
-    CGRect frame = _theCollectionView.frame;
+    CGRect frame = self.theCollectionView.frame;
     frame.origin.x = frame.size.width * page;
     frame.origin.y = 0;
-    [_theCollectionView scrollRectToVisible:frame animated:YES];
+    [self.theCollectionView scrollRectToVisible:frame animated:YES];
     
 }
 
