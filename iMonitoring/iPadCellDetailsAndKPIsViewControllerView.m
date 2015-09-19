@@ -176,6 +176,8 @@ static const NSUInteger MAX_COLUMNS = 5;
         self.numberOfRows = self.numberOfColumns = newNumberOfColumns;
         [UserPreferences sharedInstance].cellKPISize = cellSize;
 
+        [self setCurrentPageControlWithCurrentScrollPosition];
+
         [UIView transitionWithView:self.theCollectionView
                           duration:0.5f
                            options:UIViewAnimationOptionCurveLinear
@@ -198,6 +200,39 @@ static const NSUInteger MAX_COLUMNS = 5;
 
     return numberOfPages;
 }
+
+-(void) setCurrentPageControlWithCurrentScrollPosition {
+    if (self.usedPageControl) return;
+
+    CGFloat pageWidth = self.theCollectionView.frame.size.width;
+
+    NSUInteger xoffset = self.theCollectionView.contentOffset.x;
+    int page = floor((xoffset - (pageWidth / 2)) / pageWidth) + 1;
+
+    // Check if we are before the last page
+    if ((page == (_thePageControl.numberOfPages - 2)) && (xoffset>0)) {
+
+        // compute the first index of the last page if we have
+        NSUInteger numberOfKPIs = [self  collectionView:self.theCollectionView numberOfItemsInSection:0];
+
+        // check if we have an incomplete final page
+        if ((numberOfKPIs % (self.numberOfColumns*self.numberOfRows)) != 0) {
+            NSUInteger numberOfPages = numberOfKPIs / (self.numberOfColumns*self.numberOfRows);
+            NSUInteger indexForLastPage = (self.numberOfColumns*self.numberOfRows) * numberOfPages;
+
+            NSArray* visibleCellIndexPath = [self.theCollectionView indexPathsForVisibleItems];
+            for (NSIndexPath* currentIndex in visibleCellIndexPath) {
+                if (currentIndex.row > (indexForLastPage)) {
+                    page++;
+                    break;
+                }
+            }
+        }
+    }
+
+    _thePageControl.currentPage = page;
+}
+
 
 
 - (void) initializeTitle {
@@ -378,36 +413,9 @@ static const NSUInteger MAX_COLUMNS = 5;
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.usedPageControl) return;
-
-    CGFloat pageWidth = scrollView.frame.size.width;
-    
-    NSUInteger xoffset = scrollView.contentOffset.x;
-    int page = floor((xoffset - (pageWidth / 2)) / pageWidth) + 1;
-    
-    // Check if we are before the last page
-    if ((page == (_thePageControl.numberOfPages - 2)) && (xoffset>0)) {
-        
-        // compute the first index of the last page if we have
-        NSUInteger numberOfKPIs = [self  collectionView:self.theCollectionView numberOfItemsInSection:0];
-        
-        // check if we have an incomplete final page
-        if ((numberOfKPIs % (self.numberOfColumns*self.numberOfRows)) != 0) {
-            NSUInteger numberOfPages = numberOfKPIs / (self.numberOfColumns*self.numberOfRows);
-            NSUInteger indexForLastPage = (self.numberOfColumns*self.numberOfRows) * numberOfPages;
-            
-            NSArray* visibleCellIndexPath = [self.theCollectionView indexPathsForVisibleItems];
-            for (NSIndexPath* currentIndex in visibleCellIndexPath) {
-                if (currentIndex.row > (indexForLastPage)) {
-                    page++;
-                    break;
-                }
-            }
-        }
-    }
-    
-    _thePageControl.currentPage = page;
+    [self setCurrentPageControlWithCurrentScrollPosition];
 }
+
 
 #pragma mark - Mail methods
 - (IBAction)sendMail:(UIBarButtonItem *)sender {
