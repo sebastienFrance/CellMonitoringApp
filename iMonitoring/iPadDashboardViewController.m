@@ -39,7 +39,7 @@
 
 @property(nonatomic) UIViewController* currentPopover;
 
-@property(nonatomic) Boolean pageControlUsed;
+@property(nonatomic) Boolean usedPageControl;
 
 @property(nonatomic) NSArray* worstAverageCharts;
 @property(nonatomic) NSArray* worstLastGPCharts;
@@ -59,6 +59,12 @@
 @implementation iPadDashboardViewController
 @synthesize thePageControl;
 @synthesize theCollectionView;
+
+static const NSUInteger CHART_INIT_WIDTH = 336;
+static const NSUInteger CHART_INIT_HEIGHT = 207;
+
+static const NSUInteger MIN_COLUMNS = 1;
+static const NSUInteger MAX_COLUMNS = 5;
 
 
 #pragma mark - Initializations
@@ -226,7 +232,7 @@
     [self.theCollectionView scrollRectToVisible:frame animated:YES];
     
 	// Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
-    self.pageControlUsed = YES;
+    self.usedPageControl = YES;
 }
 
 - (IBAction)pinchGestureCalled:(UIPinchGestureRecognizer *)sender {
@@ -278,6 +284,40 @@
                     }
                     completion:nil];
 }
+
+-(void) setCurrentPageControlWithCurrentScrollPosition {
+    if (self.usedPageControl) return;
+
+    CGFloat pageWidth = self.theCollectionView.frame.size.width;
+
+    NSUInteger xoffset = self.theCollectionView.contentOffset.x;
+    int page = floor((xoffset - (pageWidth / 2)) / pageWidth) + 1;
+
+    // Check if we are before the last page
+    if ((page == (self.thePageControl.numberOfPages - 2)) && (xoffset>0)) {
+
+        // compute the first index of the last page if we have
+        NSUInteger numberOfKPIs = [self  collectionView:self.theCollectionView numberOfItemsInSection:0];
+
+        // check if we have an incomplete final page
+        if ((numberOfKPIs % (self.numberOfColumns*self.numberOfRows)) != 0) {
+            NSUInteger numberOfPages = numberOfKPIs / (self.numberOfColumns*self.numberOfRows);
+            NSUInteger indexForLastPage = (self.numberOfColumns*self.numberOfRows) * numberOfPages;
+
+            NSArray* visibleCellIndexPath = [self.theCollectionView indexPathsForVisibleItems];
+            for (NSIndexPath* currentIndex in visibleCellIndexPath) {
+                if (currentIndex.row > (indexForLastPage)) {
+                    page++;
+                    break;
+                }
+            }
+        }
+    }
+
+    self.thePageControl.currentPage = page;
+}
+
+
 
 #pragma - Create dashboard
 
@@ -382,41 +422,15 @@
 #pragma mark - UIScrollViewDelegate Protocol
 
 - (void) scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    self.pageControlUsed = FALSE;
+    self.usedPageControl = FALSE;
 }
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.pageControlUsed) return;
-    
-    CGFloat pageWidth = scrollView.frame.size.width;
-    
-    NSUInteger xoffset = scrollView.contentOffset.x;
-    int page = floor((xoffset - (pageWidth / 2)) / pageWidth) + 1;
-    
-    // Check if we are before the last page
-    if ((page == (self.thePageControl.numberOfPages - 2)) && (xoffset>0)) {
-        
-        // compute the first index of the last page if we have
-        NSUInteger numberOfKPIs = [self  collectionView:self.theCollectionView numberOfItemsInSection:0];
-        
-        // check if we have an incomplete final page
-        if ((numberOfKPIs % (self.numberOfColumns*self.numberOfRows)) != 0) {
-            NSUInteger numberOfPages = numberOfKPIs / (self.numberOfColumns*self.numberOfRows);
-            NSUInteger indexForLastPage = (self.numberOfColumns*self.numberOfRows) * numberOfPages;
-            
-            NSArray* visibleCellIndexPath = [self.theCollectionView indexPathsForVisibleItems];
-            for (NSIndexPath* currentIndex in visibleCellIndexPath) {
-                if (currentIndex.row > (indexForLastPage)) {
-                    page++;
-                    break;
-                }
-            }
-        }
-    }
-    
-    self.thePageControl.currentPage = page;
+    [self setCurrentPageControlWithCurrentScrollPosition];
 }
+
+
 
 #pragma mark - Mail
 - (IBAction)sendMail:(UIBarButtonItem *)sender {
