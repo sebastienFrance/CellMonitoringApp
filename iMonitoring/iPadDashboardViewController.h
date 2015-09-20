@@ -16,9 +16,7 @@
 
 @interface iPadDashboardViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, CellKPIsLoadingItf, UIPopoverPresentationControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIPageControl *thePageControl;
-@property (weak, nonatomic) IBOutlet UICollectionView *theCollectionView;
-@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *theFlowLayout;
+
 
 @property (nonatomic) WorstKPIDataSource* theDatasource;
 

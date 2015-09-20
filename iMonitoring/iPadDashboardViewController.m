@@ -56,6 +56,9 @@
 
 @property (nonatomic) Boolean isViewInitialization;
 
+@property (weak, nonatomic) IBOutlet UIPageControl *thePageControl;
+@property (weak, nonatomic) IBOutlet UICollectionView *theCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *theFlowLayout;
 
 @end
 
