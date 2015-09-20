@@ -49,7 +49,6 @@
 - (void)viewDidLoad
 {
     [self showToolbar];
-
     
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
@@ -80,7 +79,7 @@
 
 -(void) showToolbar {
     [self.navigationController setToolbarHidden:FALSE animated:FALSE];
-    self.navigationController.hidesBarsOnSwipe = TRUE;
+    self.navigationController.hidesBarsOnSwipe = FALSE;
     self.navigationController.hidesBarsOnTap = FALSE;
 }
 
@@ -96,11 +95,6 @@
     [self.alarmDatasource loadAlarms];
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 
 - (IBAction)sendMail:(UIBarButtonItem *)sender {
     MailCellAlarms* mailbody = [[MailCellAlarms alloc] init:self.alarmDatasource.theCell alarms:self.alarmDatasource.alarmsOrderedByDate];
@@ -123,7 +117,8 @@
 
 - (IBAction)switchButtonPushed:(UISegmentedControl *)sender {
     [self.theTable reloadData];
-    [self.theTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:TRUE];
+    [self.theTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                         atScrollPosition:UITableViewScrollPositionTop animated:TRUE];
 }
 
 - (NSArray*) cellAlarms {
@@ -150,12 +145,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellParamId = @"AlarmCellId";
-    AlarmViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellParamId];
-    
-    if (cell == Nil) {
-        cell = [[AlarmViewCell alloc] init];
-        
-    }
+    AlarmViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellParamId forIndexPath:indexPath];
     
     [cell initializeWithAlarm:self.cellAlarms[indexPath.row] cell:self.alarmDatasource.theCell];
     return cell;

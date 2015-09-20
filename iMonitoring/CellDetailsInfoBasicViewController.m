@@ -655,7 +655,7 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
         CellImageListViewController* controller = segue.destinationViewController;
         [controller initializeWithCell:self.theCell];
         
-    } else     if ([segue.identifier isEqualToString:@"openCellKPIDetailsId"]) {
+    } else if ([segue.identifier isEqualToString:@"openCellKPIDetailsId"]) {
         DetailsCellWithChartViewController* modal = segue.destinationViewController;
 
         NSIndexPath* selectedIndexInFullTable = [self.theTable indexPathForSelectedRow];

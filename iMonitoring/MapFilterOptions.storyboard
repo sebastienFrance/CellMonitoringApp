@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jS1-BZ-RQS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jS1-BZ-RQS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="50" width="600" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lt4-OS-sNG" id="w4l-01-QCU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="95"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Uiy-A3-cKK" userLabel="AllFilters">
@@ -91,14 +91,14 @@
                                         <rect key="frame" x="0.0" y="146" width="600" height="262"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1IT-pA-ISR" id="SBK-vc-Q1e">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="261"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="262"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="d94-Sf-NRC" userLabel="AllFilters">
                                                     <rect key="frame" x="8" y="8" width="584" height="245"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bLH-BX-Df9" userLabel="LTE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="584" height="61"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="584" height="62"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" image="8_purple" translatesAutoresizingMaskIntoConstraints="NO" id="KOX-N8-pzh">
                                                                     <rect key="frame" x="0.0" y="11" width="25" height="40"/>
@@ -109,7 +109,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SdJ-ZU-kBS">
-                                                                    <rect key="frame" x="30" y="0.0" width="500" height="61"/>
+                                                                    <rect key="frame" x="30" y="0.0" width="500" height="62"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LTE Cells" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="n1F-NT-Sdr">
                                                                             <rect key="frame" x="0.0" y="0.0" width="500" height="37"/>
@@ -119,7 +119,7 @@
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="has sub-filter configured" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ2-71-S5T">
-                                                                            <rect key="frame" x="0.0" y="24" width="500" height="37"/>
+                                                                            <rect key="frame" x="0.0" y="24" width="500" height="38"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -140,7 +140,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iLv-hs-teE" userLabel="WCDMA">
-                                                            <rect key="frame" x="0.0" y="61" width="584" height="62"/>
+                                                            <rect key="frame" x="0.0" y="62" width="584" height="61"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" image="8_teal" translatesAutoresizingMaskIntoConstraints="NO" id="Nbc-67-K9M">
                                                                     <rect key="frame" x="0.0" y="11" width="25" height="40"/>
@@ -151,7 +151,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" distribution="fillEqually" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxZ-9U-lf6">
-                                                                    <rect key="frame" x="30" y="0.0" width="500" height="62"/>
+                                                                    <rect key="frame" x="30" y="0.0" width="500" height="61"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="WCDMA Cells" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vZM-CG-N0H">
                                                                             <rect key="frame" x="0.0" y="0.0" width="500" height="37"/>
@@ -161,7 +161,7 @@
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="has sub-filter configured" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rh-Bz-Wre">
-                                                                            <rect key="frame" x="0.0" y="24" width="500" height="38"/>
+                                                                            <rect key="frame" x="0.0" y="24" width="500" height="37"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,10 +183,10 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ng0-PZ-V3V" userLabel="GSM">
-                                                            <rect key="frame" x="0.0" y="123" width="584" height="61"/>
+                                                            <rect key="frame" x="0.0" y="123" width="584" height="62"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" image="8_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="lTP-oG-gI8">
-                                                                    <rect key="frame" x="0.0" y="10" width="25" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="11" width="25" height="40"/>
                                                                     <animations/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="91H-gz-BZE"/>
@@ -194,7 +194,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" distribution="fillEqually" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qwp-cR-1OL">
-                                                                    <rect key="frame" x="30" y="0.0" width="500" height="61"/>
+                                                                    <rect key="frame" x="30" y="0.0" width="500" height="62"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="GSM Cells" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PWL-Qp-QYI">
                                                                             <rect key="frame" x="0.0" y="0.0" width="500" height="37"/>
@@ -204,7 +204,7 @@
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="has sub-filter configured" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRq-Xk-FIS">
-                                                                            <rect key="frame" x="0.0" y="24" width="500" height="37"/>
+                                                                            <rect key="frame" x="0.0" y="24" width="500" height="38"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -229,7 +229,7 @@
                                                             <rect key="frame" x="0.0" y="184" width="584" height="61"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" image="8_black" translatesAutoresizingMaskIntoConstraints="NO" id="IFM-lZ-nWP">
-                                                                    <rect key="frame" x="0.0" y="10" width="25" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="11" width="25" height="40"/>
                                                                     <animations/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="25" id="hHm-ZM-6xV"/>
@@ -279,10 +279,10 @@
                             <tableViewSection headerTitle="Coverage" id="nxt-Cc-Rf4">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="s38-uK-sBa">
-                                        <rect key="frame" x="0.0" y="451" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="450" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s38-uK-sBa" id="IuD-d2-Y0a">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dp5-AJ-QRk">
@@ -328,10 +328,10 @@
                             <tableViewSection headerTitle="Neighbors" id="TU3-Ps-7S8">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="304" id="eBY-Vk-NBU">
-                                        <rect key="frame" x="0.0" y="538" width="600" height="304"/>
+                                        <rect key="frame" x="0.0" y="536" width="600" height="304"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eBY-Vk-NBU" id="9qZ-z2-J3s">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="303"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="304"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DHz-r4-KnD">
@@ -351,7 +351,7 @@
                                                                     </variation>
                                                                 </label>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zb5-tA-UBX">
-                                                                    <rect key="frame" x="535" y="0.0" width="51" height="31"/>
+                                                                    <rect key="frame" x="535" y="1" width="51" height="31"/>
                                                                     <animations/>
                                                                     <variation key="widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="335" y="0.0" width="51" height="31"/>
@@ -364,10 +364,10 @@
                                                             </variation>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="V99-Ti-jUJ">
-                                                            <rect key="frame" x="0.0" y="37" width="584" height="31"/>
+                                                            <rect key="frame" x="0.0" y="37" width="584" height="32"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Inter-Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="MT7-4e-Z1J">
-                                                                    <rect key="frame" x="0.0" y="5" width="535" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="6" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -377,7 +377,7 @@
                                                                     </variation>
                                                                 </label>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jFz-zY-exn">
-                                                                    <rect key="frame" x="535" y="0.0" width="51" height="31"/>
+                                                                    <rect key="frame" x="535" y="1" width="51" height="31"/>
                                                                     <animations/>
                                                                     <variation key="widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="335" y="0.0" width="51" height="31"/>
@@ -403,7 +403,7 @@
                                                                     </variation>
                                                                 </label>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zbY-uj-au6">
-                                                                    <rect key="frame" x="535" y="0.0" width="51" height="31"/>
+                                                                    <rect key="frame" x="535" y="1" width="51" height="31"/>
                                                                     <animations/>
                                                                     <variation key="widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="335" y="0.0" width="51" height="31"/>
@@ -416,10 +416,10 @@
                                                             </variation>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wb7-Jx-0MZ">
-                                                            <rect key="frame" x="0.0" y="110" width="584" height="31"/>
+                                                            <rect key="frame" x="0.0" y="110" width="584" height="32"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Measured by ANR only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-yU-5xw">
-                                                                    <rect key="frame" x="0.0" y="5" width="535" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="6" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -429,7 +429,7 @@
                                                                     </variation>
                                                                 </label>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bO1-Ap-hsD">
-                                                                    <rect key="frame" x="535" y="0.0" width="51" height="31"/>
+                                                                    <rect key="frame" x="535" y="1" width="51" height="31"/>
                                                                     <animations/>
                                                                     <variation key="widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="335" y="0.0" width="51" height="31"/>
@@ -455,7 +455,7 @@
                                                                     </variation>
                                                                 </label>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FzY-9N-CYO">
-                                                                    <rect key="frame" x="535" y="0.0" width="51" height="31"/>
+                                                                    <rect key="frame" x="535" y="1" width="51" height="31"/>
                                                                     <animations/>
                                                                     <variation key="widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="335" y="0.0" width="51" height="31"/>
@@ -468,10 +468,10 @@
                                                             </variation>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bSo-Pm-EJn">
-                                                            <rect key="frame" x="0.0" y="183" width="584" height="31"/>
+                                                            <rect key="frame" x="0.0" y="183" width="584" height="32"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Black listed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vYE-M3-M6Y">
-                                                                    <rect key="frame" x="0.0" y="5" width="535" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="6" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -481,7 +481,7 @@
                                                                     </variation>
                                                                 </label>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZpV-FC-eDU">
-                                                                    <rect key="frame" x="535" y="0.0" width="51" height="31"/>
+                                                                    <rect key="frame" x="535" y="1" width="51" height="31"/>
                                                                     <animations/>
                                                                     <variation key="widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="335" y="0.0" width="51" height="31"/>
@@ -507,7 +507,7 @@
                                                                     </variation>
                                                                 </label>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L26-wc-1b9">
-                                                                    <rect key="frame" x="535" y="0.0" width="51" height="31"/>
+                                                                    <rect key="frame" x="535" y="1" width="51" height="31"/>
                                                                     <animations/>
                                                                     <variation key="widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="335" y="0.0" width="51" height="31"/>
@@ -520,17 +520,17 @@
                                                             </variation>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AG6-18-C9M">
-                                                            <rect key="frame" x="0.0" y="256" width="584" height="31"/>
+                                                            <rect key="frame" x="0.0" y="256" width="584" height="32"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" text="Distance &gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="goi-9t-xoj">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="31"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="32"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1500 m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lrC-kL-dqe">
-                                                                    <rect key="frame" x="86" y="0.0" width="357" height="31"/>
+                                                                    <rect key="frame" x="86" y="0.0" width="357" height="32"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -540,7 +540,7 @@
                                                                     </variation>
                                                                 </label>
                                                                 <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="xQN-m2-Dik">
-                                                                    <rect key="frame" x="446" y="0.0" width="140" height="32"/>
+                                                                    <rect key="frame" x="446" y="0.0" width="140" height="33"/>
                                                                     <animations/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="136" id="84W-nO-wR9"/>
@@ -645,7 +645,7 @@
                                 <rect key="frame" x="0.0" y="86" width="600" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dMg-DF-tXz" id="WgB-ye-xkh">
-                                    <rect key="frame" x="0.0" y="0.0" width="561" height="61"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="561" height="62"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4u6-qj-MFy">
