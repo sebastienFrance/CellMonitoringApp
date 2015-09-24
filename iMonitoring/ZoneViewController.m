@@ -23,11 +23,10 @@
 @property (nonatomic) NSDictionary* listOfObjectZones;
 
 @property (nonatomic) DCTechnologyId currentTechno;
-
+@property (weak, nonatomic) IBOutlet UITableView *theTable;
 @end
 
 @implementation ZoneViewController
-@synthesize theTable;
 
 
 - (IBAction)segmentPushed:(UISegmentedControl *)sender {
@@ -53,10 +52,10 @@
             return;
         }
     }
-    [theTable reloadData];
+    [self.theTable reloadData];
     NSMutableArray* workingZones = self.listOfWorkingZones[@(self.currentTechno)];
     if (workingZones != Nil && workingZones.count > 0) {
-        [theTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:TRUE];
+        [self.theTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:TRUE];
     }
     
 }
@@ -82,8 +81,12 @@
     
     self.currentTechno = DCTechnologyLTE;
     
-    theTable.delegate = self;
-    theTable.dataSource = self;
+    self.theTable.delegate = self;
+    self.theTable.dataSource = self;
+    
+    self.theTable.estimatedRowHeight = 70.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
+
     
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Loading Zones";  
@@ -109,7 +112,7 @@
     } else {
         self.listOfWorkingZones = self.datasource.listOfWorkingZones;
         self.listOfObjectZones = self.datasource.listOfObjectZones;
-        [theTable reloadData];
+        [self.theTable reloadData];
     }
 }
 

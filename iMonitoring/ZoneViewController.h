@@ -14,6 +14,6 @@
 
 @interface ZoneViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, ZonesDatasSourceDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *theTable;
+
 
 @end
