@@ -89,6 +89,9 @@ typedef NS_ENUM(NSUInteger, NeighborDisplayModeId) {
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
 
+    self.theTable.estimatedRowHeight = 114.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
+
 
 
     if (self.displayMode == NeighborDisplayModeNormal) {
