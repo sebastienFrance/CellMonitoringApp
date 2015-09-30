@@ -31,7 +31,10 @@
 {
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
-    
+
+    self.theTable.estimatedRowHeight = 76.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
+
     self.lastVisitedCells = [VisitedCells loadVisitedCells];
     self.lastVisitedCells = [self.lastVisitedCells sortedArrayUsingSelector:@selector(compareByLastVisited:)];
 

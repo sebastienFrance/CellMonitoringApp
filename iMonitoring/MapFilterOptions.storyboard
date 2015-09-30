@@ -221,7 +221,6 @@
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstItem="Qwp-cR-1OL" firstAttribute="top" secondItem="Ng0-PZ-V3V" secondAttribute="top" id="Coo-re-EaG"/>
-                                                                <constraint firstItem="rsM-7a-ecp" firstAttribute="centerY" secondItem="Ng0-PZ-V3V" secondAttribute="centerY" id="FMm-9v-SM2"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Qwp-cR-1OL" secondAttribute="bottom" id="UPW-Ap-Fau"/>
                                                             </constraints>
                                                         </stackView>

@@ -38,6 +38,9 @@
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
     
+    self.theTable.estimatedRowHeight = 114.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
+    
     self.isLoading = TRUE;
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Loading data";

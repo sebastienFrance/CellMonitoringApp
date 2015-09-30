@@ -63,6 +63,10 @@
     
     theTable.delegate = self;
     theTable.dataSource = self;
+    
+    self.theTable.estimatedRowHeight = 59.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
+
 }
 
 -(void) viewDidAppear:(BOOL)animated {
