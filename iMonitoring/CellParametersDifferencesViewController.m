@@ -48,8 +48,10 @@
 static const NSUInteger PARAMETERS_DISPLAY_ALL = 0;
 static const NSUInteger PARAMETERS_DISPLAY_DIFFERENCES_ONLY = 1;
 
+/*
 static const float CELL_HEIGHT_WITHOUT_DIFFERENCES = 60.0;
 static const float CELL_HEIGHT_WITH_DIFFERENCES = 84.0;
+*/
 
 - (IBAction)SegmentedPushed:(UISegmentedControl *)sender {
     self.displayMode = sender.selectedSegmentIndex;
@@ -63,7 +65,11 @@ static const float CELL_HEIGHT_WITH_DIFFERENCES = 84.0;
 
     self.theTableView.dataSource = self;
     self.theTableView.delegate = self;
+
+    self.theTableView.estimatedRowHeight = 59.0;
+    self.theTableView.rowHeight = UITableViewAutomaticDimension;
     
+
     self.displayMode = PARAMETERS_DISPLAY_ALL;
     [self initializeDataBasedOnDisplayMode];
     
@@ -134,7 +140,7 @@ static const float CELL_HEIGHT_WITH_DIFFERENCES = 84.0;
     }
 }
 
-
+/*
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (self.displayMode) {
         case PARAMETERS_DISPLAY_ALL: {
@@ -156,7 +162,7 @@ static const float CELL_HEIGHT_WITH_DIFFERENCES = 84.0;
             return CELL_HEIGHT_WITH_DIFFERENCES;
         }
     }
-}
+}*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

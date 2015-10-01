@@ -51,6 +51,9 @@
     self.theTableView.delegate = self;
     self.theTableView.dataSource = self;
     
+    self.theTableView.estimatedRowHeight = 59.0;
+    self.theTableView.rowHeight = UITableViewAutomaticDimension;
+
     self.title = self.theSourceCell.id;
     
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];

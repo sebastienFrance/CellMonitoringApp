@@ -30,6 +30,10 @@
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
     
+    self.theTable.estimatedRowHeight = 66.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
+    
+
     // Do any additional setup after loading the view.
     self.title = self.theCell.id;
     
