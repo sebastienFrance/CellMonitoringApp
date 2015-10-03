@@ -47,7 +47,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Fl-c4-ekI" userLabel="MarkedCells">
                                                             <rect key="frame" x="0.0" y="0.0" width="584" height="49"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Marked Cells only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6CP-mM-JJg">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Marked Cells only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="6CP-mM-JJg">
                                                                     <rect key="frame" x="0.0" y="15" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -111,7 +111,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SdJ-ZU-kBS">
                                                                     <rect key="frame" x="30" y="0.0" width="500" height="62"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LTE Cells" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="n1F-NT-Sdr">
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LTE Cells" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1F-NT-Sdr">
                                                                             <rect key="frame" x="0.0" y="0.0" width="500" height="37"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -153,7 +153,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" distribution="fillEqually" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxZ-9U-lf6">
                                                                     <rect key="frame" x="30" y="0.0" width="500" height="61"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="WCDMA Cells" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vZM-CG-N0H">
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="WCDMA Cells" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZM-CG-N0H">
                                                                             <rect key="frame" x="0.0" y="0.0" width="500" height="37"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -196,7 +196,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" distribution="fillEqually" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qwp-cR-1OL">
                                                                     <rect key="frame" x="30" y="0.0" width="500" height="62"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="GSM Cells" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PWL-Qp-QYI">
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="GSM Cells" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWL-Qp-QYI">
                                                                             <rect key="frame" x="0.0" y="0.0" width="500" height="37"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -238,7 +238,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6kB-md-0hY">
                                                                     <rect key="frame" x="30" y="0.0" width="500" height="61"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Empty Site" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="T2E-BS-Kdo">
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Empty Site" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2E-BS-Kdo">
                                                                             <rect key="frame" x="0.0" y="0.0" width="500" height="61"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -287,14 +287,14 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dp5-AJ-QRk">
                                                     <rect key="frame" x="8" y="8" width="584" height="27"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Orv-B0-8qk">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Orv-B0-8qk">
                                                             <rect key="frame" x="0.0" y="0.0" width="48" height="27"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="40000 m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="VYz-LX-eb6">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="40000 m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYz-LX-eb6">
                                                             <rect key="frame" x="53" y="0.0" width="326" height="27"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -339,7 +339,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lB8-6M-cV5">
                                                             <rect key="frame" x="0.0" y="0.0" width="584" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Intra-Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8EG-Pq-Yuq">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Intra-Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EG-Pq-Yuq">
                                                                     <rect key="frame" x="0.0" y="6" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -365,7 +365,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="V99-Ti-jUJ">
                                                             <rect key="frame" x="0.0" y="37" width="584" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Inter-Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="MT7-4e-Z1J">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Inter-Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT7-4e-Z1J">
                                                                     <rect key="frame" x="0.0" y="6" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -391,7 +391,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BMa-zY-GbE">
                                                             <rect key="frame" x="0.0" y="73" width="584" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Inter-RAT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rKc-9v-JEi">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Inter-RAT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKc-9v-JEi">
                                                                     <rect key="frame" x="0.0" y="6" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -417,7 +417,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wb7-Jx-0MZ">
                                                             <rect key="frame" x="0.0" y="110" width="584" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Measured by ANR only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-yU-5xw">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Measured by ANR only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-yU-5xw">
                                                                     <rect key="frame" x="0.0" y="6" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -443,7 +443,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GUh-do-Sph">
                                                             <rect key="frame" x="0.0" y="146" width="584" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="White listed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-pM-eTt">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="White listed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-pM-eTt">
                                                                     <rect key="frame" x="0.0" y="6" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -469,7 +469,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bSo-Pm-EJn">
                                                             <rect key="frame" x="0.0" y="183" width="584" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Black listed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vYE-M3-M6Y">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Black listed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYE-M3-M6Y">
                                                                     <rect key="frame" x="0.0" y="6" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -495,7 +495,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6sG-WB-Mxs">
                                                             <rect key="frame" x="0.0" y="219" width="584" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Others (not BL &amp; WL)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oTy-3c-r4r">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Others (not BL &amp; WL)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTy-3c-r4r">
                                                                     <rect key="frame" x="0.0" y="6" width="535" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -521,14 +521,14 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AG6-18-C9M">
                                                             <rect key="frame" x="0.0" y="256" width="584" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" text="Distance &gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="goi-9t-xoj">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" text="Distance &gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goi-9t-xoj">
                                                                     <rect key="frame" x="0.0" y="0.0" width="81" height="32"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1500 m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lrC-kL-dqe">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1500 m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrC-kL-dqe">
                                                                     <rect key="frame" x="86" y="0.0" width="357" height="32"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -650,7 +650,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4u6-qj-MFy">
                                             <rect key="frame" x="8" y="8" width="545" height="45"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency or release" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="oHH-8j-f3D">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency or release" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="oHH-8j-f3D">
                                                     <rect key="frame" x="0.0" y="0.0" width="159" height="28"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>

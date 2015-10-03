@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NrO-EE-rmb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NrO-EE-rmb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="22" width="600" height="151"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wuw-uQ-tRf" id="W3R-Ys-EB8">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="150.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qRS-UK-jto">
@@ -38,19 +38,19 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="584" height="23"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="251" text="ProbableCause" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scq-on-Dvq">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116" height="23"/>
                                                                     <animations/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEe-HL-lln">
-                                                                    <rect key="frame" x="130" y="0.0" width="454" height="23"/>
+                                                                    <rect key="frame" x="121" y="0.0" width="463" height="23"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Severity" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgu-rD-AyT">
-                                                                            <rect key="frame" x="391" y="1" width="63" height="21"/>
+                                                                            <rect key="frame" x="401" y="2" width="63" height="19"/>
                                                                             <animations/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -70,23 +70,23 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlarmType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDV-fx-FIC">
-                                                            <rect key="frame" x="0.0" y="23" width="64" height="22"/>
+                                                            <rect key="frame" x="0.0" y="23" width="69" height="22"/>
                                                             <animations/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateAndTime (Local time)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stF-tF-Aoa">
-                                                            <rect key="frame" x="0.0" y="45" width="157" height="23"/>
+                                                            <rect key="frame" x="0.0" y="45" width="168" height="22"/>
                                                             <animations/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateAndTime" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVH-Jp-ThG">
-                                                            <rect key="frame" x="0.0" y="67" width="83" height="23"/>
+                                                            <rect key="frame" x="0.0" y="67" width="88" height="23"/>
                                                             <animations/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -94,16 +94,16 @@
                                                             <rect key="frame" x="0.0" y="90" width="584" height="22"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acknowledged:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZB8-NR-Nvx">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="93" height="22"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="99" height="22"/>
                                                                     <animations/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="isAcknowledged" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFD-iu-Xch">
-                                                                    <rect key="frame" x="98" y="0.0" width="486" height="22"/>
+                                                                    <rect key="frame" x="104" y="0.0" width="480" height="22"/>
                                                                     <animations/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -115,9 +115,9 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hp3-ab-RZe">
-                                                            <rect key="frame" x="0.0" y="112" width="88" height="23"/>
+                                                            <rect key="frame" x="0.0" y="112" width="93" height="22"/>
                                                             <animations/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -253,27 +253,27 @@
                                         <rect key="frame" x="0.0" y="22" width="600" height="79"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jpn-X6-2eQ" id="miu-ZY-VD4">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="78.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2i0-OI-yE8">
                                                     <rect key="frame" x="8" y="8" width="584" height="62"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qZo-hs-Upi">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZo-hs-Upi">
                                                             <rect key="frame" x="0.0" y="0.0" width="72" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="dateLocalTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="obe-6Z-j8G">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="dateLocalTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obe-6Z-j8G">
                                                             <rect key="frame" x="0.0" y="21" width="95" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="dateCellLocalTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="kVf-p1-iCd">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="dateCellLocalTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVf-p1-iCd">
                                                             <rect key="frame" x="0.0" y="42" width="120" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -307,20 +307,20 @@
                                         <rect key="frame" x="0.0" y="101" width="600" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mB8-Mn-es2" id="IM6-7g-xa6">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="55n-yZ-RFp">
                                                     <rect key="frame" x="8" y="8" width="584" height="31"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="NkZ-UT-UIr">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkZ-UT-UIr">
                                                             <rect key="frame" x="0.0" y="6" width="292" height="20"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Period" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oz5-ep-vWr">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Period" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oz5-ep-vWr">
                                                             <rect key="frame" x="292" y="7" width="292" height="17"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -427,7 +427,7 @@
                                         <rect key="frame" x="0.0" y="86" width="600" height="169"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4H9-ol-9WK" id="0gk-l8-xti">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="168.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I0B-L7-Qoo">
@@ -440,10 +440,10 @@
                                                                 <constraint firstAttribute="width" secondItem="qSG-RP-VbN" secondAttribute="height" multiplier="1:1" id="7Zp-uq-zJe"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 9, 2015 13:35" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="NUG-BA-63o">
-                                                            <rect key="frame" x="157" y="68" width="394" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 9, 2015 13:35" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUG-BA-63o">
+                                                            <rect key="frame" x="157" y="67" width="394" height="19"/>
                                                             <animations/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -567,7 +567,7 @@
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellAddressCellId" rowHeight="147" id="f8n-ZO-SDq" customClass="CellAddressDetails">
-                                        <rect key="frame" x="0.0" y="49.5" width="600" height="147"/>
+                                        <rect key="frame" x="0.0" y="50" width="600" height="147"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f8n-ZO-SDq" id="bbI-Fc-TtH">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="146.5"/>
@@ -579,37 +579,37 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="oSY-Mm-9ck" userLabel="StackCellInfos">
                                                             <rect key="frame" x="0.0" y="0.0" width="484" height="130"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="Techno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gk7-OC-e8j">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="Techno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gk7-OC-e8j">
                                                                     <rect key="frame" x="0.0" y="0.0" width="56" height="26"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.50196081399917603" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cell Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="E90-3K-ngz">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cell Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E90-3K-ngz">
                                                                     <rect key="frame" x="0.0" y="26" width="77" height="26"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Site" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="r04-V4-Fns">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Site" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r04-V4-Fns">
                                                                     <rect key="frame" x="0.0" y="52" width="25" height="26"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Release" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="b8j-Ps-c4c">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Release" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8j-Ps-c4c">
                                                                     <rect key="frame" x="0.0" y="78" width="51" height="26"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zMR-bz-Vzr">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMR-bz-Vzr">
                                                                     <rect key="frame" x="0.0" y="104" width="69" height="26"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -623,13 +623,13 @@
                                                             </variation>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="dnF-dF-kPL" userLabel="StackVerticalImage">
-                                                            <rect key="frame" x="484" y="0.0" width="100" height="65"/>
+                                                            <rect key="frame" x="484" y="0.0" width="100" height="130"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P69-Da-dGr" userLabel="StackImage">
-                                                                    <rect key="frame" x="74" y="0.0" width="26" height="30"/>
+                                                                    <rect key="frame" x="11" y="0.0" width="89" height="95"/>
                                                                     <subviews>
                                                                         <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CellTower1" translatesAutoresizingMaskIntoConstraints="NO" id="O6G-lV-nmq">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="26" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="95"/>
                                                                             <animations/>
                                                                             <gestureRecognizers/>
                                                                             <connections>
@@ -640,7 +640,7 @@
                                                                     <animations/>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9QP-6T-gyG" userLabel="StackCamera">
-                                                                    <rect key="frame" x="65" y="30" width="35" height="35"/>
+                                                                    <rect key="frame" x="65" y="95" width="35" height="35"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMj-EG-uXm">
                                                                             <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -703,10 +703,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellAddressId" rowHeight="143" id="zuM-MY-due" customClass="CellAddressTableViewCell">
-                                        <rect key="frame" x="0.0" y="196.5" width="600" height="143"/>
+                                        <rect key="frame" x="0.0" y="197" width="600" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zuM-MY-due" id="6ls-bp-ks2">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="142.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="143"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KeM-bj-PBt">
@@ -765,7 +765,7 @@
                                                             </subviews>
                                                             <animations/>
                                                         </stackView>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Street is loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PoO-zA-mCi">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Street is loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoO-zA-mCi">
                                                             <rect key="frame" x="0.0" y="25" width="584" height="26"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -775,7 +775,7 @@
                                                                 <rect key="frame" x="0.0" y="76" width="384" height="25"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City is loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qbm-Lg-sqC">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City is loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbm-Lg-sqC">
                                                             <rect key="frame" x="0.0" y="51" width="584" height="25"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -785,7 +785,7 @@
                                                                 <rect key="frame" x="0.0" y="101" width="384" height="25"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Country is loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qKM-CL-R9s">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Country is loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKM-CL-R9s">
                                                             <rect key="frame" x="0.0" y="76" width="584" height="26"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -795,7 +795,7 @@
                                                                 <rect key="frame" x="0.0" y="25" width="384" height="25"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Timezone is loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="feE-vk-Nqj">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Timezone is loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feE-vk-Nqj">
                                                             <rect key="frame" x="0.0" y="101" width="584" height="25"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -832,10 +832,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellKPIId" rowHeight="97" id="37R-aP-RGD" customClass="DisplayKPICell">
-                                        <rect key="frame" x="0.0" y="339.5" width="600" height="97"/>
+                                        <rect key="frame" x="0.0" y="340" width="600" height="97"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="37R-aP-RGD" id="f21-1g-Irx">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="96.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="1ds-K5-Zvu" userLabel="StackContainer">
@@ -844,21 +844,21 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="a88-jn-AAI" userLabel="StackKPIInfo">
                                                             <rect key="frame" x="0.0" y="0.0" width="521" height="80"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="BTt-t4-KkO">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTt-t4-KkO">
                                                                     <rect key="frame" x="0.0" y="0.0" width="74" height="27"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yKq-I8-7bd">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKq-I8-7bd">
                                                                     <rect key="frame" x="0.0" y="27" width="100" height="27"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value + Prev Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mCb-LA-1cA">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value + Prev Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCb-LA-1cA">
                                                                     <rect key="frame" x="0.0" y="54" width="146" height="27"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -928,23 +928,23 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellPropertiesId" rowHeight="58" id="YgV-jN-HRf" customClass="CellProperties">
-                                        <rect key="frame" x="0.0" y="436.5" width="600" height="58"/>
+                                        <rect key="frame" x="0.0" y="437" width="600" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YgV-jN-HRf" id="nfH-fl-gFg">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="57.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-GR-HNn">
                                                     <rect key="frame" x="8" y="8" width="551" height="41"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="1PF-KB-vAX">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PF-KB-vAX">
                                                             <rect key="frame" x="0.0" y="0.0" width="551" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gum-xb-QJS">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gum-xb-QJS">
                                                             <rect key="frame" x="0.0" y="21" width="551" height="20"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -970,10 +970,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellAlarmsOverviewId" rowHeight="103" id="FZz-gN-3Zl" customClass="CellAlarmsOverview">
-                                        <rect key="frame" x="0.0" y="494.5" width="600" height="103"/>
+                                        <rect key="frame" x="0.0" y="495" width="600" height="103"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FZz-gN-3Zl" id="i1W-Cf-5qj">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="102.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kbR-ow-XZc">
@@ -1175,10 +1175,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellNeighborsRelationsId" rowHeight="125" id="d5j-wZ-s9i" customClass="iPadDashboardScopeViewNRCell">
-                                        <rect key="frame" x="0.0" y="597.5" width="600" height="125"/>
+                                        <rect key="frame" x="0.0" y="598" width="600" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d5j-wZ-s9i" id="ocl-l8-Rn7">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="124.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uvQ-PO-5A8">
@@ -1343,17 +1343,17 @@
                                         <rect key="frame" x="0.0" y="22" width="600" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NPT-Yy-nGU" id="jRL-ZW-95n">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="144.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TrU-MD-7th">
                                                     <rect key="frame" x="8" y="8" width="551" height="128"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6FM-if-aAk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="57.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="58"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="250" text="Techno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJx-Pb-bQv">
-                                                                    <rect key="frame" x="0.0" y="19" width="55.5" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="19" width="56" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1374,34 +1374,34 @@
                                                             <animations/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIZ-SI-Wfo">
-                                                            <rect key="frame" x="0.0" y="57.5" width="551" height="70.5"/>
+                                                            <rect key="frame" x="0.0" y="58" width="551" height="70"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Lmd-xG-Ogu" userLabel="StackCellLabel">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="523" height="70.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="523" height="71"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="150" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="CellName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kD2-yW-5mD">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="73" height="19.5"/>
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="150" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="CellName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD2-yW-5mD">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="73" height="20"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="150" text="Site" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5So-Gf-Tsw">
-                                                                            <rect key="frame" x="0.0" y="19.5" width="25" height="17"/>
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="150" text="Site" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5So-Gf-Tsw">
+                                                                            <rect key="frame" x="0.0" y="20" width="25" height="17"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="Release" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="084-OO-ftt">
-                                                                            <rect key="frame" x="0.0" y="36.5" width="50.5" height="17"/>
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="Release" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="084-OO-ftt">
+                                                                            <rect key="frame" x="0.0" y="37" width="51" height="17"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IvV-L4-KP9">
-                                                                            <rect key="frame" x="0.0" y="53.5" width="68.5" height="17"/>
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvV-L4-KP9">
+                                                                            <rect key="frame" x="0.0" y="54" width="69" height="17"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1411,7 +1411,7 @@
                                                                     <animations/>
                                                                 </stackView>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="8_purple" translatesAutoresizingMaskIntoConstraints="NO" id="0u5-oa-c1q">
-                                                                    <rect key="frame" x="523" y="0.0" width="28" height="70.5"/>
+                                                                    <rect key="frame" x="523" y="0.0" width="28" height="71"/>
                                                                     <animations/>
                                                                 </imageView>
                                                             </subviews>

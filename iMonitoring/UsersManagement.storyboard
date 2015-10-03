@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aEU-Qj-iOe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aEU-Qj-iOe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -46,41 +46,41 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zl1-ZF-tHp" id="G95-y2-GPR">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-MJ-3P8">
-                                                    <rect key="frame" x="20" y="7" width="280" height="21"/>
+                                                    <rect key="frame" x="20" y="7" width="280" height="20"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="isAdmin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRz-6v-xIP">
-                                                    <rect key="frame" x="20" y="46" width="52" height="17"/>
+                                                    <rect key="frame" x="20" y="45" width="52" height="17"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wle-GR-6BU">
-                                                    <rect key="frame" x="20" y="29" width="280" height="17"/>
+                                                    <rect key="frame" x="20" y="28" width="280" height="17"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR8-ey-vNT">
-                                                    <rect key="frame" x="136" y="62" width="67" height="17"/>
+                                                    <rect key="frame" x="136" y="61" width="66" height="17"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last connection:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLE-Nd-sTc">
-                                                    <rect key="frame" x="20" y="62" width="108" height="17"/>
+                                                    <rect key="frame" x="20" y="61" width="108" height="17"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -189,23 +189,6 @@
                                             <action selector="modifyButtonPushed:" destination="4Sb-ip-DGR" id="c8c-9Q-N96"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="liA-YZ-O2a"/>
-                                    <barButtonItem style="plain" id="33B-LX-brq">
-                                        <view key="customView" contentMode="scaleToFill" id="FnE-4L-seO">
-                                            <rect key="frame" x="198" y="6" width="144" height="33"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVe-CW-PUi">
-                                                    <rect key="frame" x="0.0" y="6" width="144" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iDs-PL-cJJ"/>
                                     <barButtonItem systemItem="cancel" id="cXI-kO-2xu">
                                         <connections>
@@ -218,119 +201,125 @@
                                 <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D10-Dm-Auu" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="540" height="576"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="598"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0eJ-5e-1Vk">
-                                                <rect key="frame" x="178" y="37" width="150" height="30"/>
+                                                <rect key="frame" x="178" y="63" width="150" height="30"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gvZ-FI-4Ih">
-                                                <rect key="frame" x="348" y="37" width="150" height="30"/>
+                                                <rect key="frame" x="348" y="63" width="150" height="30"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="short description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lbo-ag-aNU">
-                                                <rect key="frame" x="8" y="274" width="524" height="30"/>
+                                                <rect key="frame" x="8" y="296" width="524" height="30"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zk9-HF-RoJ">
-                                                <rect key="frame" x="8" y="115" width="51" height="31"/>
+                                                <rect key="frame" x="8" y="140" width="51" height="31"/>
                                                 <animations/>
                                             </switch>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxy-c4-jqU">
-                                                <rect key="frame" x="178" y="8" width="80" height="21"/>
+                                                <rect key="frame" x="178" y="36" width="74" height="19"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuO-iX-OTw">
-                                                <rect key="frame" x="8" y="245" width="95" height="21"/>
+                                                <rect key="frame" x="8" y="268" width="88" height="20"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fx4-jK-CcJ">
-                                                <rect key="frame" x="8" y="195" width="524" height="30"/>
+                                                <rect key="frame" x="8" y="218" width="524" height="30"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2p-Dc-isx">
-                                                <rect key="frame" x="8" y="166" width="53" height="21"/>
+                                                <rect key="frame" x="8" y="191" width="49" height="19"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c65-P5-sTJ">
-                                                <rect key="frame" x="348" y="8" width="90" height="21"/>
+                                                <rect key="frame" x="348" y="36" width="83" height="19"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eWZ-h5-Rbb">
-                                                <rect key="frame" x="178" y="116" width="150" height="30"/>
+                                                <rect key="frame" x="178" y="141" width="150" height="30"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="30W-08-RW0">
-                                                <rect key="frame" x="348" y="116" width="150" height="30"/>
+                                                <rect key="frame" x="348" y="141" width="150" height="30"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZm-tW-ps6">
-                                                <rect key="frame" x="178" y="87" width="86" height="21"/>
+                                                <rect key="frame" x="178" y="113" width="80" height="20"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW7-Jx-VJA">
-                                                <rect key="frame" x="348" y="87" width="85" height="21"/>
+                                                <rect key="frame" x="348" y="113" width="79" height="20"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="New password must be different from old password. Password must be at least 5 characters long." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVD-gY-2xO">
-                                                <rect key="frame" x="8" y="312" width="523" height="86"/>
+                                                <rect key="frame" x="8" y="334" width="523" height="86"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="86" id="zEp-0z-vWS"/>
                                                 </constraints>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edf-zc-Pnz">
-                                                <rect key="frame" x="8" y="8" width="66" height="21"/>
+                                                <rect key="frame" x="8" y="36" width="61" height="19"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of creation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aT-sp-5cX">
-                                                <rect key="frame" x="8" y="37" width="150" height="15"/>
+                                                <rect key="frame" x="8" y="63" width="150" height="17"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Administrator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEc-ca-w6D">
-                                                <rect key="frame" x="8" y="87" width="113" height="21"/>
+                                                <rect key="frame" x="8" y="113" width="104" height="20"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVe-CW-PUi">
+                                                <rect key="frame" x="230" y="8" width="82" height="20"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -342,6 +331,7 @@
                                             <constraint firstItem="9aT-sp-5cX" firstAttribute="leading" secondItem="UEc-ca-w6D" secondAttribute="leading" id="50m-bc-0mR"/>
                                             <constraint firstItem="eWZ-h5-Rbb" firstAttribute="leading" secondItem="TZm-tW-ps6" secondAttribute="leading" id="54X-TO-YuY"/>
                                             <constraint firstItem="eWZ-h5-Rbb" firstAttribute="width" secondItem="0eJ-5e-1Vk" secondAttribute="width" id="5gI-Ft-tOb"/>
+                                            <constraint firstItem="edf-zc-Pnz" firstAttribute="top" secondItem="kVe-CW-PUi" secondAttribute="bottom" constant="8" symbolic="YES" id="5pH-Bx-tvP"/>
                                             <constraint firstItem="Zxy-c4-jqU" firstAttribute="baseline" secondItem="edf-zc-Pnz" secondAttribute="baseline" id="6pb-eh-69V"/>
                                             <constraint firstItem="gvZ-FI-4Ih" firstAttribute="width" secondItem="30W-08-RW0" secondAttribute="width" id="7xp-aM-UQE"/>
                                             <constraint firstItem="9aT-sp-5cX" firstAttribute="top" secondItem="edf-zc-Pnz" secondAttribute="bottom" constant="8" id="8vd-43-kaQ"/>
@@ -349,7 +339,6 @@
                                             <constraint firstItem="uW7-Jx-VJA" firstAttribute="leading" secondItem="30W-08-RW0" secondAttribute="leading" id="9Dh-gQ-zy9"/>
                                             <constraint firstItem="gvZ-FI-4Ih" firstAttribute="leading" secondItem="c65-P5-sTJ" secondAttribute="leading" id="APW-XL-lal"/>
                                             <constraint firstItem="eWZ-h5-Rbb" firstAttribute="top" secondItem="TZm-tW-ps6" secondAttribute="bottom" constant="8" id="Cim-Iu-5eK"/>
-                                            <constraint firstItem="edf-zc-Pnz" firstAttribute="top" secondItem="D10-Dm-Auu" secondAttribute="topMargin" id="IrA-SK-aDN"/>
                                             <constraint firstItem="o2p-Dc-isx" firstAttribute="top" secondItem="zk9-HF-RoJ" secondAttribute="bottom" constant="20" id="JQr-8o-Nj2"/>
                                             <constraint firstItem="30W-08-RW0" firstAttribute="top" secondItem="uW7-Jx-VJA" secondAttribute="bottom" constant="8" id="K6h-Ok-QDB"/>
                                             <constraint firstItem="gvZ-FI-4Ih" firstAttribute="leading" secondItem="0eJ-5e-1Vk" secondAttribute="trailing" constant="20" id="LNU-Z8-DKo"/>
@@ -376,6 +365,7 @@
                                             <constraint firstItem="0eJ-5e-1Vk" firstAttribute="leading" secondItem="9aT-sp-5cX" secondAttribute="trailing" constant="20" id="sLc-c7-9Xe"/>
                                             <constraint firstItem="uuO-iX-OTw" firstAttribute="top" secondItem="fx4-jK-CcJ" secondAttribute="bottom" constant="20" id="sc2-yy-Y4C"/>
                                             <constraint firstItem="uW7-Jx-VJA" firstAttribute="leading" secondItem="gvZ-FI-4Ih" secondAttribute="leading" id="uNd-o5-Zhp"/>
+                                            <constraint firstItem="kVe-CW-PUi" firstAttribute="centerX" secondItem="D10-Dm-Auu" secondAttribute="centerX" id="xAm-BT-QTe"/>
                                             <constraint firstItem="0eJ-5e-1Vk" firstAttribute="width" secondItem="9aT-sp-5cX" secondAttribute="width" id="xYX-CD-5cO"/>
                                             <constraint firstItem="lbo-ag-aNU" firstAttribute="trailing" secondItem="D10-Dm-Auu" secondAttribute="trailingMargin" id="xoe-DG-i87"/>
                                             <constraint firstItem="9aT-sp-5cX" firstAttribute="trailing" secondItem="D10-Dm-Auu" secondAttribute="trailing" multiplier="33%" constant="-20" id="yEZ-lj-ahK"/>
@@ -398,6 +388,7 @@
                             <constraint firstItem="HCH-0R-Isb" firstAttribute="top" secondItem="Nxv-Ga-utf" secondAttribute="bottom" id="8DA-rh-vnD"/>
                             <constraint firstItem="QzX-a3-f9g" firstAttribute="top" secondItem="wl1-Yn-VfT" secondAttribute="bottom" id="FEP-h9-tG1"/>
                             <constraint firstAttribute="trailing" secondItem="HCH-0R-Isb" secondAttribute="trailing" id="IDH-7P-rSR"/>
+                            <constraint firstItem="kVe-CW-PUi" firstAttribute="top" secondItem="HCH-0R-Isb" secondAttribute="bottom" constant="8" id="MwC-ca-Uuu"/>
                             <constraint firstAttribute="trailing" secondItem="wl1-Yn-VfT" secondAttribute="trailing" id="PDU-nh-4cJ"/>
                             <constraint firstItem="HCH-0R-Isb" firstAttribute="leading" secondItem="BlR-L9-Cxb" secondAttribute="leading" id="ka8-4b-NLd"/>
                             <constraint firstAttribute="width" secondItem="D10-Dm-Auu" secondAttribute="width" id="mh5-WZ-BCO"/>
@@ -461,87 +452,112 @@
                                 <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NH8-82-ih9" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="540" height="576"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="570"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjp-Ii-vdw">
-                                                <rect key="frame" x="348" y="8" width="90" height="21"/>
+                                                <rect key="frame" x="348" y="8" width="83" height="20"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6r-6F-72b">
-                                                <rect key="frame" x="178" y="8" width="80" height="21"/>
+                                                <rect key="frame" x="178" y="8" width="74" height="20"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ay-D2-E1x">
-                                                <rect key="frame" x="8" y="154" width="53" height="21"/>
+                                                <rect key="frame" x="8" y="151" width="49" height="20"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tw-1u-Ymm">
-                                                <rect key="frame" x="8" y="8" width="88" height="21"/>
+                                                <rect key="frame" x="8" y="8" width="82" height="20"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EEz-hS-4ez">
-                                                <rect key="frame" x="8" y="115" width="51" height="31"/>
+                                                <rect key="frame" x="8" y="112" width="51" height="31"/>
                                                 <animations/>
                                             </switch>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TF1-0n-gJy">
-                                                <rect key="frame" x="346" y="116" width="150" height="30"/>
+                                                <rect key="frame" x="346" y="113" width="150" height="30"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="short description" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WVr-9V-2mg">
-                                                <rect key="frame" x="8" y="258" width="524" height="30"/>
+                                                <rect key="frame" x="8" y="252" width="524" height="30"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G37-YA-KUh">
-                                                <rect key="frame" x="8" y="37" width="150" height="30"/>
+                                                <rect key="frame" x="8" y="36" width="150" height="30"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Administrator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mty-vr-ZhM">
-                                                <rect key="frame" x="8" y="87" width="113" height="21"/>
+                                                <rect key="frame" x="8" y="86" width="104" height="19"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ja7-85-RTv">
-                                                <rect key="frame" x="8" y="229" width="95" height="21"/>
+                                                <rect key="frame" x="8" y="225" width="88" height="19"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6L3-Dv-4wT">
-                                                <rect key="frame" x="178" y="116" width="150" height="30"/>
+                                                <rect key="frame" x="178" y="113" width="150" height="30"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKj-eh-cyn">
-                                                <rect key="frame" x="348" y="87" width="85" height="21"/>
+                                                <rect key="frame" x="348" y="86" width="79" height="19"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3C5-Da-iRi">
+                                                <rect key="frame" x="348" y="36" width="150" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jNJ-au-uB6">
+                                                <rect key="frame" x="178" y="36" width="150" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UEW-Rb-rZM">
+                                                <rect key="frame" x="8" y="179" width="524" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                            </textField>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fuo-Tb-qa2">
+                                                <rect key="frame" x="178" y="86" width="80" height="19"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAt-Ww-gzL">
-                                                <rect key="frame" x="8" y="296" width="524" height="72"/>
+                                                <rect key="frame" x="8" y="290" width="524" height="72"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -549,34 +565,9 @@
                                                 </constraints>
                                                 <string key="text">User name must be at least 5 characters long and contains only lower case letters and/or numbers. Password must be different from old password. Password must be at least 5 characters long.</string>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3C5-Da-iRi">
-                                                <rect key="frame" x="348" y="37" width="150" height="30"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jNJ-au-uB6">
-                                                <rect key="frame" x="178" y="37" width="150" height="30"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UEW-Rb-rZM">
-                                                <rect key="frame" x="8" y="183" width="524" height="30"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
-                                            </textField>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fuo-Tb-qa2">
-                                                <rect key="frame" x="178" y="87" width="86" height="21"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

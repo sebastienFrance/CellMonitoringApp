@@ -320,6 +320,7 @@
 		BECF3FAE1865A64800E85186 /* MonitoringPeriodUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA7905316D9164D00B0D9B7 /* MonitoringPeriodUtility.m */; };
 		BED4897917F85E5100C67009 /* iMonNavigationDataActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = BED4897817F85E5100C67009 /* iMonNavigationDataActivity.m */; };
 		BED4A7D61AAB3B800086BD70 /* RequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = BED4A7D51AAB3B800086BD70 /* RequestParameters.m */; };
+		BED6B6501BBFE2190060BBA9 /* iPhoneDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED6B64F1BBFE2190060BBA9 /* iPhoneDashboard.storyboard */; settings = {ASSET_TAGS = (); }; };
 		BED703881A7422B90053D2C1 /* NeighborsHistoricalDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BED703871A7422B90053D2C1 /* NeighborsHistoricalDataSource.m */; };
 		BED703921A7560EA0053D2C1 /* HistoricalNRsOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED703911A7560EA0053D2C1 /* HistoricalNRsOverviewViewController.m */; };
 		BED703951A7562730053D2C1 /* HistoricalNRsOverviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BED703941A7562730053D2C1 /* HistoricalNRsOverviewCell.m */; };
@@ -905,6 +906,7 @@
 		BED4897817F85E5100C67009 /* iMonNavigationDataActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iMonNavigationDataActivity.m; sourceTree = "<group>"; };
 		BED4A7D41AAB3B800086BD70 /* RequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestParameters.h; sourceTree = "<group>"; };
 		BED4A7D51AAB3B800086BD70 /* RequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestParameters.m; sourceTree = "<group>"; };
+		BED6B64F1BBFE2190060BBA9 /* iPhoneDashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneDashboard.storyboard; sourceTree = "<group>"; };
 		BED703861A7422B90053D2C1 /* NeighborsHistoricalDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeighborsHistoricalDataSource.h; sourceTree = "<group>"; };
 		BED703871A7422B90053D2C1 /* NeighborsHistoricalDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeighborsHistoricalDataSource.m; sourceTree = "<group>"; };
 		BED703901A7560EA0053D2C1 /* HistoricalNRsOverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoricalNRsOverviewViewController.h; sourceTree = "<group>"; };
@@ -1220,6 +1222,7 @@
 				BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */,
 				BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */,
 				BEDF753718D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard */,
+				BED6B64F1BBFE2190060BBA9 /* iPhoneDashboard.storyboard */,
 				BE82B0091B8E50D700DBCD6F /* CellDetails.storyboard */,
 				BE82B0071B8E48D300DBCD6F /* CellParameters.storyboard */,
 				BE1B816C1B8CE7DC00385DB4 /* SearchCells.storyboard */,
@@ -2634,6 +2637,7 @@
 				BEF0FF141B85172400B15CD8 /* UsersManagement.storyboard in Resources */,
 				BE821BA0155FD58D00057C60 /* LTE_logo.jpg in Resources */,
 				BE821BA3155FD59B00057C60 /* logo_3g_150.jpg in Resources */,
+				BED6B6501BBFE2190060BBA9 /* iPhoneDashboard.storyboard in Resources */,
 				BE5E60831906BDCB00805423 /* CellMonitoringMac-Info.plist in Resources */,
 				BE82B00A1B8E50D700DBCD6F /* CellDetails.storyboard in Resources */,
 				BE1B816D1B8CE7DC00385DB4 /* SearchCells.storyboard in Resources */,

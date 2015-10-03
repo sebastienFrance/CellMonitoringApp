@@ -38,10 +38,7 @@
 @end
 
 @implementation NavigationViewController
-- (IBAction)cancelPushed:(UIBarButtonItem *)sender {
-    
-    [self hideKeyboard];
-}
+
 
 -(void) hideKeyboard {
     if (self.StartFrom.isFirstResponder) {
@@ -50,9 +47,7 @@
         [self.DestinationTo resignFirstResponder];
     }
 }
-
-- (IBAction)goPushed:(UIBarButtonItem *)sender {
-
+- (IBAction)goPushed:(UIButton *)sender {
     [self saveInUserPreferences];
     
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
