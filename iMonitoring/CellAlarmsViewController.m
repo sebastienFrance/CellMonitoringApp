@@ -78,9 +78,9 @@
 }
 
 -(void) showToolbar {
-    [self.navigationController setToolbarHidden:FALSE animated:FALSE];
-    self.navigationController.hidesBarsOnSwipe = FALSE;
-    self.navigationController.hidesBarsOnTap = FALSE;
+//    [self.navigationController setToolbarHidden:FALSE animated:FALSE];
+//    self.navigationController.hidesBarsOnSwipe = FALSE;
+//    self.navigationController.hidesBarsOnTap = FALSE;
 }
 
 

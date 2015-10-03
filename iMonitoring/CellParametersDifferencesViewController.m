@@ -86,9 +86,7 @@ static const float CELL_HEIGHT_WITH_DIFFERENCES = 84.0;
 }
 
 -(void) showToolbar {
-    [self.navigationController setToolbarHidden:FALSE animated:FALSE];
-    self.navigationController.hidesBarsOnSwipe = TRUE;
-    self.navigationController.hidesBarsOnTap = FALSE;
+    [self.navigationController setToolbarHidden:TRUE animated:FALSE];
 }
 
 

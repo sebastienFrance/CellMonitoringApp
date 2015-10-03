@@ -90,6 +90,15 @@
 }
 
 
+- (IBAction)NextKPI:(UIButton *)sender {
+    [_delegate moveToNextKPI];
+    [self resyncAndDisplayWithNewKPI];
+}
+- (IBAction)PreviousKPI:(UIButton *)sender {
+    [_delegate moveToPreviousKPI];
+    [self resyncAndDisplayWithNewKPI];
+}
+
 - (IBAction)goToNextKPI:(UIBarButtonItem *)sender {
     [_delegate moveToNextKPI];
     [self resyncAndDisplayWithNewKPI];
@@ -333,9 +342,9 @@
 }
 
 -(void) showToolbar {
-    [self.navigationController setToolbarHidden:FALSE animated:FALSE];
-    self.navigationController.hidesBarsOnSwipe = FALSE;
-    self.navigationController.hidesBarsOnTap = FALSE;
+//    [self.navigationController setToolbarHidden:FALSE animated:FALSE];
+//    self.navigationController.hidesBarsOnSwipe = FALSE;
+//    self.navigationController.hidesBarsOnTap = FALSE;
 }
 
 

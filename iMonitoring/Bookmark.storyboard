@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SLR-HD-Rv5">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="506"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="507"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -27,24 +27,24 @@
                                         <rect key="frame" x="0.0" y="22" width="600" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nh9-t5-kzT" id="0CJ-th-IAh">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u78-M6-8DJ" userLabel="All">
                                                     <rect key="frame" x="8" y="8" width="551" height="66"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cAr-KT-QoQ" userLabel="Header">
-                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="19.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CellName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhq-no-JR6">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="19.5"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Techno" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AH4-mv-2tP">
-                                                                    <rect key="frame" x="78" y="0.0" width="473" height="20"/>
+                                                                    <rect key="frame" x="78" y="0.0" width="473" height="19.5"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,17 +54,17 @@
                                                             <animations/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IRR-xV-P6w" userLabel="DateComments">
-                                                            <rect key="frame" x="0.0" y="24" width="63" height="42"/>
+                                                            <rect key="frame" x="0.0" y="24" width="63" height="41.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbv-g9-XWq">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="31" height="19"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="30.5" height="18.5"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkN-jo-fcT">
-                                                                    <rect key="frame" x="0.0" y="24" width="63" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="23" width="63" height="18"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,40 +98,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MML-wz-z5x">
-                                <rect key="frame" x="0.0" y="506" width="600" height="44"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wE2-9f-fBu">
+                                <rect key="frame" x="180.5" y="515" width="239" height="29"/>
                                 <animations/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0KF-1m-4yK"/>
-                                    <barButtonItem style="plain" id="bAD-Of-eiH">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="lq8-lx-19Q">
-                                            <rect key="frame" x="20" y="7" width="560" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                            <animations/>
-                                            <segments>
-                                                <segment title="Color"/>
-                                                <segment title="Date"/>
-                                                <segment title="Name"/>
-                                                <segment title="Techno"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="segmentPushed:" destination="lTm-tq-pCB" eventType="valueChanged" id="91R-i8-Z3e"/>
-                                            </connections>
-                                        </segmentedControl>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5Qh-2E-bjH"/>
-                                </items>
-                            </toolbar>
+                                <segments>
+                                    <segment title="Color"/>
+                                    <segment title="Date"/>
+                                    <segment title="Name"/>
+                                    <segment title="Techno"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentPushed:" destination="lTm-tq-pCB" eventType="valueChanged" id="lUi-Lr-hfV"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MML-wz-z5x" firstAttribute="top" secondItem="SLR-HD-Rv5" secondAttribute="bottom" id="4ti-1V-Wzt"/>
-                            <constraint firstItem="MML-wz-z5x" firstAttribute="trailing" secondItem="7Y8-0o-7rb" secondAttribute="trailing" id="7rp-GA-D6A"/>
+                            <constraint firstItem="WCG-2z-cV5" firstAttribute="top" secondItem="wE2-9f-fBu" secondAttribute="bottom" constant="8" symbolic="YES" id="5xW-PQ-fCG"/>
+                            <constraint firstItem="wE2-9f-fBu" firstAttribute="top" secondItem="SLR-HD-Rv5" secondAttribute="bottom" constant="8" symbolic="YES" id="RiH-cg-gIb"/>
+                            <constraint firstItem="wE2-9f-fBu" firstAttribute="centerX" secondItem="7Y8-0o-7rb" secondAttribute="centerX" id="X2A-ki-tpw"/>
                             <constraint firstItem="SLR-HD-Rv5" firstAttribute="leading" secondItem="7Y8-0o-7rb" secondAttribute="leading" id="eic-2Q-7fU"/>
                             <constraint firstItem="SLR-HD-Rv5" firstAttribute="top" secondItem="7Y8-0o-7rb" secondAttribute="top" id="fwy-Xd-5J2"/>
-                            <constraint firstItem="WCG-2z-cV5" firstAttribute="top" secondItem="MML-wz-z5x" secondAttribute="bottom" constant="1" id="mDP-cu-zfW"/>
-                            <constraint firstItem="MML-wz-z5x" firstAttribute="leading" secondItem="7Y8-0o-7rb" secondAttribute="leading" id="tgC-x3-yt6"/>
                             <constraint firstItem="SLR-HD-Rv5" firstAttribute="trailing" secondItem="7Y8-0o-7rb" secondAttribute="trailing" id="yCo-7U-YJe"/>
                         </constraints>
                     </view>
@@ -419,7 +407,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ssr-51-Dn0">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="442"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="443"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -427,21 +415,21 @@
                                         <rect key="frame" x="0.0" y="22" width="600" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Ek-XG-SwY" id="g4k-yS-Lmv">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PK4-z8-xbz">
                                                     <rect key="frame" x="8" y="8" width="551" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Region Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS2-So-Hxq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="101" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="100.5" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNd-YK-LLe">
-                                                            <rect key="frame" x="0.0" y="26" width="31" height="17"/>
+                                                            <rect key="frame" x="0.0" y="26" width="30.5" height="17"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -467,40 +455,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-Bp-r6J">
-                                <rect key="frame" x="0.0" y="442" width="600" height="44"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="358-Fw-GI2">
+                                <rect key="frame" x="224" y="451" width="152" height="29"/>
                                 <animations/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="omd-YN-fye"/>
-                                    <barButtonItem style="plain" id="CRj-Sr-l7H">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ptA-pJ-fIA">
-                                            <rect key="frame" x="20" y="7" width="560" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <animations/>
-                                            <segments>
-                                                <segment title="Color"/>
-                                                <segment title="Date"/>
-                                                <segment title="Name"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="segmentPushed:" destination="7ex-ej-ejV" eventType="valueChanged" id="zg6-rl-xtj"/>
-                                            </connections>
-                                        </segmentedControl>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jxg-Ed-m23"/>
-                                </items>
-                            </toolbar>
+                                <segments>
+                                    <segment title="Color"/>
+                                    <segment title="Date"/>
+                                    <segment title="Name"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentPushed:" destination="7ex-ej-ejV" eventType="valueChanged" id="ERS-to-2FB"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z0y-Bp-r6J" firstAttribute="top" secondItem="ssr-51-Dn0" secondAttribute="bottom" id="15P-FI-OXp"/>
-                            <constraint firstAttribute="trailing" secondItem="Z0y-Bp-r6J" secondAttribute="trailing" id="3N4-1O-egm"/>
                             <constraint firstItem="ssr-51-Dn0" firstAttribute="trailing" secondItem="ipY-Gj-1Jw" secondAttribute="trailing" id="EHu-Nn-ZW8"/>
-                            <constraint firstItem="fl7-me-S27" firstAttribute="top" secondItem="Z0y-Bp-r6J" secondAttribute="bottom" constant="1" id="lQc-eA-hP2"/>
+                            <constraint firstItem="358-Fw-GI2" firstAttribute="centerX" secondItem="ipY-Gj-1Jw" secondAttribute="centerX" id="UeB-2g-zRJ"/>
                             <constraint firstItem="ssr-51-Dn0" firstAttribute="top" secondItem="ipY-Gj-1Jw" secondAttribute="top" id="nDp-P7-sRj"/>
+                            <constraint firstItem="358-Fw-GI2" firstAttribute="top" secondItem="ssr-51-Dn0" secondAttribute="bottom" constant="8" symbolic="YES" id="nFu-AQ-7Cj"/>
                             <constraint firstItem="ssr-51-Dn0" firstAttribute="leading" secondItem="ipY-Gj-1Jw" secondAttribute="leading" id="sXr-ma-fLh"/>
-                            <constraint firstItem="Z0y-Bp-r6J" firstAttribute="leading" secondItem="ipY-Gj-1Jw" secondAttribute="leading" id="v1B-yc-ZWN"/>
+                            <constraint firstItem="fl7-me-S27" firstAttribute="top" secondItem="358-Fw-GI2" secondAttribute="bottom" constant="8" symbolic="YES" id="ulL-YM-YV4"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -527,8 +503,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gmC-kJ-yjB">
+                                <rect key="frame" x="177" y="515" width="247" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Recent"/>
+                                    <segment title="Popular"/>
+                                    <segment title="Techno"/>
+                                    <segment title="Name"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentPushed:" destination="0x8-0a-wMx" eventType="valueChanged" id="43I-Jz-S8W"/>
+                                </connections>
+                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BB1-HL-BLq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="506"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="507"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -536,24 +525,24 @@
                                         <rect key="frame" x="0.0" y="22" width="600" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KAE-Ge-dAE" id="iFx-Jm-voR">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="86"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bgd-fd-aIs" userLabel="All">
                                                     <rect key="frame" x="8" y="8" width="551" height="70"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ik4-7z-msO" userLabel="Header">
-                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="19.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CellName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaZ-6U-J4V">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="491" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="490.5" height="19.5"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Techno" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKA-A8-lDE">
-                                                                    <rect key="frame" x="496" y="0.0" width="55" height="20"/>
+                                                                    <rect key="frame" x="495" y="0.0" width="55.5" height="19.5"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -563,7 +552,7 @@
                                                             <animations/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Io-G4-LQa" userLabel="LabelsAndValues">
-                                                            <rect key="frame" x="0.0" y="25" width="117" height="45"/>
+                                                            <rect key="frame" x="0.0" y="24" width="117" height="45.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wHt-K7-beA" userLabel="Labels">
                                                                     <rect key="frame" x="0.0" y="0.0" width="73" height="39"/>
@@ -633,41 +622,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcG-Vq-Z1C">
-                                <rect key="frame" x="0.0" y="506" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="n1j-ct-jzz"/>
-                                    <barButtonItem style="plain" id="tVZ-HP-FhX">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ac8-JZ-epO">
-                                            <rect key="frame" x="17" y="7" width="567" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <animations/>
-                                            <segments>
-                                                <segment title="Recent"/>
-                                                <segment title="Popular"/>
-                                                <segment title="Techno"/>
-                                                <segment title="Name"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="segmentPushed:" destination="0x8-0a-wMx" eventType="valueChanged" id="rOS-Wh-bYc"/>
-                                            </connections>
-                                        </segmentedControl>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="DYG-0l-1RU"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MfF-Z0-Y5Q" firstAttribute="top" secondItem="IcG-Vq-Z1C" secondAttribute="bottom" constant="1" id="9bg-5E-Zxg"/>
+                            <constraint firstItem="gmC-kJ-yjB" firstAttribute="centerX" secondItem="axQ-Mh-r9j" secondAttribute="centerX" id="0jA-7K-saR"/>
                             <constraint firstItem="BB1-HL-BLq" firstAttribute="top" secondItem="axQ-Mh-r9j" secondAttribute="top" id="CFF-Aw-8lx"/>
-                            <constraint firstItem="IcG-Vq-Z1C" firstAttribute="top" secondItem="BB1-HL-BLq" secondAttribute="bottom" id="LU4-Qb-vh8"/>
-                            <constraint firstItem="IcG-Vq-Z1C" firstAttribute="leading" secondItem="axQ-Mh-r9j" secondAttribute="leading" id="TTG-oq-gbw"/>
-                            <constraint firstItem="IcG-Vq-Z1C" firstAttribute="leading" secondItem="BB1-HL-BLq" secondAttribute="leading" id="TTY-pd-WRv"/>
+                            <constraint firstItem="gmC-kJ-yjB" firstAttribute="top" secondItem="BB1-HL-BLq" secondAttribute="bottom" constant="8" symbolic="YES" id="QpB-ma-9VX"/>
                             <constraint firstItem="BB1-HL-BLq" firstAttribute="trailing" secondItem="axQ-Mh-r9j" secondAttribute="trailing" id="UfK-ro-kAV"/>
-                            <constraint firstItem="BB1-HL-BLq" firstAttribute="trailing" secondItem="IcG-Vq-Z1C" secondAttribute="trailing" id="V29-A6-M7R"/>
+                            <constraint firstItem="MfF-Z0-Y5Q" firstAttribute="top" secondItem="gmC-kJ-yjB" secondAttribute="bottom" constant="8" symbolic="YES" id="ZmL-1D-wy1"/>
+                            <constraint firstItem="BB1-HL-BLq" firstAttribute="leading" secondItem="axQ-Mh-r9j" secondAttribute="leadingMargin" constant="-20" id="vvh-iA-JJA"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -675,7 +639,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Last Visited Cells" id="kHB-sb-iuU"/>
                     <connections>
-                        <outlet property="theSegmentForOrdering" destination="ac8-JZ-epO" id="ASf-oO-GNG"/>
                         <outlet property="theTable" destination="BB1-HL-BLq" id="tdb-nL-zev"/>
                     </connections>
                 </viewController>

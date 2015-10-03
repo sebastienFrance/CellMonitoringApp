@@ -300,8 +300,6 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
 
 -(void) showToolbar {
     [self.navigationController setToolbarHidden:TRUE];
-    self.navigationController.hidesBarsOnSwipe = FALSE;
-    self.navigationController.hidesBarsOnTap = FALSE;
 }
 
 -(void) initAndLoadCellDetails {

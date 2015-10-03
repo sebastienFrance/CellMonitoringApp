@@ -90,7 +90,7 @@
     
     [self.theTableView reloadData];
     
-    [self.navigationController setToolbarHidden:FALSE];
+//    [self.navigationController setToolbarHidden:FALSE];
     self.navigationController.hidesBarsOnTap = false;
 }
 

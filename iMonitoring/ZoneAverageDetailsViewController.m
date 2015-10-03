@@ -45,6 +45,14 @@
 }
 
 #pragma mark - Manage buttons
+- (IBAction)NextKPI:(UIButton *)sender {
+    [self.dataSource moveToNextZoneKPI];
+    [self resyncAndDisplayWithNewKPI];
+}
+- (IBAction)PreviousKPI:(UIButton *)sender {
+    [self.dataSource moveToPreviousZoneKPI];
+    [self resyncAndDisplayWithNewKPI];
+}
 
 - (IBAction)goToNextKPI:(UIBarButtonItem *)sender {
     [self.dataSource moveToNextZoneKPI];
@@ -154,9 +162,9 @@
 }
 
 -(void) showToolbar {
-    [self.navigationController setToolbarHidden:FALSE animated:FALSE];
-    self.navigationController.hidesBarsOnSwipe = FALSE;
-    self.navigationController.hidesBarsOnTap = FALSE;
+ //   [self.navigationController setToolbarHidden:FALSE animated:FALSE];
+//    self.navigationController.hidesBarsOnSwipe = FALSE;
+//    self.navigationController.hidesBarsOnTap = FALSE;
 }
 
 

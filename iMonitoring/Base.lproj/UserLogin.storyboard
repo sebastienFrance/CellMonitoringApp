@@ -51,7 +51,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     </textField>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5G-ql-cwb">
-                                                        <rect key="frame" x="0.0" y="60" width="36" height="19"/>
+                                                        <rect key="frame" x="0.0" y="60" width="36" height="20"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,7 +86,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-4I-nmb" userLabel="PortPasswordColumn">
-                                                <rect key="frame" x="283" y="0.0" width="277" height="151"/>
+                                                <rect key="frame" x="283" y="0.0" width="278" height="151"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Port" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZQ-I6-uc7">
                                                         <rect key="frame" x="0.0" y="0.0" width="33" height="20"/>
@@ -102,7 +102,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                     </textField>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rx9-Z1-GGE">
-                                                        <rect key="frame" x="0.0" y="60" width="74" height="19"/>
+                                                        <rect key="frame" x="0.0" y="60" width="74" height="20"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,14 +147,14 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M7k-Ro-PFp" userLabel="Logo">
-                                        <rect key="frame" x="0.0" y="151" width="560" height="405"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M7k-Ro-PFp" userLabel="Logo">
+                                        <rect key="frame" x="266" y="151" width="28" height="405"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="4zz-8k-YR2">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="405"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="4zz-8k-YR2">
+                                                <rect key="frame" x="0.0" y="0.0" width="28" height="405"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" image="CellMonitoringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="myc-iX-qb9">
-                                                        <rect key="frame" x="0.0" y="303" width="560" height="102"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" misplaced="YES" image="CellMonitoringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="myc-iX-qb9">
+                                                        <rect key="frame" x="0.0" y="354" width="28" height="51"/>
                                                         <animations/>
                                                     </imageView>
                                                 </subviews>
