@@ -35,6 +35,9 @@
     self.theTableView.dataSource = self;
     self.theTableView.delegate = self;
 
+    self.theTableView.estimatedRowHeight = 153.0;
+    self.theTableView.rowHeight = UITableViewAutomaticDimension;
+
 
     self.datasource = [[MapInfoDatasource alloc] init];
     [self.datasource loadMapInfoFor:self.listOfCells delegate:self];

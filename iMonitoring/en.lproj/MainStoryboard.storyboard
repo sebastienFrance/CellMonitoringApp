@@ -64,7 +64,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="yJj-gJ-gcS"/>
                         <barButtonItem image="Top_Charts" id="dw8-1W-wqd">
                             <connections>
-                                <segue destination="RkK-uw-h86" kind="presentation" identifier="openMapInformation" modalPresentationStyle="formSheet" id="w87-Up-XcP"/>
+                                <segue destination="RkK-uw-h86" kind="presentation" identifier="openMapInformation" modalPresentationStyle="pageSheet" id="w87-Up-XcP"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="eg0-16-5c7"/>
