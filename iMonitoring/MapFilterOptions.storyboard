@@ -35,10 +35,10 @@
                             <tableViewSection headerTitle="Filter" id="aXF-fk-B2e">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="96" id="lt4-OS-sNG">
-                                        <rect key="frame" x="0.0" y="49.5" width="600" height="96"/>
+                                        <rect key="frame" x="0.0" y="50" width="600" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lt4-OS-sNG" id="w4l-01-QCU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="95.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Uiy-A3-cKK" userLabel="AllFilters">
@@ -88,10 +88,10 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="262" id="1IT-pA-ISR">
-                                        <rect key="frame" x="0.0" y="145.5" width="600" height="262"/>
+                                        <rect key="frame" x="0.0" y="146" width="600" height="262"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1IT-pA-ISR" id="SBK-vc-Q1e">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="261.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="262"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="d94-Sf-NRC" userLabel="AllFilters">
@@ -278,10 +278,10 @@
                             <tableViewSection headerTitle="Coverage" id="nxt-Cc-Rf4">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="s38-uK-sBa">
-                                        <rect key="frame" x="0.0" y="449.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="450" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s38-uK-sBa" id="IuD-d2-Y0a">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dp5-AJ-QRk">
@@ -327,10 +327,10 @@
                             <tableViewSection headerTitle="Neighbors" id="TU3-Ps-7S8">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="304" id="eBY-Vk-NBU">
-                                        <rect key="frame" x="0.0" y="535.5" width="600" height="304"/>
+                                        <rect key="frame" x="0.0" y="536" width="600" height="304"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eBY-Vk-NBU" id="9qZ-z2-J3s">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="303.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="304"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DHz-r4-KnD">
@@ -644,7 +644,7 @@
                                 <rect key="frame" x="0.0" y="86" width="600" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dMg-DF-tXz" id="WgB-ye-xkh">
-                                    <rect key="frame" x="0.0" y="0.0" width="561" height="61.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="561" height="62"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4u6-qj-MFy">

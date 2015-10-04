@@ -333,6 +333,7 @@
 		BED864AA18781D1800F089F7 /* KPIBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8910C515EBEFDA0077721C /* KPIBarChart.m */; };
 		BED864AC1878730D00F089F7 /* WorstCellsDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED864AB1878730D00F089F7 /* WorstCellsDetails.xib */; };
 		BED864AF187880B800F089F7 /* WorstCellDetailsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED864AE187880B800F089F7 /* WorstCellDetailsWindowController.m */; };
+		BED8706D1BC129F200B4D098 /* GeneralInfos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED8706C1BC129F200B4D098 /* GeneralInfos.storyboard */; settings = {ASSET_TAGS = (); }; };
 		BEDBBE3F1632B9E90079B813 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEDBBE3E1632B9E90079B813 /* AddressBook.framework */; };
 		BEDF62CA17FB6D3200233A63 /* iMonPDFActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDF62C917FB6D3200233A63 /* iMonPDFActivity.m */; };
 		BEDF62CD17FB6E8A00233A63 /* iMonImageActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDF62CC17FB6E8A00233A63 /* iMonImageActivity.m */; };
@@ -923,6 +924,7 @@
 		BED864AB1878730D00F089F7 /* WorstCellsDetails.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorstCellsDetails.xib; sourceTree = "<group>"; };
 		BED864AD187880B800F089F7 /* WorstCellDetailsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorstCellDetailsWindowController.h; sourceTree = "<group>"; };
 		BED864AE187880B800F089F7 /* WorstCellDetailsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorstCellDetailsWindowController.m; sourceTree = "<group>"; };
+		BED8706C1BC129F200B4D098 /* GeneralInfos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GeneralInfos.storyboard; sourceTree = "<group>"; };
 		BEDBBE3E1632B9E90079B813 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		BEDF62C817FB6D3200233A63 /* iMonPDFActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iMonPDFActivity.h; sourceTree = "<group>"; };
 		BEDF62C917FB6D3200233A63 /* iMonPDFActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iMonPDFActivity.m; sourceTree = "<group>"; };
@@ -1217,17 +1219,7 @@
 		BE14D0911556B3CA0074686F /* iPhoneApp */ = {
 			isa = PBXGroup;
 			children = (
-				BE09A5D21517CA1B00A12C4B /* MainStoryboard.storyboard */,
-				BE31F4861B876BB600404C19 /* UserLogin.storyboard */,
-				BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */,
-				BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */,
-				BEDF753718D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard */,
-				BED6B64F1BBFE2190060BBA9 /* iPhoneDashboard.storyboard */,
-				BE82B0091B8E50D700DBCD6F /* CellDetails.storyboard */,
-				BE82B0071B8E48D300DBCD6F /* CellParameters.storyboard */,
-				BE1B816C1B8CE7DC00385DB4 /* SearchCells.storyboard */,
-				BEF02F491B8BADFD003FDCF8 /* Bookmark.storyboard */,
-				BE8E25B61B8A443C004DD887 /* MapFilterOptions.storyboard */,
+				BED870681BC1281500B4D098 /* Storyboards */,
 				BE63AA3018154906002D7E09 /* UserManagement */,
 				BE8B80CB15658245008379C4 /* Locate */,
 				BE8A266615610BAB00EF61A1 /* AroundMe */,
@@ -2308,6 +2300,25 @@
 			name = DashboardHelper;
 			sourceTree = "<group>";
 		};
+		BED870681BC1281500B4D098 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BE09A5D21517CA1B00A12C4B /* MainStoryboard.storyboard */,
+				BEDF753718D4C60100FE29EC /* MainStoryboardiPhoneApp.storyboard */,
+				BED8706C1BC129F200B4D098 /* GeneralInfos.storyboard */,
+				BE31F4861B876BB600404C19 /* UserLogin.storyboard */,
+				BEF0FF131B85172400B15CD8 /* UsersManagement.storyboard */,
+				BEF0FF101B8515AB00B15CD8 /* UserPreferences.storyboard */,
+				BED6B64F1BBFE2190060BBA9 /* iPhoneDashboard.storyboard */,
+				BE82B0091B8E50D700DBCD6F /* CellDetails.storyboard */,
+				BE82B0071B8E48D300DBCD6F /* CellParameters.storyboard */,
+				BE1B816C1B8CE7DC00385DB4 /* SearchCells.storyboard */,
+				BEF02F491B8BADFD003FDCF8 /* Bookmark.storyboard */,
+				BE8E25B61B8A443C004DD887 /* MapFilterOptions.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		BEDF62C717FB6CF100233A63 /* ActivitySource */ = {
 			isa = PBXGroup;
 			children = (
@@ -2637,6 +2648,7 @@
 				BEF0FF141B85172400B15CD8 /* UsersManagement.storyboard in Resources */,
 				BE821BA0155FD58D00057C60 /* LTE_logo.jpg in Resources */,
 				BE821BA3155FD59B00057C60 /* logo_3g_150.jpg in Resources */,
+				BED8706D1BC129F200B4D098 /* GeneralInfos.storyboard in Resources */,
 				BED6B6501BBFE2190060BBA9 /* iPhoneDashboard.storyboard in Resources */,
 				BE5E60831906BDCB00805423 /* CellMonitoringMac-Info.plist in Resources */,
 				BE82B00A1B8E50D700DBCD6F /* CellDetails.storyboard in Resources */,
