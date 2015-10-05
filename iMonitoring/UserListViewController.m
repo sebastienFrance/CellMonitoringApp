@@ -52,6 +52,10 @@
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
 
+    self.theTable.estimatedRowHeight = 88.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
+
+    
     // Can be Nil on the iPad
     if (self.revealViewController != Nil) {
         // Set the gesture
@@ -66,8 +70,8 @@
     [super viewDidAppear:animated];
 
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        [self.navigationController setToolbarHidden:FALSE];
-        self.navigationController.hidesBarsOnTap = FALSE;
+  //      [self.navigationController setToolbarHidden:FALSE];
+  //      self.navigationController.hidesBarsOnTap = FALSE;
     }
 }
 

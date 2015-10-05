@@ -20,6 +20,13 @@
 @implementation iPadDashboardZoneAverageViewController
 
 
+-(void) viewDidLoad {
+    [super viewDidLoad];
+    
+    self.tableView.estimatedRowHeight = 77.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
+
 - (void) openMail:(UIBarButtonItem *)sender mail:(MailAbstract*) theMail {
     
     if (self.theMailPopover != Nil) {
@@ -37,18 +44,6 @@
     popPC.barButtonItem = theItem;
     popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
     [self presentViewController:contentController animated:TRUE completion:Nil];
-}
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DCMonitoringPeriodView monitoringPeriodView = [[MonitoringPeriodUtility sharedInstance] monitoringPeriod];
-    if ((monitoringPeriodView == last6Hours15MnView) ||
-        (monitoringPeriodView == last24HoursHourlyView)) {
-        return 77.0;
-    } else {
-        return 77.0;
-    }
-    
 }
 
 

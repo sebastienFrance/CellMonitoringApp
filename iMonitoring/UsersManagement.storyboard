@@ -49,56 +49,60 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-MJ-3P8">
-                                                    <rect key="frame" x="20" y="7" width="280" height="20"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="okT-3d-UlS" userLabel="All">
+                                                    <rect key="frame" x="8" y="8" width="271" height="71"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-MJ-3P8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="18"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wle-GR-6BU">
+                                                            <rect key="frame" x="0.0" y="18" width="70" height="18"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="isAdmin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRz-6v-xIP">
+                                                            <rect key="frame" x="0.0" y="36" width="52" height="18"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bWN-fh-6L0" userLabel="LastConnection">
+                                                            <rect key="frame" x="0.0" y="54" width="179" height="17"/>
+                                                            <subviews>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last connection:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLE-Nd-sTc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="18"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR8-ey-vNT">
+                                                                    <rect key="frame" x="113" y="0.0" width="66" height="18"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <animations/>
+                                                        </stackView>
+                                                    </subviews>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="isAdmin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRz-6v-xIP">
-                                                    <rect key="frame" x="20" y="44" width="52" height="17"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wle-GR-6BU">
-                                                    <rect key="frame" x="20" y="27" width="280" height="17"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR8-ey-vNT">
-                                                    <rect key="frame" x="135" y="60" width="67" height="17"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last connection:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLE-Nd-sTc">
-                                                    <rect key="frame" x="20" y="60" width="108" height="17"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </stackView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="ZR8-ey-vNT" firstAttribute="leading" secondItem="VLE-Nd-sTc" secondAttribute="trailing" constant="8" id="7KB-iR-Dnc"/>
-                                                <constraint firstAttribute="trailing" secondItem="b1L-MJ-3P8" secondAttribute="trailing" constant="-13" id="7V3-mt-FBC"/>
-                                                <constraint firstItem="b1L-MJ-3P8" firstAttribute="leading" secondItem="bRz-6v-xIP" secondAttribute="leading" id="7eR-c0-4Wl"/>
-                                                <constraint firstItem="VLE-Nd-sTc" firstAttribute="top" secondItem="bRz-6v-xIP" secondAttribute="bottom" constant="-1" id="Ghg-Fm-ITY"/>
-                                                <constraint firstItem="bRz-6v-xIP" firstAttribute="top" secondItem="wle-GR-6BU" secondAttribute="bottom" id="Gsu-Lv-eUQ"/>
-                                                <constraint firstItem="wle-GR-6BU" firstAttribute="leading" secondItem="b1L-MJ-3P8" secondAttribute="leading" id="JBp-9u-pHh"/>
-                                                <constraint firstAttribute="trailing" secondItem="wle-GR-6BU" secondAttribute="trailing" constant="-13" id="NY6-ov-1Lb"/>
-                                                <constraint firstItem="b1L-MJ-3P8" firstAttribute="leading" secondItem="G95-y2-GPR" secondAttribute="leading" constant="20" id="Nvj-CI-7fK"/>
-                                                <constraint firstItem="VLE-Nd-sTc" firstAttribute="top" secondItem="ZR8-ey-vNT" secondAttribute="top" id="Oxm-ZZ-aTH"/>
-                                                <constraint firstItem="wle-GR-6BU" firstAttribute="top" secondItem="b1L-MJ-3P8" secondAttribute="bottom" constant="1" id="eGb-yV-iV9"/>
-                                                <constraint firstItem="VLE-Nd-sTc" firstAttribute="leading" secondItem="bRz-6v-xIP" secondAttribute="leading" id="eYc-Up-gTg"/>
-                                                <constraint firstItem="b1L-MJ-3P8" firstAttribute="top" secondItem="G95-y2-GPR" secondAttribute="top" constant="7" id="wld-px-AiX"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="okT-3d-UlS" secondAttribute="bottom" id="bsj-C4-ja4"/>
+                                                <constraint firstItem="okT-3d-UlS" firstAttribute="top" secondItem="G95-y2-GPR" secondAttribute="topMargin" id="o2Z-3x-Egg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="okT-3d-UlS" secondAttribute="trailing" id="obM-G3-dfA"/>
+                                                <constraint firstItem="okT-3d-UlS" firstAttribute="leading" secondItem="G95-y2-GPR" secondAttribute="leadingMargin" id="swW-3d-oFM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -153,8 +157,6 @@
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="400"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="400"/>
                     <connections>
                         <outlet property="theSegmentedControl" destination="8oS-yw-lif" id="8io-XB-kxx"/>
                         <outlet property="theTable" destination="bWN-TT-WUO" id="Sce-qa-uDz"/>

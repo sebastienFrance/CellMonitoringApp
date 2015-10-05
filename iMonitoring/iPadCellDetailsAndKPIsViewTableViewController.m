@@ -23,17 +23,11 @@
     self.delegate = delegate;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
+    self.tableView.estimatedRowHeight = 153.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
     [super viewDidLoad];
 }
 

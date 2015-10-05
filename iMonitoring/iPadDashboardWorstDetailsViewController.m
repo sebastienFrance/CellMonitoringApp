@@ -38,6 +38,14 @@
     }
 }
 
+-(void) viewDidLoad {
+    [super viewDidLoad];
+    
+    self.tableView.estimatedRowHeight = 67.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
+}
+
 - (void) openMail:(UIBarButtonItem *)sender mail:(MailAbstract*) theMail {
     
     if (self.theMailPopover != Nil) {
