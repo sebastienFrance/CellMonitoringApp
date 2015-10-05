@@ -24,15 +24,6 @@
 
 @implementation GraphicConfigTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -50,6 +41,10 @@
         self.cellKPIDashboardSwitch.on = [UserPreferences sharedInstance].isCellDashboardGradiant;
         self.zoneKPIDashboardSwitch.on = [UserPreferences sharedInstance].isZoneDashboardGradiant;
     }
+    
+    self.tableView.estimatedRowHeight = 58.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
     
     self.geoIndexLookup.on = [UserPreferences sharedInstance].isGeoIndexLookup;
 }

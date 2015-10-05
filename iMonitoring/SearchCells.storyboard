@@ -611,6 +611,7 @@
                 <tabBarController storyboardIdentifier="UITabBarController-e0b-ZY-CzN" definesPresentationContext="YES" id="e0b-ZY-CzN" customClass="SearchEverywhereEntryPoint" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Search cells" id="fXu-NL-nQV"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="400"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="fill" id="FVL-b5-fqS">

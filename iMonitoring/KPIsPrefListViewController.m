@@ -35,18 +35,11 @@
 }
 
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+-(void) viewDidLoad {
+    [super viewDidLoad];
+    
+    self.tableView.estimatedRowHeight = 119.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 #pragma mark - Table view data source

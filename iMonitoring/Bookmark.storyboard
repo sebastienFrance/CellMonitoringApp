@@ -27,24 +27,24 @@
                                         <rect key="frame" x="0.0" y="22" width="600" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nh9-t5-kzT" id="0CJ-th-IAh">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="81.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u78-M6-8DJ" userLabel="All">
                                                     <rect key="frame" x="8" y="8" width="551" height="66"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cAr-KT-QoQ" userLabel="Header">
-                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CellName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhq-no-JR6">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Techno" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AH4-mv-2tP">
-                                                                    <rect key="frame" x="78" y="0.0" width="473" height="19.5"/>
+                                                                    <rect key="frame" x="78" y="0.0" width="473" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,10 +54,10 @@
                                                             <animations/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IRR-xV-P6w" userLabel="DateComments">
-                                                            <rect key="frame" x="0.0" y="24" width="63" height="41.5"/>
+                                                            <rect key="frame" x="0.0" y="24" width="63" height="42"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbv-g9-XWq">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="30.5" height="18.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="31" height="19"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,7 +99,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wE2-9f-fBu">
-                                <rect key="frame" x="180.5" y="515" width="239" height="29"/>
+                                <rect key="frame" x="181" y="515" width="239" height="29"/>
                                 <animations/>
                                 <segments>
                                     <segment title="Color"/>
@@ -140,6 +140,7 @@
                 <tabBarController storyboardIdentifier="UITabBarController-nJv-4Y-q9a" definesPresentationContext="YES" id="nJv-4Y-q9a" customClass="BookmarkEntryPoint" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Bookmarks" id="Vzx-CK-Hih"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="400"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JUH-vk-qAt">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -415,21 +416,21 @@
                                         <rect key="frame" x="0.0" y="22" width="600" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Ek-XG-SwY" id="g4k-yS-Lmv">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="58.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PK4-z8-xbz">
                                                     <rect key="frame" x="8" y="8" width="551" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Region Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS2-So-Hxq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100.5" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="101" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNd-YK-LLe">
-                                                            <rect key="frame" x="0.0" y="26" width="30.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="26" width="31" height="17"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -525,24 +526,24 @@
                                         <rect key="frame" x="0.0" y="22" width="600" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KAE-Ge-dAE" id="iFx-Jm-voR">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="85.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bgd-fd-aIs" userLabel="All">
                                                     <rect key="frame" x="8" y="8" width="551" height="70"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ik4-7z-msO" userLabel="Header">
-                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CellName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaZ-6U-J4V">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="490.5" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="491" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Techno" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKA-A8-lDE">
-                                                                    <rect key="frame" x="495" y="0.0" width="55.5" height="19.5"/>
+                                                                    <rect key="frame" x="495" y="0.0" width="56" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -552,7 +553,7 @@
                                                             <animations/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Io-G4-LQa" userLabel="LabelsAndValues">
-                                                            <rect key="frame" x="0.0" y="24" width="117" height="45.5"/>
+                                                            <rect key="frame" x="0.0" y="24" width="117" height="46"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wHt-K7-beA" userLabel="Labels">
                                                                     <rect key="frame" x="0.0" y="0.0" width="73" height="39"/>

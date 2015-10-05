@@ -60,6 +60,10 @@ static NSUInteger _technoMapping[] =  { DCTechnologyLTE, DCTechnologyWCDMA, DCTe
     preferencesTableView.dataSource = self;
     preferencesTableView.delegate = self;
 
+    self.preferencesTableView.estimatedRowHeight = 71.0;
+    self.preferencesTableView.rowHeight = UITableViewAutomaticDimension;
+    
+
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         [self.navigationItem setLeftBarButtonItems:nil animated:YES]; // hide Side Menu button
     }

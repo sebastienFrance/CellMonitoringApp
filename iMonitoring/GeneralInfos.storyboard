@@ -748,6 +748,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="400"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="GSMCellNumber" destination="RFT-EH-gQC" id="tj8-Vs-dg0"/>
