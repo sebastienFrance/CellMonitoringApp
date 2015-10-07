@@ -44,7 +44,7 @@
                                         <rect key="frame" x="0.0" y="50" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kAR-w7-2rt" id="5rE-V6-XJR">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="70.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zeS-ow-uZn">

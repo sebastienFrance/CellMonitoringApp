@@ -1014,7 +1014,7 @@
                                         <rect key="frame" x="0.0" y="22" width="587" height="77"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hdN-K2-Lhw" id="kaK-wF-vb8">
-                                            <rect key="frame" x="0.0" y="0.0" width="587" height="76.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="587" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lou-ce-Dad">

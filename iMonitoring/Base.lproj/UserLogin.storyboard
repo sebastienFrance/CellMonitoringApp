@@ -85,11 +85,11 @@
                                                     <constraint firstItem="mph-5e-Epd" firstAttribute="top" secondItem="xTn-tD-ml7" secondAttribute="top" id="oOd-GQ-Gpq"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-4I-nmb" userLabel="PortPasswordColumn">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-4I-nmb" userLabel="PortPasswordColumn">
                                                 <rect key="frame" x="283" y="0.0" width="278" height="151"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Port" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZQ-I6-uc7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="33" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="278" height="20"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -102,7 +102,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                     </textField>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rx9-Z1-GGE">
-                                                        <rect key="frame" x="0.0" y="60" width="74" height="20"/>
+                                                        <rect key="frame" x="0.0" y="60" width="278" height="20"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,47 +114,46 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                                     </textField>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="qgT-Ln-R8R">
-                                                        <rect key="frame" x="0.0" y="119" width="278" height="32"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-De-k0x">
-                                                                <rect key="frame" x="145" y="0.0" width="133" height="32"/>
-                                                                <animations/>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                <state key="normal" title="Request a license">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="requestLicensePushed:" destination="3t8-hU-TOK" eventType="touchUpInside" id="jPM-Db-EXv"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-De-k0x">
+                                                        <rect key="frame" x="145" y="119" width="133" height="32"/>
                                                         <animations/>
-                                                    </stackView>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <state key="normal" title="Request a license">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="requestLicensePushed:" destination="3t8-hU-TOK" eventType="touchUpInside" id="jPM-Db-EXv"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <animations/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="qgT-Ln-R8R" secondAttribute="trailing" id="HDL-p4-BwB"/>
                                                     <constraint firstAttribute="trailing" secondItem="Pyc-v7-MkZ" secondAttribute="trailing" id="JCx-m5-X1I"/>
+                                                    <constraint firstItem="hpc-De-k0x" firstAttribute="trailing" secondItem="Gea-4I-nmb" secondAttribute="trailing" id="VIs-Yg-Al1"/>
                                                     <constraint firstItem="Pyc-v7-MkZ" firstAttribute="leading" secondItem="Gea-4I-nmb" secondAttribute="leading" id="Vgw-X8-WKN"/>
-                                                    <constraint firstItem="qgT-Ln-R8R" firstAttribute="leading" secondItem="Gea-4I-nmb" secondAttribute="leading" id="dKg-tF-oY3"/>
                                                     <constraint firstItem="eEZ-L1-joG" firstAttribute="leading" secondItem="Gea-4I-nmb" secondAttribute="leading" id="eCa-DB-Ea0"/>
+                                                    <constraint firstItem="rx9-Z1-GGE" firstAttribute="leading" secondItem="aZQ-I6-uc7" secondAttribute="leading" id="gt1-C5-Vqf"/>
                                                     <constraint firstAttribute="trailing" secondItem="eEZ-L1-joG" secondAttribute="trailing" id="lbG-cB-3RQ"/>
                                                     <constraint firstItem="aZQ-I6-uc7" firstAttribute="leading" secondItem="Gea-4I-nmb" secondAttribute="leading" id="ooX-SF-5Mw"/>
                                                     <constraint firstItem="aZQ-I6-uc7" firstAttribute="top" secondItem="Gea-4I-nmb" secondAttribute="top" id="tAS-qd-5df"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="VIs-Yg-Al1"/>
+                                                    </mask>
+                                                </variation>
                                             </stackView>
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M7k-Ro-PFp" userLabel="Logo">
-                                        <rect key="frame" x="266" y="151" width="28" height="405"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M7k-Ro-PFp" userLabel="Logo">
+                                        <rect key="frame" x="0.0" y="151" width="560" height="405"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="4zz-8k-YR2">
-                                                <rect key="frame" x="0.0" y="0.0" width="28" height="405"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="4zz-8k-YR2">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="405"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" misplaced="YES" image="CellMonitoringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="myc-iX-qb9">
-                                                        <rect key="frame" x="0.0" y="354" width="28" height="51"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" image="CellMonitoringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="myc-iX-qb9">
+                                                        <rect key="frame" x="0.0" y="303" width="560" height="102"/>
                                                         <animations/>
                                                     </imageView>
                                                 </subviews>

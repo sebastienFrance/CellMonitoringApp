@@ -211,23 +211,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        if ((indexPath.row >= 2) || (indexPath.row <= 4)) {
+        if ((indexPath.row >= 1) && (indexPath.row <= 3)) {
             id<AroundMeViewItf> aroundMe = [DataCenter sharedInstance].aroundMeItf;
 
             self.listOfCellForFiltering = Nil;
-
-            switch (indexPath.row) {
-                case 2: {
+             switch (indexPath.row) {
+                case 1: {
                     self.listOfCellForFiltering = [aroundMe.datasource getAllCellsForTechnoId:DCTechnologyLTE];
                     self.technoForFiltering = DCTechnologyLTE;
                     break;
                 }
-                case 3: {
+                case 2: {
                     self.listOfCellForFiltering = [aroundMe.datasource getAllCellsForTechnoId:DCTechnologyWCDMA];
                     self.technoForFiltering = DCTechnologyWCDMA;
                     break;
                 }
-                case 4: {
+                case 3: {
                     self.listOfCellForFiltering = [aroundMe.datasource getAllCellsForTechnoId:DCTechnologyGSM];
                     self.technoForFiltering = DCTechnologyGSM;
                     break;
