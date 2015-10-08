@@ -103,17 +103,6 @@ NSString *const SCOPE_ADDRESS   = @"Address";
     return 1;
 }
 
-//-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.row == 0) {
-//        NSString* scope = [self getSelectedScope];
-//
-//        // If the scope is "All" or "Address" and index is 0 then the row contains only the address and not a Cell
-//        if ([scope isEqualToString:SCOPE_ALL] || [scope isEqualToString:SCOPE_ADDRESS]) {
-//            return 54.0;
-//        }
-//    }
-//    return 77.0;
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.searchController.active ? self.filteredListContent.count : 0;

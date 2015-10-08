@@ -81,16 +81,13 @@
     theTableView.dataSource = self;
     theTableView.delegate = self;
     
-    self.theTableView.estimatedRowHeight = 139.0;
+    self.theTableView.estimatedRowHeight = 130.0;
     self.theTableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.theTableView reloadData];
-    
-//    [self.navigationController setToolbarHidden:FALSE];
     self.navigationController.hidesBarsOnTap = false;
 }
 

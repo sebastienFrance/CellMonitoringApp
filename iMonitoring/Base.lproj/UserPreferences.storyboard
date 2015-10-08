@@ -636,33 +636,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ak7-Nt-6NG">
-                                <rect key="frame" x="20" y="72" width="230" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="2Y3-eg-82a"/>
-                                    <constraint firstAttribute="height" constant="30" id="6I0-pG-YOo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6I0-pG-YOo"/>
-                                    </mask>
-                                </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iVE-5g-Yge">
-                                <rect key="frame" x="20" y="137" width="230" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A1C-g6-pDF">
-                                <rect key="frame" x="289" y="137" width="230" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
-                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udw-Rf-DnP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <animations/>
@@ -680,63 +653,107 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="New password must be different from old password." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2p-oo-SEb">
-                                <rect key="frame" x="20" y="175" width="499" height="149"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Q64-uc-nkE">
+                                <rect key="frame" x="20" y="52" width="560" height="104"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nhX-Td-Pss" userLabel="OldPassword">
+                                        <rect key="frame" x="0.0" y="0.0" width="278" height="104"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kjc-1F-PvC" userLabel="OldPassword">
+                                                <rect key="frame" x="0.0" y="0.0" width="278" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9E-Ma-x6d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="278" height="20"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ak7-Nt-6NG">
+                                                        <rect key="frame" x="0.0" y="20" width="278" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                                    </textField>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KaK-Of-OIh" userLabel="NewPassword">
+                                                <rect key="frame" x="0.0" y="55" width="278" height="49"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFM-eu-7mx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="278" height="20"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iVE-5g-Yge">
+                                                        <rect key="frame" x="0.0" y="20" width="278" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                                    </textField>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="KaK-Of-OIh" secondAttribute="trailing" id="aSa-is-FDF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kjc-1F-PvC" secondAttribute="trailing" id="f6E-tT-Cb5"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="cQN-zs-iW7">
+                                        <rect key="frame" x="283" y="0.0" width="277" height="104"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Dhs-uG-wPg" userLabel="TryAgain">
+                                                <rect key="frame" x="0.0" y="55" width="278" height="49"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psO-Ih-aEg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="19.5"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A1C-g6-pDF">
+                                                        <rect key="frame" x="0.0" y="19.5" width="277.5" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                                    </textField>
+                                                </subviews>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="A1C-g6-pDF" secondAttribute="trailing" id="wCL-tC-ksH"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="149" id="WhU-9H-1ja"/>
-                                </constraints>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New password must be different from old password." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVx-Sw-at4">
+                                <rect key="frame" x="20" y="164" width="560" height="17"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9E-Ma-x6d">
-                                <rect key="frame" x="20" y="44" width="104" height="20"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFM-eu-7mx">
-                                <rect key="frame" x="20" y="110" width="111" height="19"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psO-Ih-aEg">
-                                <rect key="frame" x="283" y="110" width="83" height="19"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="A1C-g6-pDF" firstAttribute="leading" secondItem="iVE-5g-Yge" secondAttribute="trailing" constant="39" id="3ej-g8-CWu"/>
-                            <constraint firstItem="xFM-eu-7mx" firstAttribute="leading" secondItem="HLx-Bb-7D2" secondAttribute="leadingMargin" id="Hf9-aw-zpj"/>
-                            <constraint firstItem="x2p-oo-SEb" firstAttribute="leading" secondItem="iVE-5g-Yge" secondAttribute="leading" id="IlP-PU-Kye"/>
-                            <constraint firstItem="A1C-g6-pDF" firstAttribute="height" secondItem="iVE-5g-Yge" secondAttribute="height" id="JHK-wq-VwO"/>
-                            <constraint firstItem="psO-Ih-aEg" firstAttribute="leading" secondItem="xFM-eu-7mx" secondAttribute="trailing" constant="152" id="Lao-QR-NIe"/>
-                            <constraint firstItem="psO-Ih-aEg" firstAttribute="top" secondItem="xFM-eu-7mx" secondAttribute="top" id="MbG-LI-rLG"/>
-                            <constraint firstItem="A1C-g6-pDF" firstAttribute="top" secondItem="iVE-5g-Yge" secondAttribute="top" id="RHA-nj-gWg"/>
-                            <constraint firstItem="z9E-Ma-x6d" firstAttribute="leading" secondItem="HLx-Bb-7D2" secondAttribute="leadingMargin" id="V82-u7-Rk4"/>
-                            <constraint firstItem="z9E-Ma-x6d" firstAttribute="top" secondItem="udw-Rf-DnP" secondAttribute="bottom" symbolic="YES" id="XPZ-Ph-2xt"/>
-                            <constraint firstItem="x2p-oo-SEb" firstAttribute="top" secondItem="iVE-5g-Yge" secondAttribute="bottom" constant="8" symbolic="YES" id="Zt7-tf-c5r"/>
-                            <constraint firstItem="udw-Rf-DnP" firstAttribute="top" secondItem="HLx-Bb-7D2" secondAttribute="top" symbolic="YES" id="c9w-Pn-TTx"/>
-                            <constraint firstItem="ak7-Nt-6NG" firstAttribute="top" secondItem="z9E-Ma-x6d" secondAttribute="bottom" constant="8" symbolic="YES" id="dEk-48-axW"/>
-                            <constraint firstItem="ak7-Nt-6NG" firstAttribute="leading" secondItem="iVE-5g-Yge" secondAttribute="leading" id="dHP-Jq-lod"/>
-                            <constraint firstItem="ak7-Nt-6NG" firstAttribute="leading" secondItem="HLx-Bb-7D2" secondAttribute="leadingMargin" id="ftI-Cz-Dyy"/>
-                            <constraint firstItem="x2p-oo-SEb" firstAttribute="trailing" secondItem="A1C-g6-pDF" secondAttribute="trailing" id="h7z-CR-1ce"/>
-                            <constraint firstItem="ak7-Nt-6NG" firstAttribute="width" secondItem="iVE-5g-Yge" secondAttribute="width" id="hkV-1e-K7v"/>
-                            <constraint firstItem="A1C-g6-pDF" firstAttribute="width" secondItem="iVE-5g-Yge" secondAttribute="width" id="kOd-L3-Efk"/>
-                            <constraint firstItem="ak7-Nt-6NG" firstAttribute="height" secondItem="iVE-5g-Yge" secondAttribute="height" id="pBc-52-1i9"/>
-                            <constraint firstItem="xFM-eu-7mx" firstAttribute="top" secondItem="ak7-Nt-6NG" secondAttribute="bottom" constant="8" symbolic="YES" id="rKS-b9-Gdh"/>
+                            <constraint firstItem="udw-Rf-DnP" firstAttribute="top" secondItem="n6P-SK-wPa" secondAttribute="bottom" id="0gY-ft-U0Q"/>
+                            <constraint firstItem="iVx-Sw-at4" firstAttribute="top" secondItem="Q64-uc-nkE" secondAttribute="bottom" constant="8" symbolic="YES" id="Qad-bh-1jQ"/>
+                            <constraint firstItem="Q64-uc-nkE" firstAttribute="top" secondItem="udw-Rf-DnP" secondAttribute="bottom" constant="8" id="WZ6-8L-8Gn"/>
+                            <constraint firstItem="Q64-uc-nkE" firstAttribute="leading" secondItem="HLx-Bb-7D2" secondAttribute="leadingMargin" id="euv-55-r5b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q64-uc-nkE" secondAttribute="trailing" id="mGA-40-rIE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iVx-Sw-at4" secondAttribute="trailing" id="s2y-mU-dCV"/>
                             <constraint firstItem="udw-Rf-DnP" firstAttribute="leading" secondItem="HLx-Bb-7D2" secondAttribute="leading" id="tdy-RT-vBo"/>
-                            <constraint firstItem="iVE-5g-Yge" firstAttribute="top" secondItem="xFM-eu-7mx" secondAttribute="bottom" constant="8" symbolic="YES" id="vZU-aK-AVX"/>
+                            <constraint firstItem="iVx-Sw-at4" firstAttribute="leading" secondItem="HLx-Bb-7D2" secondAttribute="leadingMargin" id="tm9-xO-U2R"/>
                             <constraint firstAttribute="trailing" secondItem="udw-Rf-DnP" secondAttribute="trailing" id="yq0-eN-RVa"/>
                         </constraints>
                     </view>
