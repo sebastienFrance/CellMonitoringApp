@@ -46,21 +46,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _theTable.delegate = self;
-    _theTable.dataSource = self;
+    self.theTable.delegate = self;
+    self.theTable.dataSource = self;
     
+    self.theTable.estimatedRowHeight = 124.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
+  
     self.title = @"Zone KPIs";
     
     self.navigationItem.rightBarButtonItem.enabled = TRUE;
 }
 
 - (void) refreshView {
-    [_theTable reloadData];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    [self.theTable reloadData];
 }
 
 #pragma mark - Table view data source

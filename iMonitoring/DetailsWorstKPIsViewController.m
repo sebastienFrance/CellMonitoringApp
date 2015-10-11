@@ -322,6 +322,12 @@
     
     self.theKPITable.delegate = self;
     self.theKPITable.dataSource = self;
+    
+    self.theKPITable.estimatedRowHeight = 74.0;
+    self.theKPITable.rowHeight = UITableViewAutomaticDimension;
+    
+
+    
     self.displayingPrimary = FALSE;
     
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
