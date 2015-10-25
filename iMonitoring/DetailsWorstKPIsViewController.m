@@ -109,36 +109,23 @@
 }
 
 - (IBAction)swipeToPrevious:(id)sender {
-    UIView* displayedView = [self displayedViewChart];
-    CGRect displayedViewFrameTarget = [self moveDisplayedViewFromLeft:TRUE];
-    
-    UIView* hiddenView = [self hiddenViewChart];
-    CGRect hiddenViewFrame = [self moveHiddenViewFromLeft:TRUE];
-
-    [self resyncViewWithNewPeriod];
-    
-    
-    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        displayedView.frame = displayedViewFrameTarget;
-        hiddenView.frame = hiddenViewFrame;
-    } completion:^(BOOL finished){
-        if (finished) {
-            self.displayingPrimary = !self.displayingPrimary;
-            displayedView.hidden = TRUE;
-        }
-    }];
+    [self swipeChart:TRUE];
 }
 
 - (IBAction)swipeToNext:(id)sender {
-    
+    [self swipeChart:FALSE];
+}
+
+
+-(void) swipeChart:(Boolean) isFromLeft {
     UIView* displayedView = [self displayedViewChart];
-    CGRect displayedViewFrameTarget = [self moveDisplayedViewFromLeft:FALSE];
+    CGRect displayedViewFrameTarget = [self moveDisplayedViewFromLeft:isFromLeft];
     
     UIView* hiddenView = [self hiddenViewChart];
-    CGRect hiddenViewFrame = [self moveHiddenViewFromLeft:FALSE];
-
+    CGRect hiddenViewFrame = [self moveHiddenViewFromLeft:isFromLeft];
+    
     [self resyncViewWithNewPeriod];
-
+    
     
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         displayedView.frame = displayedViewFrameTarget;
@@ -149,6 +136,7 @@
             displayedView.hidden = TRUE;
         }
     }];
+  
 }
 
 -(CGRect) moveHiddenViewFromLeft:(Boolean) fromLeft {
@@ -175,7 +163,7 @@
     UIView* displayedView = [self displayedViewChart];
     CGRect displayedViewFrameTarget = displayedView.frame;
     
-    displayedViewFrameTarget.origin.x = fromLeft ? displayedViewFrameTarget.size.width : -displayedViewFrameTarget.size.width;
+    displayedViewFrameTarget.origin.x = fromLeft ? displayedViewFrameTarget.size.width: -displayedViewFrameTarget.size.width;
     
     return displayedViewFrameTarget;
 }
@@ -311,22 +299,14 @@
     }
 }
 
-
-- (void) viewWillAppear:(BOOL) animated {
-    [super viewWillAppear:animated];
-}
-
 - (void)viewDidLoad
 {
-    [self showToolbar];
-    
+
     self.theKPITable.delegate = self;
     self.theKPITable.dataSource = self;
     
     self.theKPITable.estimatedRowHeight = 74.0;
     self.theKPITable.rowHeight = UITableViewAutomaticDimension;
-    
-
     
     self.displayingPrimary = FALSE;
     
@@ -339,18 +319,6 @@
     self.displayingPrimary = TRUE;
 
     [super viewDidLoad];
-}
-
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self showToolbar];
-}
-
--(void) showToolbar {
-//    [self.navigationController setToolbarHidden:FALSE animated:FALSE];
-//    self.navigationController.hidesBarsOnSwipe = FALSE;
-//    self.navigationController.hidesBarsOnTap = FALSE;
 }
 
 
@@ -452,12 +420,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"DetailsWorstKPIViewCellId";
-    DetailsWorstKPIViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    
-    if (cell == Nil) {
-        cell = [[DetailsWorstKPIViewCell alloc] init];
-    }
+    DetailsWorstKPIViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     CellWithKPIValues* cellData = self.KPIValuesPerCell[indexPath.row];
     [cell initWithCellKPIValues:cellData isWithAverage:self.isAverageKPIs index:indexPath.row];

@@ -48,11 +48,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"iPadDashboardScopeCellId";
-    iPadDashboardScopeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == Nil) {
-        cell = [[iPadDashboardScopeViewCell alloc] init]; 
-    }
+    iPadDashboardScopeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSInteger defaultScope = [UserPreferences sharedInstance].CellDashboardDefaultViewScope;
     if (defaultScope == indexPath.row) {

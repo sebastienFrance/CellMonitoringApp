@@ -163,15 +163,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIm-ze-Wwe">
-                                <rect key="frame" x="7" y="51" width="587" height="300"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="300"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T4c-6Q-bEq" userLabel="Second Hosting View" customClass="CPTGraphHostingView">
-                                        <rect key="frame" x="0.0" y="0.0" width="527" height="300"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4c-6Q-bEq" userLabel="Second Hosting View" customClass="CPTGraphHostingView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zF1-2E-VjE" customClass="CPTGraphHostingView">
-                                        <rect key="frame" x="0.0" y="0.0" width="527" height="300"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zF1-2E-VjE" customClass="CPTGraphHostingView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -180,6 +180,14 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="zF1-2E-VjE" secondAttribute="bottom" id="3cj-HK-GL5"/>
+                                    <constraint firstAttribute="trailing" secondItem="zF1-2E-VjE" secondAttribute="trailing" id="GO1-iN-DCM"/>
+                                    <constraint firstAttribute="trailing" secondItem="T4c-6Q-bEq" secondAttribute="trailing" id="Lfc-F3-pK5"/>
+                                    <constraint firstAttribute="bottom" secondItem="T4c-6Q-bEq" secondAttribute="bottom" id="bg9-na-VZo"/>
+                                    <constraint firstItem="zF1-2E-VjE" firstAttribute="top" secondItem="LIm-ze-Wwe" secondAttribute="top" id="hv4-Bn-vhd"/>
+                                    <constraint firstItem="T4c-6Q-bEq" firstAttribute="leading" secondItem="LIm-ze-Wwe" secondAttribute="leading" id="kda-77-hSA"/>
+                                    <constraint firstItem="zF1-2E-VjE" firstAttribute="leading" secondItem="LIm-ze-Wwe" secondAttribute="leading" id="l8m-PQ-axu"/>
+                                    <constraint firstItem="T4c-6Q-bEq" firstAttribute="top" secondItem="LIm-ze-Wwe" secondAttribute="top" id="rXE-Qr-6Sx"/>
                                     <constraint firstAttribute="height" constant="300" id="uYN-1i-icS"/>
                                 </constraints>
                                 <connections>
@@ -215,7 +223,7 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vJh-7R-7BG">
-                                <rect key="frame" x="7" y="352" width="587" height="240"/>
+                                <rect key="frame" x="7" y="344" width="587" height="248"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -226,7 +234,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="587" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3nY-KF-kjC">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3nY-KF-kjC">
                                                     <rect key="frame" x="8" y="8" width="571" height="53"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-IS-piY">
@@ -236,14 +244,14 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="654" misplaced="YES" text="Date Local Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-jV-4wm">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="654" text="Date Local Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-jV-4wm">
                                                             <rect key="frame" x="0.0" y="18" width="104" height="17"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="657" misplaced="YES" text="Date Cell Local Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWD-Jw-PlS">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="657" text="Date Cell Local Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWD-Jw-PlS">
                                                             <rect key="frame" x="0.0" y="35" width="133" height="18"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -276,17 +284,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="587" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JIM-QK-pJY">
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIM-QK-pJY">
                                                     <rect key="frame" x="8" y="8" width="571" height="29"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppv-QS-Yz8">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppv-QS-Yz8">
                                                             <rect key="frame" x="0.0" y="0.0" width="72" height="29"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Period" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZT-p5-EKI">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Period" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZT-p5-EKI">
                                                             <rect key="frame" x="72" y="0.0" width="499" height="29"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -319,15 +327,15 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="EGE-7M-8m2" firstAttribute="top" secondItem="vJh-7R-7BG" secondAttribute="bottom" constant="8" id="190-SM-C2P"/>
-                            <constraint firstAttribute="trailing" secondItem="LIm-ze-Wwe" secondAttribute="trailing" constant="6" id="FCj-15-Jbo"/>
-                            <constraint firstItem="LIm-ze-Wwe" firstAttribute="leading" secondItem="D9W-T0-bgc" secondAttribute="leading" constant="7" id="GqR-24-kMt"/>
+                            <constraint firstAttribute="trailing" secondItem="LIm-ze-Wwe" secondAttribute="trailing" id="FCj-15-Jbo"/>
+                            <constraint firstItem="LIm-ze-Wwe" firstAttribute="leading" secondItem="D9W-T0-bgc" secondAttribute="leading" id="GqR-24-kMt"/>
                             <constraint firstAttribute="trailing" secondItem="KMi-9S-ryq" secondAttribute="trailing" id="Hae-xm-lSI"/>
                             <constraint firstItem="KMi-9S-ryq" firstAttribute="leading" secondItem="D9W-T0-bgc" secondAttribute="leading" id="ZL6-Ab-OPU"/>
                             <constraint firstAttribute="trailing" secondItem="vJh-7R-7BG" secondAttribute="trailing" constant="6" id="bfP-SX-Id2"/>
-                            <constraint firstItem="LIm-ze-Wwe" firstAttribute="top" secondItem="KMi-9S-ryq" secondAttribute="bottom" constant="7" id="dZz-dN-bdQ"/>
+                            <constraint firstItem="LIm-ze-Wwe" firstAttribute="top" secondItem="KMi-9S-ryq" secondAttribute="bottom" id="dZz-dN-bdQ"/>
                             <constraint firstItem="N58-6W-4i0" firstAttribute="top" secondItem="KMi-9S-ryq" secondAttribute="bottom" constant="-44" id="daB-u9-8zO"/>
                             <constraint firstItem="vJh-7R-7BG" firstAttribute="leading" secondItem="D9W-T0-bgc" secondAttribute="leading" constant="7" id="fx6-yT-jJ2"/>
-                            <constraint firstItem="vJh-7R-7BG" firstAttribute="top" secondItem="LIm-ze-Wwe" secondAttribute="bottom" constant="1" id="szR-uE-ymT"/>
+                            <constraint firstItem="vJh-7R-7BG" firstAttribute="top" secondItem="LIm-ze-Wwe" secondAttribute="bottom" id="szR-uE-ymT"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -351,7 +359,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2944" y="-50"/>
+            <point key="canvasLocation" x="2903" y="-50"/>
         </scene>
         <!--KPI Dashboard-->
         <scene sceneID="UVq-j5-Ooy">
@@ -702,22 +710,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="360" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Worst cell on last GP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1he-4D-VbE">
-                                            <rect key="frame" x="20" y="8" width="320" height="27"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="buR-b4-SmP">
+                                            <rect key="frame" x="8" y="8" width="344" height="45"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Worst cell on last GP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1he-4D-VbE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="156" height="23"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Display Worst distribution over last GP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdl-na-2Pu">
+                                                    <rect key="frame" x="0.0" y="23" width="248" height="22"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Display Worst distribution over last GP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdl-na-2Pu">
-                                            <rect key="frame" x="20" y="34" width="320" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
+                                        </stackView>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="buR-b4-SmP" firstAttribute="top" secondItem="B8p-9S-soz" secondAttribute="topMargin" id="GV7-N0-NCp"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="buR-b4-SmP" secondAttribute="trailing" id="MJk-kg-kAe"/>
+                                        <constraint firstItem="buR-b4-SmP" firstAttribute="leading" secondItem="B8p-9S-soz" secondAttribute="leadingMargin" id="N6v-A3-0HW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="buR-b4-SmP" secondAttribute="bottom" id="gnB-fu-aK2"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
@@ -739,7 +759,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXy-m1-e41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131" y="1386"/>
+            <point key="canvasLocation" x="1105" y="1346"/>
         </scene>
         <!--iPad Dashboard Worst Details View Controller-->
         <scene sceneID="c01-vu-U9M">
@@ -754,15 +774,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjL-3L-RF6">
-                                <rect key="frame" x="7" y="51" width="587" height="300"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="300"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbF-cP-W3z" userLabel="Second Hosting View" customClass="CPTGraphHostingView">
-                                        <rect key="frame" x="0.0" y="0.0" width="527" height="300"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbF-cP-W3z" userLabel="Second Hosting View" customClass="CPTGraphHostingView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3on-MF-Zl2" customClass="CPTGraphHostingView">
-                                        <rect key="frame" x="0.0" y="0.0" width="587" height="300"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3on-MF-Zl2" customClass="CPTGraphHostingView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -771,7 +791,15 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="RbF-cP-W3z" firstAttribute="leading" secondItem="fjL-3L-RF6" secondAttribute="leading" id="GfC-9I-0Iz"/>
+                                    <constraint firstAttribute="bottom" secondItem="3on-MF-Zl2" secondAttribute="bottom" id="GvX-xJ-7Qn"/>
+                                    <constraint firstAttribute="trailing" secondItem="RbF-cP-W3z" secondAttribute="trailing" id="M39-Nv-jEC"/>
+                                    <constraint firstItem="3on-MF-Zl2" firstAttribute="top" secondItem="fjL-3L-RF6" secondAttribute="top" id="YYL-t3-gNB"/>
                                     <constraint firstAttribute="height" constant="300" id="Yje-9E-fAa"/>
+                                    <constraint firstAttribute="bottom" secondItem="RbF-cP-W3z" secondAttribute="bottom" id="YtO-ng-Ijk"/>
+                                    <constraint firstAttribute="trailing" secondItem="3on-MF-Zl2" secondAttribute="trailing" id="lNR-Ju-e70"/>
+                                    <constraint firstItem="3on-MF-Zl2" firstAttribute="leading" secondItem="fjL-3L-RF6" secondAttribute="leading" id="pTQ-qB-Abr"/>
+                                    <constraint firstItem="RbF-cP-W3z" firstAttribute="top" secondItem="fjL-3L-RF6" secondAttribute="top" id="zjE-cL-BjV"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ceS-43-UH6" appends="YES" id="QrS-h7-orf"/>
@@ -805,7 +833,7 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1P4-yA-STG">
-                                <rect key="frame" x="7" y="395" width="587" height="197"/>
+                                <rect key="frame" x="7" y="388" width="587" height="204"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -816,10 +844,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="587" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0gm-LM-fHE" userLabel="All">
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0gm-LM-fHE" userLabel="All">
                                                     <rect key="frame" x="8" y="8" width="571" height="50"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-t9-Bba" userLabel="Values">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-t9-Bba" userLabel="Values">
                                                             <rect key="frame" x="0.0" y="5" width="504" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="Cell Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAg-yv-Omh">
@@ -828,7 +856,7 @@
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qja-Ck-9li">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qja-Ck-9li">
                                                                     <rect key="frame" x="0.0" y="20" width="504" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -838,7 +866,7 @@
                                                             </subviews>
                                                             <animations/>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6zw-4Z-KkK" userLabel="Buttons">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6zw-4Z-KkK" userLabel="Buttons">
                                                             <rect key="frame" x="504" y="10" width="67" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGM-cK-8Zh">
@@ -886,7 +914,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KNu-85-ALE">
-                                <rect key="frame" x="224" y="359" width="152" height="29"/>
+                                <rect key="frame" x="224" y="352" width="152" height="29"/>
                                 <animations/>
                                 <segments>
                                     <segment title="Worst"/>
@@ -904,16 +932,16 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="JZS-Bg-HgV" secondAttribute="trailing" id="UJp-Lu-mcT"/>
                             <constraint firstItem="1P4-yA-STG" firstAttribute="leading" secondItem="bZ5-NN-yzN" secondAttribute="leading" constant="7" id="Z0D-7x-NTK"/>
+                            <constraint firstItem="fjL-3L-RF6" firstAttribute="top" secondItem="JZS-Bg-HgV" secondAttribute="bottom" id="Zzs-0a-aHu"/>
                             <constraint firstItem="KNu-85-ALE" firstAttribute="centerX" secondItem="bZ5-NN-yzN" secondAttribute="centerX" id="aSj-JX-IBI"/>
                             <constraint firstItem="1P4-yA-STG" firstAttribute="top" secondItem="KNu-85-ALE" secondAttribute="bottom" constant="8" symbolic="YES" id="cWY-Hd-4Se"/>
                             <constraint firstItem="DJO-g4-TgU" firstAttribute="top" secondItem="1P4-yA-STG" secondAttribute="bottom" constant="8" id="ddL-rS-YYM"/>
-                            <constraint firstAttribute="trailing" secondItem="fjL-3L-RF6" secondAttribute="trailing" constant="6" id="h1e-AT-5Nm"/>
-                            <constraint firstItem="fjL-3L-RF6" firstAttribute="top" secondItem="T4T-aY-LDH" secondAttribute="bottom" constant="51" id="nfX-u5-YVc"/>
+                            <constraint firstAttribute="trailing" secondItem="fjL-3L-RF6" secondAttribute="trailing" id="h1e-AT-5Nm"/>
                             <constraint firstItem="JZS-Bg-HgV" firstAttribute="leading" secondItem="bZ5-NN-yzN" secondAttribute="leading" id="uC3-g1-nNp"/>
                             <constraint firstItem="JZS-Bg-HgV" firstAttribute="top" secondItem="T4T-aY-LDH" secondAttribute="bottom" id="uii-gD-1MX"/>
                             <constraint firstAttribute="trailing" secondItem="1P4-yA-STG" secondAttribute="trailing" constant="6" id="unY-4l-agZ"/>
                             <constraint firstItem="KNu-85-ALE" firstAttribute="top" secondItem="fjL-3L-RF6" secondAttribute="bottom" constant="8" symbolic="YES" id="v0U-Hi-Jcn"/>
-                            <constraint firstItem="fjL-3L-RF6" firstAttribute="leading" secondItem="bZ5-NN-yzN" secondAttribute="leading" constant="7" id="x4a-Pv-ae0"/>
+                            <constraint firstItem="fjL-3L-RF6" firstAttribute="leading" secondItem="bZ5-NN-yzN" secondAttribute="leading" id="x4a-Pv-ae0"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Mly-bg-GcT" appends="YES" id="QEV-mQ-dA6"/>
@@ -955,15 +983,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raR-15-wBT">
-                                <rect key="frame" x="7" y="51" width="587" height="300"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="300"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQd-PU-ZIX" userLabel="Second Hosting View" customClass="CPTGraphHostingView">
-                                        <rect key="frame" x="0.0" y="0.0" width="527" height="300"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQd-PU-ZIX" userLabel="Second Hosting View" customClass="CPTGraphHostingView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VSr-YN-qWs" customClass="CPTGraphHostingView">
-                                        <rect key="frame" x="0.0" y="0.0" width="527" height="300"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSr-YN-qWs" customClass="CPTGraphHostingView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -972,6 +1000,14 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="VSr-YN-qWs" firstAttribute="leading" secondItem="raR-15-wBT" secondAttribute="leading" id="6bj-QL-CRC"/>
+                                    <constraint firstAttribute="trailing" secondItem="kQd-PU-ZIX" secondAttribute="trailing" id="P63-Bc-Bdm"/>
+                                    <constraint firstItem="VSr-YN-qWs" firstAttribute="top" secondItem="raR-15-wBT" secondAttribute="top" id="Z3q-j1-wvB"/>
+                                    <constraint firstItem="kQd-PU-ZIX" firstAttribute="top" secondItem="raR-15-wBT" secondAttribute="top" id="bmQ-SA-BaO"/>
+                                    <constraint firstAttribute="bottom" secondItem="kQd-PU-ZIX" secondAttribute="bottom" id="jgR-vJ-pNS"/>
+                                    <constraint firstItem="kQd-PU-ZIX" firstAttribute="leading" secondItem="raR-15-wBT" secondAttribute="leading" id="khT-MI-seL"/>
+                                    <constraint firstAttribute="trailing" secondItem="VSr-YN-qWs" secondAttribute="trailing" id="lJL-Qc-cCh"/>
+                                    <constraint firstAttribute="bottom" secondItem="VSr-YN-qWs" secondAttribute="bottom" id="ocN-N7-bDn"/>
                                     <constraint firstAttribute="height" constant="300" id="ptf-OF-DQY"/>
                                 </constraints>
                                 <connections>
@@ -1017,24 +1053,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="587" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lou-ce-Dad">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lou-ce-Dad">
                                                     <rect key="frame" x="8" y="8" width="571" height="60"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgD-Al-PbY">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgD-Al-PbY">
                                                             <rect key="frame" x="0.0" y="0.0" width="72" height="20"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Date Local Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g5-Qz-uXQ">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Local Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g5-Qz-uXQ">
                                                             <rect key="frame" x="0.0" y="20" width="104" height="20"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Date Cell Local Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVE-w2-AQX">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Cell Local Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVE-w2-AQX">
                                                             <rect key="frame" x="0.0" y="40" width="133" height="20"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -1067,17 +1103,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="587" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HcL-yp-fSz">
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HcL-yp-fSz">
                                                     <rect key="frame" x="8" y="8" width="571" height="27"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7X-JO-0y4">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7X-JO-0y4">
                                                             <rect key="frame" x="0.0" y="4" width="72" height="20"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Period" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cv-sJ-3KR">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Period" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cv-sJ-3KR">
                                                             <rect key="frame" x="72" y="4" width="499" height="20"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -1110,15 +1146,15 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="l3D-Et-bb0" firstAttribute="top" secondItem="h3G-mi-h9i" secondAttribute="bottom" constant="8" id="4NC-iM-xVe"/>
-                            <constraint firstItem="raR-15-wBT" firstAttribute="top" secondItem="FL2-Y2-N2N" secondAttribute="bottom" constant="7" id="68U-bG-IMS"/>
-                            <constraint firstItem="raR-15-wBT" firstAttribute="leading" secondItem="0RX-V5-M0e" secondAttribute="leading" constant="7" id="8CN-NA-WAS"/>
+                            <constraint firstItem="raR-15-wBT" firstAttribute="top" secondItem="FL2-Y2-N2N" secondAttribute="bottom" id="68U-bG-IMS"/>
+                            <constraint firstItem="raR-15-wBT" firstAttribute="leading" secondItem="0RX-V5-M0e" secondAttribute="leading" id="8CN-NA-WAS"/>
                             <constraint firstItem="V0W-IA-QyL" firstAttribute="top" secondItem="FL2-Y2-N2N" secondAttribute="bottom" constant="-44" id="B4N-VX-euf"/>
                             <constraint firstAttribute="trailing" secondItem="h3G-mi-h9i" secondAttribute="trailing" constant="6" id="JXj-IN-Z5c"/>
                             <constraint firstAttribute="trailing" secondItem="FL2-Y2-N2N" secondAttribute="trailing" id="TYd-Zm-tzM"/>
                             <constraint firstItem="h3G-mi-h9i" firstAttribute="leading" secondItem="0RX-V5-M0e" secondAttribute="leading" constant="7" id="Y0U-mG-Grq"/>
                             <constraint firstItem="FL2-Y2-N2N" firstAttribute="leading" secondItem="0RX-V5-M0e" secondAttribute="leading" id="lEo-Wn-5GV"/>
                             <constraint firstItem="h3G-mi-h9i" firstAttribute="top" secondItem="V0W-IA-QyL" secondAttribute="bottom" constant="352" id="vrR-ep-Lsp"/>
-                            <constraint firstAttribute="trailing" secondItem="raR-15-wBT" secondAttribute="trailing" constant="6" id="y4V-Tx-e1L"/>
+                            <constraint firstAttribute="trailing" secondItem="raR-15-wBT" secondAttribute="trailing" id="y4V-Tx-e1L"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="LZr-vY-8r4" appends="YES" id="Jl9-pY-eZ4"/>
@@ -1137,7 +1173,7 @@
                 <swipeGestureRecognizer direction="left" id="X4U-ob-Znm"/>
                 <swipeGestureRecognizer direction="right" id="LZr-vY-8r4"/>
             </objects>
-            <point key="canvasLocation" x="2035" y="1477"/>
+            <point key="canvasLocation" x="2035" y="1517"/>
         </scene>
         <!--iPad Cell Details AndKP Is View Table View Controller-->
         <scene sceneID="5pe-6P-VQN">
@@ -1156,18 +1192,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="360" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ag6-R9-UQn">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ag6-R9-UQn">
                                             <rect key="frame" x="8" y="8" width="344" height="45"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Worst cell on last GP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL7-wX-f8r">
-                                                    <rect key="frame" x="0.0" y="0.0" width="156" height="23"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last 6 hours (15mn view)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL7-wX-f8r">
+                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="23"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Display Worst distribution over last GP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXB-ao-h9h">
-                                                    <rect key="frame" x="0.0" y="23" width="248" height="22"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="15 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXB-ao-h9h">
+                                                    <rect key="frame" x="0.0" y="23" width="70" height="22"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1199,10 +1235,8 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="360" height="310"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="260"/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="360" height="310"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmL-o0-ul8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -75,15 +75,6 @@ typedef NS_ENUM(NSUInteger, NeighborDisplayModeId) {
 
 }
 
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        [self.navigationController setToolbarHidden:FALSE];
-        self.navigationController.hidesBarsOnTap = FALSE;
-    }
-
-}
 
 - (void)viewDidLoad {
     self.theTable.delegate = self;
@@ -236,12 +227,7 @@ typedef NS_ENUM(NSUInteger, NeighborDisplayModeId) {
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"NeighborCellId";
-    NeighborsLocateViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    
-    if (cell == Nil) {
-        cell = [[NeighborsLocateViewCell alloc] init]; 
-    }
+    NeighborsLocateViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
     if (self.displayMode == NeighborDisplayModeNormal) {
         NeighborOverlay* currentNeighbor = [self getSelectedNeighbor:indexPath];

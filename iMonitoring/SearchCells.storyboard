@@ -110,10 +110,10 @@
                         <viewControllerLayoutGuide type="bottom" id="PRH-OV-ks3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mcb-pc-KGa">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qIU-mR-TyC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qIU-mR-TyC">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="436"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -302,7 +302,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ic2-Px-jjo">
-                                <rect key="frame" x="134" y="444" width="333" height="29"/>
+                                <rect key="frame" x="134" y="557" width="333" height="29"/>
                                 <animations/>
                                 <segments>
                                     <segment title="Distance"/>
@@ -321,6 +321,8 @@
                         <constraints>
                             <constraint firstItem="PRH-OV-ks3" firstAttribute="top" secondItem="ic2-Px-jjo" secondAttribute="bottom" constant="15" id="3KW-Df-sTO"/>
                             <constraint firstItem="ic2-Px-jjo" firstAttribute="centerX" secondItem="Mcb-pc-KGa" secondAttribute="centerX" id="Az3-Xn-v5s"/>
+                            <constraint firstAttribute="leadingMargin" relation="lessThanOrEqual" secondItem="ic2-Px-jjo" secondAttribute="leading" id="LtH-Se-K0Y"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ic2-Px-jjo" secondAttribute="trailing" id="c8o-Vk-FVd"/>
                             <constraint firstItem="qIU-mR-TyC" firstAttribute="leading" secondItem="Mcb-pc-KGa" secondAttribute="leading" id="kxD-i6-wec"/>
                             <constraint firstAttribute="trailing" secondItem="qIU-mR-TyC" secondAttribute="trailing" id="lAM-gv-h6h"/>
                             <constraint firstItem="ic2-Px-jjo" firstAttribute="top" secondItem="qIU-mR-TyC" secondAttribute="bottom" constant="8" id="oOJ-On-CGg"/>
@@ -996,6 +998,6 @@
         <image name="radio_tower" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BhZ-7Y-oOW"/>
+        <segue reference="MLa-hI-A1B"/>
     </inferredMetricsTieBreakers>
 </document>
