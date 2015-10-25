@@ -22,10 +22,12 @@
 @property(nonatomic) NSIndexPath* selectedIndexPath;
 @property(nonatomic, weak) WorstKPIDataSource* dataSource;
 
+@property (weak, nonatomic) IBOutlet UITableView *theTable;
+
 @end
 
 @implementation KPIsViewController
-@synthesize theTable = _theTable;
+
 
 
 
@@ -36,75 +38,42 @@
     [mailbody presentActivityViewFrom:self];
 }
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder*)coder
-{
-    if ((self = [super initWithCoder:coder])) {
-    }
-    return self;
-}
-
-
-
 - (void) initialize:(WorstKPIDataSource*) latestWorstKPIs {
     _dataSource = latestWorstKPIs;
 }
 
-- (void)viewDidLoad
-{
+- (void) viewDidLoad {
     [super viewDidLoad];
     
-    _theTable.delegate = self;
-    _theTable.dataSource = self;
+    self.theTable.delegate = self;
+    self.theTable.dataSource = self;
     
-    self.navigationItem.rightBarButtonItem.enabled = TRUE;
-    
+    self.theTable.estimatedRowHeight = 150.0;
+    self.theTable.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void) refreshView {
     [_theTable reloadData];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+     return 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Worst Cells";
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _dataSource.KPIs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellWorstKPIId";
-    WorstKPIsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    
-    if (cell == Nil) {
-        cell = [[WorstKPIsCell alloc] init]; 
-    }
+    WorstKPIsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSEnumerator *enumerator = [_dataSource.KPIs objectEnumerator];
     

@@ -49,7 +49,7 @@
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
     
-    self.theTable.estimatedRowHeight = 150.0;
+    self.theTable.estimatedRowHeight = 118.0;
     self.theTable.rowHeight = UITableViewAutomaticDimension;
   
     self.title = @"Zone KPIs";

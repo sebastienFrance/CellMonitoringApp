@@ -19,7 +19,6 @@
 - (void) refreshView;
 - (void)sendTheMail;
 
-@property (weak, nonatomic) IBOutlet UITableView *theTable;
 
 
 @end
