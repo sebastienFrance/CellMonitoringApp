@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CorePlot-CocoaTouch.h"
+#import <CorePlot/ios/CorePlot.h>
 #import "KPIBarChart.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #import "WorstKPIChart.h"

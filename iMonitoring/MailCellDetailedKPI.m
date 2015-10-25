@@ -15,7 +15,7 @@
 #import "HTMLMailUtility.h"
 #import "KPIs2HTMLTable.h"
 #import "KPIBarChart.h"
-#import "CorePlot-CocoaTouch.h"
+#import <CorePlot/ios/CorePlot.h>
 
 @implementation MailCellDetailedKPI
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WorstKPIDataSource.h"
 #import <MessageUI/MFMailComposeViewController.h>
-#import "CorePlot-CocoaTouch.h"
+#import <CorePlot/ios/CorePlot.h>
 #import "iPadDashboardZoneAverageViewController.h"
 #import "ZoneKPIDataSource.h"
 

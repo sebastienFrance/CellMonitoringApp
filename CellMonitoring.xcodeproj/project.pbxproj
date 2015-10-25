@@ -178,8 +178,8 @@
 		BE821BA3155FD59B00057C60 /* logo_3g_150.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE821BA2155FD59B00057C60 /* logo_3g_150.jpg */; };
 		BE821BAE155FDF7F00057C60 /* KPIPrefConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BE821BAD155FDF7F00057C60 /* KPIPrefConfiguration.m */; };
 		BE821BB2155FE11E00057C60 /* KPIsPrefListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE821BB1155FE11E00057C60 /* KPIsPrefListViewController.m */; };
-		BE82B0081B8E48D300DBCD6F /* CellParameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE82B0071B8E48D300DBCD6F /* CellParameters.storyboard */; settings = {ASSET_TAGS = (); }; };
-		BE82B00A1B8E50D700DBCD6F /* CellDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE82B0091B8E50D700DBCD6F /* CellDetails.storyboard */; settings = {ASSET_TAGS = (); }; };
+		BE82B0081B8E48D300DBCD6F /* CellParameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE82B0071B8E48D300DBCD6F /* CellParameters.storyboard */; };
+		BE82B00A1B8E50D700DBCD6F /* CellDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE82B0091B8E50D700DBCD6F /* CellDetails.storyboard */; };
 		BE858AAD186D7FD50056CFA1 /* CellsOnCoverageWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE858AAC186D7FD50056CFA1 /* CellsOnCoverageWindow.xib */; };
 		BE858AB2186D81BA0056CFA1 /* CellsOnCoverageWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE858AB1186D81BA0056CFA1 /* CellsOnCoverageWindowController.m */; };
 		BE858ABC186DDA8D0056CFA1 /* RouteInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE858ABB186DDA8D0056CFA1 /* RouteInformation.m */; };
@@ -226,7 +226,7 @@
 		BE9B45BD1717FB8200FB7D5E /* CellGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9B45BC1717FB8200FB7D5E /* CellGroupViewController.m */; };
 		BE9B45C21717FEBF00FB7D5E /* CellGroupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9B45C11717FEBF00FB7D5E /* CellGroupViewCell.m */; };
 		BE9D6922164FC9C4007C68C5 /* SearchAddressViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9D6921164FC9C4007C68C5 /* SearchAddressViewCell.m */; };
-		BE9F472C1B94E572009F95E8 /* CellAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F472B1B94E571009F95E8 /* CellAddressTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		BE9F472C1B94E572009F95E8 /* CellAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F472B1B94E571009F95E8 /* CellAddressTableViewCell.m */; };
 		BEA059BD155FE8F600A5F794 /* KPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA059BC155FE8F600A5F794 /* KPI.m */; };
 		BEA294A11881A46300CAFEC7 /* ZoneAverageDetailsCellWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA294A01881A46300CAFEC7 /* ZoneAverageDetailsCellWindow.m */; };
 		BEA294AA1881B4A500CAFEC7 /* ZoneKPISource.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA294A91881B4A500CAFEC7 /* ZoneKPISource.m */; };
@@ -320,7 +320,7 @@
 		BECF3FAE1865A64800E85186 /* MonitoringPeriodUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA7905316D9164D00B0D9B7 /* MonitoringPeriodUtility.m */; };
 		BED4897917F85E5100C67009 /* iMonNavigationDataActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = BED4897817F85E5100C67009 /* iMonNavigationDataActivity.m */; };
 		BED4A7D61AAB3B800086BD70 /* RequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = BED4A7D51AAB3B800086BD70 /* RequestParameters.m */; };
-		BED6B6501BBFE2190060BBA9 /* iPhoneDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED6B64F1BBFE2190060BBA9 /* iPhoneDashboard.storyboard */; settings = {ASSET_TAGS = (); }; };
+		BED6B6501BBFE2190060BBA9 /* iPhoneDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED6B64F1BBFE2190060BBA9 /* iPhoneDashboard.storyboard */; };
 		BED703881A7422B90053D2C1 /* NeighborsHistoricalDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BED703871A7422B90053D2C1 /* NeighborsHistoricalDataSource.m */; };
 		BED703921A7560EA0053D2C1 /* HistoricalNRsOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED703911A7560EA0053D2C1 /* HistoricalNRsOverviewViewController.m */; };
 		BED703951A7562730053D2C1 /* HistoricalNRsOverviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BED703941A7562730053D2C1 /* HistoricalNRsOverviewCell.m */; };
@@ -333,7 +333,7 @@
 		BED864AA18781D1800F089F7 /* KPIBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8910C515EBEFDA0077721C /* KPIBarChart.m */; };
 		BED864AC1878730D00F089F7 /* WorstCellsDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED864AB1878730D00F089F7 /* WorstCellsDetails.xib */; };
 		BED864AF187880B800F089F7 /* WorstCellDetailsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED864AE187880B800F089F7 /* WorstCellDetailsWindowController.m */; };
-		BED8706D1BC129F200B4D098 /* GeneralInfos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED8706C1BC129F200B4D098 /* GeneralInfos.storyboard */; settings = {ASSET_TAGS = (); }; };
+		BED8706D1BC129F200B4D098 /* GeneralInfos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED8706C1BC129F200B4D098 /* GeneralInfos.storyboard */; };
 		BEDBBE3F1632B9E90079B813 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEDBBE3E1632B9E90079B813 /* AddressBook.framework */; };
 		BEDF62CA17FB6D3200233A63 /* iMonPDFActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDF62C917FB6D3200233A63 /* iMonPDFActivity.m */; };
 		BEDF62CD17FB6E8A00233A63 /* iMonImageActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDF62CC17FB6E8A00233A63 /* iMonImageActivity.m */; };
@@ -2495,6 +2495,7 @@
 				BE09A5B61517CA1A00A12C4B /* Frameworks */,
 				BE09A5B71517CA1A00A12C4B /* Resources */,
 				BF74C547016890CCF6565BA2 /* Copy Pods Resources */,
+				755CD9F3850AD1A21F495272 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2700,6 +2701,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		755CD9F3850AD1A21F495272 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BF74C547016890CCF6565BA2 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

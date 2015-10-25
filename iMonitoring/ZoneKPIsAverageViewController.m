@@ -20,15 +20,15 @@
 @property(nonatomic) NSIndexPath* selectedIndexPath;
 @property(nonatomic) WorstKPIDataSource* dataSource;
 
+@property (weak, nonatomic) IBOutlet UITableView *theTable;
 @end
 
 @implementation ZoneKPIsAverageViewController
 
-@synthesize theTable = _theTable;
 
 #pragma mark - Manage buttons
 
-- (void)sendTheMail {
+- (void) sendTheMail {
     // build the mail body that contains cell info and values for all KPIs
     ZoneKPIsAverageMail* mailbody = [[ZoneKPIsAverageMail alloc] init:_dataSource];
     
@@ -45,16 +45,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
     
-    self.theTable.estimatedRowHeight = 124.0;
+    self.theTable.estimatedRowHeight = 150.0;
     self.theTable.rowHeight = UITableViewAutomaticDimension;
   
     self.title = @"Zone KPIs";
-    
-    self.navigationItem.rightBarButtonItem.enabled = TRUE;
 }
 
 - (void) refreshView {
@@ -74,20 +72,13 @@
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _dataSource.zoneKPIs.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"ZoneAverageKPIId";
-    ZoneKPIsAverageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    
-    if (cell == Nil) {
-        cell = [[ZoneKPIsAverageViewCell alloc] init]; 
-    }
+    ZoneKPIsAverageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSEnumerator *enumerator = [_dataSource.zoneKPIs objectEnumerator];
     

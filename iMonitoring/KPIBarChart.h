@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CellKPIsDataSource.h"
 #if TARGET_OS_IPHONE
-#import "CorePlot-CocoaTouch.h"
+#import <CorePlot/ios/CorePlot.h>
 #elif TARGET_OS_MAC && !TARGET_OS_IPHONE
 #import <CorePlot/CorePlot.h>
 #endif

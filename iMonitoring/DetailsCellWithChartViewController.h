@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RequestUtilities.h"
-#import "CorePlot-CocoaTouch.h"
+#import <CorePlot/ios/CorePlot.h>
 #import "KPIDataSource.h"
 #import "KPIBarChart.h"
 #import <MessageUI/MFMailComposeViewController.h>

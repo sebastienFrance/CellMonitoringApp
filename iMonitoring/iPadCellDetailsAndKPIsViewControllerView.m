@@ -21,7 +21,7 @@
 #import "iPadCellDetailsAndKPIsViewTableViewController.h"
 #import "CellBookmark+MarkedCell.h"
 #import "UserPreferences.h"
-#import "CorePlot-CocoaTouch.h"
+#import <CorePlot/ios/CorePlot.h>
 #import "iPadDashboardViewImageCollection.h"
 #import "KPIDictionaryManager.h"
 #import "DashboardCellDetailsHelper.h"

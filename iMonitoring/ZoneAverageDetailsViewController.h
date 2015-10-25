@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CorePlot-CocoaTouch.h"
+#import <CorePlot/ios/CorePlot.h>
 #import "CellsOnCoverageViewController.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #import "DataCenter.h"

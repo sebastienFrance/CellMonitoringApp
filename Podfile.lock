@@ -13,11 +13,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CorePlot:
-    :commit: de881f652893698417ca25e75ac10ed366e3d348
+    :commit: 526c4deec226a2c37cc9666683679a3addb8baae
     :git: https://github.com/core-plot/core-plot.git
 
 SPEC CHECKSUMS:
   CorePlot: cdef45c4ebb7a53f76dc298bf997e13afdaf956d
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

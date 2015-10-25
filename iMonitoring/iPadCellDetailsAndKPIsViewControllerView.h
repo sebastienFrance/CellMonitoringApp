@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CellKPIsDataSource.h"
-#import "CorePlot-CocoaTouch.h"
+#import <CorePlot/ios/CorePlot.h>
 #import "MarkViewController.h"
 
 @class KPIChart;

@@ -8,7 +8,7 @@
 
 #import "MailAbstract.h"
 #import <MessageUI/MFMailComposeViewController.h>
-#import "CorePlot-CocoaTouch.h"
+#import <CorePlot/ios/CorePlot.h>
 #import "iMonNavigationDataActivity.h"
 #import "iMonImageActivity.h"
 #import "iMonPDFActivity.h"

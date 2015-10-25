@@ -16,8 +16,8 @@
 
 - (void) initialize:(WorstKPIDataSource*) worstKPIs;
 - (void) refreshView;
-- (void)sendTheMail;
+- (void) sendTheMail;
 
-@property (weak, nonatomic) IBOutlet UITableView *theTable;
+
 
 @end
