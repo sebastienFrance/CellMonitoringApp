@@ -218,7 +218,6 @@ static const NSString* PARAM_numberInterRATNR = @"numberInterRATNR";
 }
 
 - (void) showDirection {
-#warning SEB: To be completed on MAC 
 #if TARGET_OS_IPHONE
     MKPlacemark* cellPlacemark = self.parentGroup.cellPlacemark;
 

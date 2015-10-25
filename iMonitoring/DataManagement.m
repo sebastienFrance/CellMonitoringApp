@@ -249,10 +249,9 @@ NSString *const kuseiCloud              = @"iCloud.useiCloud";
     self.managedDocument.persistentStoreOptions = options;
 }
 
-
+#pragma mark - iCloud
 - (void) iCloudPersistentStoreOptionsInDocument {
-#warning SEB:should use document.fileURL/@"DocumentMedata.plist" from the cloud to fill ContentNameKey value. Should use NSDictionary with URL to read the plist
-    
+    // All here should be reworked from scratch!
     NSDictionary* documentMedata = [[NSDictionary alloc] initWithContentsOfURL:self.documentMetadataURL];
     if (documentMedata != nil) {
         NSLog(@"%s document metadata %@", __PRETTY_FUNCTION__, documentMedata);

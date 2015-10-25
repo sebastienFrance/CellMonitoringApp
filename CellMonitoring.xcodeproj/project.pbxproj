@@ -356,7 +356,6 @@
 		BEE942F217C00D44009787AD /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = BEE942EC17C00D44009787AD /* unzip.c */; };
 		BEE942F317C00D44009787AD /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = BEE942EE17C00D44009787AD /* zip.c */; };
 		BEE942F617C00D4F009787AD /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE942F517C00D4F009787AD /* SSZipArchive.m */; };
-		BEEE3A8915F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */; };
 		BEF02F4A1B8BADFD003FDCF8 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF02F491B8BADFD003FDCF8 /* Bookmark.storyboard */; };
 		BEF0A75315E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0A75215E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m */; };
 		BEF0D9AD15D83A880080E31A /* CellKPIsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0D9AC15D83A880080E31A /* CellKPIsDataSource.m */; };
@@ -972,8 +971,6 @@
 		BEE942F417C00D4F009787AD /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		BEE942F517C00D4F009787AD /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		BEE942FD17C14F8D009787AD /* HTMLRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLRequest.h; sourceTree = "<group>"; };
-		BEEE3A8715F9DC7C00CAA6D4 /* iPadSearchMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadSearchMenuViewController.h; sourceTree = "<group>"; };
-		BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadSearchMenuViewController.m; sourceTree = "<group>"; };
 		BEF02F491B8BADFD003FDCF8 /* Bookmark.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bookmark.storyboard; sourceTree = "<group>"; };
 		BEF0A75115E6B8CB00A0777C /* ZoneKPIsAverageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoneKPIsAverageViewCell.h; sourceTree = "<group>"; };
 		BEF0A75215E6B8CB00A0777C /* ZoneKPIsAverageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoneKPIsAverageViewCell.m; sourceTree = "<group>"; };
@@ -1550,8 +1547,6 @@
 		BE67F33F1707529F002EA68E /* Popovers */ = {
 			isa = PBXGroup;
 			children = (
-				BEEE3A8715F9DC7C00CAA6D4 /* iPadSearchMenuViewController.h */,
-				BEEE3A8815F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m */,
 				BE6455CB1696181D00557654 /* iPadDashboardScopeViewNRCell.h */,
 				BE6455CC1696181D00557654 /* iPadDashboardScopeViewNRCell.m */,
 			);
@@ -2874,7 +2869,6 @@
 				BE286F3717F737B2002A47AA /* MailActivity.m in Sources */,
 				BEDF62D017FB6EE400233A63 /* iMonMailContentActivity.m in Sources */,
 				BEA9FF75199A9FE80050970C /* MapInfoDatasource.m in Sources */,
-				BEEE3A8915F9DC7C00CAA6D4 /* iPadSearchMenuViewController.m in Sources */,
 				BE06ADDC190D2D380026E1F1 /* SessionURLRequestHandler.m in Sources */,
 				BE56727518717968006EDFD0 /* ReverseGeoCodeRouteDataSource.m in Sources */,
 				BE09388C15FA83990059F480 /* iPadDashboardViewController.m in Sources */,

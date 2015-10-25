@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3t8-hU-TOK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3t8-hU-TOK">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -32,10 +32,10 @@
                                 <rect key="frame" x="20" y="44" width="560" height="556"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qaj-gW-U0p" userLabel="Login Info">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="151"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="152"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xTn-tD-ml7" userLabel="ServerUserColumn">
-                                                <rect key="frame" x="0.0" y="0.0" width="278" height="151"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="278" height="152"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Server" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mph-5e-Epd">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
@@ -58,13 +58,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jD6-yc-BXv">
-                                                        <rect key="frame" x="0.0" y="84" width="278" height="30"/>
+                                                        <rect key="frame" x="0.0" y="85" width="278" height="30"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjT-NS-TLb">
-                                                        <rect key="frame" x="0.0" y="119" width="62" height="32"/>
+                                                        <rect key="frame" x="0.0" y="120" width="62" height="32"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <state key="normal" title="Website">
@@ -86,36 +86,36 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-4I-nmb" userLabel="PortPasswordColumn">
-                                                <rect key="frame" x="283" y="0.0" width="278" height="151"/>
+                                                <rect key="frame" x="283" y="0.0" width="277" height="152"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Port" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZQ-I6-uc7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="278" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="277" height="20"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Port (8443...)" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pyc-v7-MkZ">
-                                                        <rect key="frame" x="0.0" y="25" width="278" height="30"/>
+                                                        <rect key="frame" x="0.0" y="25" width="277" height="30"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                     </textField>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rx9-Z1-GGE">
-                                                        <rect key="frame" x="0.0" y="60" width="278" height="20"/>
+                                                        <rect key="frame" x="0.0" y="60" width="277" height="20"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" clearsOnBeginEditing="YES" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eEZ-L1-joG">
-                                                        <rect key="frame" x="0.0" y="84" width="278" height="30"/>
+                                                        <rect key="frame" x="0.0" y="85" width="277" height="30"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-De-k0x">
-                                                        <rect key="frame" x="145" y="119" width="133" height="32"/>
+                                                        <rect key="frame" x="144" y="120" width="133" height="32"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <state key="normal" title="Request a license">
@@ -147,13 +147,13 @@
                                         <animations/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M7k-Ro-PFp" userLabel="Logo">
-                                        <rect key="frame" x="0.0" y="151" width="560" height="405"/>
+                                        <rect key="frame" x="0.0" y="152" width="560" height="404"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="4zz-8k-YR2">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="405"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="404"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" image="CellMonitoringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="myc-iX-qb9">
-                                                        <rect key="frame" x="0.0" y="303" width="560" height="102"/>
+                                                        <rect key="frame" x="0.0" y="302" width="560" height="102"/>
                                                         <animations/>
                                                     </imageView>
                                                 </subviews>
