@@ -62,17 +62,11 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
 
-    [self loadUsers];
-    
-}
-
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-  //      [self.navigationController setToolbarHidden:FALSE];
-  //      self.navigationController.hidesBarsOnTap = FALSE;
+        [self.navigationItem setLeftBarButtonItems:nil animated:YES]; // hide Side Menu button
     }
+
+    [self loadUsers];
 }
 
 
@@ -152,11 +146,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"userListCellId";
-    UserListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-
-    if (cell == Nil) {
-        cell = [[UserListViewCell alloc] init];
-    }
+    UserListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
 
     [cell initializeWithUser:self.users[indexPath.row]];
 
