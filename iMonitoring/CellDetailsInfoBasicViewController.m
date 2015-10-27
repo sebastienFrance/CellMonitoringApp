@@ -614,29 +614,6 @@ static const NSInteger SECTION_KPIS = 2; // Specific for iPhone
     }
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.section) {
-        case SECTION_ADDRESS: {
-            if (indexPath.row == SECTION_ADDRESS_ROW_CELL_INFO) {
-                return 147.0;
-            } else {
-                return 143.0;
-            }
-        }
-        case SECTION_GENERAL: {
-            if (indexPath.row == SECTION_GENERAL_ROW_NEIGHBORS_RELATIONS) {
-                return 125.0;
-            } else if (indexPath.row == SECTION_GENERAL_ROW_ALARMS) {
-                return 103.0;
-            } else {
-                return 58.0;
-            }
-        }
-        default: {
-            return 97.0;
-        }
-    }
-}
 
 #pragma mark - Segue
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

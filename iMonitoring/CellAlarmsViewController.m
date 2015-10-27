@@ -48,8 +48,6 @@
 
 - (void)viewDidLoad
 {
-    [self showToolbar];
-    
     self.theTable.delegate = self;
     self.theTable.dataSource = self;
     self.title = [NSString stringWithFormat:@"%@", self.alarmDatasource.theCell.id];
@@ -71,17 +69,6 @@
     [super viewDidLoad];
 }
 
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self showToolbar];
-}
-
--(void) showToolbar {
-//    [self.navigationController setToolbarHidden:FALSE animated:FALSE];
-//    self.navigationController.hidesBarsOnSwipe = FALSE;
-//    self.navigationController.hidesBarsOnTap = FALSE;
-}
 
 
 -(void) viewWillDisappear:(BOOL)animated {
