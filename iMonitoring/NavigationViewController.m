@@ -152,6 +152,12 @@
     
     self.theTableView.delegate = self;
     self.theTableView.dataSource = self;
+    
+    self.theTableView.estimatedRowHeight = 86.0;
+    self.theTableView.rowHeight = UITableViewAutomaticDimension;
+    
+
+    
     self.routeDatasource = [[RouteDirectionDataSource alloc] init];
 
     
@@ -271,14 +277,9 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-   static NSString *cellIdentifier = @"NavigationCellId";
-    NavigationViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (cell == Nil) {
-        cell = [[NavigationViewCell alloc] init];
-    }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"NavigationCellId";
+    NavigationViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     [cell initWithRoute:self.routes[indexPath.row] buttonId:indexPath.row];
     
