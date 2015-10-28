@@ -30,12 +30,10 @@
 
     self.theTableView.delegate = self;
     self.theTableView.dataSource = self;
-    
-    [self initSearchController];
-
-    self.theTableView.estimatedRowHeight = 88.0;
+    self.theTableView.estimatedRowHeight = 114.0;
     self.theTableView.rowHeight = UITableViewAutomaticDimension;
     
+    [self initSearchController];
     
     // cells by alphabetical order
     self.theFullCellList = [[self.delegate getCellsFromMap] sortedArrayUsingComparator:^(CellMonitoring* cell1, CellMonitoring* cell2) {
@@ -73,21 +71,11 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-//-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return 77.0;
-//}
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    return @"Cells on map";
-//}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.searchController.active) {
         return self.filteredListContent.count;
     } else {
@@ -95,8 +83,7 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         static NSString *CellIdentifier = @"CellGroupId";
     CellGroupViewCell *cell = [self.theTableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
