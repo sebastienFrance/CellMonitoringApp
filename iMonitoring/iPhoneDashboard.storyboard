@@ -531,7 +531,6 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8eq-je-riX" firstAttribute="top" secondItem="gKH-cV-lWg" secondAttribute="bottom" constant="8" symbolic="YES" id="4oy-6c-30N"/>
                             <constraint firstItem="af4-zX-2qL" firstAttribute="top" secondItem="lCQ-ec-A3E" secondAttribute="bottom" constant="8" symbolic="YES" id="Ckg-nO-GfW"/>
                             <constraint firstItem="Er0-DS-wUm" firstAttribute="leading" secondItem="05c-4m-Bsv" secondAttribute="leading" id="Cr9-eh-h66"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gKH-cV-lWg" secondAttribute="trailing" id="Fja-ox-pDQ"/>
@@ -540,16 +539,11 @@
                             <constraint firstAttribute="trailing" secondItem="lCQ-ec-A3E" secondAttribute="trailing" id="YHa-hC-7TH"/>
                             <constraint firstItem="Er0-DS-wUm" firstAttribute="bottom" secondItem="8eq-je-riX" secondAttribute="top" multiplier="40%" placeholder="YES" id="ZZc-uS-ZNT"/>
                             <constraint firstItem="lCQ-ec-A3E" firstAttribute="top" secondItem="Er0-DS-wUm" secondAttribute="bottom" id="bcf-Pa-iqM"/>
+                            <constraint firstItem="gKH-cV-lWg" firstAttribute="top" secondItem="af4-zX-2qL" secondAttribute="top" id="f1r-rs-Ypl"/>
                             <constraint firstItem="lCQ-ec-A3E" firstAttribute="leading" secondItem="05c-4m-Bsv" secondAttribute="leading" id="fFm-6n-uac"/>
                             <constraint firstAttribute="leadingMargin" secondItem="af4-zX-2qL" secondAttribute="leading" id="nrm-bF-XcA"/>
                             <constraint firstAttribute="trailing" secondItem="Er0-DS-wUm" secondAttribute="trailing" id="ucI-5k-Wrg"/>
-                            <constraint firstItem="gKH-cV-lWg" firstAttribute="centerX" secondItem="05c-4m-Bsv" secondAttribute="centerX" id="vJe-ls-JNJ"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="vJe-ls-JNJ"/>
-                            </mask>
-                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
