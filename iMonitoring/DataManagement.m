@@ -120,14 +120,14 @@ NSString *const kuseiCloud              = @"iCloud.useiCloud";
 //}
 
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    self.iCloudUsed = FALSE;
-   if (buttonIndex != 0) {
-        [self initializationWithiCloud];
-   } else {
-       [self initializationWithLocalStore];
-   }
-}
+//- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+//    self.iCloudUsed = FALSE;
+//   if (buttonIndex != 0) {
+//        [self initializationWithiCloud];
+//   } else {
+//       [self initializationWithLocalStore];
+//   }
+//}
 
 - (void) initializationWithLocalStore {
     self.iCloudUsed = FALSE;

@@ -62,13 +62,15 @@ typedef void(^restorationHandler_t)(NSArray *);
 
     switch (status) {
         case InitializationError: {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Navigation data" message:@"Initialization error" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];
+            UIViewController* ctrl = [Utility getViewController];
+            UIAlertController* alertCtrl = [Utility getSimpleAlertView:@"Navigation data" message:@"Initialization error" actionTitle:@"ok"];
+            [ctrl presentViewController:alertCtrl animated:true completion:nil];
             return FALSE;
         }
         case ParseError: {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Navigation data" message:@"Parsing error" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-            [alert show];
+            UIViewController* ctrl = [Utility getViewController];
+            UIAlertController* alertCtrl = [Utility getSimpleAlertView:@"Navigation data" message:@"arsing error" actionTitle:@"ok"];
+            [ctrl presentViewController:alertCtrl animated:true completion:nil];
             return FALSE;
         }
         case Success: {
@@ -165,8 +167,9 @@ typedef void(^restorationHandler_t)(NSArray *);
                                                                         NSOutputStream *outputStream, NSError *error) {
                 if (error != Nil) {
  
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communication Error" message:@"Cannot get data to continue the user activity" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-                    [alert show];
+                    UIViewController* vc = [Utility getViewController];
+                    UIAlertController* alertCtrl = [Utility getSimpleAlertView:@"Communication Error" message:@"Cannot get data to continue the user activity" actionTitle:@"ok"];
+                    [vc presentViewController:alertCtrl animated:YES completion:nil];
                     NSLog(@"%s error with getContinuationStreamsWithCompletionHandler %@", __PRETTY_FUNCTION__,error.localizedDescription);
                 } else {
                     if (inputStream != Nil) {

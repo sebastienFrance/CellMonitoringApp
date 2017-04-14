@@ -8,6 +8,8 @@
 
 #import "Utility.h"
 #import "SSZipArchive.h"
+#import <UIKit/UIKit.h>
+#import "iMonitoring.h"
 
 @implementation Utility
 
@@ -419,7 +421,7 @@
     return [UIImage imageWithData:imageData];
 }
 
-+ (UIImage *)normalizedImage:(UIImage*) sourceImage {
++(UIImage*)normalizedImage:(UIImage*) sourceImage {
     if (sourceImage.imageOrientation == UIImageOrientationUp) return sourceImage;
     
     UIGraphicsBeginImageContextWithOptions(sourceImage.size, NO, sourceImage.scale);
@@ -455,6 +457,66 @@
 
     [alert addAction:defaultAction];
     return alert;
+}
+
+
+/*
+ 
+ static func getCurrentViewController() -> UIViewController? {
+ let app = UIApplication.shared.delegate as! AppDelegate
+ guard let rvc = app.window?.rootViewController else {
+ return nil
+ }
+ return getCurrentViewController(vc:rvc)
+ }
+ 
+ fileprivate static func getCurrentViewController(vc: UIViewController) -> UIViewController? {
+ if let pvc = vc.presentedViewController {
+ return getCurrentViewController(vc:pvc)
+ }
+ else if let svc = vc as? UISplitViewController, svc.viewControllers.count > 0 {
+ return getCurrentViewController(vc:svc.viewControllers.last!)
+ }
+ else if let nc = vc as? UINavigationController, nc.viewControllers.count > 0 {
+ return getCurrentViewController(vc:nc.topViewController!)
+ }
+ else if let tbc = vc as? UITabBarController {
+ if let svc = tbc.selectedViewController {
+ return getCurrentViewController(vc:svc)
+ }
+ }
+ return vc
+ }
+
+ */
+
++(UIViewController*) getViewController {
+    iMonitoring* appDelegate = (iMonitoring*) [[UIApplication sharedApplication] delegate];
+    
+    UIViewController* rvc = [[appDelegate window] rootViewController];
+    if (rvc != nil) {
+        return [Utility getCurrentViewController:rvc];
+    }
+    
+    return rvc;
+}
+
++(UIViewController*) getCurrentViewController:(UIViewController*) vc {
+    if (vc == nil) {
+        return nil;
+    }
+    
+    if (vc.presentedViewController != nil) {
+        return [Utility getCurrentViewController:vc.presentedViewController];
+    } else {
+        if ([vc isKindOfClass:[UINavigationController class]]) {
+            UINavigationController* nc = (UINavigationController*) vc;
+            if (nc.viewControllers.count > 0) {
+                return [Utility getCurrentViewController:nc.topViewController];
+            }
+        }
+    }
+    return vc;
 }
 
 @end

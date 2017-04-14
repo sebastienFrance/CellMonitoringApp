@@ -20,8 +20,7 @@
 @class WorstKPIDataSource;
 
 
-#warning UIAlertViewDelegate is deprecated and should be replaced!
-@interface WorstViewSelection : NSObject<UIAlertViewDelegate> 
+@interface WorstViewSelection : NSObject 
 
 - (void) openView:(UIBarButtonItem*) sourceButton viewController:(id<DashboardSelectionDelegate>) theDelegate cancelButton:(Boolean) hasCancelButton;
 

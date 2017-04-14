@@ -7,6 +7,7 @@
 //
 
 #import "CMLocationManager.h"
+#import "Utility.h"
 
 @interface CMLocationManager()
 
@@ -43,12 +44,9 @@
 
 - (void) raiseAlertForLocation:(NSString*) theMessage {
 #if TARGET_OS_IPHONE
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Localization failure"
-                                                    message:theMessage
-                                                   delegate:Nil
-                                          cancelButtonTitle:@"ok"
-                                          otherButtonTitles:nil];
-    [alert show];
+    UIViewController* vc = [Utility getViewController];
+    UIAlertController* alertCtrl = [Utility getSimpleAlertView:@"Localization failure" message:theMessage actionTitle:@"ok"];
+    [vc presentViewController:alertCtrl animated:YES completion:nil];
 #else
     NSAlert* alert = [NSAlert alertWithMessageText:@"Localization failure"
                                      defaultButton:@"Cancel"

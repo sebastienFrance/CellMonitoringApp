@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LwD-TK-K9E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LwD-TK-K9E">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -23,7 +23,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="epx-9g-aFh">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
@@ -50,14 +49,13 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="148" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="4E6-bb-DwO">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellWorstKPIId" rowHeight="150" id="DWF-jQ-7GP" customClass="WorstKPIsCell">
                                         <rect key="frame" x="0.0" y="50" width="600" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DWF-jQ-7GP" id="xxI-Ic-Rzi">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="149"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="EfO-9h-uoG" userLabel="All">
@@ -68,47 +66,40 @@
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="h70-SA-9mA">
                                                                     <rect key="frame" x="0.0" y="0.0" width="74" height="20"/>
-                                                                    <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
                                                             </subviews>
-                                                            <animations/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EUN-LU-pox" userLabel="LastPeriod">
-                                                            <rect key="frame" x="0.0" y="25" width="551" height="54"/>
+                                                            <rect key="frame" x="0.0" y="26" width="551" height="54"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="sSF-jI-rTf" userLabel="LastPeriodLabels">
                                                                     <rect key="frame" x="0.0" y="0.0" width="531" height="54"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last Period" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YH3-Bi-QIj">
                                                                             <rect key="frame" x="0.0" y="0.0" width="86" height="20"/>
-                                                                            <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Worst Cell Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sda-3B-gHp">
                                                                             <rect key="frame" x="0.0" y="20" width="108" height="17"/>
-                                                                            <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value Last Period" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ajT-Ph-YJh">
                                                                             <rect key="frame" x="0.0" y="37" width="138" height="17"/>
-                                                                            <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <animations/>
                                                                 </stackView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="klL-Vm-VFc">
                                                                     <rect key="frame" x="531" y="17" width="20" height="20"/>
-                                                                    <animations/>
                                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="20" id="frJ-XB-Yoo"/>
@@ -116,41 +107,35 @@
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
-                                                            <animations/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3zV-Mf-jTc" userLabel="AveragePeriod">
-                                                            <rect key="frame" x="0.0" y="79" width="551" height="54"/>
+                                                            <rect key="frame" x="0.0" y="80" width="551" height="54"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="teA-Dk-Xma" userLabel="AverageLabels">
                                                                     <rect key="frame" x="0.0" y="0.0" width="531" height="54"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Average Period" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LgH-9u-ogx">
                                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="20"/>
-                                                                            <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Worst Cell Name Average" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qz7-ZP-n7y">
                                                                             <rect key="frame" x="0.0" y="20" width="164" height="17"/>
-                                                                            <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value Average" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rda-Vw-K6K">
                                                                             <rect key="frame" x="0.0" y="37" width="117" height="17"/>
-                                                                            <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <animations/>
                                                                 </stackView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmr-yw-oUX">
                                                                     <rect key="frame" x="531" y="17" width="20" height="20"/>
-                                                                    <animations/>
                                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="iRq-Cr-1Q1"/>
@@ -158,17 +143,14 @@
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
-                                                            <animations/>
                                                         </stackView>
                                                     </subviews>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="3zV-Mf-jTc" secondAttribute="trailing" id="jtF-pG-GFE"/>
                                                         <constraint firstAttribute="trailing" secondItem="EUN-LU-pox" secondAttribute="trailing" id="rea-9J-40A"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="EfO-9h-uoG" firstAttribute="leading" secondItem="xxI-Ic-Rzi" secondAttribute="leadingMargin" id="bxm-Rh-Oav"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EfO-9h-uoG" secondAttribute="trailing" id="dO3-Rw-IgB"/>
@@ -176,7 +158,6 @@
                                                 <constraint firstItem="EfO-9h-uoG" firstAttribute="top" secondItem="xxI-Ic-Rzi" secondAttribute="topMargin" id="xSR-M4-0ic"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="KPIColor" destination="klL-Vm-VFc" id="0Wl-Er-oIL"/>
                                             <outlet property="KPIColorAverage" destination="Fmr-yw-oUX" id="lT2-kV-rXW"/>
@@ -192,7 +173,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4E6-bb-DwO" firstAttribute="top" secondItem="SsF-Cx-HSP" secondAttribute="bottom" id="66d-vQ-HNa"/>
@@ -229,14 +209,13 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="118" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="1JV-nP-8i5">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ZoneAverageKPIId" rowHeight="118" id="or6-iZ-eO4" customClass="ZoneKPIsAverageViewCell">
                                         <rect key="frame" x="0.0" y="114" width="600" height="118"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="or6-iZ-eO4" id="1XS-7U-qei">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="117"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="118"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6U9-OF-PmG" userLabel="All">
@@ -247,40 +226,34 @@
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="co2-iK-oWZ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="74" height="20"/>
-                                                                    <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </label>
                                                             </subviews>
-                                                            <animations/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8I1-Qk-I19" userLabel="Average">
-                                                            <rect key="frame" x="0.0" y="27" width="551" height="37"/>
+                                                            <rect key="frame" x="0.0" y="28" width="551" height="37"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="5Gl-mA-PKU" userLabel="AverageLabels">
                                                                     <rect key="frame" x="0.0" y="0.0" width="531" height="37"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-47-mHD">
                                                                             <rect key="frame" x="0.0" y="0.0" width="42" height="20"/>
-                                                                            <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value Average" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lpY-lR-k8U">
                                                                             <rect key="frame" x="0.0" y="20" width="117" height="17"/>
-                                                                            <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <animations/>
                                                                 </stackView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDr-ad-Tvx">
                                                                     <rect key="frame" x="531" y="9" width="20" height="20"/>
-                                                                    <animations/>
                                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="6li-gb-IKp"/>
@@ -288,34 +261,29 @@
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
-                                                            <animations/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QrM-k5-SnF" userLabel="Last">
-                                                            <rect key="frame" x="0.0" y="64" width="551" height="37"/>
+                                                            <rect key="frame" x="0.0" y="65" width="551" height="37"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="W81-7t-JRM" userLabel="LastLabels">
                                                                     <rect key="frame" x="0.0" y="0.0" width="531" height="37"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last Period" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3wD-d9-p7T">
                                                                             <rect key="frame" x="0.0" y="0.0" width="86" height="20"/>
-                                                                            <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value Last Period" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v6A-Le-453">
                                                                             <rect key="frame" x="0.0" y="20" width="138" height="17"/>
-                                                                            <animations/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <animations/>
                                                                 </stackView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zu-sz-6mc">
                                                                     <rect key="frame" x="531" y="9" width="20" height="20"/>
-                                                                    <animations/>
                                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="20" id="EEZ-0A-zyk"/>
@@ -323,17 +291,14 @@
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
-                                                            <animations/>
                                                         </stackView>
                                                     </subviews>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="QrM-k5-SnF" secondAttribute="trailing" id="Q6y-Jb-gIk"/>
                                                         <constraint firstAttribute="trailing" secondItem="8I1-Qk-I19" secondAttribute="trailing" id="j6w-H7-Oii"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="6U9-OF-PmG" firstAttribute="leading" secondItem="1XS-7U-qei" secondAttribute="leadingMargin" id="Ed6-Xd-UAr"/>
                                                 <constraint firstItem="6U9-OF-PmG" firstAttribute="top" secondItem="1XS-7U-qei" secondAttribute="topMargin" id="FJI-f0-rGM"/>
@@ -341,7 +306,6 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="6U9-OF-PmG" secondAttribute="bottom" id="yUA-af-3MY"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="KPIColorAverage" destination="EDr-ad-Tvx" id="Qnx-kL-rgr"/>
                                             <outlet property="KPIColorLastPeriod" destination="1zu-sz-6mc" id="8Yg-11-WtW"/>
@@ -355,7 +319,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1JV-nP-8i5" firstAttribute="leading" secondItem="LKP-JH-KOa" secondAttribute="leading" id="QHH-am-7ug"/>
@@ -392,15 +355,12 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6F0-R0-Ew4" userLabel="SecondViewChart" customClass="CPTGraphHostingView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
-                                        <animations/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00r-Uk-38p" userLabel="FirstViewChart" customClass="CPTGraphHostingView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="6F0-R0-Ew4" secondAttribute="bottom" id="7bI-Xi-aOP"/>
                                     <constraint firstItem="00r-Uk-38p" firstAttribute="top" secondItem="Er0-DS-wUm" secondAttribute="top" id="A94-Qu-RVL"/>
@@ -414,45 +374,39 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lCQ-ec-A3E">
                                 <rect key="frame" x="0.0" y="215" width="600" height="275"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ZoneAverageEvolutionId" rowHeight="105" id="leA-uR-1Cy" customClass="ZoneAverageDetailsCell">
                                         <rect key="frame" x="0.0" y="22" width="600" height="105"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="leA-uR-1Cy" id="FQu-Is-chy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="cmG-8A-W9K" userLabel="All">
                                                     <rect key="frame" x="8" y="8" width="584" height="88"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TVC-yK-dc3">
-                                                            <rect key="frame" x="0.0" y="0.0" width="584" height="33"/>
-                                                            <animations/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="584" height="32"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="dateLocalTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1ZX-tQ-o27">
-                                                            <rect key="frame" x="0.0" y="33" width="584" height="27"/>
-                                                            <animations/>
+                                                            <rect key="frame" x="0.0" y="32" width="584" height="28"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="dateCellLocalTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gyC-B9-t4l">
                                                             <rect key="frame" x="0.0" y="60" width="584" height="28"/>
-                                                            <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                     </subviews>
-                                                    <animations/>
                                                 </stackView>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cmG-8A-W9K" secondAttribute="trailing" id="DJY-dk-PVh"/>
                                                 <constraint firstItem="cmG-8A-W9K" firstAttribute="top" secondItem="FQu-Is-chy" secondAttribute="topMargin" id="I1U-72-RqX"/>
@@ -460,7 +414,6 @@
                                                 <constraint firstItem="cmG-8A-W9K" firstAttribute="leading" secondItem="FQu-Is-chy" secondAttribute="leadingMargin" id="zuY-Qa-DVB"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="KPIValue" destination="TVC-yK-dc3" id="vw3-3W-ieD"/>
                                             <outlet property="dateCellLocalTime" destination="gyC-B9-t4l" id="rJ2-7L-d95"/>
@@ -471,7 +424,7 @@
                                         <rect key="frame" x="0.0" y="127" width="600" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="byz-X6-vil" id="Nge-hY-vb1">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Blv-a3-Kys">
@@ -479,23 +432,19 @@
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="19m-Y0-rua">
                                                             <rect key="frame" x="0.0" y="0.0" width="72" height="41"/>
-                                                            <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" text="Period" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1N3-Ed-A9M">
                                                             <rect key="frame" x="72" y="0.0" width="512" height="41"/>
-                                                            <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                     </subviews>
-                                                    <animations/>
                                                 </stackView>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Blv-a3-Kys" secondAttribute="trailing" id="6T3-gh-alT"/>
                                                 <constraint firstItem="Blv-a3-Kys" firstAttribute="top" secondItem="Nge-hY-vb1" secondAttribute="topMargin" id="POQ-NY-hWx"/>
@@ -503,7 +452,6 @@
                                                 <constraint firstItem="Blv-a3-Kys" firstAttribute="leading" secondItem="Nge-hY-vb1" secondAttribute="leadingMargin" id="pL2-5F-EXB"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="kpiValue" destination="19m-Y0-rua" id="aZI-kz-pJt"/>
                                             <outlet property="period" destination="1N3-Ed-A9M" id="PEQ-qm-dCE"/>
@@ -513,7 +461,6 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af4-zX-2qL">
                                 <rect key="frame" x="20" y="498" width="59" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Previous"/>
                                 <connections>
                                     <action selector="PreviousKPI:" destination="pvu-8V-1Wd" eventType="touchUpInside" id="TM8-BY-Mzv"/>
@@ -521,14 +468,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKH-cV-lWg">
                                 <rect key="frame" x="548" y="498" width="32" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="NextKPI:" destination="pvu-8V-1Wd" eventType="touchUpInside" id="DrY-iM-VC7"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="af4-zX-2qL" firstAttribute="top" secondItem="lCQ-ec-A3E" secondAttribute="bottom" constant="8" symbolic="YES" id="Ckg-nO-GfW"/>
@@ -583,17 +528,14 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hm0-Jp-jpm" userLabel="Second HostingView" customClass="CPTGraphHostingView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAE-EG-wgH" customClass="CPTGraphHostingView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -613,14 +555,13 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aTO-yc-1VT">
                                 <rect key="frame" x="0.0" y="215" width="600" height="277"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailsWorstKPIViewCellId" rowHeight="73" id="QoB-qS-FwY" customClass="DetailsWorstKPIViewCell">
                                         <rect key="frame" x="0.0" y="22" width="600" height="73"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QoB-qS-FwY" id="qmT-3J-IlQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="y9G-XU-DWK" userLabel="All">
@@ -628,7 +569,6 @@
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cell Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e7X-Zy-oxU">
                                                             <rect key="frame" x="0.0" y="0.0" width="77" height="26"/>
-                                                            <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -638,7 +578,6 @@
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KPI Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3jI-Ud-NI5">
                                                                     <rect key="frame" x="0.0" y="0.0" width="61" height="30"/>
-                                                                    <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -648,7 +587,6 @@
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJe-qJ-BUi">
                                                                             <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
-                                                                            <animations/>
                                                                             <state key="normal" title="KPIs">
                                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
@@ -658,7 +596,6 @@
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNE-FA-qak">
                                                                             <rect key="frame" x="36" y="0.0" width="30" height="30"/>
-                                                                            <animations/>
                                                                             <state key="normal" title="Map">
                                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
@@ -667,19 +604,15 @@
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>
-                                                                    <animations/>
                                                                 </stackView>
                                                             </subviews>
-                                                            <animations/>
                                                         </stackView>
                                                     </subviews>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="5oY-d4-y7Z" secondAttribute="trailing" id="T03-Gw-d6A"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="y9G-XU-DWK" firstAttribute="leading" secondItem="qmT-3J-IlQ" secondAttribute="leadingMargin" id="OKJ-Do-YTY"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="y9G-XU-DWK" secondAttribute="bottom" id="Uko-fG-vCy"/>
@@ -687,7 +620,6 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="y9G-XU-DWK" secondAttribute="trailing" id="mTW-4Q-8hd"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="KPIValue" destination="3jI-Ud-NI5" id="Zfr-Qq-Pwp"/>
                                             <outlet property="KPIsButton" destination="eJe-qJ-BUi" id="xCr-UN-lc0"/>
@@ -699,7 +631,6 @@
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mmq-eC-7KI">
                                 <rect key="frame" x="224" y="500" width="152" height="29"/>
-                                <animations/>
                                 <segments>
                                     <segment title="Worst"/>
                                     <segment title="Best"/>
@@ -711,7 +642,6 @@
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN9-5c-hlz">
                                 <rect key="frame" x="548" y="499" width="32" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="NextKPI:" destination="SWv-BE-ZjE" eventType="touchUpInside" id="XaV-9O-U7O"/>
@@ -719,14 +649,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyW-cR-dcI">
                                 <rect key="frame" x="20" y="499" width="59" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Previous"/>
                                 <connections>
                                     <action selector="PreviousKPI:" destination="SWv-BE-ZjE" eventType="touchUpInside" id="uOs-v0-oob"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>

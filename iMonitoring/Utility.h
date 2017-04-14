@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "MapModeItf.h"
+#import <UIKit/UIKit.h>
+
 
 @interface Utility : NSObject
 
@@ -52,4 +54,6 @@ typedef NS_ENUM(NSUInteger, ArrayMinMaxEntry)  {
 + (UIImage *)normalizedImage:(UIImage*) sourceImage;
 
 +(UIColor*) getLightColorForBookmark:(UIColor*) theColor;
+
++(UIViewController*) getViewController;
 @end
