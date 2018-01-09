@@ -32,8 +32,8 @@
     XCTAssertTrue([PasswordUtility checkPasswordValidity:@"ItIsPassword" retype:@"ItIsPassword"], @"Password is validated as compliant");
     XCTAssertFalse([PasswordUtility checkPasswordValidity:Nil retype:Nil], @"Password is not compliant because nil");
     XCTAssertFalse([PasswordUtility checkPasswordValidity:@"" retype:@""], @"Password is not compliant because empty");
-    XCTAssertFalse([PasswordUtility checkPasswordValidity:@"toto" retype:@"toto"], @"Password is not compliant because too short");
-    XCTAssertFalse([PasswordUtility checkPasswordValidity:@"ItIsPassword" retype:@"OtherPassword"], @"Password is not compliant because they are differents");
+    XCTAssertEqual(MainPasswordTooShort, [PasswordUtility checkPasswordValidity:@"toto" retype:@"toto"], @"Password is not compliant because too short");
+    XCTAssertEqual(MainRetypePasswordNotEquals, [PasswordUtility checkPasswordValidity:@"ItIsPassword" retype:@"OtherPassword"], @"Password is not compliant because they are differents");
 }
 
 - (void)testcheckUserNameValidity

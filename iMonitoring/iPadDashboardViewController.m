@@ -138,7 +138,7 @@ static const NSUInteger MAX_COLUMNS = 5;
         newNumberOfColumns = MAX_COLUMNS;
     }
 
-    // If the number of columns per change is changed we need to reset the cellSize and maybe the number of pages
+    // If the number of columns is changed we need to reset the cellSize and maybe the number of pages
     if (newNumberOfColumns != self.numberOfRows) {
 
         // Update the number of pages
